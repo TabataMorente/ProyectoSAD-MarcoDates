@@ -169,9 +169,6 @@ def procesar_texto(df_train, df_test, df_dev, config, target):
 # ==========================================
 # 5. CODIFICACIÓN CATEGÓRICA Y BOOLEANA
 # ==========================================
-# ==========================================
-# 5. CODIFICACIÓN CATEGÓRICA Y BOOLEANA
-# ==========================================
 def codificar_variables(df_train, df_test, df_dev, config, target):
     # Categorías Ordinales (Mapeo numérico)
     cat_cols = config.get('categorical_features', [])
