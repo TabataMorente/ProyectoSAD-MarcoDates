@@ -1,104 +1,72 @@
 # -*- coding: utf-8 -*-
 import sys
-import os  # Para manejar nombres de archivos y rutas
+import os
 import json
-import joblib  # Usamos joblib por eficiencia con arrays grandes
+import joblib
 import pandas as pd
-import nltk
 
-from preprocessing import apply_preprocessing # --- Para aplicar preprocesado ---
+# --- IMPORTACIÓN DEL NUEVO PREPROCESADO ---
+from preprocessing import pipeline_preprocesamiento
 
-# Herramientas de Scikit-Learn para dividir datos, limpiar y preprocesar
 from sklearn.model_selection import train_test_split
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.neighbors import KNeighborsRegressor
-from sklearn.naive_bayes import GaussianNB, MultinomialNB, BernoulliNB # --- Algoritmo Naive Bayes ---
-from sklearn.metrics import f1_score
-from sklearn.metrics import r2_score
-from sklearn.tree import DecisionTreeClassifier, DecisionTreeRegressor # --- Algoritmo Decision Trees ---
-from sklearn.ensemble import RandomForestClassifier, RandomForestRegressor # --- Algoritmo Random Forest ---
-from nltk.corpus import stopwords
-
-try:
-    nltk.data.find('corpora/stopwords')
-except (LookupError, AttributeError):
-    print("📥 Descargando diccionario de stopwords...")
-    nltk.download('stopwords')
-
-try:
-    sw_list = stopwords.words('spanish') + stopwords.words('english')
-except:
-    sw_list = None  # Backup por si falla la descarga en el examen
-
-# Librerías para el balanceo
-from imblearn.under_sampling import RandomUnderSampler
-from imblearn.over_sampling import RandomOverSampler
+from sklearn.neighbors import KNeighborsClassifier, KNeighborsRegressor
+from sklearn.naive_bayes import GaussianNB, MultinomialNB, BernoulliNB
+from sklearn.tree import DecisionTreeClassifier, DecisionTreeRegressor
+from sklearn.ensemble import RandomForestClassifier, RandomForestRegressor
+from sklearn.metrics import f1_score, r2_score
+from sklearn.metrics import accuracy_score, precision_score, recall_score, classification_report
 
 # Función para abrir y leer el archivo de configuración JSON
 def load_config(json_path):
     with open(json_path, 'r') as f: # Abre el archivo en modo lectura
         return json.load(f) # Convierte el contenido del JSON en un diccionario de Python
 
-# Función para cargar el CSV y mover la columna objetivo al final del DataFrame
-def load_data(csv_file, config):
-    df = pd.read_csv(csv_file) # Carga el archivo CSV en un DataFrame
-    target = config['target'] # Extrae el nombre de la columna objetivo del JSON
-    # Crea una lista de columnas sin el target y lo añade al final
-    if 'ID' in df.columns:
-        df = df.drop(columns=['ID'])
-        print("INFO: Columna 'ID' eliminada para mejorar el entrenamiento.")
-    cols = [c for c in df.columns if c != target] + [target]
-    return df[cols] # Devuelve el DataFrame ordenado
-
-
 def train():
-    # 1. Validación de que el usuario ha pasado los archivos por consola
-    if len(sys.argv) < 4:
-        print("Uso: python train.py <train.csv> <test.csv> <config_file.json>")
+    # 1. Validación (Ahora solo pedimos un CSV y el JSON)
+    if len(sys.argv) < 3:
+        print("Uso: python train.py <data.csv> <config_file.json>")
         sys.exit(1)
 
-    # 2. Carga de configuración y datos por separado
-    config = load_config(sys.argv[3])
-    df_train = load_data(sys.argv[1], config)
-    df_test = load_data(sys.argv[2], config)  # Cargamos el test externo directamente
+    # 2. Carga de configuración y datos originales
+    config = load_config(sys.argv[2])
+    target_global = config.get('target')
+    df_raw = pd.read_csv(sys.argv[1])
 
-    # Si en el JSON pusiste "drop", limpiamos el DataFrame entero AQUÍ
-    if config['preprocessing'].get('missing_values') == 'drop':
-        df_train = df_train.dropna().reset_index(drop=True)
-        df_test = df_test.dropna().reset_index(drop=True)
+    # 3. DIVISIÓN TRIPLE (70/15/15)
+    # Paso A: Separar el 70% para Train y el 30% para lo demás (Dev + Test)
+    df_train_raw, df_temp = train_test_split(
+        df_raw,
+        test_size=0.30,
+        random_state=42
+    )
 
-    # Separamos características (X) de la etiqueta a predecir (y)
-    # Como load_data garantizó que el target es la última columna:
-    X_train_full = df_train.iloc[:, :-1]  # "Coge todas las columnas menos la última"
-    y_train_full = df_train.iloc[:, -1]  # "Coge solo la última columna"
+    # Paso B: Del 30% restante, dividimos a la mitad para sacar Dev (15%) y Test (15%)
+    df_dev_raw, df_test_raw = train_test_split(
+        df_temp,
+        test_size=0.50,
+        random_state=42
+    )
 
-    # Separación Test (el examen final que ya nos dan)
-    X_test_final = df_test.iloc[:, :-1]
-    y_test_final = df_test.iloc[:, -1]
+    print(f"📊 Reparto: Train={len(df_train_raw)} | Dev={len(df_dev_raw)} | Test={len(df_test_raw)}")
 
-    # Codificación del target si es clasificación
-    if config.get('task') == 'classification' and y_train_full.dtype == 'object':
-        from sklearn.preprocessing import LabelEncoder
-        le = LabelEncoder()
-        y_train_full = pd.Series(le.fit_transform(y_train_full))
-        y_test_final = pd.Series(le.transform(y_test_final))
-        print(f"INFO: Target codificado: {dict(zip(le.classes_, le.transform(le.classes_)))}")
+    # 4. APLICACIÓN DEL PIPELINE MODULAR
+    # Ahora enviamos los 3 trozos recién creados a tu preprocessing.py
+    df_train_p, df_test_p, df_dev_p = pipeline_preprocesamiento(
+        df_train_raw.copy(),
+        df_test_raw.copy(),
+        df_dev_raw.copy(),
+        config
+    )
 
-    # DIVISION PARA VALIDACIÓN (Dev):
-    # Como ya tenemos el Test aparte, dividimos el Train para sacar un 20% para elegir parámetros (Dev)
-    X_train, X_dev, y_train, y_dev = train_test_split(X_train_full, y_train_full, test_size=0.20, random_state=42,stratify=y_train_full)
+    # 5. SEPARACIÓN FINAL X e y (Usando tus nombres de variables)
+    X_train_p = df_train_p.drop(columns=[target_global])
+    y_train = df_train_p[target_global]
 
-    # Aplicamos preprocesado a los tres bloques
-    X_train_p, X_dev_p, X_test_p = apply_preprocessing(X_train.copy(), X_dev.copy(), X_test_final.copy(), config)
+    X_dev_p = df_dev_p.drop(columns=[target_global])
+    y_dev = df_dev_p[target_global]
 
-    # --- 2. BALANCEO (Sampling) - (Solo se aplica al conjunto de TRAIN para que el modelo no tenga sesgos) ---
-    sampling_type = config['preprocessing'].get('sampling')
-    if sampling_type == "undersampling":
-        sampler = RandomUnderSampler(random_state=42) # Borra filas de la clase mayoritaria
-        X_train_p, y_train = sampler.fit_resample(X_train_p, y_train)
-    elif sampling_type == "oversampling":
-        sampler = RandomOverSampler(random_state=42) # Inventa filas de la clase minoritaria
-        X_train_p, y_train = sampler.fit_resample(X_train_p, y_train)
+    X_test_p = df_test_p.drop(columns=[target_global])
+    y_test_final = df_test_p[target_global]
 
     # --- INICIO DEL ENTRENAMIENTO ---
     method = config.get('method', 'knn')
@@ -296,6 +264,8 @@ def train():
                     joblib.dump(model, os.path.join(folder_path, model_name))
                     print(f"✅ Guardado: {model_name} | {metric}-Dev: {score_dev:.4f}")
 
+
+
     # --- SELECCIÓN DEL MEJOR MODELO DEL ENTRENAMIENTO ---
     import glob
 
@@ -319,20 +289,58 @@ def train():
             max_score = current_score
             best_model_path = m_path
 
-    # Guardamos el "Ganador" en una carpeta de modelos finales
-    if best_model_path:
-        final_folder = "modelos_finales"
-        os.makedirs(final_folder, exist_ok=True)
+        # --- GUARDADO DEL MODELO GANADOR Y SUS MÉTRICAS ---
+        if best_model_path:
+            # 1. Crear carpetas necesarias
+            os.makedirs("modelos_finales", exist_ok=True)
+            metrics_folder = "resultados_finales"
+            os.makedirs(metrics_folder, exist_ok=True)
 
-        # Nombre limpio para el modelo final
-        final_name = f"MEJOR_{method}_{csv_id}.sav"
-        final_path = os.path.join(final_folder, final_name)
+            # 2. Gestionar nombres de archivos
+            detalles_params = os.path.basename(best_model_path)
+            final_name = f"MEJOR_{csv_id}_{detalles_params}"
+            final_path = os.path.join("modelos_finales", final_name)
 
-        # Copiamos el modelo ganador
-        joblib.dump(joblib.load(best_model_path), final_path)
-        print(f"\n⭐ EL MEJOR MODELO PARA DEV ES: {os.path.basename(best_model_path)}")
-        print(f"⭐ PUNTUACIÓN EN DEV: {max_score:.4f}")
-        print(f"⭐ GUARDADO EN: {final_path}")
+            # 3. Guardar el modelo físico (.sav)
+            mejor_modelo = joblib.load(best_model_path)
+            joblib.dump(mejor_modelo, final_path)
+
+            # 4. Generar predicciones para el reporte de métricas
+            y_pred_mejor = mejor_modelo.predict(X_dev_p)
+
+            # 5. Crear el diccionario de métricas
+            metrics_dict = {
+                'dataset': [csv_id],
+                'algoritmo': [method],
+                'configuracion': [detalles_params],
+                'accuracy': [accuracy_score(y_dev, y_pred_mejor)]
+            }
+
+            if task == 'classification':
+                metrics_dict['precision'] = [precision_score(y_dev, y_pred_mejor, average=eval_strat)]
+                metrics_dict['recall'] = [recall_score(y_dev, y_pred_mejor, average=eval_strat)]
+                metrics_dict['f1_score'] = [f1_score(y_dev, y_pred_mejor, average=eval_strat)]
+            else:
+                metrics_dict['r2_score'] = [r2_score(y_dev, y_pred_mejor)]
+
+            # 6. Guardar el CSV de métricas
+            df_metrics = pd.DataFrame(metrics_dict)
+            ruta_csv_metrics = os.path.join(metrics_folder, f"metricas_{method}_{csv_id}.csv")
+            df_metrics.to_csv(ruta_csv_metrics, index=False)
+
+            # --- SALIDA POR CONSOLA ---
+            print("\n" + "⭐" * 40)
+            print(f"🏆 GANADOR: {final_name}")
+            print(f"📊 PUNTUACIÓN (DEV): {max_score:.4f}")
+
+            if task == 'classification':
+                print("\n📋 REPORTE DETALLADO:")
+                print(classification_report(y_dev, y_pred_mejor))
+
+            print(f"📁 Modelo en: {final_path}")
+            print(f"📄 Métricas en: {ruta_csv_metrics}")
+            print("⭐" * 40)
+
 
     # --- GENERACIÓN DEL CSV UNIFICADO DE PREDICCIONES ---
     df_predicciones_final = pd.DataFrame(dict_predicciones)
@@ -342,6 +350,21 @@ def train():
     print("\n" + "📊 " * 10)
     print(f"TABLA UNIFICADA CREADA: {ruta_unificada}")
     print("📊 " * 10 + "\n")
+
+
+    # --- EXPORTACIÓN DE DATOS PARA EL SCRIPT DE EVALUACIÓN ---
+    # Creamos una carpeta para los datos ya limpios y procesados
+    processed_data_path = os.path.join("datos_preprocesados", csv_id)
+    os.makedirs(processed_data_path, exist_ok=True)
+
+    # Guardamos el Test preprocesado (X y etiquetas)
+    # Lo guardamos con índice para no perder la referencia si hubo dropna
+    df_test_final_p = pd.concat([X_test_p, y_test_final], axis=1)
+
+    ruta_test_p = os.path.join(processed_data_path, f"{csv_id}_test_ready.csv")
+    df_test_final_p.to_csv(ruta_test_p, index=True)
+
+    print(f"📦 DATOS LISTOS: El CSV para evaluación se ha guardado en: {ruta_test_p}")
 
 
 if __name__ == "__main__":
