@@ -362,7 +362,7 @@ def train():
     df_test_final_p = pd.concat([X_test_p, y_test_final], axis=1)
 
     ruta_test_p = os.path.join(processed_data_path, f"{csv_id}_test_ready.csv")
-    df_test_final_p.to_csv(ruta_test_p, index=True)
+    df_test_final_p.to_csv(ruta_test_p, index=False)
 
     print(f"📦 DATOS LISTOS: El CSV para evaluación se ha guardado en: {ruta_test_p}")
 

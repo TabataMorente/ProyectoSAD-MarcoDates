@@ -83,6 +83,11 @@ def evaluar():
         return
 
     df_test = pd.read_csv(ruta_test_ready)
+
+    # AÑADE ESTA LÍNEA para limpiar la columna fantasma si existe:
+    if 'Unnamed: 0' in df_test.columns:
+        df_test = df_test.drop(columns=['Unnamed: 0'])
+
     X_test = df_test.drop(columns=[target])
     y_test = df_test[target]
 

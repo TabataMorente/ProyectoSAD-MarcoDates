@@ -34,7 +34,7 @@ def main():
     # eval.py ahora recibe: el json y el nombre del dataset
     # Se encarga de cargar el modelo 'MEJOR_...' y el CSV '_test_ready.csv'
     print("\n--- 📊 FASE 2: EVALUACIÓN FINAL (AUDITORÍA) ---")
-    res_eval = subprocess.run(["python", "eval.py", json_file, dataset_name])
+    res_eval = subprocess.run(["python", "evaluar.py", json_file, dataset_name])
 
     if res_eval.returncode != 0:
         print("❌ Error en la fase de evaluación.")

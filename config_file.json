@@ -1,10 +1,10 @@
 {
-    "target": "v1",
+    "target": "abandono",
     "method": "knn",
     "task": "classification",
     "evaluation": "macro",
     "hyperparameters_knn": {
-        "k_range": [1, 3],
+        "k_range": [1, 5],
         "p": [1, 2],
         "weights": ["uniform", "distance"],
         "step": 2
@@ -25,27 +25,27 @@
     },
     "preprocessing": {
         "drop_duplicates": true,
-        "drop_columns": [],
-        "text_features": ["v2"],
-        "text_process_method": "one-hot",
-        "language": "english",
-        "categorical_features": [],
-        "boolean_features": [],
+        "drop_columns": ["id"],
+        "text_features": [],
+        "text_process_method": "none",
+        "language": "spanish",
+        "categorical_features": ["plan", "genero"],
+        "boolean_features": ["soporte_premium"],
         "missing_values": "impute",
         "impute_strategy": "mean",
         "outliers": "clip",
         "discretize_features": [],
         "discretize_bins": 3,
         "scaling": "max-min",
-        "sampling_strategy": "none",
+        "sampling_strategy": "oversample",
         "erroneous_values": {
             "action": "impute",
             "rules": {
-                "bill_length_mm": {
+                "meses_permanencia": {
                     "conditions": [{"type": "less_than", "value": 0}],
                     "strategy": "median"
                 },
-                "sex": {
+                "genero": {
                     "conditions": [
                         {"type": "equals", "value": "."},
                         {"type": "in_list", "value": ["NA", "N/A", "null"]}
