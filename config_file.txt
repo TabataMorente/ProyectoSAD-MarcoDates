@@ -1,0 +1,49 @@
+{
+    "target": "nombre_columna",     //columna a predecir
+    "method": "knn",                //knn,tree,bayes,forest
+    "task": "classification",       //clasificación o regresión
+    "evaluation": "macro",          //macro o micro
+    "hyperparameters_knn":{         //hiperparametros de knn: k = {1,2,3,4,5,...}, p = 0/1, w = 0/1
+        "k_range": [1, 3],   // IMPORTANTE: Aquí se pone un limite maximo y minimo
+        "p": [1, 2],
+        "weights": ["uniform", "distance"],
+        "step": 2                   //Va de 2 en 2, o el numero que sea
+    },
+    "hyperparameters_tree":{
+        "max_depth": [3, 5, 10], // Profundidad maxima del arbol.
+        "criterio": ["gini", "entropy"] // gini o entropy
+    },
+    "hyperparameters_bayes": {
+        // Suavizado de varianza: Ayuda al modelo GaussianNB a no ser tan rígido
+        // con los datos que se alejan mucho de la media (evita divisiones por cero).
+        "var_smoothing": [1e-9, 1e-8, 1e-7, 1e-5],
+
+        // Tipo de algoritmo: 'multinomial' es ideal cuando discretizamos (no se puede usar z-score)
+        // o usamos frecuencias de palabras.
+        "bayes_type": "multinomial",    //multinomial,bernoulli,gaussian,none
+
+        // Parámetro Alpha: Es el 'Suavizado de Laplace'.
+        // Suma un pequeño valor a los conteos para que ninguna probabilidad sea 0%.
+        "alpha": [0.1, 0.5, 1.0, 2.0]
+    },
+    "hyperparameters_forest":{
+        "n_estimators": [50, 100, 200], // Numero de arboles que tendra el bosque
+        "max_depth": [3, 5, 10], // Profundidad maxima del arbol
+
+        // Muestra cuantas variables/columnas se le muestran a cada arbol al azar.
+        // Para que cada arbol sea distinto entre si.
+        "max_features": ["sqrt", "log2"]
+    },
+    "preprocessing":{
+        "categorical_features":[], //columnas categoriales: pasar a numeros
+        "text_features": [],       //columnas de texto, por ejemplo un mensaje.
+        "boolean_features": [],    //columnas booleanas en formato texto
+        "missing_values": "impute",//impute o drop (eliminar)
+        "impute_strategy": "mean", //mean, median, mode
+        "discretize_features": ["edad"],//columnas a discretizar
+        "discretize_bins": 3,           //cuantos intervalos o categorias
+        "scaling": "max-min",      //max, max-min, z-score
+        "text_process": "tf-idf",  //tf-idf,one-hot,bow
+        "sampling": "undersampling"//undersampling, oversampling, none
+    }
+}
