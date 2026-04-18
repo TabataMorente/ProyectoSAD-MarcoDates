@@ -1,23 +1,48 @@
+# -*- coding: utf-8 -*-
 import sys
 import subprocess
-
+import os
 
 def main():
-    if len(sys.argv) < 4:
-        print("Uso: python main.py <train.csv> <test.csv> <config_file.json>")
+    # 1. Validación de argumentos (Ahora solo necesitamos 2: el CSV y el JSON)
+    if len(sys.argv) < 3:
+        print("🚀 Uso: python main.py <data.csv> <config_file.json>")
         sys.exit(1)
 
-    csv_train = sys.argv[1]
-    csv_test = sys.argv[2]
-    json_file = sys.argv[3]
+    csv_data = sys.argv[1]
+    json_file = sys.argv[2]
 
-    ## FASE DE ENTRENAMIENTO
-    # Llamamos a train.py con sus 3 argumentos correspondientes
-    subprocess.run(["python", "train.py", csv_train, csv_test, json_file])
+    # Extraemos el nombre del dataset (ej: de 'ventas.csv' sacamos 'ventas')
+    # Lo necesitamos porque el evaluador busca en carpetas con ese nombre
+    dataset_name = os.path.basename(csv_data).split('.')[0]
 
-    ## FASE DE EVALUACION
-    # Llamamos a evaluar.py
-    subprocess.run(["python", "evaluar.py", csv_train, csv_test, json_file])
+    print("\n" + "═"*60)
+    print(f" 🏁 INICIANDO PIPELINE COMPLETO: {dataset_name.upper()}")
+    print("═"*60)
+
+    # --- FASE 1: ENTRENAMIENTO ---
+    # train.py ahora recibe: el csv original y el json
+    # Se encarga de dividir 70/15/15, preprocesar, entrenar y guardar el test listo
+    print("\n--- 🛠️  FASE 1: ENTRENAMIENTO Y PREPROCESADO ---")
+    res_train = subprocess.run(["python", "train.py", csv_data, json_file])
+
+    if res_train.returncode != 0:
+        print("❌ Error en la fase de entrenamiento. Abortando...")
+        sys.exit(1)
+
+    # --- FASE 2: EVALUACIÓN (AUDITORÍA) ---
+    # eval.py ahora recibe: el json y el nombre del dataset
+    # Se encarga de cargar el modelo 'MEJOR_...' y el CSV '_test_ready.csv'
+    print("\n--- 📊 FASE 2: EVALUACIÓN FINAL (AUDITORÍA) ---")
+    res_eval = subprocess.run(["python", "eval.py", json_file, dataset_name])
+
+    if res_eval.returncode != 0:
+        print("❌ Error en la fase de evaluación.")
+        sys.exit(1)
+
+    print("\n" + "═"*60)
+    print(" ✅ PIPELINE FINALIZADO CON ÉXITO")
+    print("═"*60 + "\n")
 
 if __name__ == "__main__":
     main()
