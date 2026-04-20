@@ -13,6 +13,7 @@ from sklearn.neighbors import KNeighborsClassifier, KNeighborsRegressor
 from sklearn.naive_bayes import GaussianNB, MultinomialNB, BernoulliNB
 from sklearn.tree import DecisionTreeClassifier, DecisionTreeRegressor
 from sklearn.ensemble import RandomForestClassifier, RandomForestRegressor
+from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import f1_score, r2_score
 from sklearn.metrics import accuracy_score, precision_score, recall_score, classification_report
 
@@ -259,6 +260,43 @@ def train():
                     model_name = f"forest_{params_str}.sav"
 
                     # --- GUARDADO DE RESULTADOS CSV ---
+                    dict_predicciones[model_name] = y_pred
+
+                    joblib.dump(model, os.path.join(folder_path, model_name))
+                    print(f"✅ Guardado: {model_name} | {metric}-Dev: {score_dev:.4f}")
+
+    # --- CASO LOGISTIC REGRESSION ---
+    elif method == 'logistic':
+        # 1. Extraemos los hiperparámetros del JSON
+        params_cfg = config.get('hyperparameters_logistic', {})
+        # C es el inverso de la fuerza de regularización (valores más pequeños = mayor regularización)
+        lista_C = params_cfg.get('C', [0.1, 1.0, 10.0])
+        # Multi_class 'multinomial' es ideal para el proyecto (positivo, negativo, neutro)
+        lista_solver = params_cfg.get('solver', ['lbfgs', 'liblinear'])
+
+        print(f"📈 Iniciando entrenamiento de Logistic Regression...")
+
+        for c_val in lista_C:
+            for solv in lista_solver:
+                # La regresión logística solo se usará para clasificación en este proyecto
+                if task == 'classification':
+                    # Usamos un max_iter alto (1000) para evitar errores de convergencia con texto
+                    model = LogisticRegression(C=c_val, solver=solv, max_iter=1000, random_state=42)
+                    model.fit(X_train_p, y_train)
+                    y_pred = model.predict(X_dev_p)
+
+                    # Evaluamos usando la estrategia del JSON (Macro-Fscore solicitado)
+                    score_dev = f1_score(y_dev, y_pred, average=eval_strat)
+                    metric = "F1"
+
+                    # 4. Guardado del modelo y resultados
+                    folder_path = os.path.join("modelos", csv_id, method)
+                    os.makedirs(folder_path, exist_ok=True)
+
+                    params_str = f"C={c_val}_solver={solv}"
+                    model_name = f"{csv_id}_{task}_logistic_{params_str}.sav"
+
+                    # Guardamos la predicción en el diccionario unificado para tu tabla comparativa
                     dict_predicciones[model_name] = y_pred
 
                     joblib.dump(model, os.path.join(folder_path, model_name))

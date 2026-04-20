@@ -1,5 +1,5 @@
 {
-    "target": "abandono",
+    "target": "score",
     "method": "knn",
     "task": "classification",
     "evaluation": "macro",
@@ -23,14 +23,18 @@
         "max_depth": [3, 5, 10],
         "max_features": ["sqrt", "log2"]
     },
+    "hyperparameters_logistic": {
+        "C": [0.01, 0.1, 1.0, 10.0],
+        "solver": ["lbfgs"]
+    },
     "preprocessing": {
         "drop_duplicates": true,
-        "drop_columns": [""],
-        "text_features": [],
-        "text_process_method": "none",
-        "language": "spanish",
-        "categorical_features": ["plan", "genero"],
-        "boolean_features": ["soporte_premium"],
+        "drop_columns": ["reviewId"],
+        "text_features": ["content","location"],
+        "text_process_method": "tf-idf",
+        "language": "english",
+        "categorical_features": ["gender"],
+        "boolean_features": [],
         "missing_values": "impute",
         "impute_strategy": "mean",
         "outliers": "clip",
@@ -41,17 +45,6 @@
         "erroneous_values": {
             "action": "impute",
             "rules": {
-                "meses_permanencia": {
-                    "conditions": [{"type": "less_than", "value": 0}],
-                    "strategy": "median"
-                },
-                "genero": {
-                    "conditions": [
-                        {"type": "equals", "value": "."},
-                        {"type": "in_list", "value": ["NA", "N/A", "null"]}
-                    ],
-                    "strategy": "mode"
-                }
             }
         }
     }
