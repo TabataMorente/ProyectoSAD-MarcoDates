@@ -2,12 +2,13 @@
 import pandas as pd
 import numpy as np
 import nltk
+import emoji
 
 # Herramientas de Scikit-Learn e Imblearn
 from sklearn.impute import SimpleImputer
 from sklearn.preprocessing import StandardScaler, MinMaxScaler, KBinsDiscretizer, OneHotEncoder
 from sklearn.feature_extraction.text import TfidfVectorizer, CountVectorizer
-from imblearn.over_sampling import RandomOverSampler
+from imblearn.over_sampling import RandomOverSampler, SMOTE
 from imblearn.under_sampling import RandomUnderSampler
 from nltk.corpus import stopwords
 
@@ -97,6 +98,36 @@ def tratar_valores_erroneos(df_train, df_test, df_dev, config):
     df_test = aplicar_limpieza(df_test, df_train)
     df_dev = aplicar_limpieza(df_dev, df_train)
     print(" -> Valores erróneos tratados.")
+    return df_train, df_test, df_dev
+
+
+# ==========================================
+# 3.5. TRADUCCIÓN DE EMOJIS A TEXTO
+# ==========================================
+def traducir_emojis(df_train, df_test, df_dev, config, target):
+    """
+    Convierte emojis en texto descriptivo para que los vectorizadores puedan procesarlos.
+    Requiere: pip install emoji
+    """
+    # Verificamos si la opción está activa y si hay columnas de texto
+    text_cols = config.get('text_features', [])
+
+    if not text_cols:
+        return df_train, df_test, df_dev
+
+    def limpiar_texto(texto):
+        if not isinstance(texto, str):
+            return ""
+        # Reemplaza emojis por su nombre en texto usando espacios en lugar de dos puntos
+        return emoji.demojize(texto, delimiters=(" ", " "))
+
+    for col in text_cols:
+        if col in df_train.columns and col != target:
+            print(f" ✨ Traduciendo emojis a texto en: {col}")
+            df_train[col] = df_train[col].apply(limpiar_texto)
+            df_test[col] = df_test[col].apply(limpiar_texto)
+            df_dev[col] = df_dev[col].apply(limpiar_texto)
+
     return df_train, df_test, df_dev
 
 
@@ -298,6 +329,8 @@ def balancear_clases(df_train, config, target):
         res = RandomOverSampler(random_state=42)
     elif strat == "undersample":
         res = RandomUnderSampler(random_state=42)
+    elif strat == "SMOTE":
+        res = SMOTE(random_state=42)
     else:
         return df_train
 
@@ -321,6 +354,7 @@ def pipeline_preprocesamiento(df_train, df_test, df_dev, config_full):
     df_train, df_test, df_dev = tratar_valores_erroneos(df_train, df_test, df_dev, config_prep)
 
     # 3. Transformación (El texto y las variables necesitan saber cuál es el target para no tocarlo)
+    df_train, df_test, df_dev = traducir_emojis(df_train, df_test, df_dev, config_prep)
     df_train, df_test, df_dev = procesar_texto(df_train, df_test, df_dev, config_prep, target_global)
     df_train, df_test, df_dev = codificar_variables(df_train, df_test, df_dev, config_prep, target_global)
 
