@@ -52,22 +52,25 @@ def train():
 
     # 4. APLICACIÓN DEL PIPELINE MODULAR
     # Ahora enviamos los 3 trozos recién creados a tu preprocessing.py
-    df_train_p, df_test_p, df_dev_p = pipeline_preprocesamiento(
-        df_train_raw.copy(),
-        df_test_raw.copy(),
-        df_dev_raw.copy(),
+    df_train, df_test, df_dev = pipeline_preprocesamiento(
+        df_train_raw,
+        df_test_raw,
+        df_dev_raw,
         config
     )
 
+    print(f"📊 Reparto tras preprocesado: Train={len(df_train)} | Dev={len(df_dev)} | Test={len(df_test)}")
+
     # 5. SEPARACIÓN FINAL X e y (Usando tus nombres de variables)
-    X_train_p = df_train_p.drop(columns=[target_global])
-    y_train = df_train_p[target_global]
+    train_features = df_train.drop(columns=[target_global])
+    train_target = df_train[target_global]
 
-    X_dev_p = df_dev_p.drop(columns=[target_global])
-    y_dev = df_dev_p[target_global]
 
-    X_test_p = df_test_p.drop(columns=[target_global])
-    y_test = df_test_p[target_global]
+    dev_features = df_dev.drop(columns=[target_global])
+    dev_target = df_dev[target_global]
+
+    test_features = df_test.drop(columns=[target_global])
+    test_target = df_test[target_global]
 
     # --- INICIO DEL ENTRENAMIENTO ---
     method = config.get('method', 'knn')
@@ -75,7 +78,7 @@ def train():
     csv_id = os.path.basename(sys.argv[1]).split('.')[0]
     eval_strat = config.get('evaluation', 'macro')  # Estrategia de evaluación (macro/micro) del JSON
     #lista para guardar las predicciones de los modelos
-    dict_predicciones = {'Valor_Real': y_dev.values}
+    dict_predicciones = {'Valor_Real': dev_target.values}
     #carpeta para los csv
     folder_path = os.path.join("csv", csv_id)
     os.makedirs(folder_path, exist_ok=True)
@@ -97,9 +100,9 @@ def train():
             for a in params_cfg.get('alpha', [1.0]):
                 # Parámetro Alpha: Es el 'Suavizado de Laplace'. Suma un pequeño valor para que ninguna probabilidad sea 0%.
                 model = MultinomialNB(alpha=a)
-                model.fit(X_train_p, y_train)
-                y_pred = model.predict(X_dev_p)  # Generamos predicción para comparar
-                score_dev = f1_score(y_dev, y_pred, average=eval_strat)
+                model.fit(train_features, train_target)
+                y_pred = model.predict(dev_features)  # Generamos predicción para comparar
+                score_dev = f1_score(dev_target, y_pred, average=eval_strat)
 
                 model_name = f"bayes_multi_alpha={a}.sav"
                 dict_predicciones[model_name] = y_pred
@@ -110,9 +113,9 @@ def train():
         elif b_type == 'bernoulli':
             for a in params_cfg.get('alpha', [1.0]):
                 model = BernoulliNB(alpha=a)
-                model.fit(X_train_p, y_train)
-                y_pred = model.predict(X_dev_p)
-                score_dev = f1_score(y_dev, y_pred, average=eval_strat)
+                model.fit(train_features, train_target)
+                y_pred = model.predict(dev_features)
+                score_dev = f1_score(dev_target, y_pred, average=eval_strat)
 
                 model_name = f"bayes_bern_alpha={a}.sav"
                 dict_predicciones[model_name] = y_pred
@@ -124,9 +127,9 @@ def train():
             for sm in params_cfg.get('var_smoothing', [1e-9]):
                 # Suavizado de varianza: Ayuda al modelo GaussianNB a no ser tan rígido (evita divisiones por cero)
                 model = GaussianNB(var_smoothing=sm)
-                model.fit(X_train_p, y_train)
-                y_pred = model.predict(X_dev_p)
-                score_dev = f1_score(y_dev, y_pred, average=eval_strat)
+                model.fit(train_features, train_target)
+                y_pred = model.predict(dev_features)
+                score_dev = f1_score(dev_target, y_pred, average=eval_strat)
 
                 model_name = f"bayes_gauss_sm={sm}.sav"
                 dict_predicciones[model_name] = y_pred
@@ -156,15 +159,15 @@ def train():
                     # 1. ELEGIMOS EL ALGORITMO SEGÚN LA TAREA
                     if task == 'regression':
                         model = KNeighborsRegressor(n_neighbors=k, p=p, weights=w)
-                        model.fit(X_train_p, y_train)
-                        y_pred = model.predict(X_dev_p)
-                        score_dev = r2_score(y_dev, y_pred)
+                        model.fit(train_features, train_target)
+                        y_pred = model.predict(dev_features)
+                        score_dev = r2_score(dev_target, y_pred)
                         metric = "R2"
                     else:
                         model = KNeighborsClassifier(n_neighbors=k, p=p, weights=w)
-                        model.fit(X_train_p, y_train)
-                        y_pred = model.predict(X_dev_p)
-                        score_dev = f1_score(y_dev, y_pred, average=eval_strat)
+                        model.fit(train_features, train_target)
+                        y_pred = model.predict(dev_features)
+                        score_dev = f1_score(dev_target, y_pred, average=eval_strat)
                         metric = "F1"
 
                     # GUARDAMOS TODOS LOS MODELOS GENERADOS
@@ -197,15 +200,15 @@ def train():
                     c_reg = 'squared_error' if crit == 'gini' else 'absolute_error'
                     model = DecisionTreeRegressor(max_depth=depth, criterion=c_reg,
                                                   random_state=42)  # crea el modelo
-                    model.fit(X_train_p, y_train)  # estudia los datos X y aprende a llegar al target Y
-                    y_pred = model.predict(X_dev_p)
-                    score_dev = r2_score(y_dev, y_pred)  # calcula R2 score
+                    model.fit(train_features, train_target)  # estudia los datos X y aprende a llegar al target Y
+                    y_pred = model.predict(dev_features)
+                    score_dev = r2_score(dev_target, y_pred)  # calcula R2 score
                     metric = "R2"
                 else:
                     model = DecisionTreeClassifier(max_depth=depth, criterion=crit, random_state=42)
-                    model.fit(X_train_p, y_train)
-                    y_pred = model.predict(X_dev_p)
-                    score_dev = f1_score(y_dev, y_pred, average=eval_strat)
+                    model.fit(train_features, train_target)
+                    y_pred = model.predict(dev_features)
+                    score_dev = f1_score(dev_target, y_pred, average=eval_strat)
                     metric = "F1"
 
                 # 4. Guardado del modelo
@@ -240,16 +243,16 @@ def train():
                     if task == 'regression':
                         model = RandomForestRegressor(n_estimators=n_est, max_depth=depth, max_features=feat,
                                                       random_state=42, n_jobs=-1)
-                        model.fit(X_train_p, y_train)
-                        y_pred = model.predict(X_dev_p)
-                        score_dev = r2_score(y_dev, y_pred)
+                        model.fit(train_features, train_target)
+                        y_pred = model.predict(dev_features)
+                        score_dev = r2_score(dev_target, y_pred)
                         metric = "R2"
                     else:
                         model = RandomForestClassifier(n_estimators=n_est, max_depth=depth, max_features=feat,
                                                        random_state=42, n_jobs=-1)
-                        model.fit(X_train_p, y_train)
-                        y_pred = model.predict(X_dev_p)
-                        score_dev = f1_score(y_dev, y_pred, average=eval_strat)
+                        model.fit(train_features, train_target)
+                        y_pred = model.predict(dev_features)
+                        score_dev = f1_score(dev_target, y_pred, average=eval_strat)
                         metric = "F1"
 
                     # 4. Guardado
@@ -282,11 +285,11 @@ def train():
                 if task == 'classification':
                     # Usamos un max_iter alto (1000) para evitar errores de convergencia con texto
                     model = LogisticRegression(C=c_val, solver=solv, max_iter=1000, random_state=42)
-                    model.fit(X_train_p, y_train)
-                    y_pred = model.predict(X_dev_p)
+                    model.fit(train_features, train_target)
+                    y_pred = model.predict(dev_features)
 
                     # Evaluamos usando la estrategia del JSON (Macro-Fscore solicitado)
-                    score_dev = f1_score(y_dev, y_pred, average=eval_strat)
+                    score_dev = f1_score(dev_target, y_pred, average=eval_strat)
                     metric = "F1"
 
                     # 4. Guardado del modelo y resultados
@@ -313,13 +316,13 @@ def train():
     # Buscamos al ganador comparando en el set de Validación (Dev)
     for m_path in model_files:
         tmp_model = joblib.load(m_path)
-        y_pred = tmp_model.predict(X_dev_p)
+        y_pred = tmp_model.predict(dev_features)
 
         if task == 'regression':
-            current_score = r2_score(y_dev, y_pred)
+            current_score = r2_score(dev_target, y_pred)
         else:
             # Usamos f1_score con la estrategia definida (macro/weighted)
-            current_score = f1_score(y_dev, y_pred, average=eval_strat)
+            current_score = f1_score(dev_target, y_pred, average=eval_strat)
 
         if current_score > max_score:
             max_score = current_score
@@ -342,22 +345,22 @@ def train():
         joblib.dump(mejor_modelo, final_path)
 
         # Calculamos predicciones finales para el informe
-        y_pred_mejor = mejor_modelo.predict(X_dev_p)
+        y_pred_mejor = mejor_modelo.predict(dev_features)
 
         # Construimos el diccionario de métricas para Tableau
         metrics_dict = {
             'dataset': [csv_id],
             'algoritmo': [method],
             'configuracion': [detalles_params],
-            'accuracy': [accuracy_score(y_dev, y_pred_mejor)]
+            'accuracy': [accuracy_score(dev_target, y_pred_mejor)]
         }
 
         if task == 'classification':
-            metrics_dict['precision'] = [precision_score(y_dev, y_pred_mejor, average=eval_strat)]
-            metrics_dict['recall'] = [recall_score(y_dev, y_pred_mejor, average=eval_strat)]
-            metrics_dict['f1_score'] = [f1_score(y_dev, y_pred_mejor, average=eval_strat)]
+            metrics_dict['precision'] = [precision_score(dev_target, y_pred_mejor, average=eval_strat)]
+            metrics_dict['recall'] = [recall_score(dev_target, y_pred_mejor, average=eval_strat)]
+            metrics_dict['f1_score'] = [f1_score(dev_target, y_pred_mejor, average=eval_strat)]
         else:
-            metrics_dict['r2_score'] = [r2_score(y_dev, y_pred_mejor)]
+            metrics_dict['r2_score'] = [r2_score(dev_target, y_pred_mejor)]
 
         # GUARDADO DEL CSV DE MÉTRICAS (El que usarás en Tableau)
         df_metrics = pd.DataFrame(metrics_dict)
@@ -371,7 +374,7 @@ def train():
 
         if task == 'classification':
             print("\n📋 REPORTE FINAL DE CLASIFICACIÓN:")
-            print(classification_report(y_dev, y_pred_mejor))
+            print(classification_report(dev_target, y_pred_mejor))
 
         print(f"📁 Modelo guardado en: {final_path}")
         print(f"📄 CSV de métricas para Tableau: {ruta_csv_metrics}")
@@ -385,17 +388,17 @@ def train():
     os.makedirs(processed_data_path, exist_ok=True)
 
     # 1. Guardamos el Test preprocesado
-    df_test_final_p = pd.concat([X_test_p, y_test], axis=1)
+    df_test_final_p = pd.concat([test_features, test_target], axis=1)
     ruta_test = os.path.join(processed_data_path, f"{csv_id}_test_ready.csv")
     df_test_final_p.to_csv(ruta_test, index=False)
 
     # 2. Guardamos el Train preprocesado
-    df_train_final_p = pd.concat([X_train_p, y_train], axis=1)
+    df_train_final_p = pd.concat([train_features, train_target], axis=1)
     ruta_train = os.path.join(processed_data_path, f"{csv_id}_train_ready.csv")
     df_train_final_p.to_csv(ruta_train, index=False)
 
     # 3. Guardamos el Dev preprocesado
-    df_dev_final_p = pd.concat([X_dev_p, y_dev], axis=1)
+    df_dev_final_p = pd.concat([dev_features, dev_target], axis=1)
     ruta_dev = os.path.join(processed_data_path, f"{csv_id}_dev_ready.csv")
     df_dev_final_p.to_csv(ruta_dev, index=False)
 
