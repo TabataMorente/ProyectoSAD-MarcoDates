@@ -67,7 +67,7 @@ def train():
     y_dev = df_dev_p[target_global]
 
     X_test_p = df_test_p.drop(columns=[target_global])
-    y_test_final = df_test_p[target_global]
+    y_test = df_test_p[target_global]
 
     # --- INICIO DEL ENTRENAMIENTO ---
     method = config.get('method', 'knn')
@@ -397,10 +397,24 @@ def train():
 
     # Guardamos el Test preprocesado (X y etiquetas)
     # Lo guardamos con índice para no perder la referencia si hubo dropna
-    df_test_final_p = pd.concat([X_test_p, y_test_final], axis=1)
+    df_test_final_p = pd.concat([X_test_p, y_test], axis=1)
 
     ruta_test_p = os.path.join(processed_data_path, f"{csv_id}_test_ready.csv")
     df_test_final_p.to_csv(ruta_test_p, index=False)
+
+    # Guardamos el Train preprocesado (X y etiquetas)
+    # Lo guardamos con índice para no perder la referencia si hubo dropna
+    df_train_final_p = pd.concat([X_train_p, y_train], axis=1)
+
+    ruta_test_p = os.path.join(processed_data_path, f"{csv_id}_train_ready.csv")
+    df_train_final_p.to_csv(ruta_test_p, index=False)
+
+    # Guardamos el Dev preprocesado (X y etiquetas)
+    # Lo guardamos con índice para no perder la referencia si hubo dropna
+    df_dev_final_p = pd.concat([X_dev_p, y_dev], axis=1)
+
+    ruta_test_p = os.path.join(processed_data_path, f"{csv_id}_dev_ready.csv")
+    df_dev_final_p.to_csv(ruta_test_p, index=False)
 
     print(f"📦 DATOS LISTOS: El CSV para evaluación se ha guardado en: {ruta_test_p}")
 

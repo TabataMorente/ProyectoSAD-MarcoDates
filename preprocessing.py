@@ -6,7 +6,7 @@ import emoji
 
 # Herramientas de Scikit-Learn e Imblearn
 from sklearn.impute import SimpleImputer
-from sklearn.preprocessing import StandardScaler, MinMaxScaler, KBinsDiscretizer, OneHotEncoder
+from sklearn.preprocessing import StandardScaler, MinMaxScaler, KBinsDiscretizer, OneHotEncoder, LabelEncoder
 from sklearn.feature_extraction.text import TfidfVectorizer, CountVectorizer
 from imblearn.over_sampling import RandomOverSampler, SMOTE
 from imblearn.under_sampling import RandomUnderSampler
@@ -201,26 +201,29 @@ def procesar_texto(df_train, df_test, df_dev, config, target):
 # 5. CODIFICACIÓN CATEGÓRICA Y BOOLEANA
 # ==========================================
 def codificar_variables(df_train, df_test, df_dev, config, target):
-    # Categorías Ordinales (Mapeo numérico)
-    cat_cols = config.get('categorical_features', [])
-    for col in cat_cols:
-        if col in df_train.columns and col != target:  # Protección target
-            mapping = {val: i for i, val in enumerate(df_train[col].unique())}
-            df_train[col] = df_train[col].map(mapping)
-            # Si en test aparece algo que no estaba en train, le ponemos -1
-            df_test[col] = df_test[col].map(mapping).fillna(-1)
-            df_dev[col] = df_dev[col].map(mapping).fillna(-1)
+    estrategia = config.get("categorical_encoding")
+    categorical_cols = config.get("categorical_encoding", [])
+    target = config.get("target")  # Escudo
+    if estrategia == "none": return df_train, df_dev, df_test
 
-    # Booleanos (Normalización de texto a 0/1)
-    bool_cols = config.get('boolean_features', [])
-    mapeo_bool = {'true': 1, 'false': 0, 'sí': 1, 'no': 0, 'yes': 1, '1': 1, '0': 0}
-    for col in bool_cols:
-        if col in df_train.columns and col != target:
-            for df in [df_train, df_test, df_dev]:
-                df[col] = df[col].astype(str).str.lower().map(mapeo_bool).fillna(0)
+    categorical_cols = [c for c in categorical_cols if c != target]  # Quitamos el target para no romperlo
+    if not categorical_cols: return df_train, df_dev, df_test
 
-    print(" -> Variables categóricas/booleanas codificadas.")
-    return df_train, df_test, df_dev
+    if estrategia == "one-hot":
+        df_train = pd.get_dummies(df_train, columns=categorical_cols, drop_first=True, dtype=int)
+        df_dev = pd.get_dummies(df_test, columns=categorical_cols, drop_first=True, dtype=int)
+        df_test = pd.get_dummies(df_test, columns=categorical_cols, drop_first=True, dtype=int)
+        # ALINEACIÓN MÁGICA DE PANDAS: Asegura que el Test tenga exactamente las mismas columnas que el Train
+        df_train,df_dev, df_test = df_train.align(df_test, join='left', axis=1, fill_value=0)
+
+    elif estrategia == "label":
+        for col in categorical_cols:
+            le = LabelEncoder()
+            df_train[col] = le.fit_transform(df_train[col])
+            df_test[col] = df_test[col].map(lambda s: le.transform([s])[0] if s in le.classes_ else -1)
+
+    print(f" -> Variables categóricas codificadas usando: {estrategia}.")
+    return df_train, df_test
 
 
 # ==========================================
