@@ -34,6 +34,7 @@
        "text_process_method": "tf-idf",
        "language": "english",
        "categorical_features": ["gender"],
+       "categorical_encoding": "one-hot",
        "boolean_features": [],
        "missing_values": "impute",
        "impute_strategy": "most_frequent",

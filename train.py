@@ -302,18 +302,15 @@ def train():
                     joblib.dump(model, os.path.join(folder_path, model_name))
                     print(f"✅ Guardado: {model_name} | {metric}-Dev: {score_dev:.4f}")
 
-
-
     # --- SELECCIÓN DEL MEJOR MODELO DEL ENTRENAMIENTO ---
     import glob
 
-    # Buscamos todos los modelos que acabamos de guardar en la carpeta del metodo
+    # 1. Buscamos todos los modelos guardados en la fase de entrenamiento
     model_files = glob.glob(os.path.join(folder_path, "*.sav"))
     best_model_path = None
     max_score = -1
 
-    # Pequeño truco: como no queremos re-entrenar, leemos los resultados que imprimimos antes
-    # O mejor, cargamos cada uno y probamos rápido en Dev
+    # Buscamos al ganador comparando en el set de Validación (Dev)
     for m_path in model_files:
         tmp_model = joblib.load(m_path)
         y_pred = tmp_model.predict(X_dev_p)
@@ -321,102 +318,91 @@ def train():
         if task == 'regression':
             current_score = r2_score(y_dev, y_pred)
         else:
+            # Usamos f1_score con la estrategia definida (macro/weighted)
             current_score = f1_score(y_dev, y_pred, average=eval_strat)
 
         if current_score > max_score:
             max_score = current_score
             best_model_path = m_path
 
-        # --- GUARDADO DEL MODELO GANADOR Y SUS MÉTRICAS ---
-        if best_model_path:
-            # 1. Crear carpetas necesarias
-            os.makedirs("modelos_finales", exist_ok=True)
-            metrics_folder = "resultados_finales"
-            os.makedirs(metrics_folder, exist_ok=True)
+    # 2. GESTIÓN DEL GANADOR Y EXPORTACIÓN DE MÉTRICAS
+    if best_model_path:
+        # Creamos carpetas de salida si no existen
+        os.makedirs("modelos_finales", exist_ok=True)
+        metrics_folder = "resultados_finales"
+        os.makedirs(metrics_folder, exist_ok=True)
 
-            # 2. Gestionar nombres de archivos
-            detalles_params = os.path.basename(best_model_path)
-            final_name = f"MEJOR_{csv_id}_{detalles_params}"
-            final_path = os.path.join("modelos_finales", final_name)
+        # Preparamos el nombre y ruta del modelo físico
+        detalles_params = os.path.basename(best_model_path)
+        final_name = f"MEJOR_{csv_id}_{detalles_params}"
+        final_path = os.path.join("modelos_finales", final_name)
 
-            # 3. Guardar el modelo físico (.sav)
-            mejor_modelo = joblib.load(best_model_path)
-            joblib.dump(mejor_modelo, final_path)
+        # Guardamos el modelo ganador para el examen
+        mejor_modelo = joblib.load(best_model_path)
+        joblib.dump(mejor_modelo, final_path)
 
-            # 4. Generar predicciones para el reporte de métricas
-            y_pred_mejor = mejor_modelo.predict(X_dev_p)
+        # Calculamos predicciones finales para el informe
+        y_pred_mejor = mejor_modelo.predict(X_dev_p)
 
-            # 5. Crear el diccionario de métricas
-            metrics_dict = {
-                'dataset': [csv_id],
-                'algoritmo': [method],
-                'configuracion': [detalles_params],
-                'accuracy': [accuracy_score(y_dev, y_pred_mejor)]
-            }
+        # Construimos el diccionario de métricas para Tableau
+        metrics_dict = {
+            'dataset': [csv_id],
+            'algoritmo': [method],
+            'configuracion': [detalles_params],
+            'accuracy': [accuracy_score(y_dev, y_pred_mejor)]
+        }
 
-            if task == 'classification':
-                metrics_dict['precision'] = [precision_score(y_dev, y_pred_mejor, average=eval_strat)]
-                metrics_dict['recall'] = [recall_score(y_dev, y_pred_mejor, average=eval_strat)]
-                metrics_dict['f1_score'] = [f1_score(y_dev, y_pred_mejor, average=eval_strat)]
-            else:
-                metrics_dict['r2_score'] = [r2_score(y_dev, y_pred_mejor)]
+        if task == 'classification':
+            metrics_dict['precision'] = [precision_score(y_dev, y_pred_mejor, average=eval_strat)]
+            metrics_dict['recall'] = [recall_score(y_dev, y_pred_mejor, average=eval_strat)]
+            metrics_dict['f1_score'] = [f1_score(y_dev, y_pred_mejor, average=eval_strat)]
+        else:
+            metrics_dict['r2_score'] = [r2_score(y_dev, y_pred_mejor)]
 
-            # 6. Guardar el CSV de métricas
-            df_metrics = pd.DataFrame(metrics_dict)
-            ruta_csv_metrics = os.path.join(metrics_folder, f"metricas_{method}_{csv_id}.csv")
-            df_metrics.to_csv(ruta_csv_metrics, index=False)
+        # GUARDADO DEL CSV DE MÉTRICAS (El que usarás en Tableau)
+        df_metrics = pd.DataFrame(metrics_dict)
+        ruta_csv_metrics = os.path.join(metrics_folder, f"metricas_{method}_{csv_id}.csv")
+        df_metrics.to_csv(ruta_csv_metrics, index=False)
 
-            # --- SALIDA POR CONSOLA ---
-            print("\n" + "⭐" * 40)
-            print(f"🏆 GANADOR: {final_name}")
-            print(f"📊 PUNTUACIÓN (DEV): {max_score:.4f}")
+        # --- SALIDA LIMPIA POR CONSOLA ---
+        print("\n" + "⭐" * 40)
+        print(f"🏆 MODELO GANADOR: {final_name}")
+        print(f"📊 MEJOR F1-SCORE (DEV): {max_score:.4f}")
 
-            if task == 'classification':
-                print("\n📋 REPORTE DETALLADO:")
-                print(classification_report(y_dev, y_pred_mejor))
+        if task == 'classification':
+            print("\n📋 REPORTE FINAL DE CLASIFICACIÓN:")
+            print(classification_report(y_dev, y_pred_mejor))
 
-            print(f"📁 Modelo en: {final_path}")
-            print(f"📄 Métricas en: {ruta_csv_metrics}")
-            print("⭐" * 40)
-
-
-    # --- GENERACIÓN DEL CSV UNIFICADO DE PREDICCIONES ---
-    df_predicciones_final = pd.DataFrame(dict_predicciones)
-    ruta_unificada = os.path.join("csv", csv_id, f"comparativa_predicciones_{method}.csv")
-    df_predicciones_final.to_csv(ruta_unificada, index=False)
-
-    print("\n" + "📊 " * 10)
-    print(f"TABLA UNIFICADA CREADA: {ruta_unificada}")
-    print("📊 " * 10 + "\n")
-
+        print(f"📁 Modelo guardado en: {final_path}")
+        print(f"📄 CSV de métricas para Tableau: {ruta_csv_metrics}")
+        print("⭐" * 40)
+    else:
+        print("⚠️ No se encontraron archivos de modelos (.sav) para evaluar.")
 
     # --- EXPORTACIÓN DE DATOS PARA EL SCRIPT DE EVALUACIÓN ---
     # Creamos una carpeta para los datos ya limpios y procesados
     processed_data_path = os.path.join("datos_preprocesados", csv_id)
     os.makedirs(processed_data_path, exist_ok=True)
 
-    # Guardamos el Test preprocesado (X y etiquetas)
-    # Lo guardamos con índice para no perder la referencia si hubo dropna
+    # 1. Guardamos el Test preprocesado
     df_test_final_p = pd.concat([X_test_p, y_test], axis=1)
+    ruta_test = os.path.join(processed_data_path, f"{csv_id}_test_ready.csv")
+    df_test_final_p.to_csv(ruta_test, index=False)
 
-    ruta_test_p = os.path.join(processed_data_path, f"{csv_id}_test_ready.csv")
-    df_test_final_p.to_csv(ruta_test_p, index=False)
-
-    # Guardamos el Train preprocesado (X y etiquetas)
-    # Lo guardamos con índice para no perder la referencia si hubo dropna
+    # 2. Guardamos el Train preprocesado
     df_train_final_p = pd.concat([X_train_p, y_train], axis=1)
+    ruta_train = os.path.join(processed_data_path, f"{csv_id}_train_ready.csv")
+    df_train_final_p.to_csv(ruta_train, index=False)
 
-    ruta_test_p = os.path.join(processed_data_path, f"{csv_id}_train_ready.csv")
-    df_train_final_p.to_csv(ruta_test_p, index=False)
-
-    # Guardamos el Dev preprocesado (X y etiquetas)
-    # Lo guardamos con índice para no perder la referencia si hubo dropna
+    # 3. Guardamos el Dev preprocesado
     df_dev_final_p = pd.concat([X_dev_p, y_dev], axis=1)
+    ruta_dev = os.path.join(processed_data_path, f"{csv_id}_dev_ready.csv")
+    df_dev_final_p.to_csv(ruta_dev, index=False)
 
-    ruta_test_p = os.path.join(processed_data_path, f"{csv_id}_dev_ready.csv")
-    df_dev_final_p.to_csv(ruta_test_p, index=False)
-
-    print(f"📦 DATOS LISTOS: El CSV para evaluación se ha guardado en: {ruta_test_p}")
+    print(f"📦 DATOS LISTOS:")
+    print(f" -> Train: {ruta_train}")
+    print(f" -> Dev:   {ruta_dev}")
+    print(f" -> Test:  {ruta_test}")
 
 
 if __name__ == "__main__":
