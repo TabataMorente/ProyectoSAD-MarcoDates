@@ -1,51 +1,51 @@
 {
-    "target": "score",
-    "method": "knn",
-    "task": "classification",
-    "evaluation": "macro",
-    "hyperparameters_knn": {
-        "k_range": [1, 5],
-        "p": [1, 2],
-        "weights": ["uniform", "distance"],
-        "step": 2
-    },
-    "hyperparameters_tree": {
-        "max_depth": [3, 5, 10],
-        "criterio": ["gini", "entropy"]
-    },
-    "hyperparameters_bayes": {
-        "var_smoothing": [1e-9, 1e-7, 1e-5],
-        "bayes_type": "multinomial",
-        "alpha": [0.1, 0.5, 1.0, 2.0]
-    },
-    "hyperparameters_forest": {
-        "n_estimators": [50, 100, 200],
-        "max_depth": [3, 5, 10],
-        "max_features": ["sqrt", "log2"]
-    },
-    "hyperparameters_logistic": {
-        "C": [0.01, 0.1, 1.0, 10.0],
-        "solver": ["lbfgs"]
-    },
-    "preprocessing": {
-        "drop_duplicates": true,
-        "drop_columns": ["reviewId"],
-        "text_features": ["content","location"],
-        "text_process_method": "tf-idf",
-        "language": "english",
-        "categorical_features": ["gender"],
-        "boolean_features": [],
-        "missing_values": "impute",
-        "impute_strategy": "mean",
-        "outliers": "clip",
-        "discretize_features": [],
-        "discretize_bins": 3,
-        "scaling": "max-min",
-        "sampling_strategy": "oversample",
-        "erroneous_values": {
-            "action": "impute",
-            "rules": {
-            }
-        }
-    }
+   "target": "score",
+   "method": "forest",
+   "task": "classification",
+   "evaluation": "macro",
+   "hyperparameters_knn": {
+       "k_range": [1, 5],
+       "p": [1, 2],
+       "weights": ["uniform", "distance"],
+       "step": 2
+   },
+   "hyperparameters_tree": {
+       "max_depth": [3, 5, 10],
+       "criterio": ["gini", "entropy"]
+   },
+   "hyperparameters_bayes": {
+       "var_smoothing": [1e-9, 1e-7, 1e-5],
+       "bayes_type": "multinomial",
+       "alpha": [0.1, 0.5, 1.0, 2.0]
+   },
+   "hyperparameters_forest": {
+       "n_estimators": [100, 200],
+       "max_depth": [3, 5, 10, 20, null],
+       "max_features": ["sqrt", "log2"]
+   },
+   "hyperparameters_logistic": {
+       "C": [0.01, 0.1, 1.0, 10.0],
+       "solver": ["lbfgs"]
+   },
+   "preprocessing": {
+       "drop_duplicates": true,
+       "drop_columns": ["reviewId", "location", "date"],
+       "text_features": ["content"],
+       "text_process_method": "tf-idf",
+       "language": "english",
+       "categorical_features": ["gender"],
+       "boolean_features": [],
+       "missing_values": "impute",
+       "impute_strategy": "most_frequent",
+       "outliers": "clip",
+       "discretize_features": [],
+       "discretize_bins": 3,
+       "scaling": "max-min",
+       "sampling_strategy": "oversample",
+       "erroneous_values": {
+           "action": "impute",
+           "rules": {
+           }
+       }
+   }
 }

@@ -354,7 +354,7 @@ def pipeline_preprocesamiento(df_train, df_test, df_dev, config_full):
     df_train, df_test, df_dev = tratar_valores_erroneos(df_train, df_test, df_dev, config_prep)
 
     # 3. Transformación (El texto y las variables necesitan saber cuál es el target para no tocarlo)
-    df_train, df_test, df_dev = traducir_emojis(df_train, df_test, df_dev, config_prep)
+    df_train, df_test, df_dev = traducir_emojis(df_train, df_test, df_dev, config_prep, target_global)
     df_train, df_test, df_dev = procesar_texto(df_train, df_test, df_dev, config_prep, target_global)
     df_train, df_test, df_dev = codificar_variables(df_train, df_test, df_dev, config_prep, target_global)
 
