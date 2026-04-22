@@ -1,13 +1,13 @@
 {
    "target": "score",
-   "method": "forest",
+   "method": "bayes",
    "task": "classification",
    "evaluation": "macro",
    "hyperparameters_knn": {
-       "k_range": [1, 5],
+       "k_range": [5, 10],
+       "step": 2,
        "p": [1, 2],
-       "weights": ["uniform", "distance"],
-       "step": 2
+       "weights": ["uniform", "distance"]
    },
    "hyperparameters_tree": {
        "max_depth": [3, 5, 10],
@@ -29,7 +29,7 @@
    },
    "preprocessing": {
        "drop_duplicates": true,
-       "drop_columns": ["reviewId", "location", "date"],
+       "drop_columns": ["reviewId"],
        "text_features": ["content"],
        "text_process_method": "tf-idf",
        "language": "english",
@@ -42,7 +42,8 @@
        "discretize_features": [],
        "discretize_bins": 3,
        "scaling": "max-min",
-       "sampling_strategy": "oversample",
+       "sampling_strategy": "SMOTE",
+       "sampling_ratio": {"0": 4800, "1": 1500, "2": 2500},
        "erroneous_values": {
            "action": "impute",
            "rules": {

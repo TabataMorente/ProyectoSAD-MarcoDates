@@ -5,7 +5,7 @@ import re
 import pandas as pd
 import numpy as np
 import nltk
-# import emoji
+import emoji
 
 # Herramientas de Scikit-Learn e Imblearn
 from sklearn.impute import SimpleImputer
@@ -156,21 +156,21 @@ def codificar_objetivo(df_train, df_test, df_dev, config):
 # # ==========================================
 # # 6. TRADUCCIÓN DE EMOJIS A TEXTO
 # # ==========================================
-# def traducir_emojis(df_train, df_test, df_dev, config, target):
-#     text_cols = config.get('text_features', [])
-#     if not text_cols: return df_train, df_test, df_dev
-#
-#     def limpiar_texto(texto):
-#         if not isinstance(texto, str): return ""
-#         return emoji.demojize(texto, delimiters=(" ", " "))
-#
-#     for col in text_cols:
-#         if col in df_train.columns and col != target:
-#             print(f" ✨ Traduciendo emojis a texto en: {col}")
-#             df_train[col] = df_train[col].apply(limpiar_texto)
-#             df_test[col] = df_test[col].apply(limpiar_texto)
-#             df_dev[col] = df_dev[col].apply(limpiar_texto)
-#     return df_train, df_test, df_dev
+def traducir_emojis(df_train, df_test, df_dev, config, target):
+     text_cols = config.get('text_features', [])
+     if not text_cols: return df_train, df_test, df_dev
+
+     def limpiar_texto(texto):
+         if not isinstance(texto, str): return ""
+         return emoji.demojize(texto, delimiters=(" ", " "))
+
+     for col in text_cols:
+         if col in df_train.columns and col != target:
+             print(f" ✨ Traduciendo emojis a texto en: {col}")
+             df_train[col] = df_train[col].apply(limpiar_texto)
+             df_test[col] = df_test[col].apply(limpiar_texto)
+             df_dev[col] = df_dev[col].apply(limpiar_texto)
+     return df_train, df_test, df_dev
 
 
 # ==========================================
@@ -183,6 +183,9 @@ def limpiar_y_normalizar_texto(df_train, df_test, df_dev, config, target):
     lang = config.get('language', 'english')
     try:
         stop_words = set(stopwords.words(lang))
+        # Quita las negaciones para que NO se borren del texto
+        negaciones = {"no", "not", "nor", "against", "isn't", "aren't", "didn't"}
+        stop_words = stop_words - negaciones
         stemmer = SnowballStemmer(lang[:7] if lang == 'spanish' else 'english')
     except:
         stop_words = set()
@@ -350,12 +353,19 @@ def escalar_y_discretizar(df_train, df_test, df_dev, config, target):
     method = config.get('scaling')
     if method in ['max-min', 'z-score']:
         scaler = MinMaxScaler() if method == 'max-min' else StandardScaler()
-        cols_a_escalar = [c for c in df_train.columns if c != target]
 
-        df_train[cols_a_escalar] = scaler.fit_transform(df_train[cols_a_escalar])
-        df_test[cols_a_escalar] = scaler.transform(df_test[cols_a_escalar])
-        df_dev[cols_a_escalar] = scaler.transform(df_dev[cols_a_escalar])
-        print(f" -> Datos escalados con {method}.")
+        # --- ARREGLO CRÍTICO AQUÍ ---
+        # Seleccionamos SOLO las columnas numéricas
+        cols_numericas = df_train.select_dtypes(include=[np.number]).columns.tolist()
+        cols_a_escalar = [c for c in cols_numericas if c != target]
+        # ----------------------------
+
+        # Solo escalamos si realmente hay alguna columna numérica
+        if cols_a_escalar:
+            df_train[cols_a_escalar] = scaler.fit_transform(df_train[cols_a_escalar])
+            df_test[cols_a_escalar] = scaler.transform(df_test[cols_a_escalar])
+            df_dev[cols_a_escalar] = scaler.transform(df_dev[cols_a_escalar])
+            print(f" -> Datos escalados con {method}.")
 
     return df_train, df_test, df_dev
 
@@ -365,17 +375,21 @@ def escalar_y_discretizar(df_train, df_test, df_dev, config, target):
 # ==========================================
 def balancear_clases(df_train, config, target):
     strat = config.get("sampling_strategy", "none")
+    ratio = config.get("sampling_ratio", "auto")
+    if isinstance(ratio, dict):
+        ratio = {int(k): v for k, v in ratio.items()}
+
     if strat == "none" or not target or target not in df_train.columns: return df_train
 
     X = df_train.drop(columns=[target])
     y = df_train[target]
 
     if strat == "oversample":
-        res = RandomOverSampler(random_state=42)
+        res = RandomOverSampler(random_state=42, sampling_strategy=ratio)
     elif strat == "undersample":
-        res = RandomUnderSampler(random_state=42)
+        res = RandomUnderSampler(random_state=42, sampling_strategy=ratio)
     elif strat == "SMOTE":
-        res = SMOTE(random_state=42)
+        res = SMOTE(random_state=42, sampling_strategy=ratio)
     else:
         return df_train
 
@@ -384,6 +398,30 @@ def balancear_clases(df_train, config, target):
     print(f" -> Balanceo aplicado en Train ({strat}).")
     return df_train
 
+# ==========================================
+# NUEVO: AGRUPAR TARGET EN SENTIMIENTOS
+# ==========================================
+def agrupar_sentimiento_target(df_train, df_test, df_dev, target):
+    if not target or target not in df_train.columns:
+        return df_train, df_test, df_dev
+
+    def mapear_sentimiento(valor):
+        try:
+            # Convertimos a entero por si viene como texto ("5") o float (5.0)
+            v = int(float(valor))
+            if v in [1, 2]: return 'negativo'
+            elif v == 3: return 'neutro'
+            elif v in [4, 5]: return 'positivo'
+            else: return valor
+        except:
+            return valor
+
+    print(f" -> Agrupando target '{target}' en: negativo, neutro y positivo.")
+    df_train[target] = df_train[target].apply(mapear_sentimiento)
+    df_test[target] = df_test[target].apply(mapear_sentimiento)
+    df_dev[target] = df_dev[target].apply(mapear_sentimiento)
+
+    return df_train, df_test, df_dev
 
 # ==========================================
 # PIPELINE PRINCIPAL UNIFICADO
@@ -392,35 +430,43 @@ def pipeline_preprocesamiento(df_train, df_test, df_dev, config_full):
     target_global = config_full.get("target")
     config_prep = config_full.get("preprocessing", {})
 
-    # Activamos la señal de interrupción para poder pararlo con Ctrl+C sin romper nada
     signal.signal(signal.SIGINT, signal_handler)
-
     print("\n--- 🛠️ INICIANDO PIPELINE DE PREPROCESADO ---")
 
-    # 1. Limpieza básica y Tipos
+    # 1. Limpieza básica
     df_train, df_test, df_dev = eliminar_duplicados(df_train, df_test, df_dev, config_prep)
     df_train, df_test, df_dev = eliminar_columnas(df_train, df_test, df_dev, config_prep)
     df_train, df_test, df_dev = asignar_tipos(df_train, df_test, df_dev, config_prep)
     df_train, df_test, df_dev = tratar_valores_erroneos(df_train, df_test, df_dev, config_prep)
 
-    # 2. Codificación del Target (Crucial para Sentiment Analysis)
+    # 2. TRANSFORMACIÓN Y CODIFICACIÓN DEL TARGET
+    df_train, df_test, df_dev = agrupar_sentimiento_target(df_train, df_test, df_dev, target_global)
     df_train, df_test, df_dev = codificar_objetivo(df_train, df_test, df_dev, config_full)
 
-    # 3. Procesamiento de Texto Completo
-    # df_train, df_test, df_dev = traducir_emojis(df_train, df_test, df_dev, config_prep, target_global)
+    # 3. TRATAMIENTO ESTADÍSTICO (números reales)
+    df_train, df_test, df_dev = tratar_nulos(df_train, df_test, df_dev, config_prep, target_global)
+    df_train, df_test, df_dev = tratar_outliers(df_train, df_test, df_dev, config_prep, target_global)
+    df_train, df_test, df_dev = escalar_y_discretizar(df_train, df_test, df_dev, config_prep, target_global)
+
+    # 4. TRATAMIENTO DE TEXTO (números reales)
+    df_train, df_test, df_dev = codificar_variables(df_train, df_test, df_dev, config_prep, target_global)
+    df_train, df_test, df_dev = traducir_emojis(df_train, df_test, df_dev, config_prep, target_global)
     df_train, df_test, df_dev = limpiar_y_normalizar_texto(df_train, df_test, df_dev, config_prep, target_global)
     df_train, df_test, df_dev = procesar_texto(df_train, df_test, df_dev, config_prep, target_global)
 
-    # 4. Variables Categóricas
-    df_train, df_test, df_dev = codificar_variables(df_train, df_test, df_dev, config_prep, target_global)
-
-    # 5. Tratamiento estadístico
-    df_train, df_test, df_dev = tratar_nulos(df_train, df_test, df_dev, config_prep, target_global)
-    df_train, df_test, df_dev = tratar_outliers(df_train, df_test, df_dev, config_prep, target_global)
-
-    # 6. Ajustes finales
-    df_train, df_test, df_dev = escalar_y_discretizar(df_train, df_test, df_dev, config_prep, target_global)
+    # 5. Balanceo de Clases
     df_train = balancear_clases(df_train, config_prep, target_global)
+
+    # Exportación...
+    #df_test.to_csv('test_listo.csv', index=False)
+    #df_train.to_csv('train_listo.csv', index=False)
+    #df_dev.to_csv('dev_listo.csv', index=False)
+
+    print("--- ✅ PIPELINE DE PREPROCESADO COMPLETADO ---\n")
+    return df_train, df_test, df_dev
+
+
+
 
     print("--- ✅ PIPELINE DE PREPROCESADO COMPLETADO ---\n")
     return df_train, df_test, df_dev

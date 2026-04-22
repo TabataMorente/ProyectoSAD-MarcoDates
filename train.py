@@ -249,7 +249,7 @@ def train():
                         metric = "R2"
                     else:
                         model = RandomForestClassifier(n_estimators=n_est, max_depth=depth, max_features=feat,
-                                                       random_state=42, n_jobs=-1)
+                                                       random_state=42, n_jobs=-1, class_weight='balanced')
                         model.fit(train_features, train_target)
                         y_pred = model.predict(dev_features)
                         score_dev = f1_score(dev_target, y_pred, average=eval_strat)
@@ -284,7 +284,7 @@ def train():
                 # La regresión logística solo se usará para clasificación en este proyecto
                 if task == 'classification':
                     # Usamos un max_iter alto (1000) para evitar errores de convergencia con texto
-                    model = LogisticRegression(C=c_val, solver=solv, max_iter=1000, random_state=42)
+                    model = LogisticRegression(C=c_val, solver=solv, max_iter=1000, random_state=42, class_weight='balanced')
                     model.fit(train_features, train_target)
                     y_pred = model.predict(dev_features)
 
@@ -386,7 +386,7 @@ def train():
     # Creamos una carpeta para los datos ya limpios y procesados
     processed_data_path = os.path.join("datos_preprocesados", csv_id)
     os.makedirs(processed_data_path, exist_ok=True)
-
+'''
     # 1. Guardamos el Test preprocesado
     df_test_final_p = pd.concat([test_features, test_target], axis=1)
     ruta_test = os.path.join(processed_data_path, f"{csv_id}_test_ready.csv")
@@ -406,7 +406,7 @@ def train():
     print(f" -> Train: {ruta_train}")
     print(f" -> Dev:   {ruta_dev}")
     print(f" -> Test:  {ruta_test}")
-
+'''
 
 if __name__ == "__main__":
     train()
