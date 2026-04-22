@@ -49,5 +49,16 @@
            "rules": {
            }
        }
-   }
+   },
+
+  "prompt_engineering" : {
+    "mode" : "sentiment_analysis",
+    "model" : "gemma2:2b",
+    "possible_answers": ["Worst", "Bad", "Neutral", "Good", "Best"],
+    "temperature": 0,
+    "repeat_penalty": 1.0,
+    "num_predict": 1,
+    "top_k": 10,
+    "top_p": 0.5
+  }
 }
