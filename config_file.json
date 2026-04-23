@@ -1,12 +1,12 @@
 {
    "target": "score",
-   "method": "bayes",
+   "method": "logistic",
    "task": "classification",
    "evaluation": "macro",
    "hyperparameters_knn": {
-       "k_range": [5, 10],
+       "k_range": [3, 10],
        "step": 2,
-       "p": [1, 2],
+       "p": [1,2],
        "weights": ["uniform", "distance"]
    },
    "hyperparameters_tree": {
@@ -32,6 +32,8 @@
        "drop_columns": ["reviewId"],
        "text_features": ["content"],
        "text_process_method": "tf-idf",
+       "ngram_range": [1, 3],
+       "limite_palabras": 2500,
        "language": "english",
        "categorical_features": ["gender"],
        "categorical_encoding": "one-hot",
@@ -41,9 +43,9 @@
        "outliers": "clip",
        "discretize_features": [],
        "discretize_bins": 3,
-       "scaling": "max-min",
-       "sampling_strategy": "SMOTE",
-       "sampling_ratio": {"0": 4800, "1": 1500, "2": 2500},
+       "scaling": "z-socre",
+       "sampling_strategy": "none",
+       "sampling_ratio": "auto",
        "erroneous_values": {
            "action": "impute",
            "rules": {

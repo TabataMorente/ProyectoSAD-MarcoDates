@@ -34,18 +34,22 @@ def train():
     df_raw = pd.read_csv(sys.argv[1])
 
     # 3. DIVISIÓN TRIPLE (70/15/15)
-    # Paso A: Separar el 70% para Train y el 30% para lo demás (Dev + Test)
+    # Paso A: 70% Train, 30% Temp
     df_train_raw, df_temp = train_test_split(
         df_raw,
         test_size=0.30,
-        random_state=42
+        random_state=42,
+        stratify=df_raw[target_global]
     )
 
-    # Paso B: Del 30% restante, dividimos a la mitad para sacar Dev (15%) y Test (15%)
+    df_temp = df_temp.reset_index(drop=True)
+
+    # Paso B: Del 30% restante, sacamos Dev (15%) y Test (15%)
     df_dev_raw, df_test_raw = train_test_split(
         df_temp,
         test_size=0.50,
-        random_state=42
+        random_state=42,
+        stratify=df_temp[target_global]
     )
 
     print(f"📊 Reparto: Train={len(df_train_raw)} | Dev={len(df_dev_raw)} | Test={len(df_test_raw)}")
@@ -107,7 +111,7 @@ def train():
                 model_name = f"bayes_multi_alpha={a}.sav"
                 dict_predicciones[model_name] = y_pred
 
-                joblib.dump(model, os.path.join(folder_path, model_name))
+                #joblib.dump(model, os.path.join(folder_path, model_name))
                 print(f"✅ Guardado: {model_name} | F1-Dev: {score_dev:.4f}")
 
         elif b_type == 'bernoulli':
@@ -120,7 +124,7 @@ def train():
                 model_name = f"bayes_bern_alpha={a}.sav"
                 dict_predicciones[model_name] = y_pred
 
-                joblib.dump(model, os.path.join(folder_path, model_name))
+                #joblib.dump(model, os.path.join(folder_path, model_name))
                 print(f"✅ Guardado: {model_name} | F1-Dev: {score_dev:.4f}")
 
         else:  # GAUSSIAN
@@ -134,7 +138,7 @@ def train():
                 model_name = f"bayes_gauss_sm={sm}.sav"
                 dict_predicciones[model_name] = y_pred
 
-                joblib.dump(model, os.path.join(folder_path, model_name))
+                #joblib.dump(model, os.path.join(folder_path, model_name))
                 print(f"✅ Guardado: {model_name} | F1-Dev: {score_dev:.4f}")
 
     # --- CASO KNN ---
@@ -180,7 +184,7 @@ def train():
                     # --- GUARDADO DE RESULTADOS CSV ---
                     dict_predicciones[model_name] = y_pred
 
-                    joblib.dump(model, os.path.join(folder_path, model_name))
+                    #joblib.dump(model, os.path.join(folder_path, model_name))
                     print(f"✅ Guardado: {model_name} | {metric}-Dev: {score_dev:.4f}")
 
     # --- CASO ARBOLES DE DECISION ---
@@ -221,7 +225,7 @@ def train():
                 # --- GUARDADO DE RESULTADOS CSV ---
                 dict_predicciones[model_name] = y_pred
 
-                joblib.dump(model, os.path.join(folder_path, model_name))
+                #joblib.dump(model, os.path.join(folder_path, model_name))
                 print(f"✅ Guardado: {model_name} | {metric}-Dev: {score_dev:.4f}")
 
     # --- CASO RANDOM FOREST ---
@@ -265,7 +269,7 @@ def train():
                     # --- GUARDADO DE RESULTADOS CSV ---
                     dict_predicciones[model_name] = y_pred
 
-                    joblib.dump(model, os.path.join(folder_path, model_name))
+                    #joblib.dump(model, os.path.join(folder_path, model_name))
                     print(f"✅ Guardado: {model_name} | {metric}-Dev: {score_dev:.4f}")
 
     # --- CASO LOGISTIC REGRESSION ---
@@ -302,7 +306,7 @@ def train():
                     # Guardamos la predicción en el diccionario unificado para tu tabla comparativa
                     dict_predicciones[model_name] = y_pred
 
-                    joblib.dump(model, os.path.join(folder_path, model_name))
+                    #joblib.dump(model, os.path.join(folder_path, model_name))
                     print(f"✅ Guardado: {model_name} | {metric}-Dev: {score_dev:.4f}")
 
     # --- SELECCIÓN DEL MEJOR MODELO DEL ENTRENAMIENTO ---

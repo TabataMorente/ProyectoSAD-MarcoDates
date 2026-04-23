@@ -219,14 +219,17 @@ def limpiar_y_normalizar_texto(df_train, df_test, df_dev, config, target):
 # ==========================================
 def procesar_texto(df_train, df_test, df_dev, config, target):
     text_cols = config.get('text_features', [])
+    limite_palabras = config.get('limite_palabras', "none")
     if not text_cols: return df_train, df_test, df_dev
 
     method = config.get('text_process_method', 'tf-idf')
+    ngram_range_list = config.get('ngram_range', [1, 1])
+    ngram_setting = tuple(ngram_range_list)
 
     if method == 'tf-idf':
-        vec = TfidfVectorizer()
+        vec = TfidfVectorizer(max_features=limite_palabras, min_df=3, ngram_range=ngram_setting)
     elif method == 'bow':
-        vec = CountVectorizer()
+        vec = CountVectorizer(max_features=limite_palabras, min_df=3, ngram_range=ngram_setting)
     else:
         vec = OneHotEncoder(handle_unknown='ignore', sparse_output=False)
 
@@ -354,11 +357,13 @@ def escalar_y_discretizar(df_train, df_test, df_dev, config, target):
     if method in ['max-min', 'z-score']:
         scaler = MinMaxScaler() if method == 'max-min' else StandardScaler()
 
-        # --- ARREGLO CRÍTICO AQUÍ ---
         # Seleccionamos SOLO las columnas numéricas
+        text_cols = config.get('text_features', [])
         cols_numericas = df_train.select_dtypes(include=[np.number]).columns.tolist()
-        cols_a_escalar = [c for c in cols_numericas if c != target]
-        # ----------------------------
+        cols_a_escalar = [
+            c for c in cols_numericas
+            if c != target and not any(c.startswith(f"{t}_") for t in text_cols)
+        ]
 
         # Solo escalamos si realmente hay alguna columna numérica
         if cols_a_escalar:
