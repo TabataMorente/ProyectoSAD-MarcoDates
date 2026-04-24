@@ -1,13 +1,14 @@
 # -*- coding: utf-8 -*-
+import sys
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import os
+import json
 
 # --- NUEVOS IMPORTS AÑADIDOS ---
-from sklearn.cluster import KMeans
-from sklearn.decomposition import LatentDirichletAllocation
-from sklearn.feature_extraction.text import TfidfVectorizer
+import gensim.corpora as corpora
+from gensim.models import LdaModel, CoherenceModel
 
 
 # ==========================================
@@ -34,133 +35,240 @@ def dividir_por_sentimiento(df, target_col="score"):
 
 
 # ==========================================
-# 2. BARRIDO K-MEANS Y GRÁFICO DEL CODO
+#  PREPARACIÓN DEL CORPUS PARA GENSIM
 # ==========================================
-def plot_grafico_codo(k_values, inertias, sentimiento, output_dir="graficos"):
+def preparar_corpus_gensim(textos):
     """
-    Genera y guarda el gráfico del codo para evaluar K-Means.
+    Convierte una lista de textos al formato que necesita Gensim:
+    - tokeniza cada texto en lista de palabras
+    - crea el diccionario (vocabulary)
+    - crea el corpus en formato Bag-of-Words (BoW)
+    """
+    # Tokenizamos: cada documento pasa a ser una lista de palabras en minúsculas
+    textos_tokenizados = [str(texto).lower().split() for texto in textos]
+
+    # Creamos el diccionario: mapea cada palabra a un ID único
+    diccionario = corpora.Dictionary(textos_tokenizados)
+
+    # Eliminamos palabras muy raras (en menos de 2 docs) o muy frecuentes (>50% docs)
+    diccionario.filter_extremes(no_below=2, no_above=0.5)
+
+    # Creamos el corpus en formato BoW: lista de (word_id, frecuencia)
+    corpus_bow = [diccionario.doc2bow(doc) for doc in textos_tokenizados]
+
+    return corpus_bow, diccionario, textos_tokenizados
+
+
+# ==========================================
+#  BÚSQUEDA MATEMÁTICA DEL CODO
+# ==========================================
+def encontrar_codo(x, y):
+    """
+    Encuentra el número de temas óptimo analizando la forma de la curva de coherencia.
+    Para la coherencia, buscamos MAXIMIZAR (mayor coherencia = tópicos más interpretables).
+    """
+    x = np.array(x)
+    y = np.array(y)
+
+    if len(x) == 1:
+        return x[0], 0
+
+    # 1. Buscamos el punto con la MAYOR coherencia
+    idx_max_absoluto = np.argmax(y)
+
+    # 2. Si el maximo esta en el medio o al inicio, es nuestro optimo
+    if idx_max_absoluto != len(y) - 1:
+        return x[idx_max_absoluto], idx_max_absoluto
+
+    # 3. Si sube continuamente, usamos el metodo del codo geometrico
+    punto_inicio = np.array([x[0], y[0]])
+    punto_fin = np.array([x[-1], y[-1]])
+
+    linea_vec = punto_fin - punto_inicio
+    linea_vec_norm = linea_vec / np.sqrt(np.sum(linea_vec ** 2))
+
+    distancias = []
+    for i in range(len(x)):
+        punto = np.array([x[i], y[i]])
+        vec_a_punto = punto - punto_inicio
+        proyeccion = np.sum(vec_a_punto * linea_vec_norm)
+        vec_proyectado = proyeccion * linea_vec_norm
+        distancia = np.sqrt(np.sum((vec_a_punto - vec_proyectado) ** 2))
+        distancias.append(distancia)
+
+    idx_codo = np.argmax(distancias)
+
+    return x[idx_codo], idx_codo
+
+
+# ==========================================
+#  BARRIDO LDA Y GRÁFICO DE COHERENCIA
+# ==========================================
+def plot_codo_lda(n_topics_list, coherencias, sentimiento, mejor_n, output_dir="graficos"):
+    """
+    Genera y guarda el gráfico para evaluar la Coherencia de LDA.
+    He añadido etiquetas en cada punto para que puedas elegir el codo manualmente.
     """
     os.makedirs(output_dir, exist_ok=True)
 
-    plt.figure(figsize=(8, 5))
-    plt.plot(k_values, inertias, marker='o', linestyle='--', color='b')
-    plt.title(f'Gráfico del Codo - Sentimiento: {sentimiento.capitalize()}')
-    plt.xlabel('Número de Clusters (k)')
-    plt.ylabel('Inercia (Distancia al centroide)')
-    plt.grid(True)
+    plt.figure(figsize=(10, 6))
+    plt.plot(n_topics_list, coherencias, marker='s', linestyle='-', color='b', label='Coherencia (c_v)')
 
-    ruta_guardado = os.path.join(output_dir, f"codo_kmeans_{sentimiento}.png")
+    # Marcamos todos los puntos con su valor para facilitar la elección manual
+    for i, txt in enumerate(coherencias):
+        plt.annotate(f"{txt:.3f}", (n_topics_list[i], coherencias[i]),
+                     textcoords="offset points", xytext=(0, 10), ha='center', fontsize=9)
+
+    # Marcamos el codo sugerido por el algoritmo
+    plt.axvline(x=mejor_n, color='r', linestyle='--', alpha=0.5, label=f'Sugerencia: {mejor_n} temas')
+    plt.scatter(mejor_n, coherencias[n_topics_list.index(mejor_n)], color='red', s=100, zorder=5)
+
+    plt.title(
+        f'Evaluación de Coherencia LDA - {sentimiento.capitalize()}\n(Elige el punto donde la curva se estabiliza)')
+    plt.xlabel('Número de Temas (k)')
+    plt.ylabel('Coherencia (Mayor es mejor)')
+    plt.legend()
+    plt.grid(True, linestyle='--', alpha=0.7)
+
+    ruta_guardado = os.path.join(output_dir, f"codo_lda_coherencia_{sentimiento}.png")
     plt.savefig(ruta_guardado)
     plt.close()
-    print(f"    [+] Gráfico del codo guardado en: {ruta_guardado}")
+    print(f"    [+] Gráfico con etiquetas guardado en: {ruta_guardado}")
 
 
-def barrido_kmeans(datos_procesados, k_min=2, k_max=10, sentimiento="general"):
+def barrido_lda(corpus_bow, diccionario, textos_tokenizados, config_lda, sentimiento="general", output_dir="graficos"):
     """
-    Realiza un barrido de hiperparámetros para K-Means.
+    Realiza un barrido de LDA con Gensim y devuelve todos los modelos entrenados.
     """
-    print(f"\n--- Iniciando barrido K-Means para: {sentimiento.upper()} ---")
+    print(f"\n--- Iniciando barrido LDA (Gensim) para: {sentimiento.upper()} ---")
+
+    n_topics_list = config_lda.get("n_components_range", [2, 3, 4, 5])
+    passes = config_lda.get("passes", [10])[0]
+    iterations = config_lda.get("max_iter", [50])[0]
+    random_state = config_lda.get("random_state", [42])[0]
+    metrica_coherencia = config_lda.get("coherence_metric", "c_v")
 
     resultados_barrido = []
-    k_values = []
-    inertias = []
-
-    for k in range(k_min, k_max + 1):
-        print(f"  -> Probando K-Means con k={k}")
-
-        # IMPLEMENTACIÓN REAL DE K-MEANS
-        kmeans = KMeans(n_clusters=k, random_state=42, n_init='auto')
-        kmeans.fit(datos_procesados)
-        inercia_actual = kmeans.inertia_
-
-        k_values.append(k)
-        inertias.append(inercia_actual)
-
-        resultados_barrido.append({
-            "k": k,
-            "inercia": inercia_actual,
-            "modelo": kmeans
-        })
-
-    plot_grafico_codo(k_values, inertias, sentimiento)
-    return resultados_barrido
-
-
-# ==========================================
-# 3. BARRIDO LDA (Latent Dirichlet Allocation)
-# ==========================================
-def barrido_lda(datos_procesados, n_topics_list=[2, 3, 4, 5], sentimiento="general"):
-    """
-    Realiza un barrido de hiperparámetros para LDA usando bucles.
-    """
-    print(f"\n--- Iniciando barrido LDA para: {sentimiento.upper()} ---")
-
-    resultados_barrido = []
+    temas_evaluados = []
+    coherencias = []
 
     for n_topics in n_topics_list:
-        print(f"  -> Probando LDA con n_topics={n_topics}")
+        print(f"  -> Entrenando LDA con k={n_topics}...")
 
-        # IMPLEMENTACIÓN REAL DE LDA
-        lda = LatentDirichletAllocation(n_components=n_topics, random_state=42)
-        lda.fit(datos_procesados)
-        perplejidad = lda.perplexity(datos_procesados)
+        lda = LdaModel(
+            corpus=corpus_bow,
+            id2word=diccionario,
+            num_topics=n_topics,
+            passes=passes,
+            iterations=iterations,
+            random_state=random_state,
+            alpha='auto',
+            eta='auto'
+        )
+
+        coherence_model = CoherenceModel(
+            model=lda,
+            texts=textos_tokenizados,
+            dictionary=diccionario,
+            coherence=metrica_coherencia
+        )
+        coherencia = coherence_model.get_coherence()
+
+        temas_evaluados.append(n_topics)
+        coherencias.append(coherencia)
 
         resultados_barrido.append({
             "n_topics": n_topics,
-            "perplexity": perplejidad,
+            "coherencia": coherencia,
             "modelo": lda
         })
+
+    mejor_n_topics, _ = encontrar_codo(temas_evaluados, coherencias)
+    plot_codo_lda(temas_evaluados, coherencias, sentimiento, mejor_n_topics, output_dir=output_dir)
 
     return resultados_barrido
 
 
 # ==========================================
-# 4. FUNCIÓN PRINCIPAL / ORQUESTADOR
+#            FUNCIÓN PRINCIPAL
 # ==========================================
-def pipeline_clustering(df, col_texto_procesado, target_col="score"):
+def pipeline_clustering(df, col_texto_procesado, json_file, target_col="score"):
     print("\n" + "=" * 50)
-    print(" 🚀 INICIANDO PIPELINE DE CLUSTERING Y TOPIC MODELING")
+    print(" 🚀 INICIANDO PIPELINE DE CLUSTERING MULTI-RESULTADO")
     print("=" * 50)
+
+    with open(json_file, 'r', encoding='utf-8') as f:
+        config = json.load(f)
+
+    config_lda = config.get("clustering_lda", {})
+    rango_topics_original = config_lda.get("n_components_range", [2, 3, 4, 5])
 
     # 1. Separar datos
     df_pos, df_neg, df_neu = dividir_por_sentimiento(df, target_col)
+    datasets = {"positivos": df_pos, "negativos": df_neg, "neutros": df_neu}
 
-    datasets = {
-        "positivos": df_pos,
-        "negativos": df_neg,
-        "neutros": df_neu
-    }
-
-    resultados_totales = {}
-
-    # Inicializamos el vectorizador (Convierte texto en matriz numérica)
-    vectorizer = TfidfVectorizer(max_features=1000)
-
-    # 2. Bucle principal por cada sentimiento
+    # 2. Procesar cada grupo
     for sentimiento, sub_df in datasets.items():
-        n_muestras = len(sub_df)
-
-        if n_muestras < 2:
-            print(f"\n⚠️ Saltando '{sentimiento}': Solo hay {n_muestras} filas (insuficiente para clusterizar).")
+        if len(sub_df) < 2:
             continue
 
-        print(f"\n[+] Vectorizando textos para: {sentimiento.upper()}...")
-        matriz_vectorizada = vectorizer.fit_transform(sub_df[col_texto_procesado])
+        # Crear carpeta específica para este sentimiento
+        dir_sentimiento = os.path.join("resultados_clustering", sentimiento)
+        os.makedirs(dir_sentimiento, exist_ok=True)
 
-        # Ajuste dinámico de hiperparámetros según la cantidad de datos reales
-        # k (clusters) no puede ser mayor a la cantidad de filas
-        max_k = min(8, n_muestras - 1)
-        temas_validos = [t for t in [2, 3, 4, 5] if t <= n_muestras - 1]
+        print(f"\n[+] Procesando grupo: {sentimiento.upper()}")
+        textos_limpios = sub_df[col_texto_procesado].fillna("").tolist()
+        corpus_bow, diccionario, textos_tokenizados = preparar_corpus_gensim(textos_limpios)
 
-        # --- Ejecución de barridos ---
-        res_kmeans = barrido_kmeans(matriz_vectorizada, k_min=2, k_max=max_k, sentimiento=sentimiento)
-        res_lda = barrido_lda(matriz_vectorizada, n_topics_list=temas_validos, sentimiento=sentimiento)
+        # Filtrar temas validos segun tamaño de datos
+        temas_validos = [t for t in rango_topics_original if t <= len(sub_df) - 1]
+        config_lda_actual = config_lda.copy()
+        config_lda_actual["n_components_range"] = temas_validos
 
-        resultados_totales[sentimiento] = {
-            "kmeans": res_kmeans,
-            "lda": res_lda,
-            "vectorizador": vectorizer  # Guardamos el vectorizador por si necesitas predecir nuevos textos luego
-        }
+        # Ejecutar barrido
+        todos_los_modelos = barrido_lda(corpus_bow, diccionario, textos_tokenizados, config_lda_actual, sentimiento)
 
-    print("\n✅ Tareas de barrido de Clustering finalizadas.")
-    return resultados_totales
+        # 3. GUARDAR TODOS LOS RESULTADOS
+        print(f"  -> Guardando archivos CSV para cada k en: {dir_sentimiento}")
+        for res in todos_los_modelos:
+            k = res["n_topics"]
+            modelo = res["modelo"]
+
+            # Asignación de clusters
+            temas_asignados = []
+            for doc_bow in corpus_bow:
+                distribucion = modelo.get_document_topics(doc_bow, minimum_probability=0)
+                topico_principal = max(distribucion, key=lambda x: x[1])[0]
+                temas_asignados.append(topico_principal)
+
+            # Crear copia y guardar
+            df_resultado = sub_df.copy()
+            df_resultado['Cluster_LDA'] = temas_asignados
+
+            nombre_archivo = f"clusters_k{k}.csv"
+            ruta_csv = os.path.join(dir_sentimiento, nombre_archivo)
+            df_resultado.to_csv(ruta_csv, index=False)
+
+    print("\n✅ Proceso finalizado. Revisa las carpetas en 'resultados_clustering/'")
+
+
+if __name__ == "__main__":
+    if len(sys.argv) < 3:
+        print("Uso: python clustering.py <data.csv> <config_file.json>")
+        sys.exit(1)
+
+    csv_data = sys.argv[1]
+    json_file = sys.argv[2]
+
+    try:
+        df = pd.read_csv(csv_data)
+        with open(json_file, 'r', encoding='utf-8') as f:
+            config_json = json.load(f)
+
+        target_col = config_json.get("target", "score")
+        text_features = config_json.get("preprocessing", {}).get("text_features", ["content"])
+        col_texto_procesado = text_features[0] if text_features else "content"
+
+        pipeline_clustering(df, col_texto_procesado, json_file, target_col)
+    except Exception as e:
+        print(f"❌ Error: {e}")

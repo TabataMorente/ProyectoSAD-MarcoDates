@@ -1,7 +1,7 @@
 {
    "target": "score",
-   "method": "logistic",
-   "task": "classification",
+   "method": "bayes",
+   "task": "clustering",
    "evaluation": "macro",
    "hyperparameters_knn": {
        "k_range": [3, 10],
@@ -32,8 +32,8 @@
        "drop_columns": ["reviewId"],
        "text_features": ["content"],
        "text_process_method": "tf-idf",
-       "ngram_range": [1, 3],
-       "limite_palabras": 2500,
+       "ngram_range": [1, 1],
+       "limite_palabras": "none",
        "language": "english",
        "categorical_features": ["gender"],
        "categorical_encoding": "one-hot",
@@ -43,16 +43,14 @@
        "outliers": "clip",
        "discretize_features": [],
        "discretize_bins": 3,
-       "scaling": "z-socre",
+       "scaling": "min-max",
        "sampling_strategy": "none",
-       "sampling_ratio": "auto",
+       "sampling_ratio": {"0": 3000, "1":1000, "2": 2500},
        "erroneous_values": {
            "action": "impute",
-           "rules": {
-           }
+           "rules": {}
        }
    },
-
   "prompt_engineering" : {
     "mode" : "sentiment_analysis",
     "model" : "gemma2:2b",
@@ -62,5 +60,12 @@
     "num_predict": 1,
     "top_k": 10,
     "top_p": 0.5
-  }
+  },
+  "clustering_lda": {
+       "n_components_range": [2, 3, 4, 5, 6, 7, 8, 9, 10],
+       "learning_method": ["batch"],
+       "max_iter": [10, 20],
+       "doc_topic_prior": [null, 0.1, 0.5],
+       "topic_word_prior": [null, 0.1, 0.5]
+   }
 }

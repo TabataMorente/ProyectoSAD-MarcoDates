@@ -1,49 +1,79 @@
 {
-    "target": "nombre_columna",     //columna a predecir
-    "method": "knn",                //knn,tree,bayes,forest
-    "task": "classification",       //clasificación o regresión
-    "evaluation": "macro",          //macro o micro
-    "hyperparameters_knn":{         //hiperparametros de knn: k = {1,2,3,4,5,...}, p = 0/1, w = 0/1
-        "k_range": [1, 3],   // IMPORTANTE: Aquí se pone un limite maximo y minimo
-        "p": [1, 2],
-        "weights": ["uniform", "distance"],
-        "step": 2                   //Va de 2 en 2, o el numero que sea
-    },
-    "hyperparameters_tree":{
-        "max_depth": [3, 5, 10], // Profundidad maxima del arbol.
-        "criterio": ["gini", "entropy"] // gini o entropy
-    },
-    "hyperparameters_bayes": {
-        // Suavizado de varianza: Ayuda al modelo GaussianNB a no ser tan rígido
-        // con los datos que se alejan mucho de la media (evita divisiones por cero).
-        "var_smoothing": [1e-9, 1e-8, 1e-7, 1e-5],
+   "target": "score",                   // Columna objetivo del dataset que se va a predecir o usar de referencia
+   "method": "bayes",                   // Algoritmo principal: knn, tree, bayes, forest, logistic
+   "task": "clustering",                // Tipo de problema a resolver: classification, regression o clustering
+   "evaluation": "macro",               // Métrica de evaluación multiclase: macro (clases valen igual) o micro
 
-        // Tipo de algoritmo: 'multinomial' es ideal cuando discretizamos (no se puede usar z-score)
-        // o usamos frecuencias de palabras.
-        "bayes_type": "multinomial",    //multinomial,bernoulli,gaussian,none
+   "hyperparameters_knn": {             // Hiperparámetros para K-Vecinos más cercanos
+       "k_range": [3, 10],              // IMPORTANTE: Aquí se pone un limite maximo y minimo de vecinos
+       "step": 2,                       // Va de 2 en 2, o el numero que sea
+       "p": [1, 2],                     // 1 = distancia Manhattan, 2 = distancia Euclidiana
+       "weights": ["uniform", "distance"] // uniform: todos pesan igual. distance: los cercanos pesan más
+   },
 
-        // Parámetro Alpha: Es el 'Suavizado de Laplace'.
-        // Suma un pequeño valor a los conteos para que ninguna probabilidad sea 0%.
-        "alpha": [0.1, 0.5, 1.0, 2.0]
-    },
-    "hyperparameters_forest":{
-        "n_estimators": [50, 100, 200], // Numero de arboles que tendra el bosque
-        "max_depth": [3, 5, 10], // Profundidad maxima del arbol
+   "hyperparameters_tree": {            // Hiperparámetros para Árboles de Decisión
+       "max_depth": [3, 5, 10],         // Profundidad maxima del arbol
+       "criterio": ["gini", "entropy"]  // gini o entropy (fórmula para decidir cómo dividir ramas)
+   },
 
-        // Muestra cuantas variables/columnas se le muestran a cada arbol al azar.
-        // Para que cada arbol sea distinto entre si.
-        "max_features": ["sqrt", "log2"]
-    },
-    "preprocessing":{
-        "categorical_features":[], //columnas categoriales: pasar a numeros
-        "text_features": [],       //columnas de texto, por ejemplo un mensaje.
-        "boolean_features": [],    //columnas booleanas en formato texto
-        "missing_values": "impute",//impute o drop (eliminar)
-        "impute_strategy": "mean", //mean, median, mode
-        "discretize_features": ["edad"],//columnas a discretizar
-        "discretize_bins": 3,           //cuantos intervalos o categorias
-        "scaling": "max-min",      //max, max-min, z-score
-        "text_process": "tf-idf",  //tf-idf,one-hot,bow
-        "sampling": "undersampling"//undersampling, oversampling, none
-    }
+   "hyperparameters_bayes": {           // Hiperparámetros para Naïve Bayes
+       "var_smoothing": [1e-9, 1e-7, 1e-5], // Suavizado de varianza (evita fallo en divisiones por cero)
+       "bayes_type": "multinomial",     // multinomial, bernoulli, gaussian, none
+       "alpha": [0.1, 0.5, 1.0, 2.0]    // Suavizado de Laplace: suma un valor para evitar probabilidades del 0%
+   },
+
+   "hyperparameters_forest": {          // Hiperparámetros para Random Forest
+       "n_estimators": [100, 200],      // Numero de arboles que tendra el bosque
+       "max_depth": [3, 5, 10, 20, null], // Profundidad maxima del arbol (null = sin límite)
+       "max_features": ["sqrt", "log2"] // Cuantas variables se muestran a cada arbol al azar
+   },
+
+   "hyperparameters_logistic": {        // Hiperparámetros para Regresión Logística
+       "C": [0.01, 0.1, 1.0, 10.0],     // Inverso de regularización (valores altos confían más en el dataset)
+       "solver": ["lbfgs"]              // Algoritmo matemático que busca el peso óptimo
+   },
+
+   "preprocessing": {                   // Opciones de limpieza y transformación de datos
+       "drop_duplicates": true,         // true/false: Eliminar las filas que sean exactamente iguales
+       "drop_columns": ["reviewId"],    // Columnas a eliminar completamente (ej. IDs que no sirven)
+       "text_features": ["content"],    // Columnas de texto, por ejemplo un mensaje o reseña
+       "text_process_method": "tf-idf", // tf-idf, one-hot, bow (Cómo convertir texto a números)
+       "ngram_range": [1, 1],           // Rango de agrupación de palabras. [1,2] agrupa sueltas y pares
+       "limite_palabras": "none",       // maximo de palabras a evaluar. 'none' usa todas
+       "language": "english",           // Idioma para quitar stopwords (ej. the, is, at...)
+       "categorical_features": ["gender"], // columnas categoriales: pasar a numeros
+       "categorical_encoding": "one-hot", // Metodo para convertir categorías (one-hot o label)
+       "boolean_features": [],          // columnas booleanas en formato texto
+       "missing_values": "impute",      // impute o drop (eliminar filas nulas)
+       "impute_strategy": "most_frequent", // mean, median, mode (most_frequent)
+       "outliers": "clip",              // clip limita los valores atípicos para que no distorsionen
+       "discretize_features": [],       // columnas numéricas a discretizar (ej. edad)
+       "discretize_bins": 3,            // cuantos intervalos o categorias para discretizar
+       "scaling": "min-max",            // max, max-min, z-score (normalizar datos numéricos)
+       "sampling_strategy": "none",     // undersampling, oversampling, none (balanceo de clases)
+       "sampling_ratio": {"0": 3000, "1":1000, "2": 2500}, // Forzar numero exacto de datos por clase
+       "erroneous_values": {            // Tratamiento de valores absurdos
+           "action": "impute",          // Qué hacer con ellos
+           "rules": {}                  // Reglas concretas para detectarlos
+       }
+   },
+
+  "prompt_engineering": {               // Configuración para Modelos de Lenguaje Locales (Ollama)
+    "mode": "sentiment_analysis",       // Qué tarea se le pide hacer al modelo
+    "model": "gemma2:2b",               // Nombre del modelo a utilizar
+    "possible_answers": ["Worst", "Bad", "Neutral", "Good", "Best"], // Restringe las respuestas que puede dar
+    "temperature": 0,                   // 0 = determinista (clasificación). Más alto = más creativo
+    "repeat_penalty": 1.0,              // Castigo por repetición de palabras
+    "num_predict": 1,                   // Número máximo de tokens/palabras que responderá
+    "top_k": 10,                        // Límite de vocabulario (evita alucinaciones)
+    "top_p": 0.5                        // Límite de vocabulario por probabilidad
+  },
+
+  "clustering_lda": {                   // Hiperparámetros de Topic Modeling (Latent Dirichlet Allocation)
+       "n_components_range": [2, 3, 4, 5, 6, 7, 8, 9, 10], // Lista de cuántos "temas" a buscar (para gráfico codo)
+       "learning_method": ["batch"],    // batch (procesa todos los datos a la vez) o online (lotes)
+       "max_iter": [10, 20],            // Máximo de iteraciones del algoritmo matemático
+       "doc_topic_prior": [null, 0.1, 0.5], // Alfa: cuántos temas distintos se espera por documento (null=auto)
+       "topic_word_prior": [null, 0.1, 0.5] // Beta: cuántas palabras distintas componen cada tema (null=auto)
+   }
 }
