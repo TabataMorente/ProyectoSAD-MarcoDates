@@ -71,9 +71,8 @@ def train():
     csv_id     = os.path.basename(sys.argv[1]).split('.')[0]
     eval_strat = config.get('evaluation', 'macro')
 
-    folder_path = os.path.join("modelos", csv_id, method)
+    folder_path = os.path.join("resultados_clasificacion", csv_id, "modelos", method)
     os.makedirs(folder_path, exist_ok=True)
-    os.makedirs(os.path.join("csv", csv_id), exist_ok=True)
 
     dict_predicciones = {'Valor_Real': dev_target.values}
 
@@ -86,44 +85,47 @@ def train():
         params_cfg = config.get('hyperparameters_bayes', {})
         b_type     = params_cfg.get('bayes_type', 'gaussian')
 
+        # Verificación anticipada: MultinomialNB necesita features no negativas
+        if b_type == 'multinomial' and (train_features.values < 0).any():
+            print("⚠️  MultinomialNB detectó valores negativos. Usando ComplementNB en su lugar.")
+            b_type = 'complement'
+
         if b_type == 'multinomial':
-            # Verificación: MultinomialNB necesita features no negativas
-            if (train_features.values < 0).any():
-                print("⚠️  MultinomialNB detectó valores negativos. Usando ComplementNB en su lugar.")
-                b_type = 'complement'
-            else:
-                for a in params_cfg.get('alpha', [1.0]):
+            for a in params_cfg.get('alpha', [1.0]):
+                for sm in params_cfg.get('var_smoothing', [1e-9]):
                     model      = MultinomialNB(alpha=a)
                     model.fit(train_features, train_target)
                     y_pred     = model.predict(dev_features)
                     score_dev  = f1_score(dev_target, y_pred, average=eval_strat)
-                    model_name = f"bayes_multi_alpha={a}.sav"
+                    model_name = f"bayes_multi_alpha={a}_sm={sm}.sav"
                     dict_predicciones[model_name] = y_pred
                     joblib.dump(model, os.path.join(folder_path, model_name))
                     print(f"✅ Guardado: {model_name} | F1-Dev: {score_dev:.4f}")
 
         # ComplementNB: ideal para texto con clases desbalanceadas
-        if b_type == 'complement':
+        elif b_type == 'complement':
             for a in params_cfg.get('alpha', [1.0]):
-                model      = ComplementNB(alpha=a)
-                model.fit(train_features, train_target)
-                y_pred     = model.predict(dev_features)
-                score_dev  = f1_score(dev_target, y_pred, average=eval_strat)
-                model_name = f"bayes_complement_alpha={a}.sav"
-                dict_predicciones[model_name] = y_pred
-                joblib.dump(model, os.path.join(folder_path, model_name))
-                print(f"✅ Guardado: {model_name} | F1-Dev: {score_dev:.4f}")
+                for sm in params_cfg.get('var_smoothing', [1e-9]):
+                    model      = ComplementNB(alpha=a)
+                    model.fit(train_features, train_target)
+                    y_pred     = model.predict(dev_features)
+                    score_dev  = f1_score(dev_target, y_pred, average=eval_strat)
+                    model_name = f"bayes_complement_alpha={a}_sm={sm}.sav"
+                    dict_predicciones[model_name] = y_pred
+                    joblib.dump(model, os.path.join(folder_path, model_name))
+                    print(f"✅ Guardado: {model_name} | F1-Dev: {score_dev:.4f}")
 
         elif b_type == 'bernoulli':
             for a in params_cfg.get('alpha', [1.0]):
-                model      = BernoulliNB(alpha=a)
-                model.fit(train_features, train_target)
-                y_pred     = model.predict(dev_features)
-                score_dev  = f1_score(dev_target, y_pred, average=eval_strat)
-                model_name = f"bayes_bern_alpha={a}.sav"
-                dict_predicciones[model_name] = y_pred
-                joblib.dump(model, os.path.join(folder_path, model_name))
-                print(f"✅ Guardado: {model_name} | F1-Dev: {score_dev:.4f}")
+                for sm in params_cfg.get('var_smoothing', [1e-9]):
+                    model      = BernoulliNB(alpha=a)
+                    model.fit(train_features, train_target)
+                    y_pred     = model.predict(dev_features)
+                    score_dev  = f1_score(dev_target, y_pred, average=eval_strat)
+                    model_name = f"bayes_bern_alpha={a}_sm={sm}.sav"
+                    dict_predicciones[model_name] = y_pred
+                    joblib.dump(model, os.path.join(folder_path, model_name))
+                    print(f"✅ Guardado: {model_name} | F1-Dev: {score_dev:.4f}")
 
         elif b_type == 'gaussian':
             for sm in params_cfg.get('var_smoothing', [1e-9]):
@@ -292,12 +294,14 @@ def train():
             best_model_path = m_path
 
     if best_model_path:
-        os.makedirs("modelos_finales",    exist_ok=True)
-        os.makedirs("resultados_finales", exist_ok=True)
+        dir_mejor    = os.path.join("resultados_clasificacion", csv_id, "mejor_modelo")
+        dir_metricas = os.path.join("resultados_clasificacion", csv_id, "metricas")
+        os.makedirs(dir_mejor,    exist_ok=True)
+        os.makedirs(dir_metricas, exist_ok=True)
 
         detalles_params  = os.path.basename(best_model_path)
         final_name       = f"MEJOR_{csv_id}_{detalles_params}"
-        final_path       = os.path.join("modelos_finales", final_name)
+        final_path       = os.path.join(dir_mejor, final_name)
 
         mejor_modelo = joblib.load(best_model_path)
         joblib.dump(mejor_modelo, final_path)
@@ -319,7 +323,7 @@ def train():
             metrics_dict['r2_score']  = [r2_score(dev_target, y_pred_mejor)]
 
         df_metrics = pd.DataFrame(metrics_dict)
-        ruta_csv   = os.path.join("resultados_finales", f"metricas_{method}_{csv_id}.csv")
+        ruta_csv   = os.path.join(dir_metricas, f"metricas_{method}_{csv_id}.csv")
         df_metrics.to_csv(ruta_csv, index=False)
 
         print("\n" + "⭐" * 40)
@@ -335,7 +339,7 @@ def train():
         print("⭐" * 40)
 
         # ── Exportar datos preprocesados para evaluación externa ────────────
-        processed_path = os.path.join("datos_preprocesados", csv_id)
+        processed_path = os.path.join("preprocesado", csv_id)
         os.makedirs(processed_path, exist_ok=True)
 
         pd.concat([test_features,  test_target],  axis=1).to_csv(

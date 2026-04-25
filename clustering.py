@@ -23,13 +23,15 @@ except Exception:
 # ==========================================
 # STOPWORDS DE DOMINIO (apps de citas / reseñas)
 # ==========================================
+# CAMBIO 1: Eliminadas palabras con carga semántica real en reseñas:
+#   "love", "hate", "good", "great", "nice", "bad", "awful"
+#   Son señal útil para distinguir temas dentro de un grupo de sentimiento.
 DOMAIN_STOPWORDS = {
     "app", "use", "like", "get", "make", "time", "really", "just",
     "would", "one", "also", "even", "still", "well", "much", "many",
-    "good", "great", "nice", "love", "hate", "bad", "awful",
     "it", "its", "the", "and", "for", "that", "this", "with",
     "have", "has", "was", "are", "not", "but", "all", "very",
-    "app", "update", "version", "phone", "review", "rating",
+    "update", "version", "phone", "review", "rating",
 }
 
 
@@ -57,7 +59,7 @@ def dividir_por_sentimiento(df, target_col="score"):
 
 
 # ==========================================
-# NUEVO: LIMPIEZA DE TEXTO PARA CLUSTERING
+# LIMPIEZA DE TEXTO PARA CLUSTERING
 # ==========================================
 def limpiar_texto_para_lda(texto, stop_words_set):
     """
@@ -94,22 +96,26 @@ def preparar_corpus_gensim(textos_tokenizados, n_docs):
     Recibe lista de listas de tokens ya limpios y construye
     el diccionario y corpus BoW para Gensim.
     filter_extremes se adapta al tamaño del corpus.
+
+    CAMBIO 2: no_above bajado de 0.85→0.70 (corpus pequeños) y 0.6→0.55 (corpus grandes).
+    Evita que palabras muy frecuentes pero poco informativas ensucien los temas,
+    sin llegar al 0.5 del código viejo que era demasiado restrictivo.
     """
     diccionario = corpora.Dictionary(textos_tokenizados)
 
-    no_below = max(2, int(n_docs * 0.01))   # al menos 1% de docs
-    no_above = 0.85 if n_docs < 200 else 0.6  # más permisivo con grupos pequeños
+    no_below = max(2, int(n_docs * 0.01))          # al menos 1% de docs
+    no_above = 0.70 if n_docs < 200 else 0.55      # equilibrio entre permisividad y limpieza
 
     diccionario.filter_extremes(no_below=no_below, no_above=no_above)
 
-    corpus_bow = [diccionario.doc2bow(doc) for doc in textos_tokenizados]
+    corpus_bow_full = [diccionario.doc2bow(doc) for doc in textos_tokenizados]
 
-    # Filtrar documentos vacíos tras filter_extremes
-    corpus_bow         = [doc for doc in corpus_bow if len(doc) > 0]
-    textos_filtrados   = [t for t, d in zip(textos_tokenizados, corpus_bow) if len(d) > 0]
+    indices_validos  = [i for i, doc in enumerate(corpus_bow_full) if len(doc) > 0]
+    corpus_bow       = [corpus_bow_full[i] for i in indices_validos]
+    textos_filtrados = [textos_tokenizados[i] for i in indices_validos]
 
     print(f"    Vocabulario: {len(diccionario)} términos | Docs válidos: {len(corpus_bow)}")
-    return corpus_bow, diccionario, textos_filtrados
+    return corpus_bow, diccionario, textos_filtrados, indices_validos
 
 
 # ==========================================
@@ -118,7 +124,7 @@ def preparar_corpus_gensim(textos_tokenizados, n_docs):
 def encontrar_codo(x, y):
     """
     Encuentra el número de temas óptimo maximizando coherencia.
-    Si la curva sube continuamente, usa el mét_odo geométrico del codo.
+    Si la curva sube continuamente, usa el mé_todo geométrico del codo.
     """
     x = np.array(x)
     y = np.array(y)
@@ -130,7 +136,7 @@ def encontrar_codo(x, y):
     if idx_max != len(y) - 1:
         return x[idx_max], idx_max
 
-    # Mét_odo del codo geométrico
+    # Mé_todo del codo geométrico
     p_inicio = np.array([x[0], y[0]])
     p_fin    = np.array([x[-1], y[-1]])
     linea    = p_fin - p_inicio
@@ -184,13 +190,17 @@ def barrido_lda(corpus_bow, diccionario, textos_tokenizados,
     """
     Barrido de LDA con Gensim. Devuelve todos los modelos entrenados.
     Lee passes y random_state del JSON (con defaults seguros).
+
+    CAMBIO 3: default de passes subido de 20 → 30.
+    Más iteraciones de entrenamiento = modelos más convergidos = coherencia más fiable.
+    Si el JSON especifica un valor propio, ese tiene prioridad.
     """
     print(f"\n--- Barrido LDA (Gensim) para: {sentimiento.upper()} ---")
 
-    n_topics_list     = config_lda.get("n_components_range", [2, 3, 4, 5])
-    passes            = config_lda.get("passes", [20])[0]          # mínimo recomendado: 20
-    iterations        = config_lda.get("max_iter", [50])[0]
-    random_state      = config_lda.get("random_state", [42])[0]    # reproducibilidad
+    n_topics_list      = config_lda.get("n_components_range", [2, 3, 4, 5])
+    passes             = config_lda.get("passes", [30])[0]          # subido de 20 → 30
+    iterations         = config_lda.get("max_iter", [50])[0]
+    random_state       = config_lda.get("random_state", [42])[0]
     metrica_coherencia = config_lda.get("coherence_metric", "c_v")
 
     resultados = []
@@ -207,8 +217,8 @@ def barrido_lda(corpus_bow, diccionario, textos_tokenizados,
             passes=passes,
             iterations=iterations,
             random_state=random_state,
-            alpha='auto',    # aprende la distribución de temas por documento
-            eta='auto',      # aprende la distribución de palabras por tema
+            alpha='auto',
+            eta='auto',
             per_word_topics=True,
         )
 
@@ -263,23 +273,28 @@ def pipeline_clustering(df, col_texto, json_file, target_col="score", lang='engl
 
         print(f"\n[+] Procesando grupo: {sentimiento.upper()} ({len(sub_df)} docs)")
 
-        textos_crudos       = sub_df[col_texto].fillna("").tolist()
-        textos_tokenizados  = [limpiar_texto_para_lda(t, stop_words_set) for t in textos_crudos]
+        textos_crudos      = sub_df[col_texto].fillna("").tolist()
+        textos_tokenizados = [limpiar_texto_para_lda(t, stop_words_set) for t in textos_crudos]
 
-        # Filtrar documentos que quedaron vacíos tras la limpieza
-        textos_tokenizados  = [t for t in textos_tokenizados if len(t) >= 3]
+        # Filtrar documentos que quedaron vacíos tras la limpieza inicial
+        indices_no_vacios  = [i for i, t in enumerate(textos_tokenizados) if len(t) >= 3]
+        textos_tokenizados = [textos_tokenizados[i] for i in indices_no_vacios]
 
         if len(textos_tokenizados) < 5:
             print(f"  ⚠️  Muy pocos documentos válidos en '{sentimiento}' tras limpieza. Se omite.")
             continue
 
-        corpus_bow, diccionario, textos_limpios = preparar_corpus_gensim(
+        # corpus_bow y sub_df_valido siempre tendrán el mismo número de filas
+        corpus_bow, diccionario, textos_limpios, indices_corpus = preparar_corpus_gensim(
             textos_tokenizados, n_docs=len(textos_tokenizados)
         )
 
         if len(corpus_bow) < 5:
             print(f"  ⚠️  Corpus demasiado pequeño en '{sentimiento}' tras filter_extremes. Se omite.")
             continue
+
+        indices_finales = [indices_no_vacios[i] for i in indices_corpus]
+        sub_df_valido   = sub_df.iloc[indices_finales].copy().reset_index(drop=True)
 
         # Filtrar temas válidos según tamaño del corpus
         temas_validos = [t for t in rango_topics_original if t <= len(corpus_bow) - 1]
@@ -300,13 +315,6 @@ def pipeline_clustering(df, col_texto, json_file, target_col="score", lang='engl
         # 3. Guardar CSVs de resultados
         print(f"  -> Guardando CSVs en: {dir_sentimiento}")
 
-        # Reconstruir índices válidos (los docs no vacíos del sub_df original)
-        indices_validos = [
-            i for i, t in enumerate(sub_df[col_texto].fillna("").tolist())
-            if len(limpiar_texto_para_lda(t, stop_words_set)) >= 3
-        ]
-        sub_df_valido = sub_df.iloc[indices_validos].copy().reset_index(drop=True)
-
         resumen_coherencias = []
 
         for res in todos_los_modelos:
@@ -316,14 +324,14 @@ def pipeline_clustering(df, col_texto, json_file, target_col="score", lang='engl
 
             temas_asignados = []
             for doc_bow in corpus_bow:
-                dist          = modelo.get_document_topics(doc_bow, minimum_probability=0)
-                topic_id      = max(dist, key=lambda x: x[1])[0]
+                dist     = modelo.get_document_topics(doc_bow, minimum_probability=0)
+                topic_id = max(dist, key=lambda x: x[1])[0]
                 temas_asignados.append(topic_id)
 
             df_resultado = sub_df_valido.copy()
-            df_resultado['Cluster_LDA']  = temas_asignados
-            df_resultado['n_topics']     = k
-            df_resultado['coherencia']   = round(coh, 4)
+            df_resultado['Cluster_LDA'] = temas_asignados
+            df_resultado['n_topics']    = k
+            df_resultado['coherencia']  = round(coh, 4)
 
             ruta_csv = os.path.join(dir_sentimiento, f"clusters_k{k}.csv")
             df_resultado.to_csv(ruta_csv, index=False)
@@ -351,10 +359,10 @@ if __name__ == "__main__":
         with open(json_file, 'r', encoding='utf-8') as f:
             config_json = json.load(f)
 
-        target_col         = config_json.get("target", "score")
-        text_features      = config_json.get("preprocessing", {}).get("text_features", ["content"])
-        col_texto          = text_features[0] if text_features else "content"
-        lang               = config_json.get("preprocessing", {}).get("language", "english")
+        target_col    = config_json.get("target", "score")
+        text_features = config_json.get("preprocessing", {}).get("text_features", ["content"])
+        col_texto     = text_features[0] if text_features else "content"
+        lang          = config_json.get("preprocessing", {}).get("language", "english")
 
         pipeline_clustering(df, col_texto, json_file, target_col, lang)
 

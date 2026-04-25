@@ -14,9 +14,9 @@
        "criterio": ["gini", "entropy"]
    },
    "hyperparameters_bayes": {
-       "var_smoothing": [1e-9, 1e-7, 1e-5],
+       "var_smoothing": [1e-9],
        "bayes_type": "multinomial",
-       "alpha": [0.1, 0.5, 1.0, 2.0]
+       "alpha": [0.016]
    },
    "hyperparameters_forest": {
        "n_estimators": [100, 200],
@@ -41,7 +41,7 @@
       "impute_strategy": "most_frequent",
       "outliers": "none",
       "scaling": "none",
-      "sampling_strategy": "oversampling",
+      "sampling_strategy": "oversample",
       "sampling_ratio": "auto"
    },
   "prompt_engineering" : {
@@ -61,10 +61,14 @@
     }
   },
   "clustering_lda": {
-       "n_components_range": [2, 3, 4, 5, 6, 7, 8, 9, 10],
-       "learning_method": ["batch"],
-       "max_iter": [10, 20],
-       "doc_topic_prior": [null, 0.1, 0.5],
-       "topic_word_prior": [null, 0.1, 0.5]
-   }
+    "n_components_range": [2, 3, 4, 5, 6, 7, 8, 9, 10],
+    "passes": [50],
+    "max_iter": [100],
+    "random_state": [42],
+    "coherence_metric": "c_v",
+    "doc_topic_prior": [null, 0.1],
+    "topic_word_prior": [null, 0.1],
+    "learning_method": ["batch"]
+  }
+
 }

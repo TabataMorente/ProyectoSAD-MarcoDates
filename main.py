@@ -15,7 +15,8 @@ def main():
     json_file = sys.argv[2]
 
     # Extraemos el nombre del dataset (ej: de 'ventas.csv' sacamos 'ventas')
-    # Lo necesitamos porque el evaluador busca en carpetas con ese nombre
+    # El evaluador buscará el modelo en resultados_clasificacion/<dataset>/mejor_modelo/
+    # y los datos en preprocesado/<dataset>/
     dataset_name = os.path.basename(csv_data).split('.')[0]
 
     # 2. Leer el JSON para saber qué tarea ejecutar
