@@ -1,7 +1,7 @@
 {
    "target": "score",
    "method": "bayes",
-   "task": "clustering",
+   "task": "classification",
    "evaluation": "macro",
    "hyperparameters_knn": {
        "k_range": [3, 10],
@@ -24,32 +24,25 @@
        "max_features": ["sqrt", "log2"]
    },
    "hyperparameters_logistic": {
-       "C": [0.01, 0.1, 1.0, 10.0],
-       "solver": ["lbfgs"]
+      "C": [0.1, 1.0, 5.0, 10.0],
+      "solver": ["lbfgs"]
    },
    "preprocessing": {
-       "drop_duplicates": true,
-       "drop_columns": ["reviewId"],
-       "text_features": ["content"],
-       "text_process_method": "tf-idf",
-       "ngram_range": [1, 1],
-       "limite_palabras": "none",
-       "language": "english",
-       "categorical_features": ["gender"],
-       "categorical_encoding": "one-hot",
-       "boolean_features": [],
-       "missing_values": "impute",
-       "impute_strategy": "most_frequent",
-       "outliers": "clip",
-       "discretize_features": [],
-       "discretize_bins": 3,
-       "scaling": "min-max",
-       "sampling_strategy": "none",
-       "sampling_ratio": {"0": 3000, "1":1000, "2": 2500},
-       "erroneous_values": {
-           "action": "impute",
-           "rules": {}
-       }
+      "drop_duplicates": true,
+      "drop_columns": ["reviewId"],
+      "text_features": ["content"],
+      "text_process_method": "tf-idf",
+      "ngram_range": [1, 2],
+      "limite_palabras": 15000,
+      "language": "english",
+      "categorical_features": ["gender", "region"],
+      "categorical_encoding": "one-hot",
+      "missing_values": "impute",
+      "impute_strategy": "most_frequent",
+      "outliers": "none",
+      "scaling": "none",
+      "sampling_strategy": "oversampling",
+      "sampling_ratio": "auto"
    },
   "prompt_engineering" : {
     "mode": "sentiment_analysis",

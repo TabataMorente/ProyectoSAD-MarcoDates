@@ -1,14 +1,36 @@
 # -*- coding: utf-8 -*-
 import sys
+import re
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import os
 import json
 
-# --- NUEVOS IMPORTS AÑADIDOS ---
 import gensim.corpora as corpora
 from gensim.models import LdaModel, CoherenceModel
+
+try:
+    import nltk
+    from nltk.corpus import stopwords
+    nltk.data.find('corpora/stopwords')
+except Exception:
+    import nltk
+    nltk.download('stopwords', quiet=True)
+    from nltk.corpus import stopwords
+
+
+# ==========================================
+# STOPWORDS DE DOMINIO (apps de citas / reseñas)
+# ==========================================
+DOMAIN_STOPWORDS = {
+    "app", "use", "like", "get", "make", "time", "really", "just",
+    "would", "one", "also", "even", "still", "well", "much", "many",
+    "good", "great", "nice", "love", "hate", "bad", "awful",
+    "it", "its", "the", "and", "for", "that", "this", "with",
+    "have", "has", "was", "are", "not", "but", "all", "very",
+    "app", "update", "version", "phone", "review", "rating",
+}
 
 
 # ==========================================
@@ -24,48 +46,79 @@ def dividir_por_sentimiento(df, target_col="score"):
     print(" -> Dividiendo los datos en Positivos, Negativos y Neutros...")
 
     df_negativos = df[df[target_col].isin([1, 2])].copy()
-    df_neutros = df[df[target_col] == 3].copy()
+    df_neutros   = df[df[target_col] == 3].copy()
     df_positivos = df[df[target_col].isin([4, 5])].copy()
 
     print(f"    * Positivos: {len(df_positivos)} filas")
-    print(f"    * Neutros: {len(df_neutros)} filas")
+    print(f"    * Neutros:   {len(df_neutros)} filas")
     print(f"    * Negativos: {len(df_negativos)} filas")
 
     return df_positivos, df_negativos, df_neutros
 
 
 # ==========================================
-#  PREPARACIÓN DEL CORPUS PARA GENSIM
+# NUEVO: LIMPIEZA DE TEXTO PARA CLUSTERING
 # ==========================================
-def preparar_corpus_gensim(textos):
+def limpiar_texto_para_lda(texto, stop_words_set):
     """
-    Convierte una lista de textos al formato que necesita Gensim:
-    - tokeniza cada texto en lista de palabras
-    - crea el diccionario (vocabulary)
-    - crea el corpus en formato Bag-of-Words (BoW)
+    Limpia y tokeniza un texto para LDA:
+    - Minúsculas
+    - Elimina puntuación y números
+    - Elimina stopwords generales + stopwords de dominio
+    - Filtra tokens muy cortos (< 3 caracteres)
     """
-    # Tokenizamos: cada documento pasa a ser una lista de palabras en minúsculas
-    textos_tokenizados = [str(texto).lower().split() for texto in textos]
+    if not isinstance(texto, str):
+        return []
+    texto = texto.lower()
+    texto = re.sub(r'[^\w\s]', ' ', texto)  # elimina puntuación
+    texto = re.sub(r'\d+', '', texto)        # elimina números
+    tokens = texto.split()
+    tokens = [t for t in tokens if t not in stop_words_set and len(t) >= 3]
+    return tokens
 
-    # Creamos el diccionario: mapea cada palabra a un ID único
+
+def construir_stopwords(lang='english'):
+    """Combina stopwords de NLTK con stopwords de dominio."""
+    try:
+        sw = set(stopwords.words(lang))
+    except Exception:
+        sw = set()
+    return sw | DOMAIN_STOPWORDS
+
+
+# ==========================================
+# PREPARACIÓN DEL CORPUS PARA GENSIM
+# ==========================================
+def preparar_corpus_gensim(textos_tokenizados, n_docs):
+    """
+    Recibe lista de listas de tokens ya limpios y construye
+    el diccionario y corpus BoW para Gensim.
+    filter_extremes se adapta al tamaño del corpus.
+    """
     diccionario = corpora.Dictionary(textos_tokenizados)
 
-    # Eliminamos palabras muy raras (en menos de 2 docs) o muy frecuentes (>50% docs)
-    diccionario.filter_extremes(no_below=2, no_above=0.5)
+    no_below = max(2, int(n_docs * 0.01))   # al menos 1% de docs
+    no_above = 0.85 if n_docs < 200 else 0.6  # más permisivo con grupos pequeños
 
-    # Creamos el corpus en formato BoW: lista de (word_id, frecuencia)
+    diccionario.filter_extremes(no_below=no_below, no_above=no_above)
+
     corpus_bow = [diccionario.doc2bow(doc) for doc in textos_tokenizados]
 
-    return corpus_bow, diccionario, textos_tokenizados
+    # Filtrar documentos vacíos tras filter_extremes
+    corpus_bow         = [doc for doc in corpus_bow if len(doc) > 0]
+    textos_filtrados   = [t for t, d in zip(textos_tokenizados, corpus_bow) if len(d) > 0]
+
+    print(f"    Vocabulario: {len(diccionario)} términos | Docs válidos: {len(corpus_bow)}")
+    return corpus_bow, diccionario, textos_filtrados
 
 
 # ==========================================
-#  BÚSQUEDA MATEMÁTICA DEL CODO
+# BÚSQUEDA MATEMÁTICA DEL CODO
 # ==========================================
 def encontrar_codo(x, y):
     """
-    Encuentra el número de temas óptimo analizando la forma de la curva de coherencia.
-    Para la coherencia, buscamos MAXIMIZAR (mayor coherencia = tópicos más interpretables).
+    Encuentra el número de temas óptimo maximizando coherencia.
+    Si la curva sube continuamente, usa el mét_odo geométrico del codo.
     """
     x = np.array(x)
     y = np.array(y)
@@ -73,87 +126,79 @@ def encontrar_codo(x, y):
     if len(x) == 1:
         return x[0], 0
 
-    # 1. Buscamos el punto con la MAYOR coherencia
-    idx_max_absoluto = np.argmax(y)
+    idx_max = np.argmax(y)
+    if idx_max != len(y) - 1:
+        return x[idx_max], idx_max
 
-    # 2. Si el maximo esta en el medio o al inicio, es nuestro optimo
-    if idx_max_absoluto != len(y) - 1:
-        return x[idx_max_absoluto], idx_max_absoluto
-
-    # 3. Si sube continuamente, usamos el metodo del codo geometrico
-    punto_inicio = np.array([x[0], y[0]])
-    punto_fin = np.array([x[-1], y[-1]])
-
-    linea_vec = punto_fin - punto_inicio
-    linea_vec_norm = linea_vec / np.sqrt(np.sum(linea_vec ** 2))
+    # Mét_odo del codo geométrico
+    p_inicio = np.array([x[0], y[0]])
+    p_fin    = np.array([x[-1], y[-1]])
+    linea    = p_fin - p_inicio
+    linea_n  = linea / np.linalg.norm(linea)
 
     distancias = []
     for i in range(len(x)):
-        punto = np.array([x[i], y[i]])
-        vec_a_punto = punto - punto_inicio
-        proyeccion = np.sum(vec_a_punto * linea_vec_norm)
-        vec_proyectado = proyeccion * linea_vec_norm
-        distancia = np.sqrt(np.sum((vec_a_punto - vec_proyectado) ** 2))
-        distancias.append(distancia)
+        p          = np.array([x[i], y[i]])
+        v          = p - p_inicio
+        proy       = np.dot(v, linea_n) * linea_n
+        distancias.append(np.linalg.norm(v - proy))
 
-    idx_codo = np.argmax(distancias)
-
+    idx_codo = int(np.argmax(distancias))
     return x[idx_codo], idx_codo
 
 
 # ==========================================
-#  BARRIDO LDA Y GRÁFICO DE COHERENCIA
+# GRÁFICO DE COHERENCIA
 # ==========================================
 def plot_codo_lda(n_topics_list, coherencias, sentimiento, mejor_n, output_dir="graficos"):
-    """
-    Genera y guarda el gráfico para evaluar la Coherencia de LDA.
-    He añadido etiquetas en cada punto para que puedas elegir el codo manualmente.
-    """
     os.makedirs(output_dir, exist_ok=True)
 
     plt.figure(figsize=(10, 6))
     plt.plot(n_topics_list, coherencias, marker='s', linestyle='-', color='b', label='Coherencia (c_v)')
 
-    # Marcamos todos los puntos con su valor para facilitar la elección manual
-    for i, txt in enumerate(coherencias):
-        plt.annotate(f"{txt:.3f}", (n_topics_list[i], coherencias[i]),
+    for i, val in enumerate(coherencias):
+        plt.annotate(f"{val:.3f}", (n_topics_list[i], coherencias[i]),
                      textcoords="offset points", xytext=(0, 10), ha='center', fontsize=9)
 
-    # Marcamos el codo sugerido por el algoritmo
     plt.axvline(x=mejor_n, color='r', linestyle='--', alpha=0.5, label=f'Sugerencia: {mejor_n} temas')
     plt.scatter(mejor_n, coherencias[n_topics_list.index(mejor_n)], color='red', s=100, zorder=5)
 
-    plt.title(
-        f'Evaluación de Coherencia LDA - {sentimiento.capitalize()}\n(Elige el punto donde la curva se estabiliza)')
+    plt.title(f'Evaluación de Coherencia LDA - {sentimiento.capitalize()}\n'
+              f'(Elige el punto donde la curva se estabiliza)')
     plt.xlabel('Número de Temas (k)')
     plt.ylabel('Coherencia (Mayor es mejor)')
     plt.legend()
     plt.grid(True, linestyle='--', alpha=0.7)
 
-    ruta_guardado = os.path.join(output_dir, f"codo_lda_coherencia_{sentimiento}.png")
-    plt.savefig(ruta_guardado)
+    ruta = os.path.join(output_dir, f"codo_lda_coherencia_{sentimiento}.png")
+    plt.savefig(ruta, dpi=150, bbox_inches='tight')
     plt.close()
-    print(f"    [+] Gráfico con etiquetas guardado en: {ruta_guardado}")
+    print(f"    [+] Gráfico guardado en: {ruta}")
 
 
-def barrido_lda(corpus_bow, diccionario, textos_tokenizados, config_lda, sentimiento="general", output_dir="graficos"):
+# ==========================================
+# BARRIDO LDA
+# ==========================================
+def barrido_lda(corpus_bow, diccionario, textos_tokenizados,
+                config_lda, sentimiento="general", output_dir="graficos"):
     """
-    Realiza un barrido de LDA con Gensim y devuelve todos los modelos entrenados.
+    Barrido de LDA con Gensim. Devuelve todos los modelos entrenados.
+    Lee passes y random_state del JSON (con defaults seguros).
     """
-    print(f"\n--- Iniciando barrido LDA (Gensim) para: {sentimiento.upper()} ---")
+    print(f"\n--- Barrido LDA (Gensim) para: {sentimiento.upper()} ---")
 
-    n_topics_list = config_lda.get("n_components_range", [2, 3, 4, 5])
-    passes = config_lda.get("passes", [10])[0]
-    iterations = config_lda.get("max_iter", [50])[0]
-    random_state = config_lda.get("random_state", [42])[0]
+    n_topics_list     = config_lda.get("n_components_range", [2, 3, 4, 5])
+    passes            = config_lda.get("passes", [20])[0]          # mínimo recomendado: 20
+    iterations        = config_lda.get("max_iter", [50])[0]
+    random_state      = config_lda.get("random_state", [42])[0]    # reproducibilidad
     metrica_coherencia = config_lda.get("coherence_metric", "c_v")
 
-    resultados_barrido = []
-    temas_evaluados = []
+    resultados = []
+    temas_eval  = []
     coherencias = []
 
     for n_topics in n_topics_list:
-        print(f"  -> Entrenando LDA con k={n_topics}...")
+        print(f"  -> Entrenando LDA con k={n_topics} | passes={passes} | iter={iterations}...")
 
         lda = LdaModel(
             corpus=corpus_bow,
@@ -162,94 +207,135 @@ def barrido_lda(corpus_bow, diccionario, textos_tokenizados, config_lda, sentimi
             passes=passes,
             iterations=iterations,
             random_state=random_state,
-            alpha='auto',
-            eta='auto'
+            alpha='auto',    # aprende la distribución de temas por documento
+            eta='auto',      # aprende la distribución de palabras por tema
+            per_word_topics=True,
         )
 
         coherence_model = CoherenceModel(
             model=lda,
             texts=textos_tokenizados,
             dictionary=diccionario,
-            coherence=metrica_coherencia
+            coherence=metrica_coherencia,
         )
         coherencia = coherence_model.get_coherence()
+        print(f"     Coherencia ({metrica_coherencia}): {coherencia:.4f}")
 
-        temas_evaluados.append(n_topics)
+        temas_eval.append(n_topics)
         coherencias.append(coherencia)
+        resultados.append({"n_topics": n_topics, "coherencia": coherencia, "modelo": lda})
 
-        resultados_barrido.append({
-            "n_topics": n_topics,
-            "coherencia": coherencia,
-            "modelo": lda
-        })
+    mejor_n, _ = encontrar_codo(temas_eval, coherencias)
+    plot_codo_lda(temas_eval, coherencias, sentimiento, mejor_n, output_dir=output_dir)
 
-    mejor_n_topics, _ = encontrar_codo(temas_evaluados, coherencias)
-    plot_codo_lda(temas_evaluados, coherencias, sentimiento, mejor_n_topics, output_dir=output_dir)
-
-    return resultados_barrido
+    return resultados
 
 
 # ==========================================
-#            FUNCIÓN PRINCIPAL
+# PIPELINE PRINCIPAL DE CLUSTERING
 # ==========================================
-def pipeline_clustering(df, col_texto_procesado, json_file, target_col="score"):
-    print("\n" + "=" * 50)
+def pipeline_clustering(df, col_texto, json_file, target_col="score", lang='english'):
+    print("\n" + "=" * 55)
     print(" 🚀 INICIANDO PIPELINE DE CLUSTERING MULTI-RESULTADO")
-    print("=" * 50)
+    print("=" * 55)
 
     with open(json_file, 'r', encoding='utf-8') as f:
         config = json.load(f)
 
-    config_lda = config.get("clustering_lda", {})
+    config_lda            = config.get("clustering_lda", {})
     rango_topics_original = config_lda.get("n_components_range", [2, 3, 4, 5])
 
-    # 1. Separar datos
+    # Construcción de stopwords combinadas
+    stop_words_set = construir_stopwords(lang)
+
+    # 1. Dividir por sentimiento
     df_pos, df_neg, df_neu = dividir_por_sentimiento(df, target_col)
     datasets = {"positivos": df_pos, "negativos": df_neg, "neutros": df_neu}
 
     # 2. Procesar cada grupo
     for sentimiento, sub_df in datasets.items():
-        if len(sub_df) < 2:
+        if len(sub_df) < 10:
+            print(f"\n⚠️  Grupo '{sentimiento}' tiene menos de 10 filas. Se omite.")
             continue
 
-        # Crear carpeta específica para este sentimiento
         dir_sentimiento = os.path.join("resultados_clustering", sentimiento)
         os.makedirs(dir_sentimiento, exist_ok=True)
 
-        print(f"\n[+] Procesando grupo: {sentimiento.upper()}")
-        textos_limpios = sub_df[col_texto_procesado].fillna("").tolist()
-        corpus_bow, diccionario, textos_tokenizados = preparar_corpus_gensim(textos_limpios)
+        print(f"\n[+] Procesando grupo: {sentimiento.upper()} ({len(sub_df)} docs)")
 
-        # Filtrar temas validos segun tamaño de datos
-        temas_validos = [t for t in rango_topics_original if t <= len(sub_df) - 1]
+        textos_crudos       = sub_df[col_texto].fillna("").tolist()
+        textos_tokenizados  = [limpiar_texto_para_lda(t, stop_words_set) for t in textos_crudos]
+
+        # Filtrar documentos que quedaron vacíos tras la limpieza
+        textos_tokenizados  = [t for t in textos_tokenizados if len(t) >= 3]
+
+        if len(textos_tokenizados) < 5:
+            print(f"  ⚠️  Muy pocos documentos válidos en '{sentimiento}' tras limpieza. Se omite.")
+            continue
+
+        corpus_bow, diccionario, textos_limpios = preparar_corpus_gensim(
+            textos_tokenizados, n_docs=len(textos_tokenizados)
+        )
+
+        if len(corpus_bow) < 5:
+            print(f"  ⚠️  Corpus demasiado pequeño en '{sentimiento}' tras filter_extremes. Se omite.")
+            continue
+
+        # Filtrar temas válidos según tamaño del corpus
+        temas_validos = [t for t in rango_topics_original if t <= len(corpus_bow) - 1]
+        if not temas_validos:
+            print(f"  ⚠️  No hay temas válidos para '{sentimiento}' (corpus={len(corpus_bow)} docs).")
+            continue
+
         config_lda_actual = config_lda.copy()
         config_lda_actual["n_components_range"] = temas_validos
 
-        # Ejecutar barrido
-        todos_los_modelos = barrido_lda(corpus_bow, diccionario, textos_tokenizados, config_lda_actual, sentimiento)
+        # Barrido LDA
+        todos_los_modelos = barrido_lda(
+            corpus_bow, diccionario, textos_limpios,
+            config_lda_actual, sentimiento,
+            output_dir=os.path.join(dir_sentimiento, "graficos"),
+        )
 
-        # 3. GUARDAR TODOS LOS RESULTADOS
-        print(f"  -> Guardando archivos CSV para cada k en: {dir_sentimiento}")
+        # 3. Guardar CSVs de resultados
+        print(f"  -> Guardando CSVs en: {dir_sentimiento}")
+
+        # Reconstruir índices válidos (los docs no vacíos del sub_df original)
+        indices_validos = [
+            i for i, t in enumerate(sub_df[col_texto].fillna("").tolist())
+            if len(limpiar_texto_para_lda(t, stop_words_set)) >= 3
+        ]
+        sub_df_valido = sub_df.iloc[indices_validos].copy().reset_index(drop=True)
+
+        resumen_coherencias = []
+
         for res in todos_los_modelos:
-            k = res["n_topics"]
+            k      = res["n_topics"]
             modelo = res["modelo"]
+            coh    = res["coherencia"]
 
-            # Asignación de clusters
             temas_asignados = []
             for doc_bow in corpus_bow:
-                distribucion = modelo.get_document_topics(doc_bow, minimum_probability=0)
-                topico_principal = max(distribucion, key=lambda x: x[1])[0]
-                temas_asignados.append(topico_principal)
+                dist          = modelo.get_document_topics(doc_bow, minimum_probability=0)
+                topic_id      = max(dist, key=lambda x: x[1])[0]
+                temas_asignados.append(topic_id)
 
-            # Crear copia y guardar
-            df_resultado = sub_df.copy()
-            df_resultado['Cluster_LDA'] = temas_asignados
+            df_resultado = sub_df_valido.copy()
+            df_resultado['Cluster_LDA']  = temas_asignados
+            df_resultado['n_topics']     = k
+            df_resultado['coherencia']   = round(coh, 4)
 
-            nombre_archivo = f"clusters_k{k}.csv"
-            ruta_csv = os.path.join(dir_sentimiento, nombre_archivo)
+            ruta_csv = os.path.join(dir_sentimiento, f"clusters_k{k}.csv")
             df_resultado.to_csv(ruta_csv, index=False)
 
-    print("\n✅ Proceso finalizado. Revisa las carpetas en 'resultados_clustering/'")
+            resumen_coherencias.append({"k": k, "coherencia": round(coh, 4)})
+
+        # Guardar resumen de coherencias por sentimiento
+        df_resumen = pd.DataFrame(resumen_coherencias)
+        df_resumen.to_csv(os.path.join(dir_sentimiento, "resumen_coherencias.csv"), index=False)
+        print(f"  -> Resumen de coherencias guardado.")
+
+    print("\n✅ Proceso finalizado. Revisa 'resultados_clustering/'")
 
 
 if __name__ == "__main__":
@@ -265,10 +351,15 @@ if __name__ == "__main__":
         with open(json_file, 'r', encoding='utf-8') as f:
             config_json = json.load(f)
 
-        target_col = config_json.get("target", "score")
-        text_features = config_json.get("preprocessing", {}).get("text_features", ["content"])
-        col_texto_procesado = text_features[0] if text_features else "content"
+        target_col         = config_json.get("target", "score")
+        text_features      = config_json.get("preprocessing", {}).get("text_features", ["content"])
+        col_texto          = text_features[0] if text_features else "content"
+        lang               = config_json.get("preprocessing", {}).get("language", "english")
 
-        pipeline_clustering(df, col_texto_procesado, json_file, target_col)
+        pipeline_clustering(df, col_texto, json_file, target_col, lang)
+
     except Exception as e:
+        import traceback
         print(f"❌ Error: {e}")
+        traceback.print_exc()
+        sys.exit(1)
