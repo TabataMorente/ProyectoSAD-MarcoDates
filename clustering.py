@@ -23,9 +23,6 @@ except Exception:
 # ==========================================
 # STOPWORDS DE DOMINIO (apps de citas / reseñas)
 # ==========================================
-# CAMBIO 1: Eliminadas palabras con carga semántica real en reseñas:
-#   "love", "hate", "good", "great", "nice", "bad", "awful"
-#   Son señal útil para distinguir temas dentro de un grupo de sentimiento.
 DOMAIN_STOPWORDS = {
     "app", "use", "like", "get", "make", "time", "really", "just",
     "would", "one", "also", "even", "still", "well", "much", "many",
@@ -198,7 +195,7 @@ def barrido_lda(corpus_bow, diccionario, textos_tokenizados,
     print(f"\n--- Barrido LDA (Gensim) para: {sentimiento.upper()} ---")
 
     n_topics_list      = config_lda.get("n_components_range", [2, 3, 4, 5])
-    passes             = config_lda.get("passes", [30])[0]          # subido de 20 → 30
+    passes             = config_lda.get("passes", [30])[0]
     iterations         = config_lda.get("max_iter", [50])[0]
     random_state       = config_lda.get("random_state", [42])[0]
     metrica_coherencia = config_lda.get("coherence_metric", "c_v")

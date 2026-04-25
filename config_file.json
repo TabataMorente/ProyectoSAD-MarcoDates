@@ -61,14 +61,11 @@
     }
   },
   "clustering_lda": {
-    "n_components_range": [2, 3, 4, 5, 6, 7, 8, 9, 10],
+    "n_components_range": [3, 4, 5, 6, 7, 8, 9, 10],
     "passes": [50],
     "max_iter": [100],
     "random_state": [42],
-    "coherence_metric": "c_v",
-    "doc_topic_prior": [null, 0.1],
-    "topic_word_prior": [null, 0.1],
-    "learning_method": ["batch"]
+    "coherence_metric": "c_v"
   }
 
 }

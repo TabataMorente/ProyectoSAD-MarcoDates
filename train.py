@@ -344,10 +344,13 @@ def train():
 
         pd.concat([test_features,  test_target],  axis=1).to_csv(
             os.path.join(processed_path, f"{csv_id}_test_ready.csv"),  index=False)
+        '''
         pd.concat([train_features, train_target], axis=1).to_csv(
             os.path.join(processed_path, f"{csv_id}_train_ready.csv"), index=False)
+        
         pd.concat([dev_features,   dev_target],   axis=1).to_csv(
             os.path.join(processed_path, f"{csv_id}_dev_ready.csv"),   index=False)
+        '''
 
         print(f"📦 Datos preprocesados guardados en: {processed_path}/")
     else:

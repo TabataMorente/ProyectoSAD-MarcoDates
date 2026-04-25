@@ -75,7 +75,7 @@ def evaluar():
 
     # 2. CARGA DE DATOS PREPROCESADOS
     # El archivo generado por train.py en la carpeta de datos preprocesados
-    ruta_test_ready = os.path.join("datos_preprocesados", csv_id, f"{csv_id}_test_ready.csv")
+    ruta_test_ready = os.path.join("preprocesado", csv_id, f"{csv_id}_test_ready.csv")
 
     if not os.path.exists(ruta_test_ready):
         print(f"❌ ERROR: No se encuentra el CSV listo en: {ruta_test_ready}")
@@ -93,7 +93,7 @@ def evaluar():
 
     # 3. BÚSQUEDA DEL MODELO GANADOR (.sav)
     # Buscamos en 'modelos_finales' el archivo que coincida con dataset y algoritmo
-    search_pattern = os.path.join("modelos_finales", f"MEJOR_{csv_id}_{method}*.sav")
+    search_pattern = os.path.join("resultados_clasificacion", "Tinder","mejor_modelo", f"MEJOR_{csv_id}_{method}*.sav")
     modelos_encontrados = glob.glob(search_pattern)
 
     if not modelos_encontrados:
@@ -132,7 +132,7 @@ def evaluar():
         print_advanced_metrics(y_test, y_pred)
 
     # 6. EXPORTAR PREDICCIONES DE AUDITORÍA
-    salida_dir = os.path.join("csv", csv_id)
+    salida_dir = os.path.join("resultados_clasificacion", csv_id, "evaluacion")
     os.makedirs(salida_dir, exist_ok=True)
 
     df_audit = pd.DataFrame({
@@ -143,9 +143,7 @@ def evaluar():
     ruta_salida = os.path.join(salida_dir, f"audit_final_{method}.csv")
     df_audit.to_csv(ruta_salida, index=False)
 
-    print("\n" + "📂 " * 10)
     print(f"PROCESO TERMINADO. Predicciones guardadas en: {ruta_salida}")
-    print("📂 " * 10 + "\n")
 
 
 if __name__ == "__main__":
