@@ -327,8 +327,6 @@ def pipeline_clustering(df, col_texto, json_file, target_col="score", lang='engl
 
             df_resultado = sub_df_valido.copy()
             df_resultado['Cluster_LDA'] = temas_asignados
-            df_resultado['n_topics']    = k
-            df_resultado['coherencia']  = round(coh, 4)
 
             ruta_csv = os.path.join(dir_sentimiento, f"clusters_k{k}.csv")
             df_resultado.to_csv(ruta_csv, index=False)
