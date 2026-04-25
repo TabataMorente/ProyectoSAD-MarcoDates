@@ -21,7 +21,7 @@ except Exception:
 
 
 # ==========================================
-# STOPWORDS DE DOMINIO (apps de citas / reseñas)
+# STOPWORDS DE DOMINIO
 # ==========================================
 DOMAIN_STOPWORDS = {
     "app", "use", "like", "get", "make", "time", "really", "just",
