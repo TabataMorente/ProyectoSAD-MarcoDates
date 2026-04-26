@@ -16,7 +16,7 @@
    "hyperparameters_bayes": {
        "var_smoothing": [1e-9],
        "bayes_type": "multinomial",
-       "alpha": [0.016]
+       "alpha": [0.021]
    },
    "hyperparameters_forest": {
        "n_estimators": [100, 200],
@@ -29,19 +29,19 @@
    },
    "preprocessing": {
       "drop_duplicates": true,
-      "drop_columns": ["reviewId"],
+      "drop_columns": ["reviewId", "location"],
       "text_features": ["content"],
       "text_process_method": "tf-idf",
-      "ngram_range": [1, 2],
-      "limite_palabras": 15000,
+      "ngram_range": [1, 3],
+      "limite_palabras": 10000,
       "language": "english",
-      "categorical_features": ["gender", "region"],
+      "categorical_features": ["gender"],
       "categorical_encoding": "one-hot",
       "missing_values": "impute",
       "impute_strategy": "most_frequent",
       "outliers": "none",
       "scaling": "none",
-      "sampling_strategy": "oversample",
+      "sampling_strategy": "SMOTE",
       "sampling_ratio": "auto"
    },
   "prompt_engineering" : {
