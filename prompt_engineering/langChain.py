@@ -7,47 +7,72 @@ import json
 import pandas as pd
 
 class Log_generator:
-    def __init__(self):
+    def __init__(self, path, debug=False):
         self.question = []
         self.examples = []
         self.id_examples = []
         self.actual_answer = []
         self.llm_answer = []
+        self.task_name = []
+        self.debug = debug
+        self.path = path
 
     def add_no_zero_shots_info(self, current_question, current_examples, current_question_indexes):
         self.question.append(current_question)
         self.examples.append(current_examples)
         self.id_examples.append(current_question_indexes)
 
+        if self.debug:
+            print(current_question, end="")
+
     def add_zero_shots_info(self, current_question):
         self.question.append(current_question)
         self.examples.append(None)
         self.id_examples.append(None)
 
-    def add_answers(self, llm_answer, actual_answer):
-        self.actual_answer.append(actual_answer)
-        self.llm_answer.append(llm_answer)
+        if self.debug:
+            print(current_question)
 
-    def __dict__(self):
+    def add_answers(self, task_name, llm_answer, actual_answer):
+        self.llm_answer.append(llm_answer)
+        self.actual_answer.append(actual_answer)
+        self.task_name.append(task_name)
+
+    def to_dict(self):
         return {
             "Question" : self.question,
             "Examples": self.examples,
             "Id-Examples": self.id_examples,
+            "Task name": self.task_name,
             "Actual-answer": self.actual_answer,
             "LLM-answer" : self.llm_answer
         }
 
     def to_csv(self):
-        row_length = len(self.question)
-        while len(self.actual_answer) != row_length:
-            self.actual_answer.append(None)
-
-        output_dict = self.__dict__()
+        output_dict = self.to_dict()
         for clave in output_dict.keys():
             print(clave + ": " + str(len(output_dict[clave])))
 
-        pd.DataFrame(output_dict).to_csv("output.csv", index=False)
+        pd.DataFrame(output_dict).to_csv(self.path, index=False)
 
+def create_examples(current_example_list, plantilla_no_zero_shots, task_string, log_generator):
+    result = ""
+
+    if len(current_example_list) > 0:
+        examples_index = []
+
+        for current_index, current_example in current_example_list.iterrows():
+            formated_example = f"Comment:\"{current_example["content"]}\" Sentiment:{current_example["score"]}"
+            result = result + formated_example + "\n"
+            examples_index.append(current_index)
+
+        formed_question = plantilla_no_zero_shots.format(examples=result, task=task_string)
+        log_generator.add_no_zero_shots_info(formed_question, result, examples_index)
+
+    return result
+
+def evaluate_given_task():
+    pass
 
 def evaluate(config, example_list_collection, tasks_collection):
     """
@@ -61,13 +86,13 @@ def evaluate(config, example_list_collection, tasks_collection):
     """
     plantilla_zero_shots = """Respond ONLY with the sentiment label (1, 2, 3, 4 or 5) and nothing else.
 ## TASK
-Comment:"This app sucks" Sentiment:"""
+{task}"""
 
     plantilla_no_zero_shots = """Respond ONLY with the sentiment label (1, 2, 3, 4 or 5) for each task and nothing else.
 ## Examples
 {examples}
 ## TASK
-{tasks}"""
+{task}"""
 
     prompt_no_zero_shots = PromptTemplate.from_template(plantilla_no_zero_shots)
     prompt_zero_shots = PromptTemplate.from_template(plantilla_zero_shots)
@@ -90,55 +115,37 @@ Comment:"This app sucks" Sentiment:"""
 
     possible_answers = config.get("possible_answers",  ["1", "2", "3", "4", "5"] )
 
-    log_generator = Log_generator()
-
-    tasks_string = ""
-    tasks_answer = []
+    log_generator = Log_generator("output.csv", True)
 
     for current_task in tasks_collection:
-        tasks_string = tasks_string + "Comment:" + "\""+ current_task["content"] + "\" Sentiment: " + "\n"
-        tasks_answer.append(str(current_task["score"]))
+        task_string = "Comment:" + "\""+ current_task["content"] + "\" Sentiment: " + "\n"
+        actual_answer = str(current_task["score"])
 
-    print(tasks_string)
+        for indice, current_example_list in enumerate(example_list_collection):
+            examples_text = create_examples(current_example_list, plantilla_no_zero_shots, task_string, log_generator)
 
-    for indice, current_example_list in enumerate(example_list_collection):
-        examples_text = ""
-        if len(current_example_list) > 0:
-            examples_index = []
-            for current_index, current_example in current_example_list.iterrows():
-                formated_example = f"Comment:\"{current_example["content"]}\" Sentiment:{current_example["score"]}"
-                examples_text = examples_text + formated_example + "\n"
-                examples_index.append(current_index)
+            answer = None
+            if len(examples_text) > 0:
+                answer = chain_no_zero_shots.invoke({"examples": examples_text, "task":task_string}).strip()
+            else:
+                log_generator.add_zero_shots_info(plantilla_zero_shots.format(task=task_string))
+                answer = chain_zero_shots.invoke({"task":task_string}).strip()
 
-            formed_question = plantilla_no_zero_shots.format(examples=examples_text, tasks=tasks_string)
+            log_generator.add_answers(task_string, answer, actual_answer)
 
-            log_generator.add_no_zero_shots_info(plantilla_no_zero_shots, examples_text, examples_index)
+            if not answer in possible_answers: wrongOut += 1
 
-            print(formed_question, end="")
+            score = evaluator.evaluate_strings(
+                prediction=answer,
+                reference=actual_answer
+            )['score']
 
-        answer = None
-        if len(examples_text) > 0:
-            answer = chain_no_zero_shots.invoke({"examples": examples_text, "tasks":tasks_string}).strip()
-        else:
-            print(plantilla_zero_shots)
-            log_generator.add_zero_shots_info(plantilla_zero_shots)
-            answer = chain_zero_shots.invoke({}).strip()
+            print(answer)
 
-        log_generator.add_answers(answer, None)
-
-        if not answer in possible_answers: wrongOut += 1
-
-        score = evaluator.evaluate_strings(
-            prediction=answer,
-            reference="1"
-        )['score']
-
-        print(answer)
-
-        # evaluate_strings SOLO devuelve 1 o 0.
-        if score == 1.0: ok += 1
-        acc = round(100 * ok / (indice + 1), 2)
-        print("| " + model.model + "| row: " + str(indice + 1) + " | acc: " + str(acc) + " | inc: " + str(wrongOut) + " |")
+            # evaluate_strings SOLO devuelve 1 o 0.
+            if score == 1.0: ok += 1
+            acc = round(100 * ok / (indice + 1), 2)
+            print("| " + model.model + "| row: " + str(indice + 1) + " | acc: " + str(acc) + " | inc: " + str(wrongOut) + " |")
 
     log_generator.to_csv()
 
