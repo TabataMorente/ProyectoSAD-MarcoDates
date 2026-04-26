@@ -5,7 +5,22 @@ import re
 import pandas as pd
 import numpy as np
 import nltk
-import emoji
+import os
+
+# 1. Forzamos la entrada de la carpeta de librerías al principio de la lista
+ruta_venv = os.path.join(os.path.dirname(__file__), '.venv', 'Lib', 'site-packages')
+if ruta_venv not in sys.path:
+    sys.path.insert(0, ruta_venv)
+
+# 2. Ahora intentamos el import
+try:
+    import emoji
+    print("✅ Módulo 'emoji' cargado con éxito mediante bypass de ruta.")
+except ImportError:
+    # Si lo anterior falla, probamos con la ruta absoluta que verificamos antes
+    sys.path.insert(0, r'C:\Users\tabat\PycharmProjects\ProyectoSAD-MarcoDates\.venv\Lib\site-packages')
+    import emoji
+    print("✅ Módulo 'emoji' cargado mediante ruta absoluta.")
 from scipy.sparse import hstack, csr_matrix
 
 # Herramientas de Scikit-Learn e Imblearn

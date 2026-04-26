@@ -1,7 +1,7 @@
 {
    "target": "score",
    "method": "bayes",
-   "task": "classification",
+   "task": "clustering",
    "evaluation": "macro",
    "hyperparameters_knn": {
        "k_range": [3, 10],
