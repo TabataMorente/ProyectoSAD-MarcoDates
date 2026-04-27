@@ -8,21 +8,35 @@ import pandas as pd
 
 class Log_generator:
     def __init__(self, path, debug=False):
+        self.debug = debug
+        self.path = path
+
+    def get_debug(self):
+        return self.debug
+
+    def to_csv(self, output_dict):
+        if self.debug:
+            for clave in output_dict.keys():
+                print(clave + ": " + str(len(output_dict[clave])))
+
+        pd.DataFrame(output_dict).to_csv(self.path, index=False)
+
+class Classification_log_generator(Log_generator):
+    def __init__(self, path, debug=False):
         self.question = []
         self.examples = []
         self.id_examples = []
         self.actual_answer = []
         self.llm_answer = []
         self.task_name = []
-        self.debug = debug
-        self.path = path
+        super().__init__(path, debug)
 
     def add_no_zero_shots_info(self, current_question, current_examples, current_question_indexes):
         self.question.append(current_question)
         self.examples.append(current_examples)
         self.id_examples.append(current_question_indexes)
 
-        if self.debug:
+        if super().get_debug():
             print(current_question, end="")
 
     def add_zero_shots_info(self, current_question):
@@ -30,7 +44,7 @@ class Log_generator:
         self.examples.append(None)
         self.id_examples.append(None)
 
-        if self.debug:
+        if super().get_debug():
             print(current_question)
 
     def add_answers(self, task_name, llm_answer, actual_answer):
@@ -49,11 +63,46 @@ class Log_generator:
         }
 
     def to_csv(self):
-        output_dict = self.to_dict()
-        for clave in output_dict.keys():
-            print(clave + ": " + str(len(output_dict[clave])))
+        super().to_csv(self.to_dict())
 
-        pd.DataFrame(output_dict).to_csv(self.path, index=False)
+class Oversampling_log_generator(Log_generator):
+    def __init__(self, path, debug=False):
+        super().__init__(path, debug)
+        self.examples = []
+        self.answers = []
+        self.instructions = []
+        self.models = []
+
+    def add_model(self, model):
+        self.models.append(model)
+        if super().get_debug():
+            print(model)
+
+    def add_examples(self, example_string):
+        self.examples.append(example_string)
+        if super().get_debug():
+            print(example_string)
+
+    def add_instruction(self, instruction):
+        self.instructions.append(instruction)
+        if super().get_debug():
+            print(instruction)
+
+    def add_answer(self, answer):
+        self.answers.append(answer)
+        if super().get_debug():
+            print(answer)
+
+    def to_dict(self):
+        return {
+            "model": self.models,
+            "instructions": self.instructions,
+            "examples": self.examples,
+            "answers": self.answers
+        }
+
+    def to_csv(self):
+        super().to_csv(self.to_dict())
 
 def create_examples(current_example_list, plantilla_no_zero_shots, task_string, log_generator):
     result = ""
@@ -71,8 +120,9 @@ def create_examples(current_example_list, plantilla_no_zero_shots, task_string, 
 
     return result
 
-def evaluate_given_task():
-    pass
+def create_chain(model, plantilla):
+    current_prompt = PromptTemplate.from_template(plantilla)
+    return ( current_prompt | model )
 
 def evaluate(config, example_list_collection, tasks_collection):
     """
@@ -84,18 +134,15 @@ def evaluate(config, example_list_collection, tasks_collection):
     example_list_collection: List[pd.DataFrame]
     plantilla: str
     """
-    plantilla_zero_shots = """Respond ONLY with the sentiment label (1, 2, 3, 4 or 5) and nothing else.
+    plantilla_zero_shots = """Respond ONLY with the sentiment label (\"negative\", \"neutral\" or \"positive\") and nothing else.
 ## TASK
 {task}"""
 
-    plantilla_no_zero_shots = """Respond ONLY with the sentiment label (1, 2, 3, 4 or 5) for each task and nothing else.
+    plantilla_no_zero_shots = """Respond ONLY with the sentiment label (\"negative\", \"neutral\" or \"positive\") for each task and nothing else.
 ## Examples
 {examples}
 ## TASK
 {task}"""
-
-    prompt_no_zero_shots = PromptTemplate.from_template(plantilla_no_zero_shots)
-    prompt_zero_shots = PromptTemplate.from_template(plantilla_zero_shots)
 
     model = OllamaLLM(
         model=config.get("model", "gemma2:2b"),
@@ -106,22 +153,22 @@ def evaluate(config, example_list_collection, tasks_collection):
         top_p=config.get("top_p", 0.5)
     )
 
-    chain_no_zero_shots = prompt_no_zero_shots | model
-    chain_zero_shots = prompt_zero_shots | model
+    chain_no_zero_shots = create_chain(model, plantilla_no_zero_shots)
+    chain_zero_shots = create_chain(model, plantilla_zero_shots)
 
     evaluator = ExactMatchStringEvaluator()  # Por ahora se queda este evaluador
     ok = 0
     wrongOut = 0
 
-    possible_answers = config.get("possible_answers",  ["1", "2", "3", "4", "5"] )
+    possible_answers = config.get("possible_answers",  ["positive", "neutral", "negative"] )
 
-    log_generator = Log_generator("output.csv", True)
+    log_generator = Classification_log_generator("classification.csv", True)
 
     for current_task in tasks_collection:
         task_string = "Comment:" + "\""+ current_task["content"] + "\" Sentiment: " + "\n"
         actual_answer = str(current_task["score"])
 
-        for indice, current_example_list in enumerate(example_list_collection):
+        for current_index, current_example_list in enumerate(example_list_collection):
             examples_text = create_examples(current_example_list, plantilla_no_zero_shots, task_string, log_generator)
 
             answer = None
@@ -144,8 +191,51 @@ def evaluate(config, example_list_collection, tasks_collection):
 
             # evaluate_strings SOLO devuelve 1 o 0.
             if score == 1.0: ok += 1
-            acc = round(100 * ok / (indice + 1), 2)
-            print("| " + model.model + "| row: " + str(indice + 1) + " | acc: " + str(acc) + " | inc: " + str(wrongOut) + " |")
+            acc = round(100 * ok / (current_index + 1), 2)
+            print("| " + model.model + "| row: " + str(current_index + 1) + " | acc: " + str(acc) + " | inc: " + str(wrongOut) + " |")
+
+    log_generator.to_csv()
+
+def oversample(config, examples_collection):
+    plantilla_zero_shots = f"""Generate a comment with the sentiment label \"{config["score_to_extract"]}\" and nothing else.
+Comment: """
+
+    plantilla_no_zero_shots = "Generate a comment with the sentiment label \"" + config["score_to_extract"] + """"\", following the examples
+below and nothing else.
+## Examples
+{examples}
+Comment: """
+
+    model = OllamaLLM(
+        model=config.get("model", "gemma2:2b"),
+        temperature=config.get("temperature", 0),
+        repeat_penalty=config.get("repeat_penalty", 0),
+        num_predict=config.get("num_predict", 1),
+        top_k=config.get("top_k", 10),
+        top_p=config.get("top_p", 0.5)
+    )
+
+    chain_no_zero_shots = create_chain(model, plantilla_no_zero_shots)
+    chain_zero_shots = create_chain(model, plantilla_zero_shots)
+
+    log_generator = Oversampling_log_generator("oversample.csv", True)
+
+    for current_example_list_index, current_example_list in enumerate(examples_collection):
+        example_string = ""
+        for current_index, current_example in current_example_list.iterrows():
+            example_string += "Comment:" + current_example["content"] + "\n"
+
+        answer = None
+        if len(example_string) > 0:
+            log_generator.add_instruction(plantilla_no_zero_shots.format(examples=example_string))
+            answer = chain_no_zero_shots.invoke({"examples": example_string}).strip()
+        else:
+            log_generator.add_instruction(plantilla_zero_shots)
+            answer = chain_zero_shots.invoke({}).strip()
+
+        log_generator.add_examples(example_string)
+        log_generator.add_model(model.model)
+        log_generator.add_answer(answer)
 
     log_generator.to_csv()
 
@@ -223,6 +313,19 @@ def split_dataset_by_shots(prompt_config, dataframe):
 def get_test_collection(test_config, dataframe):
     return extract_rows_manually(test_config.get("questions_by_id"), dataframe)
 
+def number_to_sentiment(value):
+    result = ""
+    if value == 1 or value == 2: result = "negative"
+    elif value == 3: result = "neutral"
+    elif value == 4 or value == 5: result = "positive"
+
+    return result
+
+def load_dataset(data_file):
+    result = pd.read_csv(data_file)
+    result.score = result.score.map(number_to_sentiment)
+    return result
+
 if __name__ == "__main__":
     """
     Parametro 1: ruta a config_file.json
@@ -247,13 +350,17 @@ if __name__ == "__main__":
     if prompt_config != None:
         mode = prompt_config.get("mode")
         if mode == "clasificacion":
-            dataset = pd.read_csv(data_file)
+            dataset = load_dataset(data_file)
             classification_config = prompt_config.get("clasificacion")
             examples_collection = split_dataset_by_shots(classification_config, dataset)
             tasks_collection = get_test_collection(classification_config.get("test_questions"), dataset)
             evaluate(classification_config, examples_collection, tasks_collection)
-        elif mode == "nose":
-            pass
+        elif mode == "oversampling":
+            dataset = load_dataset(data_file)
+            oversampling_config = prompt_config.get("oversampling")
+            examples_collection = dataset.loc[lambda df : df["score"] == oversampling_config["score_to_extract"]]
+            examples_collection = split_dataset_by_shots(oversampling_config, examples_collection)
+            oversample(oversampling_config, examples_collection)
         else:
             print(f"El modo {mode} no es valido")
     else:
