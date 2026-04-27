@@ -1,7 +1,7 @@
 {
    "target": "score",
    "method": "bayes",
-   "task": "classification",
+   "task": "clustering",
    "evaluation": "macro",
    "hyperparameters_knn": {
        "k_range": [3, 10],
@@ -69,7 +69,8 @@
     "passes": [50],
     "max_iter": [100],
     "random_state": [42],
-    "coherence_metric": "c_v"
+    "coherence_metric": "c_v",
+    "ngram_mode": "trigram"
   }
 
 }
