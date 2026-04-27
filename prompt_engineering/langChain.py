@@ -5,21 +5,29 @@ from sklearn.model_selection import train_test_split
 import sys
 import json
 import pandas as pd
+import os
 
 class Log_generator:
     def __init__(self, path, debug=False):
         self.debug = debug
         self.path = path
+        os.makedirs(path, exist_ok=True)
 
     def get_debug(self):
         return self.debug
 
-    def to_csv(self, output_dict):
+    def clean(self):
+        pass
+
+    def to_csv(self, output_dict, file_name):
+
+        export_path = os.path.join(self.path, file_name)
+
         if self.debug:
             for clave in output_dict.keys():
                 print(clave + ": " + str(len(output_dict[clave])))
 
-        pd.DataFrame(output_dict).to_csv(self.path, index=False)
+        pd.DataFrame(output_dict).to_csv(export_path, index=False)
 
 class Classification_log_generator(Log_generator):
     def __init__(self, path, debug=False):
@@ -29,6 +37,7 @@ class Classification_log_generator(Log_generator):
         self.actual_answer = []
         self.llm_answer = []
         self.task_name = []
+        self.task_id = []
         super().__init__(path, debug)
 
     def add_no_zero_shots_info(self, current_question, current_examples, current_question_indexes):
@@ -47,10 +56,11 @@ class Classification_log_generator(Log_generator):
         if super().get_debug():
             print(current_question)
 
-    def add_answers(self, task_name, llm_answer, actual_answer):
+    def add_answers(self, task_name, llm_answer, actual_answer, task_id):
         self.llm_answer.append(llm_answer)
         self.actual_answer.append(actual_answer)
         self.task_name.append(task_name)
+        self.task_id.append(task_id)
 
     def to_dict(self):
         return {
@@ -59,11 +69,21 @@ class Classification_log_generator(Log_generator):
             "Id-Examples": self.id_examples,
             "Task name": self.task_name,
             "Actual-answer": self.actual_answer,
-            "LLM-answer" : self.llm_answer
+            "LLM-answer" : self.llm_answer,
+            "Task-id": self.task_id
         }
 
-    def to_csv(self):
-        super().to_csv(self.to_dict())
+    def clean(self):
+        self.question = []
+        self.examples = []
+        self.id_examples = []
+        self.actual_answer = []
+        self.llm_answer = []
+        self.task_name = []
+        self.task_id = []
+
+    def to_csv(self, file_name):
+        super().to_csv(self.to_dict(), file_name)
 
 class Oversampling_log_generator(Log_generator):
     def __init__(self, path, debug=False):
@@ -93,6 +113,12 @@ class Oversampling_log_generator(Log_generator):
         if super().get_debug():
             print(answer)
 
+    def clean(self):
+        self.models = []
+        self.examples = []
+        self.answers = []
+        self.instructions = []
+
     def to_dict(self):
         return {
             "model": self.models,
@@ -101,8 +127,8 @@ class Oversampling_log_generator(Log_generator):
             "answers": self.answers
         }
 
-    def to_csv(self):
-        super().to_csv(self.to_dict())
+    def to_csv(self, file_name):
+        super().to_csv(self.to_dict(), file_name)
 
 def create_examples(current_example_list, plantilla_no_zero_shots, task_string, log_generator):
     result = ""
@@ -123,6 +149,26 @@ def create_examples(current_example_list, plantilla_no_zero_shots, task_string, 
 def create_chain(model, plantilla):
     current_prompt = PromptTemplate.from_template(plantilla)
     return ( current_prompt | model )
+
+def sort_by_length(matrix):
+    matrix_length = len(matrix)
+    array_index = 0
+
+    while array_index < matrix_length:
+        smallest = array_index
+        comparison_index = array_index
+
+        while comparison_index < matrix_length:
+            if len(matrix[comparison_index]) < len(matrix[smallest]):
+                smallest = comparison_index
+
+            comparison_index += 1
+
+        aux = matrix[array_index]
+        matrix[array_index] = matrix[smallest]
+        matrix[smallest] = aux
+
+        array_index += 1
 
 def evaluate(config, example_list_collection, tasks_collection):
     """
@@ -162,23 +208,35 @@ def evaluate(config, example_list_collection, tasks_collection):
 
     possible_answers = config.get("possible_answers",  ["positive", "neutral", "negative"] )
 
-    log_generator = Classification_log_generator("classification.csv", True)
+    log_generator = Classification_log_generator("classification_results", False)
 
-    for current_task in tasks_collection:
-        task_string = "Comment:" + "\""+ current_task["content"] + "\" Sentiment: " + "\n"
-        actual_answer = str(current_task["score"])
+    sort_by_length(example_list_collection)
 
-        for current_index, current_example_list in enumerate(example_list_collection):
+    previous_shot = -1
+
+    for current_index, current_example_list in enumerate(example_list_collection):
+        shot = len(current_example_list)
+
+        if previous_shot == -1:
+            previous_shot = shot
+        elif previous_shot != shot:
+            log_generator.to_csv(str(previous_shot) + " shots.csv")
+            log_generator.clean()
+            previous_shot = shot
+
+        for task_index, current_task in tasks_collection.iterrows():
+            task_string = "Comment:" + "\"" + current_task["content"] + "\" Sentiment: " + "\n"
+            actual_answer = str(current_task["score"])
             examples_text = create_examples(current_example_list, plantilla_no_zero_shots, task_string, log_generator)
 
             answer = None
             if len(examples_text) > 0:
-                answer = chain_no_zero_shots.invoke({"examples": examples_text, "task":task_string}).strip()
+                answer = chain_no_zero_shots.invoke({"examples": examples_text, "task": task_string}).strip()
             else:
                 log_generator.add_zero_shots_info(plantilla_zero_shots.format(task=task_string))
-                answer = chain_zero_shots.invoke({"task":task_string}).strip()
+                answer = chain_zero_shots.invoke({"task": task_string}).strip()
 
-            log_generator.add_answers(task_string, answer, actual_answer)
+            log_generator.add_answers(task_string, answer, actual_answer, task_index)
 
             if not answer in possible_answers: wrongOut += 1
 
@@ -192,9 +250,11 @@ def evaluate(config, example_list_collection, tasks_collection):
             # evaluate_strings SOLO devuelve 1 o 0.
             if score == 1.0: ok += 1
             acc = round(100 * ok / (current_index + 1), 2)
-            print("| " + model.model + "| row: " + str(current_index + 1) + " | acc: " + str(acc) + " | inc: " + str(wrongOut) + " |")
+            print("| " + model.model + "| row: " + str(current_index + 1) + " | acc: " + str(acc) + " | inc: " + str(
+                wrongOut) + " |")
 
-    log_generator.to_csv()
+    log_generator.to_csv(str(previous_shot) + " shots.csv")
+    log_generator.clean()
 
 def oversample(config, examples_collection):
     plantilla_zero_shots = f"""Generate a comment with the sentiment label \"{config["score_to_extract"]}\" and nothing else.
@@ -218,9 +278,22 @@ Comment: """
     chain_no_zero_shots = create_chain(model, plantilla_no_zero_shots)
     chain_zero_shots = create_chain(model, plantilla_zero_shots)
 
-    log_generator = Oversampling_log_generator("oversample.csv", True)
+    log_generator = Oversampling_log_generator("oversample_results", True)
+
+    previous_shot = -1
+
+    sort_by_length(examples_collection)
 
     for current_example_list_index, current_example_list in enumerate(examples_collection):
+        shot = len(current_example_list)
+
+        if previous_shot == -1:
+            previous_shot = shot
+        elif previous_shot != shot:
+            log_generator.to_csv(str(previous_shot) + " shots.csv")
+            log_generator.clean()
+            previous_shot = shot
+
         example_string = ""
         for current_index, current_example in current_example_list.iterrows():
             example_string += "Comment:" + current_example["content"] + "\n"
@@ -237,7 +310,8 @@ Comment: """
         log_generator.add_model(model.model)
         log_generator.add_answer(answer)
 
-    log_generator.to_csv()
+    log_generator.to_csv(str(previous_shot) + " shots.csv")
+    log_generator.clean()
 
 def get_parameters():
     result = None
@@ -247,22 +321,31 @@ def get_parameters():
 
     return result
 
+def split_dataset_given_split(prompt_config, split, split_size, dataframe, classes_length):
+    result = None
+    seed = prompt_config.get("seed", 42)
+    if split == "First":
+        result = dataframe.iloc[:split_size]
+    elif split == "Random":
+        result, _ = train_test_split(dataframe, train_size=split_size, shuffle=True, random_state=seed)
+    elif split == "Stratified" and split_size >= classes_length:
+        result, _ = train_test_split(dataframe, stratify=dataframe["score"], train_size=split_size, shuffle=True, random_state=seed)
+    else:
+        print(f"El split {split} no es valido con el split_size {split_size}")
+
+    return result
+
 def split_dataset(prompt_config, shot, dataframe):
     result = []
     split_collection = prompt_config.get("split")
     split_collection = [split for split in split_collection if split != "Manual"] # Lo limpiamos aqui para tener mejor log en el bucle
-    seed = prompt_config.get("seed", 42)
 
     classes_length = len(prompt_config["possible_answers"])
 
     for split in split_collection:
-        if split == "First":
-            result.append(dataframe.iloc[:shot])
-        elif split == "Random":
-            subsample, _ = train_test_split(dataframe, train_size=shot, shuffle=True, random_state=seed)
-            result.append(subsample)
-        elif split == "Stratified" and shot >= classes_length:
-            subsample, _ = train_test_split(dataframe, stratify=dataframe["score"], train_size=shot, shuffle=True, random_state=seed)
+        subsample = split_dataset_given_split(prompt_config, split, shot, dataframe, classes_length)
+
+        if subsample is not None:
             result.append(subsample)
         else:
             print(f"El split {split} no es valido con el shot {shot}")
@@ -270,9 +353,18 @@ def split_dataset(prompt_config, shot, dataframe):
     return result
 
 def extract_rows_manually(index_list, dataframe):
-    result = []
-    for current_manual_split in index_list:
-        result.append(dataframe.iloc[current_manual_split])
+    new_index_list = []
+
+    for current_index in index_list:
+        if type(current_index) != int:
+            index_range = range(current_index[0], current_index[1])
+
+            for current_index_in_range in index_range:
+                new_index_list.append(current_index_in_range)
+        else:
+            new_index_list.append(current_index)
+
+    result = dataframe.iloc[new_index_list]
 
     return result
 
@@ -281,7 +373,10 @@ def split_dataset_manually(prompt_config, dataframe):
     result = None
     if "Manual" in split:
         manual_split_indexes = prompt_config.get("manual_split_indexes")
-        result = extract_rows_manually(manual_split_indexes, dataframe)
+        result = []
+
+        for current_split in manual_split_indexes:
+            result.append(extract_rows_manually(current_split, dataframe))
 
     return result
 
@@ -310,8 +405,17 @@ def split_dataset_by_shots(prompt_config, dataframe):
 
     return result
 
-def get_test_collection(test_config, dataframe):
-    return extract_rows_manually(test_config.get("questions_by_id"), dataframe)
+def get_test_collection(test_config, dataframe, classes_length):
+    split_type = test_config.get("split")
+    split_size = test_config.get("split_size")
+
+    if split_type == "Manual":
+        index_list = test_config.get("manual_split_indexes")
+        result = extract_rows_manually(index_list, dataframe)
+    else:
+        result = split_dataset_given_split(test_config, split_type, split_size, dataframe, classes_length)
+
+    return result
 
 def number_to_sentiment(value):
     result = ""
@@ -323,13 +427,6 @@ def number_to_sentiment(value):
 
 def load_dataset(data_file):
     result = pd.read_csv(data_file)
-
-    # --- DESORDENAR AQUÍ ---
-    # frac=1 baraja el 100% de las filas.
-    # random_state=42 asegura que siempre se desordene igual para que tus tests sean reproducibles.
-    result = result.sample(frac=1, random_state=42).reset_index(drop=True)
-    # -----------------------
-
     result.score = result.score.map(number_to_sentiment)
     return result
 
@@ -360,13 +457,14 @@ if __name__ == "__main__":
             dataset = load_dataset(data_file)
             classification_config = prompt_config.get("clasificacion")
             examples_collection = split_dataset_by_shots(classification_config, dataset)
-            tasks_collection = get_test_collection(classification_config.get("test_questions"), dataset)
+            tasks_collection = get_test_collection(classification_config.get("test_questions"), dataset, len(classification_config.get("possible_answers")))
             evaluate(classification_config, examples_collection, tasks_collection)
         elif mode == "oversampling":
             dataset = load_dataset(data_file)
             oversampling_config = prompt_config.get("oversampling")
             examples_collection = dataset.loc[lambda df : df["score"] == oversampling_config["score_to_extract"]]
             examples_collection = split_dataset_by_shots(oversampling_config, examples_collection)
+
             oversample(oversampling_config, examples_collection)
         else:
             print(f"El modo {mode} no es valido")
