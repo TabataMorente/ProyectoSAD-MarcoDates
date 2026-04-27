@@ -16,7 +16,7 @@
    "hyperparameters_bayes": {
        "var_smoothing": [1e-9],
        "bayes_type": "multinomial",
-       "alpha": [0.021]
+       "alpha": [0.016]
    },
    "hyperparameters_forest": {
        "n_estimators": [100, 200],
@@ -29,59 +29,46 @@
    },
    "preprocessing": {
       "drop_duplicates": true,
-      "drop_columns": ["reviewId", "location"],
+      "drop_columns": ["reviewId"],
       "text_features": ["content"],
       "text_process_method": "tf-idf",
-      "ngram_range": [1, 3],
-      "limite_palabras": 10000,
+      "ngram_range": [1, 2],
+      "limite_palabras": 15000,
       "language": "english",
-      "categorical_features": ["gender"],
+      "categorical_features": ["gender", "region"],
       "categorical_encoding": "one-hot",
       "missing_values": "impute",
       "impute_strategy": "most_frequent",
       "outliers": "none",
       "scaling": "none",
-      "sampling_strategy": "SMOTE",
+      "sampling_strategy": "oversample",
       "sampling_ratio": "auto"
    },
   "prompt_engineering" : {
-    "mode": "oversampling",
-    "clasificacion": {
-      "model": "llama3.1:8b-text-q2_K",
-      "possible_answers": ["positive","neutral","negative"],
+    "mode": "sentiment_analysis",
+    "sentiment_analysis": {
+      "model": "gemma2:2b",
+      "possible_answers": ["Worst","Bad","Neutral","Good","Best"],
       "temperature": 0,
       "repeat_penalty": 1.0,
-      "num_predict": 8,
+      "num_predict": 1,
       "top_k": 10,
       "top_p": 0.5,
       "shots": [0,1,5],
       "split": ["First","Random","Stratified","Manual"],
-      "manual_split_indexes": [[1, 2, 3, 4, 5]],
-      "test_questions": {
-        "questions_by_id": [76,5753,6139,7275],
-        "hard_coded_questions": []
-      }
-    },
-    "oversampling" : {
-      "model": "llama3.1:8b-text-q2_K",
-      "possible_answers": ["positive","neutral","negative"],
-      "temperature": 0,
-      "repeat_penalty": 1.0,
-      "num_predict": 8,
-      "top_k": 10,
-      "top_p": 0.5,
-      "shots": [0,1,5],
-      "score_to_extract": "neutral",
-      "split": ["First","Random","Stratified","Manual"],
-      "manual_split_indexes": [[1, 2, 3, 4, 5]]
+      "manual_split": [1, 2, 3, 4, 5],
+      "seed": 42
     }
   },
   "clustering_lda": {
-    "n_components_range": [3, 4, 5, 6, 7, 8, 9, 10],
+    "n_components_range": [2, 3, 4, 5, 6, 7, 8, 9, 10],
     "passes": [50],
     "max_iter": [100],
     "random_state": [42],
-    "coherence_metric": "c_v"
+    "coherence_metric": "c_v",
+    "doc_topic_prior": [null, 0.1],
+    "topic_word_prior": [null, 0.1],
+    "learning_method": ["batch"]
   }
 
 }
