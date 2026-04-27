@@ -323,6 +323,13 @@ def number_to_sentiment(value):
 
 def load_dataset(data_file):
     result = pd.read_csv(data_file)
+
+    # --- DESORDENAR AQUÍ ---
+    # frac=1 baraja el 100% de las filas.
+    # random_state=42 asegura que siempre se desordene igual para que tus tests sean reproducibles.
+    result = result.sample(frac=1, random_state=42).reset_index(drop=True)
+    # -----------------------
+
     result.score = result.score.map(number_to_sentiment)
     return result
 
