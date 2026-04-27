@@ -442,14 +442,14 @@ if __name__ == "__main__":
     if parameters == None:
         print("No hay parametros suficientes")
     elif len(parameters) >= 1:
-        config_file = parameters[0]
-
-        with open(config_file, "r") as file:
-            config_dict = json.load(file)
-            prompt_config = config_dict.get("prompt_engineering")
+        data_file = parameters[0]
 
         if len(parameters) > 1:
-            data_file = parameters[1]
+            config_file = parameters[1]
+
+            with open(config_file, "r") as file:
+                config_dict = json.load(file)
+                prompt_config = config_dict.get("prompt_engineering")
 
     if prompt_config != None:
         mode = prompt_config.get("mode")
