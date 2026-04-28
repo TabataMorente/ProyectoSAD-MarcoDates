@@ -342,8 +342,7 @@ def train():
         processed_path = os.path.join("preprocesado", csv_id)
         os.makedirs(processed_path, exist_ok=True)
 
-        pd.concat([test_features,  test_target],  axis=1).to_csv(
-            os.path.join(processed_path, f"{csv_id}_test_ready.csv"),  index=False)
+        #pd.concat([test_features,  test_target],  axis=1).to_csv(os.path.join(processed_path, f"{csv_id}_test_ready.csv"),  index=False)
         '''
         pd.concat([train_features, train_target], axis=1).to_csv(
             os.path.join(processed_path, f"{csv_id}_train_ready.csv"), index=False)
