@@ -1,11 +1,11 @@
 from langchain_core.prompts import PromptTemplate
 from langchain_ollama.llms import OllamaLLM
-from langchain_classic.evaluation import ExactMatchStringEvaluator
 from sklearn.model_selection import train_test_split
 import sys
 import json
 import pandas as pd
 import os
+import evaluar
 
 class Log_generator:
     def __init__(self, path, debug=False):
@@ -38,6 +38,7 @@ class Classification_log_generator(Log_generator):
         self.llm_answer = []
         self.task_name = []
         self.task_id = []
+        self.models = []
         super().__init__(path, debug)
 
     def add_no_zero_shots_info(self, current_question, current_examples, current_question_indexes):
@@ -56,6 +57,9 @@ class Classification_log_generator(Log_generator):
         if super().get_debug():
             print(current_question)
 
+    def add_models(self, model_name):
+        self.models.append(model_name)
+
     def add_answers(self, task_name, llm_answer, actual_answer, task_id):
         self.llm_answer.append(llm_answer)
         self.actual_answer.append(actual_answer)
@@ -64,6 +68,7 @@ class Classification_log_generator(Log_generator):
 
     def to_dict(self):
         return {
+            "Model": self.models,
             "Question" : self.question,
             "Examples": self.examples,
             "Id-Examples": self.id_examples,
@@ -81,9 +86,38 @@ class Classification_log_generator(Log_generator):
         self.llm_answer = []
         self.task_name = []
         self.task_id = []
+        self.models = []
+
+    def print_evaluation(self):
+        if super().get_debug():
+            evaluar.print_advanced_metrics(self.actual_answer, self.llm_answer)
 
     def to_csv(self, file_name):
         super().to_csv(self.to_dict(), file_name)
+
+class Dataset_like_log_generator(Log_generator):
+    def __init__(self, path, debug=False):
+        super().__init__(path, debug)
+        self.dict = {
+            "content" : [],
+            "score": [],
+            "gender": [],
+            "location": [],
+            "date": []
+        }
+
+    def add(self, answer):
+        my_keys = self.dict.keys()
+
+        print(answer)
+
+        for current_dict in answer:
+            for current_key in my_keys:
+                print(current_key + ":" + str(current_dict.get(current_key, None)))
+                self.dict[current_key].append(current_dict.get(current_key, None))
+
+    def to_csv(self, file_name):
+        super().to_csv(self.dict, file_name)
 
 class Oversampling_log_generator(Log_generator):
     def __init__(self, path, debug=False):
@@ -170,6 +204,22 @@ def sort_by_length(matrix):
 
         array_index += 1
 
+def parse_answer_to_df(text):
+    result = []
+    line_list = text.split("\n")
+
+    for key_value_list in line_list:
+        current_dict = {}
+        split_key_value_list = key_value_list.split(";")
+        for key_value_pair in split_key_value_list:
+            if len(key_value_pair) > 0:
+                split_key_value = key_value_pair.split(":")
+                current_dict[split_key_value[0].lower()] = split_key_value[1]
+
+        result.append(current_dict)
+
+    return result
+
 def evaluate(config, example_list_collection, tasks_collection):
     """
     config: Diccionario con las opciones del prompt engineering
@@ -202,13 +252,7 @@ def evaluate(config, example_list_collection, tasks_collection):
     chain_no_zero_shots = create_chain(model, plantilla_no_zero_shots)
     chain_zero_shots = create_chain(model, plantilla_zero_shots)
 
-    evaluator = ExactMatchStringEvaluator()  # Por ahora se queda este evaluador
-    ok = 0
-    wrongOut = 0
-
-    possible_answers = config.get("possible_answers",  ["positive", "neutral", "negative"] )
-
-    log_generator = Classification_log_generator("classification_results", False)
+    log_generator = Classification_log_generator("classification_results", True)
 
     sort_by_length(example_list_collection)
 
@@ -220,6 +264,7 @@ def evaluate(config, example_list_collection, tasks_collection):
         if previous_shot == -1:
             previous_shot = shot
         elif previous_shot != shot:
+            log_generator.print_evaluation()
             log_generator.to_csv(str(previous_shot) + " shots.csv")
             log_generator.clean()
             previous_shot = shot
@@ -231,40 +276,28 @@ def evaluate(config, example_list_collection, tasks_collection):
 
             answer = None
             if len(examples_text) > 0:
-                answer = chain_no_zero_shots.invoke({"examples": examples_text, "task": task_string}).strip()
+                answer = chain_no_zero_shots.invoke({"examples": examples_text, "task": task_string}).strip().lower()
             else:
                 log_generator.add_zero_shots_info(plantilla_zero_shots.format(task=task_string))
-                answer = chain_zero_shots.invoke({"task": task_string}).strip()
+                answer = chain_zero_shots.invoke({"task": task_string}).strip().lower()
 
+            log_generator.add_models(model.model)
             log_generator.add_answers(task_string, answer, actual_answer, task_index)
 
-            if not answer in possible_answers: wrongOut += 1
-
-            score = evaluator.evaluate_strings(
-                prediction=answer,
-                reference=actual_answer
-            )['score']
-
-            print(answer)
-
-            # evaluate_strings SOLO devuelve 1 o 0.
-            if score == 1.0: ok += 1
-            acc = round(100 * ok / (current_index + 1), 2)
-            print("| " + model.model + "| row: " + str(current_index + 1) + " | acc: " + str(acc) + " | inc: " + str(
-                wrongOut) + " |")
-
+    log_generator.print_evaluation()
     log_generator.to_csv(str(previous_shot) + " shots.csv")
     log_generator.clean()
 
 def oversample(config, examples_collection):
-    plantilla_zero_shots = f"""Generate a comment with the sentiment label \"{config["score_to_extract"]}\" and nothing else.
-Comment: """
+    plantilla_zero_shots = f"""Generate a comment, including the location the comment was sent, the date and the user's gender, with the sentiment label \"{config["score_to_extract"]}\" and nothing else.
+Follow the next format:
+content:\"\";gender:;location;date:;"""
 
-    plantilla_no_zero_shots = "Generate a comment with the sentiment label \"" + config["score_to_extract"] + """"\", following the examples
+    plantilla_no_zero_shots = "Generate a comment, including the user's gender, the location the comment was sent and the date, with the sentiment label \"" + config["score_to_extract"] + """"\", following the examples
 below and nothing else.
 ## Examples
 {examples}
-Comment: """
+content:\"\";gender:;location;date:;"""
 
     model = OllamaLLM(
         model=config.get("model", "gemma2:2b"),
@@ -278,7 +311,8 @@ Comment: """
     chain_no_zero_shots = create_chain(model, plantilla_no_zero_shots)
     chain_zero_shots = create_chain(model, plantilla_zero_shots)
 
-    log_generator = Oversampling_log_generator("oversample_results", True)
+    log_generator = Oversampling_log_generator("oversample_results", False)
+    log_generator2 = Dataset_like_log_generator("oversample", True)
 
     previous_shot = -1
 
@@ -296,15 +330,19 @@ Comment: """
 
         example_string = ""
         for current_index, current_example in current_example_list.iterrows():
-            example_string += "Comment:" + current_example["content"] + "\n"
+            example_string += "Content:\"" + current_example["content"] + "\";Gender:" + current_example["gender"] \
+            + ";Location:" + current_example["location"] + ";Date:" + current_example["date"] + ";\n"
 
         answer = None
         if len(example_string) > 0:
             log_generator.add_instruction(plantilla_no_zero_shots.format(examples=example_string))
             answer = chain_no_zero_shots.invoke({"examples": example_string}).strip()
+
         else:
             log_generator.add_instruction(plantilla_zero_shots)
             answer = chain_zero_shots.invoke({}).strip()
+
+        log_generator2.add(parse_answer_to_df(answer))
 
         log_generator.add_examples(example_string)
         log_generator.add_model(model.model)
@@ -312,6 +350,8 @@ Comment: """
 
     log_generator.to_csv(str(previous_shot) + " shots.csv")
     log_generator.clean()
+
+    log_generator2.to_csv("Tinder_oversample.csv")
 
 def get_parameters():
     result = None
@@ -364,7 +404,9 @@ def extract_rows_manually(index_list, dataframe):
         else:
             new_index_list.append(current_index)
 
-    result = dataframe.iloc[new_index_list]
+    print(new_index_list)
+
+    result = dataframe.iloc[new_index_list].sample(frac=1)
 
     return result
 
