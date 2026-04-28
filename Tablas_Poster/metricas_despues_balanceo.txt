@@ -1,0 +1,111 @@
+
+
+======================================================================
+  Hiperparámetros (hyperparameters_knn):
+    · k_range: [3, 10]
+    · step: 2
+    · p: [1, 2]
+    · weights: ['uniform', 'distance']
+  Preprocesado:
+    · scaling: none
+    · sampling_strategy: SMOTE
+    · categorical_encoding: one-hot
+    · text_process_method: tf-idf
+    · ngram_range: [1, 1]
+    · limite_palabras: 10000
+
+[ MÉTRICAS DE CLASIFICACIÓN ]
+
+ -> Accuracy Global (Exactitud): 0.6740
+
+Clase        | Precision  | Recall     | Specif.    | F1-Score  
+----------------------------------------------------------------------
+0            | 0.8575     | 0.7020     | 0.7521     | 0.7720    
+1            | 0.0864     | 0.1538     | 0.8950     | 0.1107    
+2            | 0.5586     | 0.7224     | 0.8002     | 0.6300    
+----------------------------------------------------------------------
+MEDIA MACRO  | -          | -          | -          | 0.5042    
+MEDIA MICRO  | -          | -          | -          | 0.6740    
+
+
+
+======================================================================
+  Hiperparámetros (hyperparameters_forest):
+    · n_estimators: [100, 200]
+    · max_depth: [3, 5, 10, 20, None]
+    · max_features: ['sqrt', 'log2']
+  Preprocesado:
+    · scaling: none
+    · sampling_strategy: SMOTE
+    · categorical_encoding: one-hot
+    · text_process_method: tf-idf
+    · ngram_range: [1, 1]
+    · limite_palabras: 10000
+
+[ MÉTRICAS DE CLASIFICACIÓN ]
+
+ -> Accuracy Global (Exactitud): 0.8687
+
+Clase        | Precision  | Recall     | Specif.    | F1-Score  
+----------------------------------------------------------------------
+0            | 0.8892     | 0.9520     | 0.7479     | 0.9195    
+1            | 0.5000     | 0.0330     | 0.9979     | 0.0619    
+2            | 0.8184     | 0.8458     | 0.9343     | 0.8319    
+----------------------------------------------------------------------
+MEDIA MACRO  | -          | -          | -          | 0.6044    
+MEDIA MICRO  | -          | -          | -          | 0.8687    
+
+
+
+======================================================================
+  Hiperparámetros (hyperparameters_logistic):
+    · C: [0.1, 1.0, 5.0, 10.0]
+    · solver: ['lbfgs']
+  Preprocesado:
+    · scaling: none
+    · sampling_strategy: SMOTE
+    · categorical_encoding: one-hot
+    · text_process_method: tf-idf
+    · ngram_range: [1, 1]
+    · limite_palabras: 10000
+
+[ MÉTRICAS DE CLASIFICACIÓN ]
+
+ -> Accuracy Global (Exactitud): 0.8873
+
+Clase        | Precision  | Recall     | Specif.    | F1-Score  
+----------------------------------------------------------------------
+0            | 0.9260     | 0.9451     | 0.8396     | 0.9355    
+1            | 0.3913     | 0.1978     | 0.9801     | 0.2628    
+2            | 0.8450     | 0.8972     | 0.9424     | 0.8703    
+----------------------------------------------------------------------
+MEDIA MACRO  | -          | -          | -          | 0.6895    
+MEDIA MICRO  | -          | -          | -          | 0.8873    
+
+
+======================================================================
+  Hiperparámetros (hyperparameters_bayes):
+    · var_smoothing: [1e-09]
+    · bayes_type: multinomial
+    · alpha: [0.1, 0.5, 1.0, 2.0]
+  Preprocesado:
+    · scaling: none
+    · sampling_strategy: SMOTE
+    · categorical_encoding: one-hot
+    · text_process_method: tf-idf
+    · ngram_range: [1, 1]
+    · limite_palabras: 10000
+
+[ MÉTRICAS DE CLASIFICACIÓN ]
+
+ -> Accuracy Global (Exactitud): 0.9007
+
+Clase        | Precision  | Recall     | Specif.    | F1-Score  
+----------------------------------------------------------------------
+0            | 0.9200     | 0.9804     | 0.8187     | 0.9492    
+1            | 0.3676     | 0.2747     | 0.9695     | 0.3145    
+2            | 0.9449     | 0.8380     | 0.9829     | 0.8883    
+----------------------------------------------------------------------
+MEDIA MACRO  | -          | -          | -          | 0.7173    
+MEDIA MICRO  | -          | -          | -          | 0.9007    
+
