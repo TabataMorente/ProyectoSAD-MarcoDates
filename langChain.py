@@ -212,13 +212,18 @@ def parse_answer_to_df(text):
         current_dict = {}
         split_key_value_list = key_value_list.split(";")
         for key_value_pair in split_key_value_list:
-            if len(key_value_pair) > 0:
-                split_key_value = key_value_pair.split(":")
+            split_key_value = key_value_pair.split(":")
+
+            if len(split_key_value) >= 2:
                 current_dict[split_key_value[0].lower()] = split_key_value[1]
 
         result.append(current_dict)
 
     return result
+
+def add_key(dict_list, new_key, new_value):
+    for current_dict in dict_list:
+        current_dict[new_key] = new_value
 
 def evaluate(config, example_list_collection, tasks_collection):
     """
@@ -342,7 +347,11 @@ content:\"\";gender:;location;date:;"""
             log_generator.add_instruction(plantilla_zero_shots)
             answer = chain_zero_shots.invoke({}).strip()
 
-        log_generator2.add(parse_answer_to_df(answer))
+
+        parsed_answer = parse_answer_to_df(answer)
+        add_key(parsed_answer, "score", config["score_to_extract"])
+
+        log_generator2.add(parsed_answer)
 
         log_generator.add_examples(example_string)
         log_generator.add_model(model.model)
