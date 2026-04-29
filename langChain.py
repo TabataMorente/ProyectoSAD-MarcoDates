@@ -6,6 +6,7 @@ import json
 import pandas as pd
 import os
 import evaluar
+import random
 
 class Log_generator:
     def __init__(self, path, debug=False):
@@ -98,6 +99,7 @@ class Dataset_like_log_generator(Log_generator):
     def __init__(self, path, debug=False):
         super().__init__(path, debug)
         self.dict = {
+            "id": [],
             "content" : [],
             "score": [],
             "gender": [],
@@ -108,12 +110,11 @@ class Dataset_like_log_generator(Log_generator):
     def add(self, answer):
         my_keys = self.dict.keys()
 
-        print(answer)
+        if super().get_debug():
+            print(answer)
 
-        for current_dict in answer:
-            for current_key in my_keys:
-                print(current_key + ":" + str(current_dict.get(current_key, None)))
-                self.dict[current_key].append(current_dict.get(current_key, None))
+        for current_key in my_keys:
+            self.dict[current_key].append(answer.get(current_key, None))
 
     def to_csv(self, file_name):
         super().to_csv(self.dict, file_name)
@@ -183,25 +184,35 @@ def create_chain(model, plantilla):
     current_prompt = PromptTemplate.from_template(plantilla)
     return ( current_prompt | model )
 
-def sort_by_length(matrix):
-    matrix_length = len(matrix)
-    array_index = 0
+def sort_by_length(dataframe_collection):
+    dfc_length = len(dataframe_collection)
+    df_index = 0
 
-    while array_index < matrix_length:
-        smallest = array_index
-        comparison_index = array_index
+    for index, a in enumerate(dataframe_collection):
+        print(f"index: {index}\n{a}\n")
 
-        while comparison_index < matrix_length:
-            if len(matrix[comparison_index]) < len(matrix[smallest]):
+    while df_index < dfc_length:
+        smallest = df_index
+        comparison_index = df_index
+
+        while comparison_index < dfc_length:
+            actual_size = len(dataframe_collection[comparison_index]["ejemplos"])
+
+            if actual_size > 0:
+                if dataframe_collection[comparison_index]["ejemplos"].iloc[0] == None:
+                    actual_size = 0
+
+
+            if actual_size  < len(dataframe_collection[smallest]["ejemplos"]):
                 smallest = comparison_index
 
             comparison_index += 1
 
-        aux = matrix[array_index]
-        matrix[array_index] = matrix[smallest]
-        matrix[smallest] = aux
+        aux = dataframe_collection[df_index]
+        dataframe_collection[df_index] = dataframe_collection[smallest]
+        dataframe_collection[smallest] = aux
 
-        array_index += 1
+        df_index += 1
 
 def parse_answer_to_df(text):
     result = []
@@ -288,78 +299,80 @@ def evaluate(config, example_list_collection, tasks_collection):
             log_generator.add_models(model.model)
             log_generator.add_answers(task_string, answer, actual_answer, task_index)
 
-    print(previous_shot)
     log_generator.print_evaluation()
     log_generator.to_csv(str(previous_shot) + " shots.csv")
     log_generator.clean()
 
-def oversample(config, examples_collection):
-    for current_sentiment in config["score_to_extract"]:
-        plantilla_zero_shots = f"""Generate a comment, including the location the comment was sent, the date and the user's gender, with the sentiment label \"{current_sentiment}\" and nothing else.
-    Follow the next format:
-    content:\"\";gender:male/female;location;date:;"""
+def oversample(config, examples_collection, dataset):
+    plantilla_zero_shots = """Generate ONLY a different comment to \"{comment}\", but keep the same meaning.Do not add more text than the necessary.\n###TASK\nComment:"""
 
-        plantilla_no_zero_shots = "Generate a comment, including the user's gender, the location the comment was sent and the date, with the sentiment label \"" + str(current_sentiment) + """"\", following the examples
-    below and nothing else.
-    ## Examples
-    {examples}
-    content:\"\";gender:;location;date:;"""
+    plantilla_no_zero_shots = "Generate ONLY a different comment to \"{comment}\", but keep the same meaning. Do not add more text than the necessary." + \
+        "The sentences below have the same meaning.\n###EXAMPLES\n{examples}\n###TASK\nComment: "
 
-        model = OllamaLLM(
-            model=config.get("model", "gemma2:2b"),
-            temperature=config.get("temperature", 0),
-            repeat_penalty=config.get("repeat_penalty", 0),
-            num_predict=config.get("num_predict", 1),
-            top_k=config.get("top_k", 10),
-            top_p=config.get("top_p", 0.5)
-        )
+    model = OllamaLLM(
+        model=config.get("model", "gemma2:2b"),
+        temperature=config.get("temperature", 0),
+        repeat_penalty=config.get("repeat_penalty", 0),
+        num_predict=config.get("num_predict", 1),
+        top_k=config.get("top_k", 10),
+        top_p=config.get("top_p", 0.5)
+    )
 
-        chain_no_zero_shots = create_chain(model, plantilla_no_zero_shots)
-        chain_zero_shots = create_chain(model, plantilla_zero_shots)
+    chain_no_zero_shots = create_chain(model, plantilla_no_zero_shots)
+    chain_zero_shots = create_chain(model, plantilla_zero_shots)
 
-        log_generator = Oversampling_log_generator("oversample_results", False)
-        log_generator2 = Dataset_like_log_generator("oversample", True)
+    log_generator = Oversampling_log_generator("oversample_results", False)
+    log_generator2 = Dataset_like_log_generator("oversample", False)
 
-        previous_shot = -1
+    previous_shot = -1
 
-        sort_by_length(examples_collection)
+    sort_by_length(examples_collection)
 
-        for current_example_list_index, current_example_list in enumerate(examples_collection):
-            shot = len(current_example_list)
+    for _, current_example_list in enumerate(examples_collection):
+        shot = len(current_example_list["ejemplos"])
 
-            if previous_shot == -1:
-                previous_shot = shot
-            elif previous_shot != shot:
-                log_generator.to_csv(str(previous_shot) + " shots.csv")
-                log_generator.clean()
-                previous_shot = shot
+        if shot > 0:
+            if current_example_list["ejemplos"].iloc[0] == None:
+                shot = 0
 
-            example_string = ""
-            for current_index, current_example in current_example_list.iterrows():
-                example_string += "Content:\"" + current_example["content"] + "\";Gender:" + current_example["gender"] \
-                + ";Location:" + current_example["location"] + ";Date:" + current_example["date"] + ";\n"
+        if previous_shot == -1:
+            previous_shot = shot
+        elif previous_shot != shot:
+            log_generator.to_csv(str(previous_shot) + " shots.csv")
+            log_generator.clean()
+            previous_shot = shot
 
-            answer = None
-            if len(example_string) > 0:
-                log_generator.add_instruction(plantilla_no_zero_shots.format(examples=example_string))
-                answer = chain_no_zero_shots.invoke({"examples": example_string}).strip()
+        example_string = ""
+        current_example = None
+        example_id = -1
+        for current_index, current_example in current_example_list.iterrows():
+            if current_example["ejemplos"] != None:
+                example_string += current_example["ejemplos"] + "\n"
 
-            else:
-                log_generator.add_instruction(plantilla_zero_shots)
-                answer = chain_zero_shots.invoke({}).strip()
+        example_id = current_example["id"]
 
+        actual_index = example_id - 1
 
-            parsed_answer = parse_answer_to_df(answer)
-            add_key(parsed_answer, "score", current_sentiment)
+        answer = None
+        if shot > 0:
+            log_generator.add_instruction(plantilla_no_zero_shots.format(comment=dataset["content"][actual_index], examples=example_string))
+            answer = chain_no_zero_shots.invoke({"examples": example_string, "comment" : dataset["content"][actual_index]}).strip()
+        else:
+            log_generator.add_instruction(plantilla_zero_shots.format(comment=dataset["content"][actual_index]))
+            answer = chain_zero_shots.invoke({"comment" : dataset["content"][actual_index]}).strip()
 
-            log_generator2.add(parsed_answer)
+        new_message = dataset.iloc[actual_index].copy()
+        new_message["content"] = answer
+        new_message["id"] = current_example["id"]
 
-            log_generator.add_examples(example_string)
-            log_generator.add_model(model.model)
-            log_generator.add_answer(answer)
+        log_generator2.add(new_message)
 
-        log_generator.to_csv(str(previous_shot) + " shots.csv")
-        log_generator.clean()
+        log_generator.add_examples(example_string)
+        log_generator.add_model(model.model)
+        log_generator.add_answer(answer)
+
+    log_generator.to_csv(str(previous_shot) + " shots.csv")
+    log_generator.clean()
 
     log_generator2.to_csv("Tinder_oversample.csv")
 
@@ -413,8 +426,6 @@ def extract_rows_manually(index_list, dataframe):
                 new_index_list.append(current_index_in_range)
         else:
             new_index_list.append(current_index)
-
-    print(new_index_list)
 
     result = dataframe.iloc[new_index_list].sample(frac=1)
 
@@ -482,6 +493,31 @@ def load_dataset(data_file):
     result.score = result.score.map(number_to_sentiment)
     return result
 
+def split_paraphrasis_examples(conf, dataset):
+    result = []
+    shots = conf.get("shots")
+    splits = conf.get("split")
+    id_list = dataset["id"].drop_duplicates()
+    seed = conf.get("seed")
+
+    for current_id in id_list:
+        current_sample = dataset.loc[dataset["id"] == current_id]
+        current_sample_length = len(current_sample)
+        for current_shot in shots:
+            if current_shot > 0:
+                for current_split in splits:
+                    if current_split == "Random" and current_shot != current_sample_length:
+                        new_sample, _ = train_test_split(current_sample, train_size=current_shot, shuffle=True,
+                                                         random_state=seed)
+                        result.append(new_sample)
+                    elif current_split == "First":
+                        new_sample = current_sample[:current_shot]
+                        result.append(new_sample)
+            else:
+                result.append(pd.DataFrame({"id": [current_id], "ejemplos": [None]}))
+
+    return result
+
 if __name__ == "__main__":
     """
     Parametro 1: ruta a config_file.json
@@ -490,6 +526,7 @@ if __name__ == "__main__":
     parameters = get_parameters()
     prompt_config = None
     data_file = "./Datos/Tinder.csv"
+    parafrasis_file = "./Datos/parafrasis.csv"
 
     if parameters == None:
         print("No hay parametros suficientes")
@@ -503,6 +540,9 @@ if __name__ == "__main__":
                 config_dict = json.load(file)
                 prompt_config = config_dict.get("prompt_engineering")
 
+            if len(parameters) > 2:
+                parafrasis_file = parameters[2]
+
     if prompt_config != None:
         mode = prompt_config.get("mode")
         if mode == "clasificacion":
@@ -512,12 +552,10 @@ if __name__ == "__main__":
             tasks_collection = get_test_collection(classification_config.get("test_questions"), dataset, len(classification_config.get("possible_answers")))
             evaluate(classification_config, examples_collection, tasks_collection)
         elif mode == "oversampling":
-            dataset = pd.read_csv(data_file)
             oversampling_config = prompt_config.get("oversampling")
-            examples_collection = dataset.loc[lambda df : df["score"].isin(oversampling_config["score_to_extract"])]
-            examples_collection = split_dataset_by_shots(oversampling_config, examples_collection)
-
-            oversample(oversampling_config, examples_collection)
+            dataset = pd.read_csv(data_file)
+            examples_collection = split_paraphrasis_examples(oversampling_config, pd.read_csv(parafrasis_file))
+            oversample(oversampling_config, examples_collection, dataset)
         else:
             print(f"El modo {mode} no es valido")
     else:

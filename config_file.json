@@ -66,17 +66,15 @@
       "seed" : 42
     },
     "oversampling" : {
-      "model": "llama3.1:8b-text-q2_K",
+      "model": "gemma2:9B",
       "possible_answers": ["positive","neutral","negative"],
-      "temperature": 0,
+      "temperature": 0.2,
       "repeat_penalty": 1.0,
-      "num_predict": 8,
+      "num_predict": 50,
       "top_k": 10,
       "top_p": 0.5,
-      "shots": [0,1,5],
-      "score_to_extract": "neutral",
-      "split": ["First","Random","Stratified"],
-      "manual_split_indexes": [[1, 2, 3, 4, 5]],
+      "shots": [0,1],
+      "split": ["First","Random"],
       "seed" : 42
     }
   },
