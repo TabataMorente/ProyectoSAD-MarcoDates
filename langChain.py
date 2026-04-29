@@ -89,8 +89,7 @@ class Classification_log_generator(Log_generator):
         self.models = []
 
     def print_evaluation(self):
-        if super().get_debug():
-            evaluar.print_advanced_metrics(self.actual_answer, self.llm_answer)
+        evaluar.print_advanced_metrics(self.actual_answer, self.llm_answer)
 
     def to_csv(self, file_name):
         super().to_csv(self.to_dict(), file_name)
@@ -289,76 +288,78 @@ def evaluate(config, example_list_collection, tasks_collection):
             log_generator.add_models(model.model)
             log_generator.add_answers(task_string, answer, actual_answer, task_index)
 
+    print(previous_shot)
     log_generator.print_evaluation()
     log_generator.to_csv(str(previous_shot) + " shots.csv")
     log_generator.clean()
 
 def oversample(config, examples_collection):
-    plantilla_zero_shots = f"""Generate a comment, including the location the comment was sent, the date and the user's gender, with the sentiment label \"{config["score_to_extract"]}\" and nothing else.
-Follow the next format:
-content:\"\";gender:;location;date:;"""
+    for current_sentiment in config["score_to_extract"]:
+        plantilla_zero_shots = f"""Generate a comment, including the location the comment was sent, the date and the user's gender, with the sentiment label \"{current_sentiment}\" and nothing else.
+    Follow the next format:
+    content:\"\";gender:male/female;location;date:;"""
 
-    plantilla_no_zero_shots = "Generate a comment, including the user's gender, the location the comment was sent and the date, with the sentiment label \"" + config["score_to_extract"] + """"\", following the examples
-below and nothing else.
-## Examples
-{examples}
-content:\"\";gender:;location;date:;"""
+        plantilla_no_zero_shots = "Generate a comment, including the user's gender, the location the comment was sent and the date, with the sentiment label \"" + str(current_sentiment) + """"\", following the examples
+    below and nothing else.
+    ## Examples
+    {examples}
+    content:\"\";gender:;location;date:;"""
 
-    model = OllamaLLM(
-        model=config.get("model", "gemma2:2b"),
-        temperature=config.get("temperature", 0),
-        repeat_penalty=config.get("repeat_penalty", 0),
-        num_predict=config.get("num_predict", 1),
-        top_k=config.get("top_k", 10),
-        top_p=config.get("top_p", 0.5)
-    )
+        model = OllamaLLM(
+            model=config.get("model", "gemma2:2b"),
+            temperature=config.get("temperature", 0),
+            repeat_penalty=config.get("repeat_penalty", 0),
+            num_predict=config.get("num_predict", 1),
+            top_k=config.get("top_k", 10),
+            top_p=config.get("top_p", 0.5)
+        )
 
-    chain_no_zero_shots = create_chain(model, plantilla_no_zero_shots)
-    chain_zero_shots = create_chain(model, plantilla_zero_shots)
+        chain_no_zero_shots = create_chain(model, plantilla_no_zero_shots)
+        chain_zero_shots = create_chain(model, plantilla_zero_shots)
 
-    log_generator = Oversampling_log_generator("oversample_results", False)
-    log_generator2 = Dataset_like_log_generator("oversample", True)
+        log_generator = Oversampling_log_generator("oversample_results", False)
+        log_generator2 = Dataset_like_log_generator("oversample", True)
 
-    previous_shot = -1
+        previous_shot = -1
 
-    sort_by_length(examples_collection)
+        sort_by_length(examples_collection)
 
-    for current_example_list_index, current_example_list in enumerate(examples_collection):
-        shot = len(current_example_list)
+        for current_example_list_index, current_example_list in enumerate(examples_collection):
+            shot = len(current_example_list)
 
-        if previous_shot == -1:
-            previous_shot = shot
-        elif previous_shot != shot:
-            log_generator.to_csv(str(previous_shot) + " shots.csv")
-            log_generator.clean()
-            previous_shot = shot
+            if previous_shot == -1:
+                previous_shot = shot
+            elif previous_shot != shot:
+                log_generator.to_csv(str(previous_shot) + " shots.csv")
+                log_generator.clean()
+                previous_shot = shot
 
-        example_string = ""
-        for current_index, current_example in current_example_list.iterrows():
-            example_string += "Content:\"" + current_example["content"] + "\";Gender:" + current_example["gender"] \
-            + ";Location:" + current_example["location"] + ";Date:" + current_example["date"] + ";\n"
+            example_string = ""
+            for current_index, current_example in current_example_list.iterrows():
+                example_string += "Content:\"" + current_example["content"] + "\";Gender:" + current_example["gender"] \
+                + ";Location:" + current_example["location"] + ";Date:" + current_example["date"] + ";\n"
 
-        answer = None
-        if len(example_string) > 0:
-            log_generator.add_instruction(plantilla_no_zero_shots.format(examples=example_string))
-            answer = chain_no_zero_shots.invoke({"examples": example_string}).strip()
+            answer = None
+            if len(example_string) > 0:
+                log_generator.add_instruction(plantilla_no_zero_shots.format(examples=example_string))
+                answer = chain_no_zero_shots.invoke({"examples": example_string}).strip()
 
-        else:
-            log_generator.add_instruction(plantilla_zero_shots)
-            answer = chain_zero_shots.invoke({}).strip()
+            else:
+                log_generator.add_instruction(plantilla_zero_shots)
+                answer = chain_zero_shots.invoke({}).strip()
 
 
-        parsed_answer = parse_answer_to_df(answer)
-        add_key(parsed_answer, "score", config["score_to_extract"])
+            parsed_answer = parse_answer_to_df(answer)
+            add_key(parsed_answer, "score", current_sentiment)
 
-        log_generator2.add(parsed_answer)
+            log_generator2.add(parsed_answer)
 
-        log_generator.add_examples(example_string)
-        log_generator.add_model(model.model)
-        log_generator.add_answer(answer)
+            log_generator.add_examples(example_string)
+            log_generator.add_model(model.model)
+            log_generator.add_answer(answer)
 
-    log_generator.to_csv(str(previous_shot) + " shots.csv")
-    log_generator.clean()
+        log_generator.to_csv(str(previous_shot) + " shots.csv")
+        log_generator.clean()
 
     log_generator2.to_csv("Tinder_oversample.csv")
 
@@ -511,9 +512,9 @@ if __name__ == "__main__":
             tasks_collection = get_test_collection(classification_config.get("test_questions"), dataset, len(classification_config.get("possible_answers")))
             evaluate(classification_config, examples_collection, tasks_collection)
         elif mode == "oversampling":
-            dataset = load_dataset(data_file)
+            dataset = pd.read_csv(data_file)
             oversampling_config = prompt_config.get("oversampling")
-            examples_collection = dataset.loc[lambda df : df["score"] == oversampling_config["score_to_extract"]]
+            examples_collection = dataset.loc[lambda df : df["score"].isin(oversampling_config["score_to_extract"])]
             examples_collection = split_dataset_by_shots(oversampling_config, examples_collection)
 
             oversample(oversampling_config, examples_collection)
