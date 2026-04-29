@@ -184,36 +184,6 @@ def create_chain(model, plantilla):
     current_prompt = PromptTemplate.from_template(plantilla)
     return ( current_prompt | model )
 
-def sort_by_length(dataframe_collection):
-    dfc_length = len(dataframe_collection)
-    df_index = 0
-
-    for index, a in enumerate(dataframe_collection):
-        print(f"index: {index}\n{a}\n")
-
-    while df_index < dfc_length:
-        smallest = df_index
-        comparison_index = df_index
-
-        while comparison_index < dfc_length:
-            actual_size = len(dataframe_collection[comparison_index]["ejemplos"])
-
-            if actual_size > 0:
-                if dataframe_collection[comparison_index]["ejemplos"].iloc[0] == None:
-                    actual_size = 0
-
-
-            if actual_size  < len(dataframe_collection[smallest]["ejemplos"]):
-                smallest = comparison_index
-
-            comparison_index += 1
-
-        aux = dataframe_collection[df_index]
-        dataframe_collection[df_index] = dataframe_collection[smallest]
-        dataframe_collection[smallest] = aux
-
-        df_index += 1
-
 def parse_answer_to_df(text):
     result = []
     line_list = text.split("\n")
@@ -245,6 +215,27 @@ def evaluate(config, example_list_collection, tasks_collection):
     example_list_collection: List[pd.DataFrame]
     plantilla: str
     """
+
+    def sort_by_length(matrix):
+        matrix_length = len(matrix)
+        array_index = 0
+
+        while array_index < matrix_length:
+            smallest = array_index
+            comparison_index = array_index
+
+            while comparison_index < matrix_length:
+                if len(matrix[comparison_index]) < len(matrix[smallest]):
+                    smallest = comparison_index
+
+                comparison_index += 1
+
+            aux = matrix[array_index]
+            matrix[array_index] = matrix[smallest]
+            matrix[smallest] = aux
+
+            array_index += 1
+
     plantilla_zero_shots = """Respond ONLY with the sentiment label (\"negative\", \"neutral\" or \"positive\") and nothing else.
 ## TASK
 {task}"""
@@ -304,6 +295,36 @@ def evaluate(config, example_list_collection, tasks_collection):
     log_generator.clean()
 
 def oversample(config, examples_collection, dataset):
+    def sort_by_length(dataframe_collection):
+        dfc_length = len(dataframe_collection)
+        df_index = 0
+
+        for index, a in enumerate(dataframe_collection):
+            print(f"index: {index}\n{a}\n")
+
+        while df_index < dfc_length:
+            smallest = df_index
+            comparison_index = df_index
+
+            while comparison_index < dfc_length:
+                actual_size = len(dataframe_collection[comparison_index]["ejemplos"])
+
+                if actual_size > 0:
+                    if dataframe_collection[comparison_index]["ejemplos"].iloc[0] == None:
+                        actual_size = 0
+
+                if actual_size < len(dataframe_collection[smallest]["ejemplos"]):
+                    smallest = comparison_index
+
+                comparison_index += 1
+
+            aux = dataframe_collection[df_index]
+            dataframe_collection[df_index] = dataframe_collection[smallest]
+            dataframe_collection[smallest] = aux
+
+            df_index += 1
+
+
     plantilla_zero_shots = """Generate ONLY a different comment to \"{comment}\", but keep the same meaning.Do not add more text than the necessary.\n###TASK\nComment:"""
 
     plantilla_no_zero_shots = "Generate ONLY a different comment to \"{comment}\", but keep the same meaning. Do not add more text than the necessary." + \
