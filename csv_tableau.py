@@ -4,48 +4,45 @@ import pandas as pd
 # 1. CARGA Y RENOMBRADO DE COLUMNAS (Soft Clustering)
 # ==========================================
 # Diccionarios con los nombres exactos para las columnas de probabilidad
-nombres_neg = {
-    'cluster_0': "Prob Neg: Pagos y dinero",
-    'cluster_1': "Prob Neg: Perfiles falsos y bots",
-    'cluster_2': "Prob Neg: Errores y verificación",
-    'cluster_3': "Prob Neg: Falta de matches",
-    'cluster_4': "Prob Neg: Quejas generales",
-    'cluster_5': "Prob Neg: Cuentas bloqueadas"
-}
-
-nombres_neu = {
-    'cluster_0': "Prob Neu: Ver quién te dio like",
-    'cluster_1': "Prob Neu: Fallos en cuentas de pago",
-    'cluster_2': "Prob Neu: Cansancio de la app",
-    'cluster_3': "Prob Neu: Mejoras de diseño",
-    'cluster_4': "Prob Neu: Límite de mensajes gratis"
-}
+# nombres_neg = {
+#     'cluster_0': "Pay to Play",
+#     'cluster_1': "Cuentas bloqueadas",
+#     'cluster_2': "Fake profiles y Bots",
+#     'cluster_3': "Subscripciones caras",
+# }
+#
+# nombres_neu = {
+#     'cluster_0': "Prob Neu: Ver quién te dio like",
+#     'cluster_1': "Prob Neu: Fallos en cuentas de pago",
+#     'cluster_2': "Prob Neu: Cansancio de la app",
+#     'cluster_3': "Prob Neu: Mejoras de diseño",
+#     'cluster_4': "Prob Neu: Límite de mensajes gratis"
+# }
 
 nombres_pos = {
-    'cluster_0': "Prob Pos: Útil para viajar",
-    'cluster_1': "Prob Pos: Cara pero funciona",
-    'cluster_2': "Prob Pos: Fácil de usar",
-    'cluster_3': "Prob Pos: Para hacer amigos",
-    'cluster_4': "Prob Pos: Casos de éxito / Ayuda",
-    'cluster_5': "Prob Pos: Citas rápidas"
+    'cluster_0': "Pos: Buen modo free",
+    'cluster_1': "Pos: conocer gente",
+    'cluster_2': "Pos: Encontrar el amor",
+    'cluster_3': "Pos: Mejores match con mujeres",
+    'cluster_4': "Pos: Fácil de usar, buena interfaz",
 }
 
 # Cargamos los archivos
-df_neg = pd.read_csv('resultados_clustering_trigrams/negativos/distribucion_docs/distribucion_docs_k6.csv')
-df_neu = pd.read_csv('resultados_clustering_trigrams/neutros/distribucion_docs/distribucion_docs_k5.csv')
-df_pos = pd.read_csv('resultados_clustering_trigrams/positivos/distribucion_docs/distribucion_docs_k6.csv')
+# df_neg = pd.read_csv('resultados_clustering_trigrams/negativos/distribucion_docs/distribucion_docs_k6.csv')
+# df_neu = pd.read_csv('resultados_clustering_trigrams/neutros/distribucion_docs/distribucion_docs_k5.csv')
+df_pos = pd.read_csv('resultados_clustering_trigrams/positivos/distribucion_docs/distribucion_docs_k5.csv')
 
 # Renombramos las columnas de probabilidad en cada archivo ANTES de unirlos
-df_neg.rename(columns=nombres_neg, inplace=True)
-df_neu.rename(columns=nombres_neu, inplace=True)
-df_pos.rename(columns=nombres_pos, inplace=True)
+# df_neg.rename(columns=nombres_neg)
+# df_neu.rename(columns=nombres_neu)
+df_master = df_pos.rename(columns=nombres_pos)
 
 # Unimos los tres archivos en uno solo
-df_master = pd.concat([df_neg, df_neu, df_pos], ignore_index=True)
+# df_master = pd.concat([df_neg, df_neu, df_pos], ignore_index=True)
 
 # Rellenamos los huecos vacíos con 0 (ej: una reseña positiva tendrá 0% en las quejas negativas)
-columnas_probabilidad = list(nombres_neg.values()) + list(nombres_neu.values()) + list(nombres_pos.values())
-df_master[columnas_probabilidad] = df_master[columnas_probabilidad].fillna(0)
+# columnas_probabilidad = list(nombres_neg.values()) + list(nombres_neu.values()) + list(nombres_pos.values())
+# df_master[columnas_probabilidad] = df_master[columnas_probabilidad].fillna(0)
 
 # ==========================================
 # 2. LIMPIEZA GEOGRÁFICA
@@ -98,11 +95,11 @@ df_master['Nombre_Topico'] = df_master.apply(nombrar_clusters, axis=1)
 # ==========================================
 # 4.5. SENTIMIENTO DOMINANTE POR CIUDAD Y PAÍS
 # ==========================================
-df_master['Sentimiento_Dominante_Ciudad'] = df_master.groupby(['City', 'Country'])['Grupo_Sentimiento'].transform(
-    lambda x: x.value_counts().idxmax() if not x.empty else 'Desconocido')
+# df_master['Sentimiento_Dominante_Ciudad'] = df_master.groupby(['City', 'Country'])['Grupo_Sentimiento'].transform(
+#     lambda x: x.value_counts().idxmax() if not x.empty else 'Desconocido')
 
 # ==========================================
 # 5. EXPORTAR EL ARCHIVO FINAL
 # ==========================================
-df_master.to_csv('Tinder_Corpus_Tableau.csv', index=False, encoding='utf-8')
+df_master.to_csv('Bumble_Corpus_Tableau_2021+.csv', index=False, encoding='utf-8')
 print("¡Archivo maestro creado con éxito!")

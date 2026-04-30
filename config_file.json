@@ -1,7 +1,7 @@
 {
    "target": "score",
    "method": "bayes",
-   "task": "classification",
+   "task": "clustering",
    "evaluation": "macro",
    "hyperparameters_knn": {
        "k_range": [3, 10],
@@ -66,15 +66,15 @@
       "seed" : 42
     },
     "oversampling" : {
-      "model": "gemma2:9B",
+      "model": "qwen2.5:1.5b",
       "possible_answers": ["positive","neutral","negative"],
-      "temperature": 0.2,
-      "repeat_penalty": 1.0,
-      "num_predict": 50,
-      "top_k": 10,
+      "temperature": 0.4,
+      "repeat_penalty": 1.2,
+      "num_predict": 40,
+      "top_k": 30,
       "top_p": 0.5,
-      "shots": [0,1],
-      "split": ["First","Random"],
+      "shots": [0],
+      "split": ["Random"],
       "seed" : 42
     }
   },
