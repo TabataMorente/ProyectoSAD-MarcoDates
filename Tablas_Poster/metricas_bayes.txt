@@ -1,4 +1,28 @@
+======================================================================
+  Hiperparámetros (hyperparameters_bayes):
+    · var_smoothing: [1e-09]
+    · bayes_type: multinomial
+    · alpha: [0.01, 0.1, 0.5, 1.0, 2.0]
+  Preprocesado:
+    · scaling: none
+    · sampling_strategy: undersample
+    · categorical_encoding: one-hot
+    · text_process_method: tf-idf
+    · ngram_range: [1, 3]
+    · limite_palabras: 10000
 
+[ MÉTRICAS DE CLASIFICACIÓN ]
+
+ -> Accuracy Global (Exactitud): 0.7533
+
+Clase        | Precision  | Recall     | Specif.    | F1-Score  
+----------------------------------------------------------------------
+0            | 0.9045     | 0.8078     | 0.8187     | 0.8534    
+1            | 0.1389     | 0.3846     | 0.8460     | 0.2041    
+2            | 0.8042     | 0.6967     | 0.9406     | 0.7466    
+----------------------------------------------------------------------
+MEDIA MACRO  | -          | -          | -          | 0.6014    
+MEDIA MICRO  | -          | -          | -          | 0.7533    
 
 
 ======================================================================
