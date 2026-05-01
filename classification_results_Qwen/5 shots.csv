@@ -1,0 +1,681 @@
+Model,Question,Examples,Id-Examples,Task name,Actual-answer,LLM-answer,Task-id
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") for each task and nothing else.
+## Examples
+Comment:""Can you delete my account I'm unable to"" Sentiment:negative
+Comment:""Alot of bots and undesirable people"" Sentiment:negative
+Comment:""I assume I was shadowbanned because nothing is working"" Sentiment:negative
+Comment:""First day it is nice . If any matches are not found it going to take account under review and it banns the account. Same situation happen to me. I don't know what I have crossed terms and conditions. Finally my account banned itself."" Sentiment:negative
+Comment:""Was issued a permanent ban. Bad experience after seeing 90% of fake profiles."" Sentiment:negative
+
+## TASK
+Comment:""Too expensive and lots of third party paid site ads."" Sentiment: 
+","Comment:""Can you delete my account I'm unable to"" Sentiment:negative
+Comment:""Alot of bots and undesirable people"" Sentiment:negative
+Comment:""I assume I was shadowbanned because nothing is working"" Sentiment:negative
+Comment:""First day it is nice . If any matches are not found it going to take account under review and it banns the account. Same situation happen to me. I don't know what I have crossed terms and conditions. Finally my account banned itself."" Sentiment:negative
+Comment:""Was issued a permanent ban. Bad experience after seeing 90% of fake profiles."" Sentiment:negative
+","[0, 1, 2, 3, 4]","Comment:""Too expensive and lots of third party paid site ads."" Sentiment: 
+",negative,negative,2654
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") for each task and nothing else.
+## Examples
+Comment:""Can you delete my account I'm unable to"" Sentiment:negative
+Comment:""Alot of bots and undesirable people"" Sentiment:negative
+Comment:""I assume I was shadowbanned because nothing is working"" Sentiment:negative
+Comment:""First day it is nice . If any matches are not found it going to take account under review and it banns the account. Same situation happen to me. I don't know what I have crossed terms and conditions. Finally my account banned itself."" Sentiment:negative
+Comment:""Was issued a permanent ban. Bad experience after seeing 90% of fake profiles."" Sentiment:negative
+
+## TASK
+Comment:""Hello my name is David and my experience with tinder has been very poor do to the fact that I don't get any likes at all and it would seem as if something is wrong or broken so I am going to just delete the account and the app and tell others to avoid it because it's not worth giving access to all your information just for them to shadow ban you so you can try to spend money on this app it is utterly useless and disappointing I am very dissatisfied."" Sentiment: 
+","Comment:""Can you delete my account I'm unable to"" Sentiment:negative
+Comment:""Alot of bots and undesirable people"" Sentiment:negative
+Comment:""I assume I was shadowbanned because nothing is working"" Sentiment:negative
+Comment:""First day it is nice . If any matches are not found it going to take account under review and it banns the account. Same situation happen to me. I don't know what I have crossed terms and conditions. Finally my account banned itself."" Sentiment:negative
+Comment:""Was issued a permanent ban. Bad experience after seeing 90% of fake profiles."" Sentiment:negative
+","[0, 1, 2, 3, 4]","Comment:""Hello my name is David and my experience with tinder has been very poor do to the fact that I don't get any likes at all and it would seem as if something is wrong or broken so I am going to just delete the account and the app and tell others to avoid it because it's not worth giving access to all your information just for them to shadow ban you so you can try to spend money on this app it is utterly useless and disappointing I am very dissatisfied."" Sentiment: 
+",negative,negative,982
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") for each task and nothing else.
+## Examples
+Comment:""Can you delete my account I'm unable to"" Sentiment:negative
+Comment:""Alot of bots and undesirable people"" Sentiment:negative
+Comment:""I assume I was shadowbanned because nothing is working"" Sentiment:negative
+Comment:""First day it is nice . If any matches are not found it going to take account under review and it banns the account. Same situation happen to me. I don't know what I have crossed terms and conditions. Finally my account banned itself."" Sentiment:negative
+Comment:""Was issued a permanent ban. Bad experience after seeing 90% of fake profiles."" Sentiment:negative
+
+## TASK
+Comment:""people telll me that if the account gets blocked they never get Amy information or reason."" Sentiment: 
+","Comment:""Can you delete my account I'm unable to"" Sentiment:negative
+Comment:""Alot of bots and undesirable people"" Sentiment:negative
+Comment:""I assume I was shadowbanned because nothing is working"" Sentiment:negative
+Comment:""First day it is nice . If any matches are not found it going to take account under review and it banns the account. Same situation happen to me. I don't know what I have crossed terms and conditions. Finally my account banned itself."" Sentiment:negative
+Comment:""Was issued a permanent ban. Bad experience after seeing 90% of fake profiles."" Sentiment:negative
+","[0, 1, 2, 3, 4]","Comment:""people telll me that if the account gets blocked they never get Amy information or reason."" Sentiment: 
+",neutral,negative,7165
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") for each task and nothing else.
+## Examples
+Comment:""Can you delete my account I'm unable to"" Sentiment:negative
+Comment:""Alot of bots and undesirable people"" Sentiment:negative
+Comment:""I assume I was shadowbanned because nothing is working"" Sentiment:negative
+Comment:""First day it is nice . If any matches are not found it going to take account under review and it banns the account. Same situation happen to me. I don't know what I have crossed terms and conditions. Finally my account banned itself."" Sentiment:negative
+Comment:""Was issued a permanent ban. Bad experience after seeing 90% of fake profiles."" Sentiment:negative
+
+## TASK
+Comment:""a money consuming app for nothing. maybe you get lucky with a match onec every two to three months or something. and I have a really good profile and not a monster face or something. sportive body. but what you know 😏"" Sentiment: 
+","Comment:""Can you delete my account I'm unable to"" Sentiment:negative
+Comment:""Alot of bots and undesirable people"" Sentiment:negative
+Comment:""I assume I was shadowbanned because nothing is working"" Sentiment:negative
+Comment:""First day it is nice . If any matches are not found it going to take account under review and it banns the account. Same situation happen to me. I don't know what I have crossed terms and conditions. Finally my account banned itself."" Sentiment:negative
+Comment:""Was issued a permanent ban. Bad experience after seeing 90% of fake profiles."" Sentiment:negative
+","[0, 1, 2, 3, 4]","Comment:""a money consuming app for nothing. maybe you get lucky with a match onec every two to three months or something. and I have a really good profile and not a monster face or something. sportive body. but what you know 😏"" Sentiment: 
+",negative,negative,4704
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") for each task and nothing else.
+## Examples
+Comment:""Can you delete my account I'm unable to"" Sentiment:negative
+Comment:""Alot of bots and undesirable people"" Sentiment:negative
+Comment:""I assume I was shadowbanned because nothing is working"" Sentiment:negative
+Comment:""First day it is nice . If any matches are not found it going to take account under review and it banns the account. Same situation happen to me. I don't know what I have crossed terms and conditions. Finally my account banned itself."" Sentiment:negative
+Comment:""Was issued a permanent ban. Bad experience after seeing 90% of fake profiles."" Sentiment:negative
+
+## TASK
+Comment:""Personally, the app feels very superficial. It ends up feeling repetitive."" Sentiment: 
+","Comment:""Can you delete my account I'm unable to"" Sentiment:negative
+Comment:""Alot of bots and undesirable people"" Sentiment:negative
+Comment:""I assume I was shadowbanned because nothing is working"" Sentiment:negative
+Comment:""First day it is nice . If any matches are not found it going to take account under review and it banns the account. Same situation happen to me. I don't know what I have crossed terms and conditions. Finally my account banned itself."" Sentiment:negative
+Comment:""Was issued a permanent ban. Bad experience after seeing 90% of fake profiles."" Sentiment:negative
+","[0, 1, 2, 3, 4]","Comment:""Personally, the app feels very superficial. It ends up feeling repetitive."" Sentiment: 
+",negative,negative,101
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") for each task and nothing else.
+## Examples
+Comment:""Can you delete my account I'm unable to"" Sentiment:negative
+Comment:""Alot of bots and undesirable people"" Sentiment:negative
+Comment:""I assume I was shadowbanned because nothing is working"" Sentiment:negative
+Comment:""First day it is nice . If any matches are not found it going to take account under review and it banns the account. Same situation happen to me. I don't know what I have crossed terms and conditions. Finally my account banned itself."" Sentiment:negative
+Comment:""Was issued a permanent ban. Bad experience after seeing 90% of fake profiles."" Sentiment:negative
+
+## TASK
+Comment:""Why keep showing me the fat and ugly ""secret admirer"" day after day?"" Sentiment: 
+","Comment:""Can you delete my account I'm unable to"" Sentiment:negative
+Comment:""Alot of bots and undesirable people"" Sentiment:negative
+Comment:""I assume I was shadowbanned because nothing is working"" Sentiment:negative
+Comment:""First day it is nice . If any matches are not found it going to take account under review and it banns the account. Same situation happen to me. I don't know what I have crossed terms and conditions. Finally my account banned itself."" Sentiment:negative
+Comment:""Was issued a permanent ban. Bad experience after seeing 90% of fake profiles."" Sentiment:negative
+","[0, 1, 2, 3, 4]","Comment:""Why keep showing me the fat and ugly ""secret admirer"" day after day?"" Sentiment: 
+",negative,negative,4222
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") for each task and nothing else.
+## Examples
+Comment:""Can you delete my account I'm unable to"" Sentiment:negative
+Comment:""Alot of bots and undesirable people"" Sentiment:negative
+Comment:""I assume I was shadowbanned because nothing is working"" Sentiment:negative
+Comment:""First day it is nice . If any matches are not found it going to take account under review and it banns the account. Same situation happen to me. I don't know what I have crossed terms and conditions. Finally my account banned itself."" Sentiment:negative
+Comment:""Was issued a permanent ban. Bad experience after seeing 90% of fake profiles."" Sentiment:negative
+
+## TASK
+Comment:""Good apps"" Sentiment: 
+","Comment:""Can you delete my account I'm unable to"" Sentiment:negative
+Comment:""Alot of bots and undesirable people"" Sentiment:negative
+Comment:""I assume I was shadowbanned because nothing is working"" Sentiment:negative
+Comment:""First day it is nice . If any matches are not found it going to take account under review and it banns the account. Same situation happen to me. I don't know what I have crossed terms and conditions. Finally my account banned itself."" Sentiment:negative
+Comment:""Was issued a permanent ban. Bad experience after seeing 90% of fake profiles."" Sentiment:negative
+","[0, 1, 2, 3, 4]","Comment:""Good apps"" Sentiment: 
+",positive,positive,7884
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") for each task and nothing else.
+## Examples
+Comment:""Can you delete my account I'm unable to"" Sentiment:negative
+Comment:""Alot of bots and undesirable people"" Sentiment:negative
+Comment:""I assume I was shadowbanned because nothing is working"" Sentiment:negative
+Comment:""First day it is nice . If any matches are not found it going to take account under review and it banns the account. Same situation happen to me. I don't know what I have crossed terms and conditions. Finally my account banned itself."" Sentiment:negative
+Comment:""Was issued a permanent ban. Bad experience after seeing 90% of fake profiles."" Sentiment:negative
+
+## TASK
+Comment:""This app is dry. A waste of mens time."" Sentiment: 
+","Comment:""Can you delete my account I'm unable to"" Sentiment:negative
+Comment:""Alot of bots and undesirable people"" Sentiment:negative
+Comment:""I assume I was shadowbanned because nothing is working"" Sentiment:negative
+Comment:""First day it is nice . If any matches are not found it going to take account under review and it banns the account. Same situation happen to me. I don't know what I have crossed terms and conditions. Finally my account banned itself."" Sentiment:negative
+Comment:""Was issued a permanent ban. Bad experience after seeing 90% of fake profiles."" Sentiment:negative
+","[0, 1, 2, 3, 4]","Comment:""This app is dry. A waste of mens time."" Sentiment: 
+",negative,negative,1115
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") for each task and nothing else.
+## Examples
+Comment:""Can you delete my account I'm unable to"" Sentiment:negative
+Comment:""Alot of bots and undesirable people"" Sentiment:negative
+Comment:""I assume I was shadowbanned because nothing is working"" Sentiment:negative
+Comment:""First day it is nice . If any matches are not found it going to take account under review and it banns the account. Same situation happen to me. I don't know what I have crossed terms and conditions. Finally my account banned itself."" Sentiment:negative
+Comment:""Was issued a permanent ban. Bad experience after seeing 90% of fake profiles."" Sentiment:negative
+
+## TASK
+Comment:""great"" Sentiment: 
+","Comment:""Can you delete my account I'm unable to"" Sentiment:negative
+Comment:""Alot of bots and undesirable people"" Sentiment:negative
+Comment:""I assume I was shadowbanned because nothing is working"" Sentiment:negative
+Comment:""First day it is nice . If any matches are not found it going to take account under review and it banns the account. Same situation happen to me. I don't know what I have crossed terms and conditions. Finally my account banned itself."" Sentiment:negative
+Comment:""Was issued a permanent ban. Bad experience after seeing 90% of fake profiles."" Sentiment:negative
+","[0, 1, 2, 3, 4]","Comment:""great"" Sentiment: 
+",positive,positive,9229
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") for each task and nothing else.
+## Examples
+Comment:""Can you delete my account I'm unable to"" Sentiment:negative
+Comment:""Alot of bots and undesirable people"" Sentiment:negative
+Comment:""I assume I was shadowbanned because nothing is working"" Sentiment:negative
+Comment:""First day it is nice . If any matches are not found it going to take account under review and it banns the account. Same situation happen to me. I don't know what I have crossed terms and conditions. Finally my account banned itself."" Sentiment:negative
+Comment:""Was issued a permanent ban. Bad experience after seeing 90% of fake profiles."" Sentiment:negative
+
+## TASK
+Comment:""I love having friends"" Sentiment: 
+","Comment:""Can you delete my account I'm unable to"" Sentiment:negative
+Comment:""Alot of bots and undesirable people"" Sentiment:negative
+Comment:""I assume I was shadowbanned because nothing is working"" Sentiment:negative
+Comment:""First day it is nice . If any matches are not found it going to take account under review and it banns the account. Same situation happen to me. I don't know what I have crossed terms and conditions. Finally my account banned itself."" Sentiment:negative
+Comment:""Was issued a permanent ban. Bad experience after seeing 90% of fake profiles."" Sentiment:negative
+","[0, 1, 2, 3, 4]","Comment:""I love having friends"" Sentiment: 
+",negative,positive,4010
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") for each task and nothing else.
+## Examples
+Comment:""Paywalls contacts, loads of inactive and spam profiles."" Sentiment:negative
+Comment:""Can someone please tell me how the hell I stop payments??? I'm not using the app and still being charged"" Sentiment:negative
+Comment:""It's too bad to see such a big organisation with a lack of professional approach. I had closed my account completely, but they continued deducting their fees for four months in a row, though I had written to them nothing happened!!! until I requested Google to cancel their facilities tools !!!! sheep, too, sheep Tinder, take care guys from them it happens to many subscribers before ."" Sentiment:negative
+Comment:""$40 a month just to see who likes me. Not worth it to find out it's someone I know wouldn't be interested in me. I'd pay less than $5 for that feature alone because it's the only useful one"" Sentiment:negative
+Comment:""no luck on tinder"" Sentiment:neutral
+
+## TASK
+Comment:""Too expensive and lots of third party paid site ads."" Sentiment: 
+","Comment:""Paywalls contacts, loads of inactive and spam profiles."" Sentiment:negative
+Comment:""Can someone please tell me how the hell I stop payments??? I'm not using the app and still being charged"" Sentiment:negative
+Comment:""It's too bad to see such a big organisation with a lack of professional approach. I had closed my account completely, but they continued deducting their fees for four months in a row, though I had written to them nothing happened!!! until I requested Google to cancel their facilities tools !!!! sheep, too, sheep Tinder, take care guys from them it happens to many subscribers before ."" Sentiment:negative
+Comment:""$40 a month just to see who likes me. Not worth it to find out it's someone I know wouldn't be interested in me. I'd pay less than $5 for that feature alone because it's the only useful one"" Sentiment:negative
+Comment:""no luck on tinder"" Sentiment:neutral
+","[5734, 5191, 5390, 860, 7270]","Comment:""Too expensive and lots of third party paid site ads."" Sentiment: 
+",negative,negative,2654
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") for each task and nothing else.
+## Examples
+Comment:""Paywalls contacts, loads of inactive and spam profiles."" Sentiment:negative
+Comment:""Can someone please tell me how the hell I stop payments??? I'm not using the app and still being charged"" Sentiment:negative
+Comment:""It's too bad to see such a big organisation with a lack of professional approach. I had closed my account completely, but they continued deducting their fees for four months in a row, though I had written to them nothing happened!!! until I requested Google to cancel their facilities tools !!!! sheep, too, sheep Tinder, take care guys from them it happens to many subscribers before ."" Sentiment:negative
+Comment:""$40 a month just to see who likes me. Not worth it to find out it's someone I know wouldn't be interested in me. I'd pay less than $5 for that feature alone because it's the only useful one"" Sentiment:negative
+Comment:""no luck on tinder"" Sentiment:neutral
+
+## TASK
+Comment:""Hello my name is David and my experience with tinder has been very poor do to the fact that I don't get any likes at all and it would seem as if something is wrong or broken so I am going to just delete the account and the app and tell others to avoid it because it's not worth giving access to all your information just for them to shadow ban you so you can try to spend money on this app it is utterly useless and disappointing I am very dissatisfied."" Sentiment: 
+","Comment:""Paywalls contacts, loads of inactive and spam profiles."" Sentiment:negative
+Comment:""Can someone please tell me how the hell I stop payments??? I'm not using the app and still being charged"" Sentiment:negative
+Comment:""It's too bad to see such a big organisation with a lack of professional approach. I had closed my account completely, but they continued deducting their fees for four months in a row, though I had written to them nothing happened!!! until I requested Google to cancel their facilities tools !!!! sheep, too, sheep Tinder, take care guys from them it happens to many subscribers before ."" Sentiment:negative
+Comment:""$40 a month just to see who likes me. Not worth it to find out it's someone I know wouldn't be interested in me. I'd pay less than $5 for that feature alone because it's the only useful one"" Sentiment:negative
+Comment:""no luck on tinder"" Sentiment:neutral
+","[5734, 5191, 5390, 860, 7270]","Comment:""Hello my name is David and my experience with tinder has been very poor do to the fact that I don't get any likes at all and it would seem as if something is wrong or broken so I am going to just delete the account and the app and tell others to avoid it because it's not worth giving access to all your information just for them to shadow ban you so you can try to spend money on this app it is utterly useless and disappointing I am very dissatisfied."" Sentiment: 
+",negative,negative,982
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") for each task and nothing else.
+## Examples
+Comment:""Paywalls contacts, loads of inactive and spam profiles."" Sentiment:negative
+Comment:""Can someone please tell me how the hell I stop payments??? I'm not using the app and still being charged"" Sentiment:negative
+Comment:""It's too bad to see such a big organisation with a lack of professional approach. I had closed my account completely, but they continued deducting their fees for four months in a row, though I had written to them nothing happened!!! until I requested Google to cancel their facilities tools !!!! sheep, too, sheep Tinder, take care guys from them it happens to many subscribers before ."" Sentiment:negative
+Comment:""$40 a month just to see who likes me. Not worth it to find out it's someone I know wouldn't be interested in me. I'd pay less than $5 for that feature alone because it's the only useful one"" Sentiment:negative
+Comment:""no luck on tinder"" Sentiment:neutral
+
+## TASK
+Comment:""people telll me that if the account gets blocked they never get Amy information or reason."" Sentiment: 
+","Comment:""Paywalls contacts, loads of inactive and spam profiles."" Sentiment:negative
+Comment:""Can someone please tell me how the hell I stop payments??? I'm not using the app and still being charged"" Sentiment:negative
+Comment:""It's too bad to see such a big organisation with a lack of professional approach. I had closed my account completely, but they continued deducting their fees for four months in a row, though I had written to them nothing happened!!! until I requested Google to cancel their facilities tools !!!! sheep, too, sheep Tinder, take care guys from them it happens to many subscribers before ."" Sentiment:negative
+Comment:""$40 a month just to see who likes me. Not worth it to find out it's someone I know wouldn't be interested in me. I'd pay less than $5 for that feature alone because it's the only useful one"" Sentiment:negative
+Comment:""no luck on tinder"" Sentiment:neutral
+","[5734, 5191, 5390, 860, 7270]","Comment:""people telll me that if the account gets blocked they never get Amy information or reason."" Sentiment: 
+",neutral,negative,7165
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") for each task and nothing else.
+## Examples
+Comment:""Paywalls contacts, loads of inactive and spam profiles."" Sentiment:negative
+Comment:""Can someone please tell me how the hell I stop payments??? I'm not using the app and still being charged"" Sentiment:negative
+Comment:""It's too bad to see such a big organisation with a lack of professional approach. I had closed my account completely, but they continued deducting their fees for four months in a row, though I had written to them nothing happened!!! until I requested Google to cancel their facilities tools !!!! sheep, too, sheep Tinder, take care guys from them it happens to many subscribers before ."" Sentiment:negative
+Comment:""$40 a month just to see who likes me. Not worth it to find out it's someone I know wouldn't be interested in me. I'd pay less than $5 for that feature alone because it's the only useful one"" Sentiment:negative
+Comment:""no luck on tinder"" Sentiment:neutral
+
+## TASK
+Comment:""a money consuming app for nothing. maybe you get lucky with a match onec every two to three months or something. and I have a really good profile and not a monster face or something. sportive body. but what you know 😏"" Sentiment: 
+","Comment:""Paywalls contacts, loads of inactive and spam profiles."" Sentiment:negative
+Comment:""Can someone please tell me how the hell I stop payments??? I'm not using the app and still being charged"" Sentiment:negative
+Comment:""It's too bad to see such a big organisation with a lack of professional approach. I had closed my account completely, but they continued deducting their fees for four months in a row, though I had written to them nothing happened!!! until I requested Google to cancel their facilities tools !!!! sheep, too, sheep Tinder, take care guys from them it happens to many subscribers before ."" Sentiment:negative
+Comment:""$40 a month just to see who likes me. Not worth it to find out it's someone I know wouldn't be interested in me. I'd pay less than $5 for that feature alone because it's the only useful one"" Sentiment:negative
+Comment:""no luck on tinder"" Sentiment:neutral
+","[5734, 5191, 5390, 860, 7270]","Comment:""a money consuming app for nothing. maybe you get lucky with a match onec every two to three months or something. and I have a really good profile and not a monster face or something. sportive body. but what you know 😏"" Sentiment: 
+",negative,negative,4704
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") for each task and nothing else.
+## Examples
+Comment:""Paywalls contacts, loads of inactive and spam profiles."" Sentiment:negative
+Comment:""Can someone please tell me how the hell I stop payments??? I'm not using the app and still being charged"" Sentiment:negative
+Comment:""It's too bad to see such a big organisation with a lack of professional approach. I had closed my account completely, but they continued deducting their fees for four months in a row, though I had written to them nothing happened!!! until I requested Google to cancel their facilities tools !!!! sheep, too, sheep Tinder, take care guys from them it happens to many subscribers before ."" Sentiment:negative
+Comment:""$40 a month just to see who likes me. Not worth it to find out it's someone I know wouldn't be interested in me. I'd pay less than $5 for that feature alone because it's the only useful one"" Sentiment:negative
+Comment:""no luck on tinder"" Sentiment:neutral
+
+## TASK
+Comment:""Personally, the app feels very superficial. It ends up feeling repetitive."" Sentiment: 
+","Comment:""Paywalls contacts, loads of inactive and spam profiles."" Sentiment:negative
+Comment:""Can someone please tell me how the hell I stop payments??? I'm not using the app and still being charged"" Sentiment:negative
+Comment:""It's too bad to see such a big organisation with a lack of professional approach. I had closed my account completely, but they continued deducting their fees for four months in a row, though I had written to them nothing happened!!! until I requested Google to cancel their facilities tools !!!! sheep, too, sheep Tinder, take care guys from them it happens to many subscribers before ."" Sentiment:negative
+Comment:""$40 a month just to see who likes me. Not worth it to find out it's someone I know wouldn't be interested in me. I'd pay less than $5 for that feature alone because it's the only useful one"" Sentiment:negative
+Comment:""no luck on tinder"" Sentiment:neutral
+","[5734, 5191, 5390, 860, 7270]","Comment:""Personally, the app feels very superficial. It ends up feeling repetitive."" Sentiment: 
+",negative,negative,101
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") for each task and nothing else.
+## Examples
+Comment:""Paywalls contacts, loads of inactive and spam profiles."" Sentiment:negative
+Comment:""Can someone please tell me how the hell I stop payments??? I'm not using the app and still being charged"" Sentiment:negative
+Comment:""It's too bad to see such a big organisation with a lack of professional approach. I had closed my account completely, but they continued deducting their fees for four months in a row, though I had written to them nothing happened!!! until I requested Google to cancel their facilities tools !!!! sheep, too, sheep Tinder, take care guys from them it happens to many subscribers before ."" Sentiment:negative
+Comment:""$40 a month just to see who likes me. Not worth it to find out it's someone I know wouldn't be interested in me. I'd pay less than $5 for that feature alone because it's the only useful one"" Sentiment:negative
+Comment:""no luck on tinder"" Sentiment:neutral
+
+## TASK
+Comment:""Why keep showing me the fat and ugly ""secret admirer"" day after day?"" Sentiment: 
+","Comment:""Paywalls contacts, loads of inactive and spam profiles."" Sentiment:negative
+Comment:""Can someone please tell me how the hell I stop payments??? I'm not using the app and still being charged"" Sentiment:negative
+Comment:""It's too bad to see such a big organisation with a lack of professional approach. I had closed my account completely, but they continued deducting their fees for four months in a row, though I had written to them nothing happened!!! until I requested Google to cancel their facilities tools !!!! sheep, too, sheep Tinder, take care guys from them it happens to many subscribers before ."" Sentiment:negative
+Comment:""$40 a month just to see who likes me. Not worth it to find out it's someone I know wouldn't be interested in me. I'd pay less than $5 for that feature alone because it's the only useful one"" Sentiment:negative
+Comment:""no luck on tinder"" Sentiment:neutral
+","[5734, 5191, 5390, 860, 7270]","Comment:""Why keep showing me the fat and ugly ""secret admirer"" day after day?"" Sentiment: 
+",negative,negative,4222
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") for each task and nothing else.
+## Examples
+Comment:""Paywalls contacts, loads of inactive and spam profiles."" Sentiment:negative
+Comment:""Can someone please tell me how the hell I stop payments??? I'm not using the app and still being charged"" Sentiment:negative
+Comment:""It's too bad to see such a big organisation with a lack of professional approach. I had closed my account completely, but they continued deducting their fees for four months in a row, though I had written to them nothing happened!!! until I requested Google to cancel their facilities tools !!!! sheep, too, sheep Tinder, take care guys from them it happens to many subscribers before ."" Sentiment:negative
+Comment:""$40 a month just to see who likes me. Not worth it to find out it's someone I know wouldn't be interested in me. I'd pay less than $5 for that feature alone because it's the only useful one"" Sentiment:negative
+Comment:""no luck on tinder"" Sentiment:neutral
+
+## TASK
+Comment:""Good apps"" Sentiment: 
+","Comment:""Paywalls contacts, loads of inactive and spam profiles."" Sentiment:negative
+Comment:""Can someone please tell me how the hell I stop payments??? I'm not using the app and still being charged"" Sentiment:negative
+Comment:""It's too bad to see such a big organisation with a lack of professional approach. I had closed my account completely, but they continued deducting their fees for four months in a row, though I had written to them nothing happened!!! until I requested Google to cancel their facilities tools !!!! sheep, too, sheep Tinder, take care guys from them it happens to many subscribers before ."" Sentiment:negative
+Comment:""$40 a month just to see who likes me. Not worth it to find out it's someone I know wouldn't be interested in me. I'd pay less than $5 for that feature alone because it's the only useful one"" Sentiment:negative
+Comment:""no luck on tinder"" Sentiment:neutral
+","[5734, 5191, 5390, 860, 7270]","Comment:""Good apps"" Sentiment: 
+",positive,positive,7884
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") for each task and nothing else.
+## Examples
+Comment:""Paywalls contacts, loads of inactive and spam profiles."" Sentiment:negative
+Comment:""Can someone please tell me how the hell I stop payments??? I'm not using the app and still being charged"" Sentiment:negative
+Comment:""It's too bad to see such a big organisation with a lack of professional approach. I had closed my account completely, but they continued deducting their fees for four months in a row, though I had written to them nothing happened!!! until I requested Google to cancel their facilities tools !!!! sheep, too, sheep Tinder, take care guys from them it happens to many subscribers before ."" Sentiment:negative
+Comment:""$40 a month just to see who likes me. Not worth it to find out it's someone I know wouldn't be interested in me. I'd pay less than $5 for that feature alone because it's the only useful one"" Sentiment:negative
+Comment:""no luck on tinder"" Sentiment:neutral
+
+## TASK
+Comment:""This app is dry. A waste of mens time."" Sentiment: 
+","Comment:""Paywalls contacts, loads of inactive and spam profiles."" Sentiment:negative
+Comment:""Can someone please tell me how the hell I stop payments??? I'm not using the app and still being charged"" Sentiment:negative
+Comment:""It's too bad to see such a big organisation with a lack of professional approach. I had closed my account completely, but they continued deducting their fees for four months in a row, though I had written to them nothing happened!!! until I requested Google to cancel their facilities tools !!!! sheep, too, sheep Tinder, take care guys from them it happens to many subscribers before ."" Sentiment:negative
+Comment:""$40 a month just to see who likes me. Not worth it to find out it's someone I know wouldn't be interested in me. I'd pay less than $5 for that feature alone because it's the only useful one"" Sentiment:negative
+Comment:""no luck on tinder"" Sentiment:neutral
+","[5734, 5191, 5390, 860, 7270]","Comment:""This app is dry. A waste of mens time."" Sentiment: 
+",negative,negative,1115
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") for each task and nothing else.
+## Examples
+Comment:""Paywalls contacts, loads of inactive and spam profiles."" Sentiment:negative
+Comment:""Can someone please tell me how the hell I stop payments??? I'm not using the app and still being charged"" Sentiment:negative
+Comment:""It's too bad to see such a big organisation with a lack of professional approach. I had closed my account completely, but they continued deducting their fees for four months in a row, though I had written to them nothing happened!!! until I requested Google to cancel their facilities tools !!!! sheep, too, sheep Tinder, take care guys from them it happens to many subscribers before ."" Sentiment:negative
+Comment:""$40 a month just to see who likes me. Not worth it to find out it's someone I know wouldn't be interested in me. I'd pay less than $5 for that feature alone because it's the only useful one"" Sentiment:negative
+Comment:""no luck on tinder"" Sentiment:neutral
+
+## TASK
+Comment:""great"" Sentiment: 
+","Comment:""Paywalls contacts, loads of inactive and spam profiles."" Sentiment:negative
+Comment:""Can someone please tell me how the hell I stop payments??? I'm not using the app and still being charged"" Sentiment:negative
+Comment:""It's too bad to see such a big organisation with a lack of professional approach. I had closed my account completely, but they continued deducting their fees for four months in a row, though I had written to them nothing happened!!! until I requested Google to cancel their facilities tools !!!! sheep, too, sheep Tinder, take care guys from them it happens to many subscribers before ."" Sentiment:negative
+Comment:""$40 a month just to see who likes me. Not worth it to find out it's someone I know wouldn't be interested in me. I'd pay less than $5 for that feature alone because it's the only useful one"" Sentiment:negative
+Comment:""no luck on tinder"" Sentiment:neutral
+","[5734, 5191, 5390, 860, 7270]","Comment:""great"" Sentiment: 
+",positive,positive,9229
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") for each task and nothing else.
+## Examples
+Comment:""Paywalls contacts, loads of inactive and spam profiles."" Sentiment:negative
+Comment:""Can someone please tell me how the hell I stop payments??? I'm not using the app and still being charged"" Sentiment:negative
+Comment:""It's too bad to see such a big organisation with a lack of professional approach. I had closed my account completely, but they continued deducting their fees for four months in a row, though I had written to them nothing happened!!! until I requested Google to cancel their facilities tools !!!! sheep, too, sheep Tinder, take care guys from them it happens to many subscribers before ."" Sentiment:negative
+Comment:""$40 a month just to see who likes me. Not worth it to find out it's someone I know wouldn't be interested in me. I'd pay less than $5 for that feature alone because it's the only useful one"" Sentiment:negative
+Comment:""no luck on tinder"" Sentiment:neutral
+
+## TASK
+Comment:""I love having friends"" Sentiment: 
+","Comment:""Paywalls contacts, loads of inactive and spam profiles."" Sentiment:negative
+Comment:""Can someone please tell me how the hell I stop payments??? I'm not using the app and still being charged"" Sentiment:negative
+Comment:""It's too bad to see such a big organisation with a lack of professional approach. I had closed my account completely, but they continued deducting their fees for four months in a row, though I had written to them nothing happened!!! until I requested Google to cancel their facilities tools !!!! sheep, too, sheep Tinder, take care guys from them it happens to many subscribers before ."" Sentiment:negative
+Comment:""$40 a month just to see who likes me. Not worth it to find out it's someone I know wouldn't be interested in me. I'd pay less than $5 for that feature alone because it's the only useful one"" Sentiment:negative
+Comment:""no luck on tinder"" Sentiment:neutral
+","[5734, 5191, 5390, 860, 7270]","Comment:""I love having friends"" Sentiment: 
+",negative,positive,4010
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") for each task and nothing else.
+## Examples
+Comment:""great"" Sentiment:positive
+Comment:""This app is dry. A waste of mens time."" Sentiment:negative
+Comment:""a money consuming app for nothing. maybe you get lucky with a match onec every two to three months or something. and I have a really good profile and not a monster face or something. sportive body. but what you know 😏"" Sentiment:negative
+Comment:""Hello my name is David and my experience with tinder has been very poor do to the fact that I don't get any likes at all and it would seem as if something is wrong or broken so I am going to just delete the account and the app and tell others to avoid it because it's not worth giving access to all your information just for them to shadow ban you so you can try to spend money on this app it is utterly useless and disappointing I am very dissatisfied."" Sentiment:negative
+Comment:""Why keep showing me the fat and ugly ""secret admirer"" day after day?"" Sentiment:negative
+
+## TASK
+Comment:""Too expensive and lots of third party paid site ads."" Sentiment: 
+","Comment:""great"" Sentiment:positive
+Comment:""This app is dry. A waste of mens time."" Sentiment:negative
+Comment:""a money consuming app for nothing. maybe you get lucky with a match onec every two to three months or something. and I have a really good profile and not a monster face or something. sportive body. but what you know 😏"" Sentiment:negative
+Comment:""Hello my name is David and my experience with tinder has been very poor do to the fact that I don't get any likes at all and it would seem as if something is wrong or broken so I am going to just delete the account and the app and tell others to avoid it because it's not worth giving access to all your information just for them to shadow ban you so you can try to spend money on this app it is utterly useless and disappointing I am very dissatisfied."" Sentiment:negative
+Comment:""Why keep showing me the fat and ugly ""secret admirer"" day after day?"" Sentiment:negative
+","[9229, 1115, 4704, 982, 4222]","Comment:""Too expensive and lots of third party paid site ads."" Sentiment: 
+",negative,negative,2654
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") for each task and nothing else.
+## Examples
+Comment:""great"" Sentiment:positive
+Comment:""This app is dry. A waste of mens time."" Sentiment:negative
+Comment:""a money consuming app for nothing. maybe you get lucky with a match onec every two to three months or something. and I have a really good profile and not a monster face or something. sportive body. but what you know 😏"" Sentiment:negative
+Comment:""Hello my name is David and my experience with tinder has been very poor do to the fact that I don't get any likes at all and it would seem as if something is wrong or broken so I am going to just delete the account and the app and tell others to avoid it because it's not worth giving access to all your information just for them to shadow ban you so you can try to spend money on this app it is utterly useless and disappointing I am very dissatisfied."" Sentiment:negative
+Comment:""Why keep showing me the fat and ugly ""secret admirer"" day after day?"" Sentiment:negative
+
+## TASK
+Comment:""Hello my name is David and my experience with tinder has been very poor do to the fact that I don't get any likes at all and it would seem as if something is wrong or broken so I am going to just delete the account and the app and tell others to avoid it because it's not worth giving access to all your information just for them to shadow ban you so you can try to spend money on this app it is utterly useless and disappointing I am very dissatisfied."" Sentiment: 
+","Comment:""great"" Sentiment:positive
+Comment:""This app is dry. A waste of mens time."" Sentiment:negative
+Comment:""a money consuming app for nothing. maybe you get lucky with a match onec every two to three months or something. and I have a really good profile and not a monster face or something. sportive body. but what you know 😏"" Sentiment:negative
+Comment:""Hello my name is David and my experience with tinder has been very poor do to the fact that I don't get any likes at all and it would seem as if something is wrong or broken so I am going to just delete the account and the app and tell others to avoid it because it's not worth giving access to all your information just for them to shadow ban you so you can try to spend money on this app it is utterly useless and disappointing I am very dissatisfied."" Sentiment:negative
+Comment:""Why keep showing me the fat and ugly ""secret admirer"" day after day?"" Sentiment:negative
+","[9229, 1115, 4704, 982, 4222]","Comment:""Hello my name is David and my experience with tinder has been very poor do to the fact that I don't get any likes at all and it would seem as if something is wrong or broken so I am going to just delete the account and the app and tell others to avoid it because it's not worth giving access to all your information just for them to shadow ban you so you can try to spend money on this app it is utterly useless and disappointing I am very dissatisfied."" Sentiment: 
+",negative,negative,982
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") for each task and nothing else.
+## Examples
+Comment:""great"" Sentiment:positive
+Comment:""This app is dry. A waste of mens time."" Sentiment:negative
+Comment:""a money consuming app for nothing. maybe you get lucky with a match onec every two to three months or something. and I have a really good profile and not a monster face or something. sportive body. but what you know 😏"" Sentiment:negative
+Comment:""Hello my name is David and my experience with tinder has been very poor do to the fact that I don't get any likes at all and it would seem as if something is wrong or broken so I am going to just delete the account and the app and tell others to avoid it because it's not worth giving access to all your information just for them to shadow ban you so you can try to spend money on this app it is utterly useless and disappointing I am very dissatisfied."" Sentiment:negative
+Comment:""Why keep showing me the fat and ugly ""secret admirer"" day after day?"" Sentiment:negative
+
+## TASK
+Comment:""people telll me that if the account gets blocked they never get Amy information or reason."" Sentiment: 
+","Comment:""great"" Sentiment:positive
+Comment:""This app is dry. A waste of mens time."" Sentiment:negative
+Comment:""a money consuming app for nothing. maybe you get lucky with a match onec every two to three months or something. and I have a really good profile and not a monster face or something. sportive body. but what you know 😏"" Sentiment:negative
+Comment:""Hello my name is David and my experience with tinder has been very poor do to the fact that I don't get any likes at all and it would seem as if something is wrong or broken so I am going to just delete the account and the app and tell others to avoid it because it's not worth giving access to all your information just for them to shadow ban you so you can try to spend money on this app it is utterly useless and disappointing I am very dissatisfied."" Sentiment:negative
+Comment:""Why keep showing me the fat and ugly ""secret admirer"" day after day?"" Sentiment:negative
+","[9229, 1115, 4704, 982, 4222]","Comment:""people telll me that if the account gets blocked they never get Amy information or reason."" Sentiment: 
+",neutral,negative,7165
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") for each task and nothing else.
+## Examples
+Comment:""great"" Sentiment:positive
+Comment:""This app is dry. A waste of mens time."" Sentiment:negative
+Comment:""a money consuming app for nothing. maybe you get lucky with a match onec every two to three months or something. and I have a really good profile and not a monster face or something. sportive body. but what you know 😏"" Sentiment:negative
+Comment:""Hello my name is David and my experience with tinder has been very poor do to the fact that I don't get any likes at all and it would seem as if something is wrong or broken so I am going to just delete the account and the app and tell others to avoid it because it's not worth giving access to all your information just for them to shadow ban you so you can try to spend money on this app it is utterly useless and disappointing I am very dissatisfied."" Sentiment:negative
+Comment:""Why keep showing me the fat and ugly ""secret admirer"" day after day?"" Sentiment:negative
+
+## TASK
+Comment:""a money consuming app for nothing. maybe you get lucky with a match onec every two to three months or something. and I have a really good profile and not a monster face or something. sportive body. but what you know 😏"" Sentiment: 
+","Comment:""great"" Sentiment:positive
+Comment:""This app is dry. A waste of mens time."" Sentiment:negative
+Comment:""a money consuming app for nothing. maybe you get lucky with a match onec every two to three months or something. and I have a really good profile and not a monster face or something. sportive body. but what you know 😏"" Sentiment:negative
+Comment:""Hello my name is David and my experience with tinder has been very poor do to the fact that I don't get any likes at all and it would seem as if something is wrong or broken so I am going to just delete the account and the app and tell others to avoid it because it's not worth giving access to all your information just for them to shadow ban you so you can try to spend money on this app it is utterly useless and disappointing I am very dissatisfied."" Sentiment:negative
+Comment:""Why keep showing me the fat and ugly ""secret admirer"" day after day?"" Sentiment:negative
+","[9229, 1115, 4704, 982, 4222]","Comment:""a money consuming app for nothing. maybe you get lucky with a match onec every two to three months or something. and I have a really good profile and not a monster face or something. sportive body. but what you know 😏"" Sentiment: 
+",negative,negative,4704
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") for each task and nothing else.
+## Examples
+Comment:""great"" Sentiment:positive
+Comment:""This app is dry. A waste of mens time."" Sentiment:negative
+Comment:""a money consuming app for nothing. maybe you get lucky with a match onec every two to three months or something. and I have a really good profile and not a monster face or something. sportive body. but what you know 😏"" Sentiment:negative
+Comment:""Hello my name is David and my experience with tinder has been very poor do to the fact that I don't get any likes at all and it would seem as if something is wrong or broken so I am going to just delete the account and the app and tell others to avoid it because it's not worth giving access to all your information just for them to shadow ban you so you can try to spend money on this app it is utterly useless and disappointing I am very dissatisfied."" Sentiment:negative
+Comment:""Why keep showing me the fat and ugly ""secret admirer"" day after day?"" Sentiment:negative
+
+## TASK
+Comment:""Personally, the app feels very superficial. It ends up feeling repetitive."" Sentiment: 
+","Comment:""great"" Sentiment:positive
+Comment:""This app is dry. A waste of mens time."" Sentiment:negative
+Comment:""a money consuming app for nothing. maybe you get lucky with a match onec every two to three months or something. and I have a really good profile and not a monster face or something. sportive body. but what you know 😏"" Sentiment:negative
+Comment:""Hello my name is David and my experience with tinder has been very poor do to the fact that I don't get any likes at all and it would seem as if something is wrong or broken so I am going to just delete the account and the app and tell others to avoid it because it's not worth giving access to all your information just for them to shadow ban you so you can try to spend money on this app it is utterly useless and disappointing I am very dissatisfied."" Sentiment:negative
+Comment:""Why keep showing me the fat and ugly ""secret admirer"" day after day?"" Sentiment:negative
+","[9229, 1115, 4704, 982, 4222]","Comment:""Personally, the app feels very superficial. It ends up feeling repetitive."" Sentiment: 
+",negative,negative,101
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") for each task and nothing else.
+## Examples
+Comment:""great"" Sentiment:positive
+Comment:""This app is dry. A waste of mens time."" Sentiment:negative
+Comment:""a money consuming app for nothing. maybe you get lucky with a match onec every two to three months or something. and I have a really good profile and not a monster face or something. sportive body. but what you know 😏"" Sentiment:negative
+Comment:""Hello my name is David and my experience with tinder has been very poor do to the fact that I don't get any likes at all and it would seem as if something is wrong or broken so I am going to just delete the account and the app and tell others to avoid it because it's not worth giving access to all your information just for them to shadow ban you so you can try to spend money on this app it is utterly useless and disappointing I am very dissatisfied."" Sentiment:negative
+Comment:""Why keep showing me the fat and ugly ""secret admirer"" day after day?"" Sentiment:negative
+
+## TASK
+Comment:""Why keep showing me the fat and ugly ""secret admirer"" day after day?"" Sentiment: 
+","Comment:""great"" Sentiment:positive
+Comment:""This app is dry. A waste of mens time."" Sentiment:negative
+Comment:""a money consuming app for nothing. maybe you get lucky with a match onec every two to three months or something. and I have a really good profile and not a monster face or something. sportive body. but what you know 😏"" Sentiment:negative
+Comment:""Hello my name is David and my experience with tinder has been very poor do to the fact that I don't get any likes at all and it would seem as if something is wrong or broken so I am going to just delete the account and the app and tell others to avoid it because it's not worth giving access to all your information just for them to shadow ban you so you can try to spend money on this app it is utterly useless and disappointing I am very dissatisfied."" Sentiment:negative
+Comment:""Why keep showing me the fat and ugly ""secret admirer"" day after day?"" Sentiment:negative
+","[9229, 1115, 4704, 982, 4222]","Comment:""Why keep showing me the fat and ugly ""secret admirer"" day after day?"" Sentiment: 
+",negative,negative,4222
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") for each task and nothing else.
+## Examples
+Comment:""great"" Sentiment:positive
+Comment:""This app is dry. A waste of mens time."" Sentiment:negative
+Comment:""a money consuming app for nothing. maybe you get lucky with a match onec every two to three months or something. and I have a really good profile and not a monster face or something. sportive body. but what you know 😏"" Sentiment:negative
+Comment:""Hello my name is David and my experience with tinder has been very poor do to the fact that I don't get any likes at all and it would seem as if something is wrong or broken so I am going to just delete the account and the app and tell others to avoid it because it's not worth giving access to all your information just for them to shadow ban you so you can try to spend money on this app it is utterly useless and disappointing I am very dissatisfied."" Sentiment:negative
+Comment:""Why keep showing me the fat and ugly ""secret admirer"" day after day?"" Sentiment:negative
+
+## TASK
+Comment:""Good apps"" Sentiment: 
+","Comment:""great"" Sentiment:positive
+Comment:""This app is dry. A waste of mens time."" Sentiment:negative
+Comment:""a money consuming app for nothing. maybe you get lucky with a match onec every two to three months or something. and I have a really good profile and not a monster face or something. sportive body. but what you know 😏"" Sentiment:negative
+Comment:""Hello my name is David and my experience with tinder has been very poor do to the fact that I don't get any likes at all and it would seem as if something is wrong or broken so I am going to just delete the account and the app and tell others to avoid it because it's not worth giving access to all your information just for them to shadow ban you so you can try to spend money on this app it is utterly useless and disappointing I am very dissatisfied."" Sentiment:negative
+Comment:""Why keep showing me the fat and ugly ""secret admirer"" day after day?"" Sentiment:negative
+","[9229, 1115, 4704, 982, 4222]","Comment:""Good apps"" Sentiment: 
+",positive,positive,7884
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") for each task and nothing else.
+## Examples
+Comment:""great"" Sentiment:positive
+Comment:""This app is dry. A waste of mens time."" Sentiment:negative
+Comment:""a money consuming app for nothing. maybe you get lucky with a match onec every two to three months or something. and I have a really good profile and not a monster face or something. sportive body. but what you know 😏"" Sentiment:negative
+Comment:""Hello my name is David and my experience with tinder has been very poor do to the fact that I don't get any likes at all and it would seem as if something is wrong or broken so I am going to just delete the account and the app and tell others to avoid it because it's not worth giving access to all your information just for them to shadow ban you so you can try to spend money on this app it is utterly useless and disappointing I am very dissatisfied."" Sentiment:negative
+Comment:""Why keep showing me the fat and ugly ""secret admirer"" day after day?"" Sentiment:negative
+
+## TASK
+Comment:""This app is dry. A waste of mens time."" Sentiment: 
+","Comment:""great"" Sentiment:positive
+Comment:""This app is dry. A waste of mens time."" Sentiment:negative
+Comment:""a money consuming app for nothing. maybe you get lucky with a match onec every two to three months or something. and I have a really good profile and not a monster face or something. sportive body. but what you know 😏"" Sentiment:negative
+Comment:""Hello my name is David and my experience with tinder has been very poor do to the fact that I don't get any likes at all and it would seem as if something is wrong or broken so I am going to just delete the account and the app and tell others to avoid it because it's not worth giving access to all your information just for them to shadow ban you so you can try to spend money on this app it is utterly useless and disappointing I am very dissatisfied."" Sentiment:negative
+Comment:""Why keep showing me the fat and ugly ""secret admirer"" day after day?"" Sentiment:negative
+","[9229, 1115, 4704, 982, 4222]","Comment:""This app is dry. A waste of mens time."" Sentiment: 
+",negative,negative,1115
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") for each task and nothing else.
+## Examples
+Comment:""great"" Sentiment:positive
+Comment:""This app is dry. A waste of mens time."" Sentiment:negative
+Comment:""a money consuming app for nothing. maybe you get lucky with a match onec every two to three months or something. and I have a really good profile and not a monster face or something. sportive body. but what you know 😏"" Sentiment:negative
+Comment:""Hello my name is David and my experience with tinder has been very poor do to the fact that I don't get any likes at all and it would seem as if something is wrong or broken so I am going to just delete the account and the app and tell others to avoid it because it's not worth giving access to all your information just for them to shadow ban you so you can try to spend money on this app it is utterly useless and disappointing I am very dissatisfied."" Sentiment:negative
+Comment:""Why keep showing me the fat and ugly ""secret admirer"" day after day?"" Sentiment:negative
+
+## TASK
+Comment:""great"" Sentiment: 
+","Comment:""great"" Sentiment:positive
+Comment:""This app is dry. A waste of mens time."" Sentiment:negative
+Comment:""a money consuming app for nothing. maybe you get lucky with a match onec every two to three months or something. and I have a really good profile and not a monster face or something. sportive body. but what you know 😏"" Sentiment:negative
+Comment:""Hello my name is David and my experience with tinder has been very poor do to the fact that I don't get any likes at all and it would seem as if something is wrong or broken so I am going to just delete the account and the app and tell others to avoid it because it's not worth giving access to all your information just for them to shadow ban you so you can try to spend money on this app it is utterly useless and disappointing I am very dissatisfied."" Sentiment:negative
+Comment:""Why keep showing me the fat and ugly ""secret admirer"" day after day?"" Sentiment:negative
+","[9229, 1115, 4704, 982, 4222]","Comment:""great"" Sentiment: 
+",positive,positive,9229
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") for each task and nothing else.
+## Examples
+Comment:""great"" Sentiment:positive
+Comment:""This app is dry. A waste of mens time."" Sentiment:negative
+Comment:""a money consuming app for nothing. maybe you get lucky with a match onec every two to three months or something. and I have a really good profile and not a monster face or something. sportive body. but what you know 😏"" Sentiment:negative
+Comment:""Hello my name is David and my experience with tinder has been very poor do to the fact that I don't get any likes at all and it would seem as if something is wrong or broken so I am going to just delete the account and the app and tell others to avoid it because it's not worth giving access to all your information just for them to shadow ban you so you can try to spend money on this app it is utterly useless and disappointing I am very dissatisfied."" Sentiment:negative
+Comment:""Why keep showing me the fat and ugly ""secret admirer"" day after day?"" Sentiment:negative
+
+## TASK
+Comment:""I love having friends"" Sentiment: 
+","Comment:""great"" Sentiment:positive
+Comment:""This app is dry. A waste of mens time."" Sentiment:negative
+Comment:""a money consuming app for nothing. maybe you get lucky with a match onec every two to three months or something. and I have a really good profile and not a monster face or something. sportive body. but what you know 😏"" Sentiment:negative
+Comment:""Hello my name is David and my experience with tinder has been very poor do to the fact that I don't get any likes at all and it would seem as if something is wrong or broken so I am going to just delete the account and the app and tell others to avoid it because it's not worth giving access to all your information just for them to shadow ban you so you can try to spend money on this app it is utterly useless and disappointing I am very dissatisfied."" Sentiment:negative
+Comment:""Why keep showing me the fat and ugly ""secret admirer"" day after day?"" Sentiment:negative
+","[9229, 1115, 4704, 982, 4222]","Comment:""I love having friends"" Sentiment: 
+",negative,positive,4010
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") for each task and nothing else.
+## Examples
+Comment:""Alot of bots and undesirable people"" Sentiment:negative
+Comment:""First day it is nice . If any matches are not found it going to take account under review and it banns the account. Same situation happen to me. I don't know what I have crossed terms and conditions. Finally my account banned itself."" Sentiment:negative
+Comment:""The limited amount of likes plus the amount of spam bots makes the whole experience trash. I really wish I could give it zero stars. Edit update: Wow, this app sucks.Then they have the balls to ask me to pay for features. Update: Far too many bots and fake profiles. Apparently you can't report fake profiles anymore for being straight up fake profiles. Tinder, fix yourself. Edit: Dear Tinder, remove whatever it is that lets ""calling cards"" be a thing."" Sentiment:negative
+Comment:""Was issued a permanent ban. Bad experience after seeing 90% of fake profiles."" Sentiment:negative
+Comment:""I assume I was shadowbanned because nothing is working"" Sentiment:negative
+
+## TASK
+Comment:""Too expensive and lots of third party paid site ads."" Sentiment: 
+","Comment:""Alot of bots and undesirable people"" Sentiment:negative
+Comment:""First day it is nice . If any matches are not found it going to take account under review and it banns the account. Same situation happen to me. I don't know what I have crossed terms and conditions. Finally my account banned itself."" Sentiment:negative
+Comment:""The limited amount of likes plus the amount of spam bots makes the whole experience trash. I really wish I could give it zero stars. Edit update: Wow, this app sucks.Then they have the balls to ask me to pay for features. Update: Far too many bots and fake profiles. Apparently you can't report fake profiles anymore for being straight up fake profiles. Tinder, fix yourself. Edit: Dear Tinder, remove whatever it is that lets ""calling cards"" be a thing."" Sentiment:negative
+Comment:""Was issued a permanent ban. Bad experience after seeing 90% of fake profiles."" Sentiment:negative
+Comment:""I assume I was shadowbanned because nothing is working"" Sentiment:negative
+","[1, 3, 9, 4, 2]","Comment:""Too expensive and lots of third party paid site ads."" Sentiment: 
+",negative,negative,2654
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") for each task and nothing else.
+## Examples
+Comment:""Alot of bots and undesirable people"" Sentiment:negative
+Comment:""First day it is nice . If any matches are not found it going to take account under review and it banns the account. Same situation happen to me. I don't know what I have crossed terms and conditions. Finally my account banned itself."" Sentiment:negative
+Comment:""The limited amount of likes plus the amount of spam bots makes the whole experience trash. I really wish I could give it zero stars. Edit update: Wow, this app sucks.Then they have the balls to ask me to pay for features. Update: Far too many bots and fake profiles. Apparently you can't report fake profiles anymore for being straight up fake profiles. Tinder, fix yourself. Edit: Dear Tinder, remove whatever it is that lets ""calling cards"" be a thing."" Sentiment:negative
+Comment:""Was issued a permanent ban. Bad experience after seeing 90% of fake profiles."" Sentiment:negative
+Comment:""I assume I was shadowbanned because nothing is working"" Sentiment:negative
+
+## TASK
+Comment:""Hello my name is David and my experience with tinder has been very poor do to the fact that I don't get any likes at all and it would seem as if something is wrong or broken so I am going to just delete the account and the app and tell others to avoid it because it's not worth giving access to all your information just for them to shadow ban you so you can try to spend money on this app it is utterly useless and disappointing I am very dissatisfied."" Sentiment: 
+","Comment:""Alot of bots and undesirable people"" Sentiment:negative
+Comment:""First day it is nice . If any matches are not found it going to take account under review and it banns the account. Same situation happen to me. I don't know what I have crossed terms and conditions. Finally my account banned itself."" Sentiment:negative
+Comment:""The limited amount of likes plus the amount of spam bots makes the whole experience trash. I really wish I could give it zero stars. Edit update: Wow, this app sucks.Then they have the balls to ask me to pay for features. Update: Far too many bots and fake profiles. Apparently you can't report fake profiles anymore for being straight up fake profiles. Tinder, fix yourself. Edit: Dear Tinder, remove whatever it is that lets ""calling cards"" be a thing."" Sentiment:negative
+Comment:""Was issued a permanent ban. Bad experience after seeing 90% of fake profiles."" Sentiment:negative
+Comment:""I assume I was shadowbanned because nothing is working"" Sentiment:negative
+","[1, 3, 9, 4, 2]","Comment:""Hello my name is David and my experience with tinder has been very poor do to the fact that I don't get any likes at all and it would seem as if something is wrong or broken so I am going to just delete the account and the app and tell others to avoid it because it's not worth giving access to all your information just for them to shadow ban you so you can try to spend money on this app it is utterly useless and disappointing I am very dissatisfied."" Sentiment: 
+",negative,negative,982
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") for each task and nothing else.
+## Examples
+Comment:""Alot of bots and undesirable people"" Sentiment:negative
+Comment:""First day it is nice . If any matches are not found it going to take account under review and it banns the account. Same situation happen to me. I don't know what I have crossed terms and conditions. Finally my account banned itself."" Sentiment:negative
+Comment:""The limited amount of likes plus the amount of spam bots makes the whole experience trash. I really wish I could give it zero stars. Edit update: Wow, this app sucks.Then they have the balls to ask me to pay for features. Update: Far too many bots and fake profiles. Apparently you can't report fake profiles anymore for being straight up fake profiles. Tinder, fix yourself. Edit: Dear Tinder, remove whatever it is that lets ""calling cards"" be a thing."" Sentiment:negative
+Comment:""Was issued a permanent ban. Bad experience after seeing 90% of fake profiles."" Sentiment:negative
+Comment:""I assume I was shadowbanned because nothing is working"" Sentiment:negative
+
+## TASK
+Comment:""people telll me that if the account gets blocked they never get Amy information or reason."" Sentiment: 
+","Comment:""Alot of bots and undesirable people"" Sentiment:negative
+Comment:""First day it is nice . If any matches are not found it going to take account under review and it banns the account. Same situation happen to me. I don't know what I have crossed terms and conditions. Finally my account banned itself."" Sentiment:negative
+Comment:""The limited amount of likes plus the amount of spam bots makes the whole experience trash. I really wish I could give it zero stars. Edit update: Wow, this app sucks.Then they have the balls to ask me to pay for features. Update: Far too many bots and fake profiles. Apparently you can't report fake profiles anymore for being straight up fake profiles. Tinder, fix yourself. Edit: Dear Tinder, remove whatever it is that lets ""calling cards"" be a thing."" Sentiment:negative
+Comment:""Was issued a permanent ban. Bad experience after seeing 90% of fake profiles."" Sentiment:negative
+Comment:""I assume I was shadowbanned because nothing is working"" Sentiment:negative
+","[1, 3, 9, 4, 2]","Comment:""people telll me that if the account gets blocked they never get Amy information or reason."" Sentiment: 
+",neutral,negative,7165
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") for each task and nothing else.
+## Examples
+Comment:""Alot of bots and undesirable people"" Sentiment:negative
+Comment:""First day it is nice . If any matches are not found it going to take account under review and it banns the account. Same situation happen to me. I don't know what I have crossed terms and conditions. Finally my account banned itself."" Sentiment:negative
+Comment:""The limited amount of likes plus the amount of spam bots makes the whole experience trash. I really wish I could give it zero stars. Edit update: Wow, this app sucks.Then they have the balls to ask me to pay for features. Update: Far too many bots and fake profiles. Apparently you can't report fake profiles anymore for being straight up fake profiles. Tinder, fix yourself. Edit: Dear Tinder, remove whatever it is that lets ""calling cards"" be a thing."" Sentiment:negative
+Comment:""Was issued a permanent ban. Bad experience after seeing 90% of fake profiles."" Sentiment:negative
+Comment:""I assume I was shadowbanned because nothing is working"" Sentiment:negative
+
+## TASK
+Comment:""a money consuming app for nothing. maybe you get lucky with a match onec every two to three months or something. and I have a really good profile and not a monster face or something. sportive body. but what you know 😏"" Sentiment: 
+","Comment:""Alot of bots and undesirable people"" Sentiment:negative
+Comment:""First day it is nice . If any matches are not found it going to take account under review and it banns the account. Same situation happen to me. I don't know what I have crossed terms and conditions. Finally my account banned itself."" Sentiment:negative
+Comment:""The limited amount of likes plus the amount of spam bots makes the whole experience trash. I really wish I could give it zero stars. Edit update: Wow, this app sucks.Then they have the balls to ask me to pay for features. Update: Far too many bots and fake profiles. Apparently you can't report fake profiles anymore for being straight up fake profiles. Tinder, fix yourself. Edit: Dear Tinder, remove whatever it is that lets ""calling cards"" be a thing."" Sentiment:negative
+Comment:""Was issued a permanent ban. Bad experience after seeing 90% of fake profiles."" Sentiment:negative
+Comment:""I assume I was shadowbanned because nothing is working"" Sentiment:negative
+","[1, 3, 9, 4, 2]","Comment:""a money consuming app for nothing. maybe you get lucky with a match onec every two to three months or something. and I have a really good profile and not a monster face or something. sportive body. but what you know 😏"" Sentiment: 
+",negative,negative,4704
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") for each task and nothing else.
+## Examples
+Comment:""Alot of bots and undesirable people"" Sentiment:negative
+Comment:""First day it is nice . If any matches are not found it going to take account under review and it banns the account. Same situation happen to me. I don't know what I have crossed terms and conditions. Finally my account banned itself."" Sentiment:negative
+Comment:""The limited amount of likes plus the amount of spam bots makes the whole experience trash. I really wish I could give it zero stars. Edit update: Wow, this app sucks.Then they have the balls to ask me to pay for features. Update: Far too many bots and fake profiles. Apparently you can't report fake profiles anymore for being straight up fake profiles. Tinder, fix yourself. Edit: Dear Tinder, remove whatever it is that lets ""calling cards"" be a thing."" Sentiment:negative
+Comment:""Was issued a permanent ban. Bad experience after seeing 90% of fake profiles."" Sentiment:negative
+Comment:""I assume I was shadowbanned because nothing is working"" Sentiment:negative
+
+## TASK
+Comment:""Personally, the app feels very superficial. It ends up feeling repetitive."" Sentiment: 
+","Comment:""Alot of bots and undesirable people"" Sentiment:negative
+Comment:""First day it is nice . If any matches are not found it going to take account under review and it banns the account. Same situation happen to me. I don't know what I have crossed terms and conditions. Finally my account banned itself."" Sentiment:negative
+Comment:""The limited amount of likes plus the amount of spam bots makes the whole experience trash. I really wish I could give it zero stars. Edit update: Wow, this app sucks.Then they have the balls to ask me to pay for features. Update: Far too many bots and fake profiles. Apparently you can't report fake profiles anymore for being straight up fake profiles. Tinder, fix yourself. Edit: Dear Tinder, remove whatever it is that lets ""calling cards"" be a thing."" Sentiment:negative
+Comment:""Was issued a permanent ban. Bad experience after seeing 90% of fake profiles."" Sentiment:negative
+Comment:""I assume I was shadowbanned because nothing is working"" Sentiment:negative
+","[1, 3, 9, 4, 2]","Comment:""Personally, the app feels very superficial. It ends up feeling repetitive."" Sentiment: 
+",negative,negative,101
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") for each task and nothing else.
+## Examples
+Comment:""Alot of bots and undesirable people"" Sentiment:negative
+Comment:""First day it is nice . If any matches are not found it going to take account under review and it banns the account. Same situation happen to me. I don't know what I have crossed terms and conditions. Finally my account banned itself."" Sentiment:negative
+Comment:""The limited amount of likes plus the amount of spam bots makes the whole experience trash. I really wish I could give it zero stars. Edit update: Wow, this app sucks.Then they have the balls to ask me to pay for features. Update: Far too many bots and fake profiles. Apparently you can't report fake profiles anymore for being straight up fake profiles. Tinder, fix yourself. Edit: Dear Tinder, remove whatever it is that lets ""calling cards"" be a thing."" Sentiment:negative
+Comment:""Was issued a permanent ban. Bad experience after seeing 90% of fake profiles."" Sentiment:negative
+Comment:""I assume I was shadowbanned because nothing is working"" Sentiment:negative
+
+## TASK
+Comment:""Why keep showing me the fat and ugly ""secret admirer"" day after day?"" Sentiment: 
+","Comment:""Alot of bots and undesirable people"" Sentiment:negative
+Comment:""First day it is nice . If any matches are not found it going to take account under review and it banns the account. Same situation happen to me. I don't know what I have crossed terms and conditions. Finally my account banned itself."" Sentiment:negative
+Comment:""The limited amount of likes plus the amount of spam bots makes the whole experience trash. I really wish I could give it zero stars. Edit update: Wow, this app sucks.Then they have the balls to ask me to pay for features. Update: Far too many bots and fake profiles. Apparently you can't report fake profiles anymore for being straight up fake profiles. Tinder, fix yourself. Edit: Dear Tinder, remove whatever it is that lets ""calling cards"" be a thing."" Sentiment:negative
+Comment:""Was issued a permanent ban. Bad experience after seeing 90% of fake profiles."" Sentiment:negative
+Comment:""I assume I was shadowbanned because nothing is working"" Sentiment:negative
+","[1, 3, 9, 4, 2]","Comment:""Why keep showing me the fat and ugly ""secret admirer"" day after day?"" Sentiment: 
+",negative,negative,4222
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") for each task and nothing else.
+## Examples
+Comment:""Alot of bots and undesirable people"" Sentiment:negative
+Comment:""First day it is nice . If any matches are not found it going to take account under review and it banns the account. Same situation happen to me. I don't know what I have crossed terms and conditions. Finally my account banned itself."" Sentiment:negative
+Comment:""The limited amount of likes plus the amount of spam bots makes the whole experience trash. I really wish I could give it zero stars. Edit update: Wow, this app sucks.Then they have the balls to ask me to pay for features. Update: Far too many bots and fake profiles. Apparently you can't report fake profiles anymore for being straight up fake profiles. Tinder, fix yourself. Edit: Dear Tinder, remove whatever it is that lets ""calling cards"" be a thing."" Sentiment:negative
+Comment:""Was issued a permanent ban. Bad experience after seeing 90% of fake profiles."" Sentiment:negative
+Comment:""I assume I was shadowbanned because nothing is working"" Sentiment:negative
+
+## TASK
+Comment:""Good apps"" Sentiment: 
+","Comment:""Alot of bots and undesirable people"" Sentiment:negative
+Comment:""First day it is nice . If any matches are not found it going to take account under review and it banns the account. Same situation happen to me. I don't know what I have crossed terms and conditions. Finally my account banned itself."" Sentiment:negative
+Comment:""The limited amount of likes plus the amount of spam bots makes the whole experience trash. I really wish I could give it zero stars. Edit update: Wow, this app sucks.Then they have the balls to ask me to pay for features. Update: Far too many bots and fake profiles. Apparently you can't report fake profiles anymore for being straight up fake profiles. Tinder, fix yourself. Edit: Dear Tinder, remove whatever it is that lets ""calling cards"" be a thing."" Sentiment:negative
+Comment:""Was issued a permanent ban. Bad experience after seeing 90% of fake profiles."" Sentiment:negative
+Comment:""I assume I was shadowbanned because nothing is working"" Sentiment:negative
+","[1, 3, 9, 4, 2]","Comment:""Good apps"" Sentiment: 
+",positive,positive,7884
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") for each task and nothing else.
+## Examples
+Comment:""Alot of bots and undesirable people"" Sentiment:negative
+Comment:""First day it is nice . If any matches are not found it going to take account under review and it banns the account. Same situation happen to me. I don't know what I have crossed terms and conditions. Finally my account banned itself."" Sentiment:negative
+Comment:""The limited amount of likes plus the amount of spam bots makes the whole experience trash. I really wish I could give it zero stars. Edit update: Wow, this app sucks.Then they have the balls to ask me to pay for features. Update: Far too many bots and fake profiles. Apparently you can't report fake profiles anymore for being straight up fake profiles. Tinder, fix yourself. Edit: Dear Tinder, remove whatever it is that lets ""calling cards"" be a thing."" Sentiment:negative
+Comment:""Was issued a permanent ban. Bad experience after seeing 90% of fake profiles."" Sentiment:negative
+Comment:""I assume I was shadowbanned because nothing is working"" Sentiment:negative
+
+## TASK
+Comment:""This app is dry. A waste of mens time."" Sentiment: 
+","Comment:""Alot of bots and undesirable people"" Sentiment:negative
+Comment:""First day it is nice . If any matches are not found it going to take account under review and it banns the account. Same situation happen to me. I don't know what I have crossed terms and conditions. Finally my account banned itself."" Sentiment:negative
+Comment:""The limited amount of likes plus the amount of spam bots makes the whole experience trash. I really wish I could give it zero stars. Edit update: Wow, this app sucks.Then they have the balls to ask me to pay for features. Update: Far too many bots and fake profiles. Apparently you can't report fake profiles anymore for being straight up fake profiles. Tinder, fix yourself. Edit: Dear Tinder, remove whatever it is that lets ""calling cards"" be a thing."" Sentiment:negative
+Comment:""Was issued a permanent ban. Bad experience after seeing 90% of fake profiles."" Sentiment:negative
+Comment:""I assume I was shadowbanned because nothing is working"" Sentiment:negative
+","[1, 3, 9, 4, 2]","Comment:""This app is dry. A waste of mens time."" Sentiment: 
+",negative,negative,1115
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") for each task and nothing else.
+## Examples
+Comment:""Alot of bots and undesirable people"" Sentiment:negative
+Comment:""First day it is nice . If any matches are not found it going to take account under review and it banns the account. Same situation happen to me. I don't know what I have crossed terms and conditions. Finally my account banned itself."" Sentiment:negative
+Comment:""The limited amount of likes plus the amount of spam bots makes the whole experience trash. I really wish I could give it zero stars. Edit update: Wow, this app sucks.Then they have the balls to ask me to pay for features. Update: Far too many bots and fake profiles. Apparently you can't report fake profiles anymore for being straight up fake profiles. Tinder, fix yourself. Edit: Dear Tinder, remove whatever it is that lets ""calling cards"" be a thing."" Sentiment:negative
+Comment:""Was issued a permanent ban. Bad experience after seeing 90% of fake profiles."" Sentiment:negative
+Comment:""I assume I was shadowbanned because nothing is working"" Sentiment:negative
+
+## TASK
+Comment:""great"" Sentiment: 
+","Comment:""Alot of bots and undesirable people"" Sentiment:negative
+Comment:""First day it is nice . If any matches are not found it going to take account under review and it banns the account. Same situation happen to me. I don't know what I have crossed terms and conditions. Finally my account banned itself."" Sentiment:negative
+Comment:""The limited amount of likes plus the amount of spam bots makes the whole experience trash. I really wish I could give it zero stars. Edit update: Wow, this app sucks.Then they have the balls to ask me to pay for features. Update: Far too many bots and fake profiles. Apparently you can't report fake profiles anymore for being straight up fake profiles. Tinder, fix yourself. Edit: Dear Tinder, remove whatever it is that lets ""calling cards"" be a thing."" Sentiment:negative
+Comment:""Was issued a permanent ban. Bad experience after seeing 90% of fake profiles."" Sentiment:negative
+Comment:""I assume I was shadowbanned because nothing is working"" Sentiment:negative
+","[1, 3, 9, 4, 2]","Comment:""great"" Sentiment: 
+",positive,positive,9229
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") for each task and nothing else.
+## Examples
+Comment:""Alot of bots and undesirable people"" Sentiment:negative
+Comment:""First day it is nice . If any matches are not found it going to take account under review and it banns the account. Same situation happen to me. I don't know what I have crossed terms and conditions. Finally my account banned itself."" Sentiment:negative
+Comment:""The limited amount of likes plus the amount of spam bots makes the whole experience trash. I really wish I could give it zero stars. Edit update: Wow, this app sucks.Then they have the balls to ask me to pay for features. Update: Far too many bots and fake profiles. Apparently you can't report fake profiles anymore for being straight up fake profiles. Tinder, fix yourself. Edit: Dear Tinder, remove whatever it is that lets ""calling cards"" be a thing."" Sentiment:negative
+Comment:""Was issued a permanent ban. Bad experience after seeing 90% of fake profiles."" Sentiment:negative
+Comment:""I assume I was shadowbanned because nothing is working"" Sentiment:negative
+
+## TASK
+Comment:""I love having friends"" Sentiment: 
+","Comment:""Alot of bots and undesirable people"" Sentiment:negative
+Comment:""First day it is nice . If any matches are not found it going to take account under review and it banns the account. Same situation happen to me. I don't know what I have crossed terms and conditions. Finally my account banned itself."" Sentiment:negative
+Comment:""The limited amount of likes plus the amount of spam bots makes the whole experience trash. I really wish I could give it zero stars. Edit update: Wow, this app sucks.Then they have the balls to ask me to pay for features. Update: Far too many bots and fake profiles. Apparently you can't report fake profiles anymore for being straight up fake profiles. Tinder, fix yourself. Edit: Dear Tinder, remove whatever it is that lets ""calling cards"" be a thing."" Sentiment:negative
+Comment:""Was issued a permanent ban. Bad experience after seeing 90% of fake profiles."" Sentiment:negative
+Comment:""I assume I was shadowbanned because nothing is working"" Sentiment:negative
+","[1, 3, 9, 4, 2]","Comment:""I love having friends"" Sentiment: 
+",negative,positive,4010

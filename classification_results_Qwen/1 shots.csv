@@ -1,0 +1,181 @@
+Model,Question,Examples,Id-Examples,Task name,Actual-answer,LLM-answer,Task-id
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") for each task and nothing else.
+## Examples
+Comment:""Can you delete my account I'm unable to"" Sentiment:negative
+
+## TASK
+Comment:""Too expensive and lots of third party paid site ads."" Sentiment: 
+","Comment:""Can you delete my account I'm unable to"" Sentiment:negative
+",[0],"Comment:""Too expensive and lots of third party paid site ads."" Sentiment: 
+",negative,negative,2654
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") for each task and nothing else.
+## Examples
+Comment:""Can you delete my account I'm unable to"" Sentiment:negative
+
+## TASK
+Comment:""Hello my name is David and my experience with tinder has been very poor do to the fact that I don't get any likes at all and it would seem as if something is wrong or broken so I am going to just delete the account and the app and tell others to avoid it because it's not worth giving access to all your information just for them to shadow ban you so you can try to spend money on this app it is utterly useless and disappointing I am very dissatisfied."" Sentiment: 
+","Comment:""Can you delete my account I'm unable to"" Sentiment:negative
+",[0],"Comment:""Hello my name is David and my experience with tinder has been very poor do to the fact that I don't get any likes at all and it would seem as if something is wrong or broken so I am going to just delete the account and the app and tell others to avoid it because it's not worth giving access to all your information just for them to shadow ban you so you can try to spend money on this app it is utterly useless and disappointing I am very dissatisfied."" Sentiment: 
+",negative,negative,982
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") for each task and nothing else.
+## Examples
+Comment:""Can you delete my account I'm unable to"" Sentiment:negative
+
+## TASK
+Comment:""people telll me that if the account gets blocked they never get Amy information or reason."" Sentiment: 
+","Comment:""Can you delete my account I'm unable to"" Sentiment:negative
+",[0],"Comment:""people telll me that if the account gets blocked they never get Amy information or reason."" Sentiment: 
+",neutral,negative,7165
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") for each task and nothing else.
+## Examples
+Comment:""Can you delete my account I'm unable to"" Sentiment:negative
+
+## TASK
+Comment:""a money consuming app for nothing. maybe you get lucky with a match onec every two to three months or something. and I have a really good profile and not a monster face or something. sportive body. but what you know 😏"" Sentiment: 
+","Comment:""Can you delete my account I'm unable to"" Sentiment:negative
+",[0],"Comment:""a money consuming app for nothing. maybe you get lucky with a match onec every two to three months or something. and I have a really good profile and not a monster face or something. sportive body. but what you know 😏"" Sentiment: 
+",negative,negative,4704
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") for each task and nothing else.
+## Examples
+Comment:""Can you delete my account I'm unable to"" Sentiment:negative
+
+## TASK
+Comment:""Personally, the app feels very superficial. It ends up feeling repetitive."" Sentiment: 
+","Comment:""Can you delete my account I'm unable to"" Sentiment:negative
+",[0],"Comment:""Personally, the app feels very superficial. It ends up feeling repetitive."" Sentiment: 
+",negative,negative,101
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") for each task and nothing else.
+## Examples
+Comment:""Can you delete my account I'm unable to"" Sentiment:negative
+
+## TASK
+Comment:""Why keep showing me the fat and ugly ""secret admirer"" day after day?"" Sentiment: 
+","Comment:""Can you delete my account I'm unable to"" Sentiment:negative
+",[0],"Comment:""Why keep showing me the fat and ugly ""secret admirer"" day after day?"" Sentiment: 
+",negative,negative,4222
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") for each task and nothing else.
+## Examples
+Comment:""Can you delete my account I'm unable to"" Sentiment:negative
+
+## TASK
+Comment:""Good apps"" Sentiment: 
+","Comment:""Can you delete my account I'm unable to"" Sentiment:negative
+",[0],"Comment:""Good apps"" Sentiment: 
+",positive,positive,7884
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") for each task and nothing else.
+## Examples
+Comment:""Can you delete my account I'm unable to"" Sentiment:negative
+
+## TASK
+Comment:""This app is dry. A waste of mens time."" Sentiment: 
+","Comment:""Can you delete my account I'm unable to"" Sentiment:negative
+",[0],"Comment:""This app is dry. A waste of mens time."" Sentiment: 
+",negative,negative,1115
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") for each task and nothing else.
+## Examples
+Comment:""Can you delete my account I'm unable to"" Sentiment:negative
+
+## TASK
+Comment:""great"" Sentiment: 
+","Comment:""Can you delete my account I'm unable to"" Sentiment:negative
+",[0],"Comment:""great"" Sentiment: 
+",positive,positive,9229
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") for each task and nothing else.
+## Examples
+Comment:""Can you delete my account I'm unable to"" Sentiment:negative
+
+## TASK
+Comment:""I love having friends"" Sentiment: 
+","Comment:""Can you delete my account I'm unable to"" Sentiment:negative
+",[0],"Comment:""I love having friends"" Sentiment: 
+",negative,positive,4010
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") for each task and nothing else.
+## Examples
+Comment:""no luck on tinder"" Sentiment:neutral
+
+## TASK
+Comment:""Too expensive and lots of third party paid site ads."" Sentiment: 
+","Comment:""no luck on tinder"" Sentiment:neutral
+",[7270],"Comment:""Too expensive and lots of third party paid site ads."" Sentiment: 
+",negative,negative,2654
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") for each task and nothing else.
+## Examples
+Comment:""no luck on tinder"" Sentiment:neutral
+
+## TASK
+Comment:""Hello my name is David and my experience with tinder has been very poor do to the fact that I don't get any likes at all and it would seem as if something is wrong or broken so I am going to just delete the account and the app and tell others to avoid it because it's not worth giving access to all your information just for them to shadow ban you so you can try to spend money on this app it is utterly useless and disappointing I am very dissatisfied."" Sentiment: 
+","Comment:""no luck on tinder"" Sentiment:neutral
+",[7270],"Comment:""Hello my name is David and my experience with tinder has been very poor do to the fact that I don't get any likes at all and it would seem as if something is wrong or broken so I am going to just delete the account and the app and tell others to avoid it because it's not worth giving access to all your information just for them to shadow ban you so you can try to spend money on this app it is utterly useless and disappointing I am very dissatisfied."" Sentiment: 
+",negative,negative,982
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") for each task and nothing else.
+## Examples
+Comment:""no luck on tinder"" Sentiment:neutral
+
+## TASK
+Comment:""people telll me that if the account gets blocked they never get Amy information or reason."" Sentiment: 
+","Comment:""no luck on tinder"" Sentiment:neutral
+",[7270],"Comment:""people telll me that if the account gets blocked they never get Amy information or reason."" Sentiment: 
+",neutral,negative,7165
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") for each task and nothing else.
+## Examples
+Comment:""no luck on tinder"" Sentiment:neutral
+
+## TASK
+Comment:""a money consuming app for nothing. maybe you get lucky with a match onec every two to three months or something. and I have a really good profile and not a monster face or something. sportive body. but what you know 😏"" Sentiment: 
+","Comment:""no luck on tinder"" Sentiment:neutral
+",[7270],"Comment:""a money consuming app for nothing. maybe you get lucky with a match onec every two to three months or something. and I have a really good profile and not a monster face or something. sportive body. but what you know 😏"" Sentiment: 
+",negative,negative,4704
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") for each task and nothing else.
+## Examples
+Comment:""no luck on tinder"" Sentiment:neutral
+
+## TASK
+Comment:""Personally, the app feels very superficial. It ends up feeling repetitive."" Sentiment: 
+","Comment:""no luck on tinder"" Sentiment:neutral
+",[7270],"Comment:""Personally, the app feels very superficial. It ends up feeling repetitive."" Sentiment: 
+",negative,negative,101
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") for each task and nothing else.
+## Examples
+Comment:""no luck on tinder"" Sentiment:neutral
+
+## TASK
+Comment:""Why keep showing me the fat and ugly ""secret admirer"" day after day?"" Sentiment: 
+","Comment:""no luck on tinder"" Sentiment:neutral
+",[7270],"Comment:""Why keep showing me the fat and ugly ""secret admirer"" day after day?"" Sentiment: 
+",negative,negative,4222
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") for each task and nothing else.
+## Examples
+Comment:""no luck on tinder"" Sentiment:neutral
+
+## TASK
+Comment:""Good apps"" Sentiment: 
+","Comment:""no luck on tinder"" Sentiment:neutral
+",[7270],"Comment:""Good apps"" Sentiment: 
+",positive,positive,7884
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") for each task and nothing else.
+## Examples
+Comment:""no luck on tinder"" Sentiment:neutral
+
+## TASK
+Comment:""This app is dry. A waste of mens time."" Sentiment: 
+","Comment:""no luck on tinder"" Sentiment:neutral
+",[7270],"Comment:""This app is dry. A waste of mens time."" Sentiment: 
+",negative,negative,1115
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") for each task and nothing else.
+## Examples
+Comment:""no luck on tinder"" Sentiment:neutral
+
+## TASK
+Comment:""great"" Sentiment: 
+","Comment:""no luck on tinder"" Sentiment:neutral
+",[7270],"Comment:""great"" Sentiment: 
+",positive,positive,9229
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") for each task and nothing else.
+## Examples
+Comment:""no luck on tinder"" Sentiment:neutral
+
+## TASK
+Comment:""I love having friends"" Sentiment: 
+","Comment:""no luck on tinder"" Sentiment:neutral
+",[7270],"Comment:""I love having friends"" Sentiment: 
+",negative,positive,4010

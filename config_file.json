@@ -45,16 +45,16 @@
       "sampling_ratio": "auto"
    },
   "prompt_engineering" : {
-    "mode": "oversampling",
+    "mode": "clasificacion",
     "clasificacion": {
-      "model": "llama3.1:8b-text-q2_K",
+      "model": "qwen2.5:1.5b",
       "possible_answers": ["positive","neutral","negative"],
       "temperature": 0,
       "repeat_penalty": 1.0,
       "num_predict": 8,
       "top_k": 10,
       "top_p": 0.5,
-      "shots": [0,1,5],
+      "shots": [0,1,5,10],
       "split": ["First","Random","Stratified","Manual"],
       "manual_split_indexes": [[[1, 5], 9]],
       "test_questions": {

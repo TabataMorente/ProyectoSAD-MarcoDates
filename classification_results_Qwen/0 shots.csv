@@ -1,0 +1,51 @@
+Model,Question,Examples,Id-Examples,Task name,Actual-answer,LLM-answer,Task-id
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") and nothing else.
+## TASK
+Comment:""Too expensive and lots of third party paid site ads."" Sentiment: 
+",,,"Comment:""Too expensive and lots of third party paid site ads."" Sentiment: 
+",negative,negative,2654
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") and nothing else.
+## TASK
+Comment:""Hello my name is David and my experience with tinder has been very poor do to the fact that I don't get any likes at all and it would seem as if something is wrong or broken so I am going to just delete the account and the app and tell others to avoid it because it's not worth giving access to all your information just for them to shadow ban you so you can try to spend money on this app it is utterly useless and disappointing I am very dissatisfied."" Sentiment: 
+",,,"Comment:""Hello my name is David and my experience with tinder has been very poor do to the fact that I don't get any likes at all and it would seem as if something is wrong or broken so I am going to just delete the account and the app and tell others to avoid it because it's not worth giving access to all your information just for them to shadow ban you so you can try to spend money on this app it is utterly useless and disappointing I am very dissatisfied."" Sentiment: 
+",negative,negative,982
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") and nothing else.
+## TASK
+Comment:""people telll me that if the account gets blocked they never get Amy information or reason."" Sentiment: 
+",,,"Comment:""people telll me that if the account gets blocked they never get Amy information or reason."" Sentiment: 
+",neutral,negative,7165
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") and nothing else.
+## TASK
+Comment:""a money consuming app for nothing. maybe you get lucky with a match onec every two to three months or something. and I have a really good profile and not a monster face or something. sportive body. but what you know 😏"" Sentiment: 
+",,,"Comment:""a money consuming app for nothing. maybe you get lucky with a match onec every two to three months or something. and I have a really good profile and not a monster face or something. sportive body. but what you know 😏"" Sentiment: 
+",negative,negative,4704
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") and nothing else.
+## TASK
+Comment:""Personally, the app feels very superficial. It ends up feeling repetitive."" Sentiment: 
+",,,"Comment:""Personally, the app feels very superficial. It ends up feeling repetitive."" Sentiment: 
+",negative,negative,101
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") and nothing else.
+## TASK
+Comment:""Why keep showing me the fat and ugly ""secret admirer"" day after day?"" Sentiment: 
+",,,"Comment:""Why keep showing me the fat and ugly ""secret admirer"" day after day?"" Sentiment: 
+",negative,negative,4222
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") and nothing else.
+## TASK
+Comment:""Good apps"" Sentiment: 
+",,,"Comment:""Good apps"" Sentiment: 
+",positive,positive,7884
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") and nothing else.
+## TASK
+Comment:""This app is dry. A waste of mens time."" Sentiment: 
+",,,"Comment:""This app is dry. A waste of mens time."" Sentiment: 
+",negative,negative,1115
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") and nothing else.
+## TASK
+Comment:""great"" Sentiment: 
+",,,"Comment:""great"" Sentiment: 
+",positive,positive,9229
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") and nothing else.
+## TASK
+Comment:""I love having friends"" Sentiment: 
+",,,"Comment:""I love having friends"" Sentiment: 
+",negative,positive,4010

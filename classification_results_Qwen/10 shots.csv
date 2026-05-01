@@ -1,0 +1,811 @@
+Model,Question,Examples,Id-Examples,Task name,Actual-answer,LLM-answer,Task-id
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") for each task and nothing else.
+## Examples
+Comment:""Good"" Sentiment:positive
+Comment:""Blocked me for nothing!!!!!!"" Sentiment:negative
+Comment:""Tinder is useless without subscription, there is no point in doing it, the features are also useless. No rating"" Sentiment:negative
+Comment:""to many fake profiles"" Sentiment:negative
+Comment:""expensive, greedy, and affecting purposely people who dont pay for the app"" Sentiment:negative
+Comment:""Paywalls contacts, loads of inactive and spam profiles."" Sentiment:negative
+Comment:""Can someone please tell me how the hell I stop payments??? I'm not using the app and still being charged"" Sentiment:negative
+Comment:""It's too bad to see such a big organisation with a lack of professional approach. I had closed my account completely, but they continued deducting their fees for four months in a row, though I had written to them nothing happened!!! until I requested Google to cancel their facilities tools !!!! sheep, too, sheep Tinder, take care guys from them it happens to many subscribers before ."" Sentiment:negative
+Comment:""$40 a month just to see who likes me. Not worth it to find out it's someone I know wouldn't be interested in me. I'd pay less than $5 for that feature alone because it's the only useful one"" Sentiment:negative
+Comment:""no luck on tinder"" Sentiment:neutral
+
+## TASK
+Comment:""Too expensive and lots of third party paid site ads."" Sentiment: 
+","Comment:""Good"" Sentiment:positive
+Comment:""Blocked me for nothing!!!!!!"" Sentiment:negative
+Comment:""Tinder is useless without subscription, there is no point in doing it, the features are also useless. No rating"" Sentiment:negative
+Comment:""to many fake profiles"" Sentiment:negative
+Comment:""expensive, greedy, and affecting purposely people who dont pay for the app"" Sentiment:negative
+Comment:""Paywalls contacts, loads of inactive and spam profiles."" Sentiment:negative
+Comment:""Can someone please tell me how the hell I stop payments??? I'm not using the app and still being charged"" Sentiment:negative
+Comment:""It's too bad to see such a big organisation with a lack of professional approach. I had closed my account completely, but they continued deducting their fees for four months in a row, though I had written to them nothing happened!!! until I requested Google to cancel their facilities tools !!!! sheep, too, sheep Tinder, take care guys from them it happens to many subscribers before ."" Sentiment:negative
+Comment:""$40 a month just to see who likes me. Not worth it to find out it's someone I know wouldn't be interested in me. I'd pay less than $5 for that feature alone because it's the only useful one"" Sentiment:negative
+Comment:""no luck on tinder"" Sentiment:neutral
+","[8322, 5578, 4426, 466, 6265, 5734, 5191, 5390, 860, 7270]","Comment:""Too expensive and lots of third party paid site ads."" Sentiment: 
+",negative,negative,2654
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") for each task and nothing else.
+## Examples
+Comment:""Good"" Sentiment:positive
+Comment:""Blocked me for nothing!!!!!!"" Sentiment:negative
+Comment:""Tinder is useless without subscription, there is no point in doing it, the features are also useless. No rating"" Sentiment:negative
+Comment:""to many fake profiles"" Sentiment:negative
+Comment:""expensive, greedy, and affecting purposely people who dont pay for the app"" Sentiment:negative
+Comment:""Paywalls contacts, loads of inactive and spam profiles."" Sentiment:negative
+Comment:""Can someone please tell me how the hell I stop payments??? I'm not using the app and still being charged"" Sentiment:negative
+Comment:""It's too bad to see such a big organisation with a lack of professional approach. I had closed my account completely, but they continued deducting their fees for four months in a row, though I had written to them nothing happened!!! until I requested Google to cancel their facilities tools !!!! sheep, too, sheep Tinder, take care guys from them it happens to many subscribers before ."" Sentiment:negative
+Comment:""$40 a month just to see who likes me. Not worth it to find out it's someone I know wouldn't be interested in me. I'd pay less than $5 for that feature alone because it's the only useful one"" Sentiment:negative
+Comment:""no luck on tinder"" Sentiment:neutral
+
+## TASK
+Comment:""Hello my name is David and my experience with tinder has been very poor do to the fact that I don't get any likes at all and it would seem as if something is wrong or broken so I am going to just delete the account and the app and tell others to avoid it because it's not worth giving access to all your information just for them to shadow ban you so you can try to spend money on this app it is utterly useless and disappointing I am very dissatisfied."" Sentiment: 
+","Comment:""Good"" Sentiment:positive
+Comment:""Blocked me for nothing!!!!!!"" Sentiment:negative
+Comment:""Tinder is useless without subscription, there is no point in doing it, the features are also useless. No rating"" Sentiment:negative
+Comment:""to many fake profiles"" Sentiment:negative
+Comment:""expensive, greedy, and affecting purposely people who dont pay for the app"" Sentiment:negative
+Comment:""Paywalls contacts, loads of inactive and spam profiles."" Sentiment:negative
+Comment:""Can someone please tell me how the hell I stop payments??? I'm not using the app and still being charged"" Sentiment:negative
+Comment:""It's too bad to see such a big organisation with a lack of professional approach. I had closed my account completely, but they continued deducting their fees for four months in a row, though I had written to them nothing happened!!! until I requested Google to cancel their facilities tools !!!! sheep, too, sheep Tinder, take care guys from them it happens to many subscribers before ."" Sentiment:negative
+Comment:""$40 a month just to see who likes me. Not worth it to find out it's someone I know wouldn't be interested in me. I'd pay less than $5 for that feature alone because it's the only useful one"" Sentiment:negative
+Comment:""no luck on tinder"" Sentiment:neutral
+","[8322, 5578, 4426, 466, 6265, 5734, 5191, 5390, 860, 7270]","Comment:""Hello my name is David and my experience with tinder has been very poor do to the fact that I don't get any likes at all and it would seem as if something is wrong or broken so I am going to just delete the account and the app and tell others to avoid it because it's not worth giving access to all your information just for them to shadow ban you so you can try to spend money on this app it is utterly useless and disappointing I am very dissatisfied."" Sentiment: 
+",negative,negative,982
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") for each task and nothing else.
+## Examples
+Comment:""Good"" Sentiment:positive
+Comment:""Blocked me for nothing!!!!!!"" Sentiment:negative
+Comment:""Tinder is useless without subscription, there is no point in doing it, the features are also useless. No rating"" Sentiment:negative
+Comment:""to many fake profiles"" Sentiment:negative
+Comment:""expensive, greedy, and affecting purposely people who dont pay for the app"" Sentiment:negative
+Comment:""Paywalls contacts, loads of inactive and spam profiles."" Sentiment:negative
+Comment:""Can someone please tell me how the hell I stop payments??? I'm not using the app and still being charged"" Sentiment:negative
+Comment:""It's too bad to see such a big organisation with a lack of professional approach. I had closed my account completely, but they continued deducting their fees for four months in a row, though I had written to them nothing happened!!! until I requested Google to cancel their facilities tools !!!! sheep, too, sheep Tinder, take care guys from them it happens to many subscribers before ."" Sentiment:negative
+Comment:""$40 a month just to see who likes me. Not worth it to find out it's someone I know wouldn't be interested in me. I'd pay less than $5 for that feature alone because it's the only useful one"" Sentiment:negative
+Comment:""no luck on tinder"" Sentiment:neutral
+
+## TASK
+Comment:""people telll me that if the account gets blocked they never get Amy information or reason."" Sentiment: 
+","Comment:""Good"" Sentiment:positive
+Comment:""Blocked me for nothing!!!!!!"" Sentiment:negative
+Comment:""Tinder is useless without subscription, there is no point in doing it, the features are also useless. No rating"" Sentiment:negative
+Comment:""to many fake profiles"" Sentiment:negative
+Comment:""expensive, greedy, and affecting purposely people who dont pay for the app"" Sentiment:negative
+Comment:""Paywalls contacts, loads of inactive and spam profiles."" Sentiment:negative
+Comment:""Can someone please tell me how the hell I stop payments??? I'm not using the app and still being charged"" Sentiment:negative
+Comment:""It's too bad to see such a big organisation with a lack of professional approach. I had closed my account completely, but they continued deducting their fees for four months in a row, though I had written to them nothing happened!!! until I requested Google to cancel their facilities tools !!!! sheep, too, sheep Tinder, take care guys from them it happens to many subscribers before ."" Sentiment:negative
+Comment:""$40 a month just to see who likes me. Not worth it to find out it's someone I know wouldn't be interested in me. I'd pay less than $5 for that feature alone because it's the only useful one"" Sentiment:negative
+Comment:""no luck on tinder"" Sentiment:neutral
+","[8322, 5578, 4426, 466, 6265, 5734, 5191, 5390, 860, 7270]","Comment:""people telll me that if the account gets blocked they never get Amy information or reason."" Sentiment: 
+",neutral,negative,7165
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") for each task and nothing else.
+## Examples
+Comment:""Good"" Sentiment:positive
+Comment:""Blocked me for nothing!!!!!!"" Sentiment:negative
+Comment:""Tinder is useless without subscription, there is no point in doing it, the features are also useless. No rating"" Sentiment:negative
+Comment:""to many fake profiles"" Sentiment:negative
+Comment:""expensive, greedy, and affecting purposely people who dont pay for the app"" Sentiment:negative
+Comment:""Paywalls contacts, loads of inactive and spam profiles."" Sentiment:negative
+Comment:""Can someone please tell me how the hell I stop payments??? I'm not using the app and still being charged"" Sentiment:negative
+Comment:""It's too bad to see such a big organisation with a lack of professional approach. I had closed my account completely, but they continued deducting their fees for four months in a row, though I had written to them nothing happened!!! until I requested Google to cancel their facilities tools !!!! sheep, too, sheep Tinder, take care guys from them it happens to many subscribers before ."" Sentiment:negative
+Comment:""$40 a month just to see who likes me. Not worth it to find out it's someone I know wouldn't be interested in me. I'd pay less than $5 for that feature alone because it's the only useful one"" Sentiment:negative
+Comment:""no luck on tinder"" Sentiment:neutral
+
+## TASK
+Comment:""a money consuming app for nothing. maybe you get lucky with a match onec every two to three months or something. and I have a really good profile and not a monster face or something. sportive body. but what you know 😏"" Sentiment: 
+","Comment:""Good"" Sentiment:positive
+Comment:""Blocked me for nothing!!!!!!"" Sentiment:negative
+Comment:""Tinder is useless without subscription, there is no point in doing it, the features are also useless. No rating"" Sentiment:negative
+Comment:""to many fake profiles"" Sentiment:negative
+Comment:""expensive, greedy, and affecting purposely people who dont pay for the app"" Sentiment:negative
+Comment:""Paywalls contacts, loads of inactive and spam profiles."" Sentiment:negative
+Comment:""Can someone please tell me how the hell I stop payments??? I'm not using the app and still being charged"" Sentiment:negative
+Comment:""It's too bad to see such a big organisation with a lack of professional approach. I had closed my account completely, but they continued deducting their fees for four months in a row, though I had written to them nothing happened!!! until I requested Google to cancel their facilities tools !!!! sheep, too, sheep Tinder, take care guys from them it happens to many subscribers before ."" Sentiment:negative
+Comment:""$40 a month just to see who likes me. Not worth it to find out it's someone I know wouldn't be interested in me. I'd pay less than $5 for that feature alone because it's the only useful one"" Sentiment:negative
+Comment:""no luck on tinder"" Sentiment:neutral
+","[8322, 5578, 4426, 466, 6265, 5734, 5191, 5390, 860, 7270]","Comment:""a money consuming app for nothing. maybe you get lucky with a match onec every two to three months or something. and I have a really good profile and not a monster face or something. sportive body. but what you know 😏"" Sentiment: 
+",negative,negative,4704
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") for each task and nothing else.
+## Examples
+Comment:""Good"" Sentiment:positive
+Comment:""Blocked me for nothing!!!!!!"" Sentiment:negative
+Comment:""Tinder is useless without subscription, there is no point in doing it, the features are also useless. No rating"" Sentiment:negative
+Comment:""to many fake profiles"" Sentiment:negative
+Comment:""expensive, greedy, and affecting purposely people who dont pay for the app"" Sentiment:negative
+Comment:""Paywalls contacts, loads of inactive and spam profiles."" Sentiment:negative
+Comment:""Can someone please tell me how the hell I stop payments??? I'm not using the app and still being charged"" Sentiment:negative
+Comment:""It's too bad to see such a big organisation with a lack of professional approach. I had closed my account completely, but they continued deducting their fees for four months in a row, though I had written to them nothing happened!!! until I requested Google to cancel their facilities tools !!!! sheep, too, sheep Tinder, take care guys from them it happens to many subscribers before ."" Sentiment:negative
+Comment:""$40 a month just to see who likes me. Not worth it to find out it's someone I know wouldn't be interested in me. I'd pay less than $5 for that feature alone because it's the only useful one"" Sentiment:negative
+Comment:""no luck on tinder"" Sentiment:neutral
+
+## TASK
+Comment:""Personally, the app feels very superficial. It ends up feeling repetitive."" Sentiment: 
+","Comment:""Good"" Sentiment:positive
+Comment:""Blocked me for nothing!!!!!!"" Sentiment:negative
+Comment:""Tinder is useless without subscription, there is no point in doing it, the features are also useless. No rating"" Sentiment:negative
+Comment:""to many fake profiles"" Sentiment:negative
+Comment:""expensive, greedy, and affecting purposely people who dont pay for the app"" Sentiment:negative
+Comment:""Paywalls contacts, loads of inactive and spam profiles."" Sentiment:negative
+Comment:""Can someone please tell me how the hell I stop payments??? I'm not using the app and still being charged"" Sentiment:negative
+Comment:""It's too bad to see such a big organisation with a lack of professional approach. I had closed my account completely, but they continued deducting their fees for four months in a row, though I had written to them nothing happened!!! until I requested Google to cancel their facilities tools !!!! sheep, too, sheep Tinder, take care guys from them it happens to many subscribers before ."" Sentiment:negative
+Comment:""$40 a month just to see who likes me. Not worth it to find out it's someone I know wouldn't be interested in me. I'd pay less than $5 for that feature alone because it's the only useful one"" Sentiment:negative
+Comment:""no luck on tinder"" Sentiment:neutral
+","[8322, 5578, 4426, 466, 6265, 5734, 5191, 5390, 860, 7270]","Comment:""Personally, the app feels very superficial. It ends up feeling repetitive."" Sentiment: 
+",negative,negative,101
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") for each task and nothing else.
+## Examples
+Comment:""Good"" Sentiment:positive
+Comment:""Blocked me for nothing!!!!!!"" Sentiment:negative
+Comment:""Tinder is useless without subscription, there is no point in doing it, the features are also useless. No rating"" Sentiment:negative
+Comment:""to many fake profiles"" Sentiment:negative
+Comment:""expensive, greedy, and affecting purposely people who dont pay for the app"" Sentiment:negative
+Comment:""Paywalls contacts, loads of inactive and spam profiles."" Sentiment:negative
+Comment:""Can someone please tell me how the hell I stop payments??? I'm not using the app and still being charged"" Sentiment:negative
+Comment:""It's too bad to see such a big organisation with a lack of professional approach. I had closed my account completely, but they continued deducting their fees for four months in a row, though I had written to them nothing happened!!! until I requested Google to cancel their facilities tools !!!! sheep, too, sheep Tinder, take care guys from them it happens to many subscribers before ."" Sentiment:negative
+Comment:""$40 a month just to see who likes me. Not worth it to find out it's someone I know wouldn't be interested in me. I'd pay less than $5 for that feature alone because it's the only useful one"" Sentiment:negative
+Comment:""no luck on tinder"" Sentiment:neutral
+
+## TASK
+Comment:""Why keep showing me the fat and ugly ""secret admirer"" day after day?"" Sentiment: 
+","Comment:""Good"" Sentiment:positive
+Comment:""Blocked me for nothing!!!!!!"" Sentiment:negative
+Comment:""Tinder is useless without subscription, there is no point in doing it, the features are also useless. No rating"" Sentiment:negative
+Comment:""to many fake profiles"" Sentiment:negative
+Comment:""expensive, greedy, and affecting purposely people who dont pay for the app"" Sentiment:negative
+Comment:""Paywalls contacts, loads of inactive and spam profiles."" Sentiment:negative
+Comment:""Can someone please tell me how the hell I stop payments??? I'm not using the app and still being charged"" Sentiment:negative
+Comment:""It's too bad to see such a big organisation with a lack of professional approach. I had closed my account completely, but they continued deducting their fees for four months in a row, though I had written to them nothing happened!!! until I requested Google to cancel their facilities tools !!!! sheep, too, sheep Tinder, take care guys from them it happens to many subscribers before ."" Sentiment:negative
+Comment:""$40 a month just to see who likes me. Not worth it to find out it's someone I know wouldn't be interested in me. I'd pay less than $5 for that feature alone because it's the only useful one"" Sentiment:negative
+Comment:""no luck on tinder"" Sentiment:neutral
+","[8322, 5578, 4426, 466, 6265, 5734, 5191, 5390, 860, 7270]","Comment:""Why keep showing me the fat and ugly ""secret admirer"" day after day?"" Sentiment: 
+",negative,negative,4222
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") for each task and nothing else.
+## Examples
+Comment:""Good"" Sentiment:positive
+Comment:""Blocked me for nothing!!!!!!"" Sentiment:negative
+Comment:""Tinder is useless without subscription, there is no point in doing it, the features are also useless. No rating"" Sentiment:negative
+Comment:""to many fake profiles"" Sentiment:negative
+Comment:""expensive, greedy, and affecting purposely people who dont pay for the app"" Sentiment:negative
+Comment:""Paywalls contacts, loads of inactive and spam profiles."" Sentiment:negative
+Comment:""Can someone please tell me how the hell I stop payments??? I'm not using the app and still being charged"" Sentiment:negative
+Comment:""It's too bad to see such a big organisation with a lack of professional approach. I had closed my account completely, but they continued deducting their fees for four months in a row, though I had written to them nothing happened!!! until I requested Google to cancel their facilities tools !!!! sheep, too, sheep Tinder, take care guys from them it happens to many subscribers before ."" Sentiment:negative
+Comment:""$40 a month just to see who likes me. Not worth it to find out it's someone I know wouldn't be interested in me. I'd pay less than $5 for that feature alone because it's the only useful one"" Sentiment:negative
+Comment:""no luck on tinder"" Sentiment:neutral
+
+## TASK
+Comment:""Good apps"" Sentiment: 
+","Comment:""Good"" Sentiment:positive
+Comment:""Blocked me for nothing!!!!!!"" Sentiment:negative
+Comment:""Tinder is useless without subscription, there is no point in doing it, the features are also useless. No rating"" Sentiment:negative
+Comment:""to many fake profiles"" Sentiment:negative
+Comment:""expensive, greedy, and affecting purposely people who dont pay for the app"" Sentiment:negative
+Comment:""Paywalls contacts, loads of inactive and spam profiles."" Sentiment:negative
+Comment:""Can someone please tell me how the hell I stop payments??? I'm not using the app and still being charged"" Sentiment:negative
+Comment:""It's too bad to see such a big organisation with a lack of professional approach. I had closed my account completely, but they continued deducting their fees for four months in a row, though I had written to them nothing happened!!! until I requested Google to cancel their facilities tools !!!! sheep, too, sheep Tinder, take care guys from them it happens to many subscribers before ."" Sentiment:negative
+Comment:""$40 a month just to see who likes me. Not worth it to find out it's someone I know wouldn't be interested in me. I'd pay less than $5 for that feature alone because it's the only useful one"" Sentiment:negative
+Comment:""no luck on tinder"" Sentiment:neutral
+","[8322, 5578, 4426, 466, 6265, 5734, 5191, 5390, 860, 7270]","Comment:""Good apps"" Sentiment: 
+",positive,positive,7884
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") for each task and nothing else.
+## Examples
+Comment:""Good"" Sentiment:positive
+Comment:""Blocked me for nothing!!!!!!"" Sentiment:negative
+Comment:""Tinder is useless without subscription, there is no point in doing it, the features are also useless. No rating"" Sentiment:negative
+Comment:""to many fake profiles"" Sentiment:negative
+Comment:""expensive, greedy, and affecting purposely people who dont pay for the app"" Sentiment:negative
+Comment:""Paywalls contacts, loads of inactive and spam profiles."" Sentiment:negative
+Comment:""Can someone please tell me how the hell I stop payments??? I'm not using the app and still being charged"" Sentiment:negative
+Comment:""It's too bad to see such a big organisation with a lack of professional approach. I had closed my account completely, but they continued deducting their fees for four months in a row, though I had written to them nothing happened!!! until I requested Google to cancel their facilities tools !!!! sheep, too, sheep Tinder, take care guys from them it happens to many subscribers before ."" Sentiment:negative
+Comment:""$40 a month just to see who likes me. Not worth it to find out it's someone I know wouldn't be interested in me. I'd pay less than $5 for that feature alone because it's the only useful one"" Sentiment:negative
+Comment:""no luck on tinder"" Sentiment:neutral
+
+## TASK
+Comment:""This app is dry. A waste of mens time."" Sentiment: 
+","Comment:""Good"" Sentiment:positive
+Comment:""Blocked me for nothing!!!!!!"" Sentiment:negative
+Comment:""Tinder is useless without subscription, there is no point in doing it, the features are also useless. No rating"" Sentiment:negative
+Comment:""to many fake profiles"" Sentiment:negative
+Comment:""expensive, greedy, and affecting purposely people who dont pay for the app"" Sentiment:negative
+Comment:""Paywalls contacts, loads of inactive and spam profiles."" Sentiment:negative
+Comment:""Can someone please tell me how the hell I stop payments??? I'm not using the app and still being charged"" Sentiment:negative
+Comment:""It's too bad to see such a big organisation with a lack of professional approach. I had closed my account completely, but they continued deducting their fees for four months in a row, though I had written to them nothing happened!!! until I requested Google to cancel their facilities tools !!!! sheep, too, sheep Tinder, take care guys from them it happens to many subscribers before ."" Sentiment:negative
+Comment:""$40 a month just to see who likes me. Not worth it to find out it's someone I know wouldn't be interested in me. I'd pay less than $5 for that feature alone because it's the only useful one"" Sentiment:negative
+Comment:""no luck on tinder"" Sentiment:neutral
+","[8322, 5578, 4426, 466, 6265, 5734, 5191, 5390, 860, 7270]","Comment:""This app is dry. A waste of mens time."" Sentiment: 
+",negative,negative,1115
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") for each task and nothing else.
+## Examples
+Comment:""Good"" Sentiment:positive
+Comment:""Blocked me for nothing!!!!!!"" Sentiment:negative
+Comment:""Tinder is useless without subscription, there is no point in doing it, the features are also useless. No rating"" Sentiment:negative
+Comment:""to many fake profiles"" Sentiment:negative
+Comment:""expensive, greedy, and affecting purposely people who dont pay for the app"" Sentiment:negative
+Comment:""Paywalls contacts, loads of inactive and spam profiles."" Sentiment:negative
+Comment:""Can someone please tell me how the hell I stop payments??? I'm not using the app and still being charged"" Sentiment:negative
+Comment:""It's too bad to see such a big organisation with a lack of professional approach. I had closed my account completely, but they continued deducting their fees for four months in a row, though I had written to them nothing happened!!! until I requested Google to cancel their facilities tools !!!! sheep, too, sheep Tinder, take care guys from them it happens to many subscribers before ."" Sentiment:negative
+Comment:""$40 a month just to see who likes me. Not worth it to find out it's someone I know wouldn't be interested in me. I'd pay less than $5 for that feature alone because it's the only useful one"" Sentiment:negative
+Comment:""no luck on tinder"" Sentiment:neutral
+
+## TASK
+Comment:""great"" Sentiment: 
+","Comment:""Good"" Sentiment:positive
+Comment:""Blocked me for nothing!!!!!!"" Sentiment:negative
+Comment:""Tinder is useless without subscription, there is no point in doing it, the features are also useless. No rating"" Sentiment:negative
+Comment:""to many fake profiles"" Sentiment:negative
+Comment:""expensive, greedy, and affecting purposely people who dont pay for the app"" Sentiment:negative
+Comment:""Paywalls contacts, loads of inactive and spam profiles."" Sentiment:negative
+Comment:""Can someone please tell me how the hell I stop payments??? I'm not using the app and still being charged"" Sentiment:negative
+Comment:""It's too bad to see such a big organisation with a lack of professional approach. I had closed my account completely, but they continued deducting their fees for four months in a row, though I had written to them nothing happened!!! until I requested Google to cancel their facilities tools !!!! sheep, too, sheep Tinder, take care guys from them it happens to many subscribers before ."" Sentiment:negative
+Comment:""$40 a month just to see who likes me. Not worth it to find out it's someone I know wouldn't be interested in me. I'd pay less than $5 for that feature alone because it's the only useful one"" Sentiment:negative
+Comment:""no luck on tinder"" Sentiment:neutral
+","[8322, 5578, 4426, 466, 6265, 5734, 5191, 5390, 860, 7270]","Comment:""great"" Sentiment: 
+",positive,positive,9229
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") for each task and nothing else.
+## Examples
+Comment:""Good"" Sentiment:positive
+Comment:""Blocked me for nothing!!!!!!"" Sentiment:negative
+Comment:""Tinder is useless without subscription, there is no point in doing it, the features are also useless. No rating"" Sentiment:negative
+Comment:""to many fake profiles"" Sentiment:negative
+Comment:""expensive, greedy, and affecting purposely people who dont pay for the app"" Sentiment:negative
+Comment:""Paywalls contacts, loads of inactive and spam profiles."" Sentiment:negative
+Comment:""Can someone please tell me how the hell I stop payments??? I'm not using the app and still being charged"" Sentiment:negative
+Comment:""It's too bad to see such a big organisation with a lack of professional approach. I had closed my account completely, but they continued deducting their fees for four months in a row, though I had written to them nothing happened!!! until I requested Google to cancel their facilities tools !!!! sheep, too, sheep Tinder, take care guys from them it happens to many subscribers before ."" Sentiment:negative
+Comment:""$40 a month just to see who likes me. Not worth it to find out it's someone I know wouldn't be interested in me. I'd pay less than $5 for that feature alone because it's the only useful one"" Sentiment:negative
+Comment:""no luck on tinder"" Sentiment:neutral
+
+## TASK
+Comment:""I love having friends"" Sentiment: 
+","Comment:""Good"" Sentiment:positive
+Comment:""Blocked me for nothing!!!!!!"" Sentiment:negative
+Comment:""Tinder is useless without subscription, there is no point in doing it, the features are also useless. No rating"" Sentiment:negative
+Comment:""to many fake profiles"" Sentiment:negative
+Comment:""expensive, greedy, and affecting purposely people who dont pay for the app"" Sentiment:negative
+Comment:""Paywalls contacts, loads of inactive and spam profiles."" Sentiment:negative
+Comment:""Can someone please tell me how the hell I stop payments??? I'm not using the app and still being charged"" Sentiment:negative
+Comment:""It's too bad to see such a big organisation with a lack of professional approach. I had closed my account completely, but they continued deducting their fees for four months in a row, though I had written to them nothing happened!!! until I requested Google to cancel their facilities tools !!!! sheep, too, sheep Tinder, take care guys from them it happens to many subscribers before ."" Sentiment:negative
+Comment:""$40 a month just to see who likes me. Not worth it to find out it's someone I know wouldn't be interested in me. I'd pay less than $5 for that feature alone because it's the only useful one"" Sentiment:negative
+Comment:""no luck on tinder"" Sentiment:neutral
+","[8322, 5578, 4426, 466, 6265, 5734, 5191, 5390, 860, 7270]","Comment:""I love having friends"" Sentiment: 
+",negative,positive,4010
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") for each task and nothing else.
+## Examples
+Comment:""Too expensive and lots of third party paid site ads."" Sentiment:negative
+Comment:""Hello my name is David and my experience with tinder has been very poor do to the fact that I don't get any likes at all and it would seem as if something is wrong or broken so I am going to just delete the account and the app and tell others to avoid it because it's not worth giving access to all your information just for them to shadow ban you so you can try to spend money on this app it is utterly useless and disappointing I am very dissatisfied."" Sentiment:negative
+Comment:""people telll me that if the account gets blocked they never get Amy information or reason."" Sentiment:neutral
+Comment:""a money consuming app for nothing. maybe you get lucky with a match onec every two to three months or something. and I have a really good profile and not a monster face or something. sportive body. but what you know 😏"" Sentiment:negative
+Comment:""Personally, the app feels very superficial. It ends up feeling repetitive."" Sentiment:negative
+Comment:""Why keep showing me the fat and ugly ""secret admirer"" day after day?"" Sentiment:negative
+Comment:""Good apps"" Sentiment:positive
+Comment:""This app is dry. A waste of mens time."" Sentiment:negative
+Comment:""great"" Sentiment:positive
+Comment:""I love having friends"" Sentiment:negative
+
+## TASK
+Comment:""Too expensive and lots of third party paid site ads."" Sentiment: 
+","Comment:""Too expensive and lots of third party paid site ads."" Sentiment:negative
+Comment:""Hello my name is David and my experience with tinder has been very poor do to the fact that I don't get any likes at all and it would seem as if something is wrong or broken so I am going to just delete the account and the app and tell others to avoid it because it's not worth giving access to all your information just for them to shadow ban you so you can try to spend money on this app it is utterly useless and disappointing I am very dissatisfied."" Sentiment:negative
+Comment:""people telll me that if the account gets blocked they never get Amy information or reason."" Sentiment:neutral
+Comment:""a money consuming app for nothing. maybe you get lucky with a match onec every two to three months or something. and I have a really good profile and not a monster face or something. sportive body. but what you know 😏"" Sentiment:negative
+Comment:""Personally, the app feels very superficial. It ends up feeling repetitive."" Sentiment:negative
+Comment:""Why keep showing me the fat and ugly ""secret admirer"" day after day?"" Sentiment:negative
+Comment:""Good apps"" Sentiment:positive
+Comment:""This app is dry. A waste of mens time."" Sentiment:negative
+Comment:""great"" Sentiment:positive
+Comment:""I love having friends"" Sentiment:negative
+","[2654, 982, 7165, 4704, 101, 4222, 7884, 1115, 9229, 4010]","Comment:""Too expensive and lots of third party paid site ads."" Sentiment: 
+",negative,negative,2654
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") for each task and nothing else.
+## Examples
+Comment:""Too expensive and lots of third party paid site ads."" Sentiment:negative
+Comment:""Hello my name is David and my experience with tinder has been very poor do to the fact that I don't get any likes at all and it would seem as if something is wrong or broken so I am going to just delete the account and the app and tell others to avoid it because it's not worth giving access to all your information just for them to shadow ban you so you can try to spend money on this app it is utterly useless and disappointing I am very dissatisfied."" Sentiment:negative
+Comment:""people telll me that if the account gets blocked they never get Amy information or reason."" Sentiment:neutral
+Comment:""a money consuming app for nothing. maybe you get lucky with a match onec every two to three months or something. and I have a really good profile and not a monster face or something. sportive body. but what you know 😏"" Sentiment:negative
+Comment:""Personally, the app feels very superficial. It ends up feeling repetitive."" Sentiment:negative
+Comment:""Why keep showing me the fat and ugly ""secret admirer"" day after day?"" Sentiment:negative
+Comment:""Good apps"" Sentiment:positive
+Comment:""This app is dry. A waste of mens time."" Sentiment:negative
+Comment:""great"" Sentiment:positive
+Comment:""I love having friends"" Sentiment:negative
+
+## TASK
+Comment:""Hello my name is David and my experience with tinder has been very poor do to the fact that I don't get any likes at all and it would seem as if something is wrong or broken so I am going to just delete the account and the app and tell others to avoid it because it's not worth giving access to all your information just for them to shadow ban you so you can try to spend money on this app it is utterly useless and disappointing I am very dissatisfied."" Sentiment: 
+","Comment:""Too expensive and lots of third party paid site ads."" Sentiment:negative
+Comment:""Hello my name is David and my experience with tinder has been very poor do to the fact that I don't get any likes at all and it would seem as if something is wrong or broken so I am going to just delete the account and the app and tell others to avoid it because it's not worth giving access to all your information just for them to shadow ban you so you can try to spend money on this app it is utterly useless and disappointing I am very dissatisfied."" Sentiment:negative
+Comment:""people telll me that if the account gets blocked they never get Amy information or reason."" Sentiment:neutral
+Comment:""a money consuming app for nothing. maybe you get lucky with a match onec every two to three months or something. and I have a really good profile and not a monster face or something. sportive body. but what you know 😏"" Sentiment:negative
+Comment:""Personally, the app feels very superficial. It ends up feeling repetitive."" Sentiment:negative
+Comment:""Why keep showing me the fat and ugly ""secret admirer"" day after day?"" Sentiment:negative
+Comment:""Good apps"" Sentiment:positive
+Comment:""This app is dry. A waste of mens time."" Sentiment:negative
+Comment:""great"" Sentiment:positive
+Comment:""I love having friends"" Sentiment:negative
+","[2654, 982, 7165, 4704, 101, 4222, 7884, 1115, 9229, 4010]","Comment:""Hello my name is David and my experience with tinder has been very poor do to the fact that I don't get any likes at all and it would seem as if something is wrong or broken so I am going to just delete the account and the app and tell others to avoid it because it's not worth giving access to all your information just for them to shadow ban you so you can try to spend money on this app it is utterly useless and disappointing I am very dissatisfied."" Sentiment: 
+",negative,negative,982
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") for each task and nothing else.
+## Examples
+Comment:""Too expensive and lots of third party paid site ads."" Sentiment:negative
+Comment:""Hello my name is David and my experience with tinder has been very poor do to the fact that I don't get any likes at all and it would seem as if something is wrong or broken so I am going to just delete the account and the app and tell others to avoid it because it's not worth giving access to all your information just for them to shadow ban you so you can try to spend money on this app it is utterly useless and disappointing I am very dissatisfied."" Sentiment:negative
+Comment:""people telll me that if the account gets blocked they never get Amy information or reason."" Sentiment:neutral
+Comment:""a money consuming app for nothing. maybe you get lucky with a match onec every two to three months or something. and I have a really good profile and not a monster face or something. sportive body. but what you know 😏"" Sentiment:negative
+Comment:""Personally, the app feels very superficial. It ends up feeling repetitive."" Sentiment:negative
+Comment:""Why keep showing me the fat and ugly ""secret admirer"" day after day?"" Sentiment:negative
+Comment:""Good apps"" Sentiment:positive
+Comment:""This app is dry. A waste of mens time."" Sentiment:negative
+Comment:""great"" Sentiment:positive
+Comment:""I love having friends"" Sentiment:negative
+
+## TASK
+Comment:""people telll me that if the account gets blocked they never get Amy information or reason."" Sentiment: 
+","Comment:""Too expensive and lots of third party paid site ads."" Sentiment:negative
+Comment:""Hello my name is David and my experience with tinder has been very poor do to the fact that I don't get any likes at all and it would seem as if something is wrong or broken so I am going to just delete the account and the app and tell others to avoid it because it's not worth giving access to all your information just for them to shadow ban you so you can try to spend money on this app it is utterly useless and disappointing I am very dissatisfied."" Sentiment:negative
+Comment:""people telll me that if the account gets blocked they never get Amy information or reason."" Sentiment:neutral
+Comment:""a money consuming app for nothing. maybe you get lucky with a match onec every two to three months or something. and I have a really good profile and not a monster face or something. sportive body. but what you know 😏"" Sentiment:negative
+Comment:""Personally, the app feels very superficial. It ends up feeling repetitive."" Sentiment:negative
+Comment:""Why keep showing me the fat and ugly ""secret admirer"" day after day?"" Sentiment:negative
+Comment:""Good apps"" Sentiment:positive
+Comment:""This app is dry. A waste of mens time."" Sentiment:negative
+Comment:""great"" Sentiment:positive
+Comment:""I love having friends"" Sentiment:negative
+","[2654, 982, 7165, 4704, 101, 4222, 7884, 1115, 9229, 4010]","Comment:""people telll me that if the account gets blocked they never get Amy information or reason."" Sentiment: 
+",neutral,negative,7165
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") for each task and nothing else.
+## Examples
+Comment:""Too expensive and lots of third party paid site ads."" Sentiment:negative
+Comment:""Hello my name is David and my experience with tinder has been very poor do to the fact that I don't get any likes at all and it would seem as if something is wrong or broken so I am going to just delete the account and the app and tell others to avoid it because it's not worth giving access to all your information just for them to shadow ban you so you can try to spend money on this app it is utterly useless and disappointing I am very dissatisfied."" Sentiment:negative
+Comment:""people telll me that if the account gets blocked they never get Amy information or reason."" Sentiment:neutral
+Comment:""a money consuming app for nothing. maybe you get lucky with a match onec every two to three months or something. and I have a really good profile and not a monster face or something. sportive body. but what you know 😏"" Sentiment:negative
+Comment:""Personally, the app feels very superficial. It ends up feeling repetitive."" Sentiment:negative
+Comment:""Why keep showing me the fat and ugly ""secret admirer"" day after day?"" Sentiment:negative
+Comment:""Good apps"" Sentiment:positive
+Comment:""This app is dry. A waste of mens time."" Sentiment:negative
+Comment:""great"" Sentiment:positive
+Comment:""I love having friends"" Sentiment:negative
+
+## TASK
+Comment:""a money consuming app for nothing. maybe you get lucky with a match onec every two to three months or something. and I have a really good profile and not a monster face or something. sportive body. but what you know 😏"" Sentiment: 
+","Comment:""Too expensive and lots of third party paid site ads."" Sentiment:negative
+Comment:""Hello my name is David and my experience with tinder has been very poor do to the fact that I don't get any likes at all and it would seem as if something is wrong or broken so I am going to just delete the account and the app and tell others to avoid it because it's not worth giving access to all your information just for them to shadow ban you so you can try to spend money on this app it is utterly useless and disappointing I am very dissatisfied."" Sentiment:negative
+Comment:""people telll me that if the account gets blocked they never get Amy information or reason."" Sentiment:neutral
+Comment:""a money consuming app for nothing. maybe you get lucky with a match onec every two to three months or something. and I have a really good profile and not a monster face or something. sportive body. but what you know 😏"" Sentiment:negative
+Comment:""Personally, the app feels very superficial. It ends up feeling repetitive."" Sentiment:negative
+Comment:""Why keep showing me the fat and ugly ""secret admirer"" day after day?"" Sentiment:negative
+Comment:""Good apps"" Sentiment:positive
+Comment:""This app is dry. A waste of mens time."" Sentiment:negative
+Comment:""great"" Sentiment:positive
+Comment:""I love having friends"" Sentiment:negative
+","[2654, 982, 7165, 4704, 101, 4222, 7884, 1115, 9229, 4010]","Comment:""a money consuming app for nothing. maybe you get lucky with a match onec every two to three months or something. and I have a really good profile and not a monster face or something. sportive body. but what you know 😏"" Sentiment: 
+",negative,negative,4704
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") for each task and nothing else.
+## Examples
+Comment:""Too expensive and lots of third party paid site ads."" Sentiment:negative
+Comment:""Hello my name is David and my experience with tinder has been very poor do to the fact that I don't get any likes at all and it would seem as if something is wrong or broken so I am going to just delete the account and the app and tell others to avoid it because it's not worth giving access to all your information just for them to shadow ban you so you can try to spend money on this app it is utterly useless and disappointing I am very dissatisfied."" Sentiment:negative
+Comment:""people telll me that if the account gets blocked they never get Amy information or reason."" Sentiment:neutral
+Comment:""a money consuming app for nothing. maybe you get lucky with a match onec every two to three months or something. and I have a really good profile and not a monster face or something. sportive body. but what you know 😏"" Sentiment:negative
+Comment:""Personally, the app feels very superficial. It ends up feeling repetitive."" Sentiment:negative
+Comment:""Why keep showing me the fat and ugly ""secret admirer"" day after day?"" Sentiment:negative
+Comment:""Good apps"" Sentiment:positive
+Comment:""This app is dry. A waste of mens time."" Sentiment:negative
+Comment:""great"" Sentiment:positive
+Comment:""I love having friends"" Sentiment:negative
+
+## TASK
+Comment:""Personally, the app feels very superficial. It ends up feeling repetitive."" Sentiment: 
+","Comment:""Too expensive and lots of third party paid site ads."" Sentiment:negative
+Comment:""Hello my name is David and my experience with tinder has been very poor do to the fact that I don't get any likes at all and it would seem as if something is wrong or broken so I am going to just delete the account and the app and tell others to avoid it because it's not worth giving access to all your information just for them to shadow ban you so you can try to spend money on this app it is utterly useless and disappointing I am very dissatisfied."" Sentiment:negative
+Comment:""people telll me that if the account gets blocked they never get Amy information or reason."" Sentiment:neutral
+Comment:""a money consuming app for nothing. maybe you get lucky with a match onec every two to three months or something. and I have a really good profile and not a monster face or something. sportive body. but what you know 😏"" Sentiment:negative
+Comment:""Personally, the app feels very superficial. It ends up feeling repetitive."" Sentiment:negative
+Comment:""Why keep showing me the fat and ugly ""secret admirer"" day after day?"" Sentiment:negative
+Comment:""Good apps"" Sentiment:positive
+Comment:""This app is dry. A waste of mens time."" Sentiment:negative
+Comment:""great"" Sentiment:positive
+Comment:""I love having friends"" Sentiment:negative
+","[2654, 982, 7165, 4704, 101, 4222, 7884, 1115, 9229, 4010]","Comment:""Personally, the app feels very superficial. It ends up feeling repetitive."" Sentiment: 
+",negative,negative,101
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") for each task and nothing else.
+## Examples
+Comment:""Too expensive and lots of third party paid site ads."" Sentiment:negative
+Comment:""Hello my name is David and my experience with tinder has been very poor do to the fact that I don't get any likes at all and it would seem as if something is wrong or broken so I am going to just delete the account and the app and tell others to avoid it because it's not worth giving access to all your information just for them to shadow ban you so you can try to spend money on this app it is utterly useless and disappointing I am very dissatisfied."" Sentiment:negative
+Comment:""people telll me that if the account gets blocked they never get Amy information or reason."" Sentiment:neutral
+Comment:""a money consuming app for nothing. maybe you get lucky with a match onec every two to three months or something. and I have a really good profile and not a monster face or something. sportive body. but what you know 😏"" Sentiment:negative
+Comment:""Personally, the app feels very superficial. It ends up feeling repetitive."" Sentiment:negative
+Comment:""Why keep showing me the fat and ugly ""secret admirer"" day after day?"" Sentiment:negative
+Comment:""Good apps"" Sentiment:positive
+Comment:""This app is dry. A waste of mens time."" Sentiment:negative
+Comment:""great"" Sentiment:positive
+Comment:""I love having friends"" Sentiment:negative
+
+## TASK
+Comment:""Why keep showing me the fat and ugly ""secret admirer"" day after day?"" Sentiment: 
+","Comment:""Too expensive and lots of third party paid site ads."" Sentiment:negative
+Comment:""Hello my name is David and my experience with tinder has been very poor do to the fact that I don't get any likes at all and it would seem as if something is wrong or broken so I am going to just delete the account and the app and tell others to avoid it because it's not worth giving access to all your information just for them to shadow ban you so you can try to spend money on this app it is utterly useless and disappointing I am very dissatisfied."" Sentiment:negative
+Comment:""people telll me that if the account gets blocked they never get Amy information or reason."" Sentiment:neutral
+Comment:""a money consuming app for nothing. maybe you get lucky with a match onec every two to three months or something. and I have a really good profile and not a monster face or something. sportive body. but what you know 😏"" Sentiment:negative
+Comment:""Personally, the app feels very superficial. It ends up feeling repetitive."" Sentiment:negative
+Comment:""Why keep showing me the fat and ugly ""secret admirer"" day after day?"" Sentiment:negative
+Comment:""Good apps"" Sentiment:positive
+Comment:""This app is dry. A waste of mens time."" Sentiment:negative
+Comment:""great"" Sentiment:positive
+Comment:""I love having friends"" Sentiment:negative
+","[2654, 982, 7165, 4704, 101, 4222, 7884, 1115, 9229, 4010]","Comment:""Why keep showing me the fat and ugly ""secret admirer"" day after day?"" Sentiment: 
+",negative,negative,4222
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") for each task and nothing else.
+## Examples
+Comment:""Too expensive and lots of third party paid site ads."" Sentiment:negative
+Comment:""Hello my name is David and my experience with tinder has been very poor do to the fact that I don't get any likes at all and it would seem as if something is wrong or broken so I am going to just delete the account and the app and tell others to avoid it because it's not worth giving access to all your information just for them to shadow ban you so you can try to spend money on this app it is utterly useless and disappointing I am very dissatisfied."" Sentiment:negative
+Comment:""people telll me that if the account gets blocked they never get Amy information or reason."" Sentiment:neutral
+Comment:""a money consuming app for nothing. maybe you get lucky with a match onec every two to three months or something. and I have a really good profile and not a monster face or something. sportive body. but what you know 😏"" Sentiment:negative
+Comment:""Personally, the app feels very superficial. It ends up feeling repetitive."" Sentiment:negative
+Comment:""Why keep showing me the fat and ugly ""secret admirer"" day after day?"" Sentiment:negative
+Comment:""Good apps"" Sentiment:positive
+Comment:""This app is dry. A waste of mens time."" Sentiment:negative
+Comment:""great"" Sentiment:positive
+Comment:""I love having friends"" Sentiment:negative
+
+## TASK
+Comment:""Good apps"" Sentiment: 
+","Comment:""Too expensive and lots of third party paid site ads."" Sentiment:negative
+Comment:""Hello my name is David and my experience with tinder has been very poor do to the fact that I don't get any likes at all and it would seem as if something is wrong or broken so I am going to just delete the account and the app and tell others to avoid it because it's not worth giving access to all your information just for them to shadow ban you so you can try to spend money on this app it is utterly useless and disappointing I am very dissatisfied."" Sentiment:negative
+Comment:""people telll me that if the account gets blocked they never get Amy information or reason."" Sentiment:neutral
+Comment:""a money consuming app for nothing. maybe you get lucky with a match onec every two to three months or something. and I have a really good profile and not a monster face or something. sportive body. but what you know 😏"" Sentiment:negative
+Comment:""Personally, the app feels very superficial. It ends up feeling repetitive."" Sentiment:negative
+Comment:""Why keep showing me the fat and ugly ""secret admirer"" day after day?"" Sentiment:negative
+Comment:""Good apps"" Sentiment:positive
+Comment:""This app is dry. A waste of mens time."" Sentiment:negative
+Comment:""great"" Sentiment:positive
+Comment:""I love having friends"" Sentiment:negative
+","[2654, 982, 7165, 4704, 101, 4222, 7884, 1115, 9229, 4010]","Comment:""Good apps"" Sentiment: 
+",positive,positive,7884
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") for each task and nothing else.
+## Examples
+Comment:""Too expensive and lots of third party paid site ads."" Sentiment:negative
+Comment:""Hello my name is David and my experience with tinder has been very poor do to the fact that I don't get any likes at all and it would seem as if something is wrong or broken so I am going to just delete the account and the app and tell others to avoid it because it's not worth giving access to all your information just for them to shadow ban you so you can try to spend money on this app it is utterly useless and disappointing I am very dissatisfied."" Sentiment:negative
+Comment:""people telll me that if the account gets blocked they never get Amy information or reason."" Sentiment:neutral
+Comment:""a money consuming app for nothing. maybe you get lucky with a match onec every two to three months or something. and I have a really good profile and not a monster face or something. sportive body. but what you know 😏"" Sentiment:negative
+Comment:""Personally, the app feels very superficial. It ends up feeling repetitive."" Sentiment:negative
+Comment:""Why keep showing me the fat and ugly ""secret admirer"" day after day?"" Sentiment:negative
+Comment:""Good apps"" Sentiment:positive
+Comment:""This app is dry. A waste of mens time."" Sentiment:negative
+Comment:""great"" Sentiment:positive
+Comment:""I love having friends"" Sentiment:negative
+
+## TASK
+Comment:""This app is dry. A waste of mens time."" Sentiment: 
+","Comment:""Too expensive and lots of third party paid site ads."" Sentiment:negative
+Comment:""Hello my name is David and my experience with tinder has been very poor do to the fact that I don't get any likes at all and it would seem as if something is wrong or broken so I am going to just delete the account and the app and tell others to avoid it because it's not worth giving access to all your information just for them to shadow ban you so you can try to spend money on this app it is utterly useless and disappointing I am very dissatisfied."" Sentiment:negative
+Comment:""people telll me that if the account gets blocked they never get Amy information or reason."" Sentiment:neutral
+Comment:""a money consuming app for nothing. maybe you get lucky with a match onec every two to three months or something. and I have a really good profile and not a monster face or something. sportive body. but what you know 😏"" Sentiment:negative
+Comment:""Personally, the app feels very superficial. It ends up feeling repetitive."" Sentiment:negative
+Comment:""Why keep showing me the fat and ugly ""secret admirer"" day after day?"" Sentiment:negative
+Comment:""Good apps"" Sentiment:positive
+Comment:""This app is dry. A waste of mens time."" Sentiment:negative
+Comment:""great"" Sentiment:positive
+Comment:""I love having friends"" Sentiment:negative
+","[2654, 982, 7165, 4704, 101, 4222, 7884, 1115, 9229, 4010]","Comment:""This app is dry. A waste of mens time."" Sentiment: 
+",negative,negative,1115
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") for each task and nothing else.
+## Examples
+Comment:""Too expensive and lots of third party paid site ads."" Sentiment:negative
+Comment:""Hello my name is David and my experience with tinder has been very poor do to the fact that I don't get any likes at all and it would seem as if something is wrong or broken so I am going to just delete the account and the app and tell others to avoid it because it's not worth giving access to all your information just for them to shadow ban you so you can try to spend money on this app it is utterly useless and disappointing I am very dissatisfied."" Sentiment:negative
+Comment:""people telll me that if the account gets blocked they never get Amy information or reason."" Sentiment:neutral
+Comment:""a money consuming app for nothing. maybe you get lucky with a match onec every two to three months or something. and I have a really good profile and not a monster face or something. sportive body. but what you know 😏"" Sentiment:negative
+Comment:""Personally, the app feels very superficial. It ends up feeling repetitive."" Sentiment:negative
+Comment:""Why keep showing me the fat and ugly ""secret admirer"" day after day?"" Sentiment:negative
+Comment:""Good apps"" Sentiment:positive
+Comment:""This app is dry. A waste of mens time."" Sentiment:negative
+Comment:""great"" Sentiment:positive
+Comment:""I love having friends"" Sentiment:negative
+
+## TASK
+Comment:""great"" Sentiment: 
+","Comment:""Too expensive and lots of third party paid site ads."" Sentiment:negative
+Comment:""Hello my name is David and my experience with tinder has been very poor do to the fact that I don't get any likes at all and it would seem as if something is wrong or broken so I am going to just delete the account and the app and tell others to avoid it because it's not worth giving access to all your information just for them to shadow ban you so you can try to spend money on this app it is utterly useless and disappointing I am very dissatisfied."" Sentiment:negative
+Comment:""people telll me that if the account gets blocked they never get Amy information or reason."" Sentiment:neutral
+Comment:""a money consuming app for nothing. maybe you get lucky with a match onec every two to three months or something. and I have a really good profile and not a monster face or something. sportive body. but what you know 😏"" Sentiment:negative
+Comment:""Personally, the app feels very superficial. It ends up feeling repetitive."" Sentiment:negative
+Comment:""Why keep showing me the fat and ugly ""secret admirer"" day after day?"" Sentiment:negative
+Comment:""Good apps"" Sentiment:positive
+Comment:""This app is dry. A waste of mens time."" Sentiment:negative
+Comment:""great"" Sentiment:positive
+Comment:""I love having friends"" Sentiment:negative
+","[2654, 982, 7165, 4704, 101, 4222, 7884, 1115, 9229, 4010]","Comment:""great"" Sentiment: 
+",positive,positive,9229
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") for each task and nothing else.
+## Examples
+Comment:""Too expensive and lots of third party paid site ads."" Sentiment:negative
+Comment:""Hello my name is David and my experience with tinder has been very poor do to the fact that I don't get any likes at all and it would seem as if something is wrong or broken so I am going to just delete the account and the app and tell others to avoid it because it's not worth giving access to all your information just for them to shadow ban you so you can try to spend money on this app it is utterly useless and disappointing I am very dissatisfied."" Sentiment:negative
+Comment:""people telll me that if the account gets blocked they never get Amy information or reason."" Sentiment:neutral
+Comment:""a money consuming app for nothing. maybe you get lucky with a match onec every two to three months or something. and I have a really good profile and not a monster face or something. sportive body. but what you know 😏"" Sentiment:negative
+Comment:""Personally, the app feels very superficial. It ends up feeling repetitive."" Sentiment:negative
+Comment:""Why keep showing me the fat and ugly ""secret admirer"" day after day?"" Sentiment:negative
+Comment:""Good apps"" Sentiment:positive
+Comment:""This app is dry. A waste of mens time."" Sentiment:negative
+Comment:""great"" Sentiment:positive
+Comment:""I love having friends"" Sentiment:negative
+
+## TASK
+Comment:""I love having friends"" Sentiment: 
+","Comment:""Too expensive and lots of third party paid site ads."" Sentiment:negative
+Comment:""Hello my name is David and my experience with tinder has been very poor do to the fact that I don't get any likes at all and it would seem as if something is wrong or broken so I am going to just delete the account and the app and tell others to avoid it because it's not worth giving access to all your information just for them to shadow ban you so you can try to spend money on this app it is utterly useless and disappointing I am very dissatisfied."" Sentiment:negative
+Comment:""people telll me that if the account gets blocked they never get Amy information or reason."" Sentiment:neutral
+Comment:""a money consuming app for nothing. maybe you get lucky with a match onec every two to three months or something. and I have a really good profile and not a monster face or something. sportive body. but what you know 😏"" Sentiment:negative
+Comment:""Personally, the app feels very superficial. It ends up feeling repetitive."" Sentiment:negative
+Comment:""Why keep showing me the fat and ugly ""secret admirer"" day after day?"" Sentiment:negative
+Comment:""Good apps"" Sentiment:positive
+Comment:""This app is dry. A waste of mens time."" Sentiment:negative
+Comment:""great"" Sentiment:positive
+Comment:""I love having friends"" Sentiment:negative
+","[2654, 982, 7165, 4704, 101, 4222, 7884, 1115, 9229, 4010]","Comment:""I love having friends"" Sentiment: 
+",negative,negative,4010
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") for each task and nothing else.
+## Examples
+Comment:""Can you delete my account I'm unable to"" Sentiment:negative
+Comment:""Alot of bots and undesirable people"" Sentiment:negative
+Comment:""I assume I was shadowbanned because nothing is working"" Sentiment:negative
+Comment:""First day it is nice . If any matches are not found it going to take account under review and it banns the account. Same situation happen to me. I don't know what I have crossed terms and conditions. Finally my account banned itself."" Sentiment:negative
+Comment:""Was issued a permanent ban. Bad experience after seeing 90% of fake profiles."" Sentiment:negative
+Comment:""Not quite sure if the shallowness of dating is brought on by tinder or it has just brought it to the fore. Anyway, this vicious cycle is something I'm tired of, and dating seems like a far off pipe dream for me. Tinder doesn't help, instead it sets in more self doubt and insecurity than any positive experiences or feelings it promises."" Sentiment:negative
+Comment:""I registered and subscribed to this app in less than 3days only for me to be blocked, saying I have violated their terms and conditions which I have not. This app is a scam app Don't subscribe"" Sentiment:negative
+Comment:""Just got the app today, says it's under review should only take a couple minutes. I can't get into it. And this has been hours now."" Sentiment:negative
+Comment:""You Broke It. This app was already broken, and all around lacking in comparison to other dating apps available. And just when you thought it can't get anyworse, you've completely flubbered the tools to add and remove photos by overcomplicating and redesigning an already functional tool no one asked you to change or redesign in the first place. Congrats, now it doesn't work at all- I'll go back to Bumble👋"" Sentiment:negative
+Comment:""The limited amount of likes plus the amount of spam bots makes the whole experience trash. I really wish I could give it zero stars. Edit update: Wow, this app sucks.Then they have the balls to ask me to pay for features. Update: Far too many bots and fake profiles. Apparently you can't report fake profiles anymore for being straight up fake profiles. Tinder, fix yourself. Edit: Dear Tinder, remove whatever it is that lets ""calling cards"" be a thing."" Sentiment:negative
+
+## TASK
+Comment:""Too expensive and lots of third party paid site ads."" Sentiment: 
+","Comment:""Can you delete my account I'm unable to"" Sentiment:negative
+Comment:""Alot of bots and undesirable people"" Sentiment:negative
+Comment:""I assume I was shadowbanned because nothing is working"" Sentiment:negative
+Comment:""First day it is nice . If any matches are not found it going to take account under review and it banns the account. Same situation happen to me. I don't know what I have crossed terms and conditions. Finally my account banned itself."" Sentiment:negative
+Comment:""Was issued a permanent ban. Bad experience after seeing 90% of fake profiles."" Sentiment:negative
+Comment:""Not quite sure if the shallowness of dating is brought on by tinder or it has just brought it to the fore. Anyway, this vicious cycle is something I'm tired of, and dating seems like a far off pipe dream for me. Tinder doesn't help, instead it sets in more self doubt and insecurity than any positive experiences or feelings it promises."" Sentiment:negative
+Comment:""I registered and subscribed to this app in less than 3days only for me to be blocked, saying I have violated their terms and conditions which I have not. This app is a scam app Don't subscribe"" Sentiment:negative
+Comment:""Just got the app today, says it's under review should only take a couple minutes. I can't get into it. And this has been hours now."" Sentiment:negative
+Comment:""You Broke It. This app was already broken, and all around lacking in comparison to other dating apps available. And just when you thought it can't get anyworse, you've completely flubbered the tools to add and remove photos by overcomplicating and redesigning an already functional tool no one asked you to change or redesign in the first place. Congrats, now it doesn't work at all- I'll go back to Bumble👋"" Sentiment:negative
+Comment:""The limited amount of likes plus the amount of spam bots makes the whole experience trash. I really wish I could give it zero stars. Edit update: Wow, this app sucks.Then they have the balls to ask me to pay for features. Update: Far too many bots and fake profiles. Apparently you can't report fake profiles anymore for being straight up fake profiles. Tinder, fix yourself. Edit: Dear Tinder, remove whatever it is that lets ""calling cards"" be a thing."" Sentiment:negative
+","[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]","Comment:""Too expensive and lots of third party paid site ads."" Sentiment: 
+",negative,negative,2654
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") for each task and nothing else.
+## Examples
+Comment:""Can you delete my account I'm unable to"" Sentiment:negative
+Comment:""Alot of bots and undesirable people"" Sentiment:negative
+Comment:""I assume I was shadowbanned because nothing is working"" Sentiment:negative
+Comment:""First day it is nice . If any matches are not found it going to take account under review and it banns the account. Same situation happen to me. I don't know what I have crossed terms and conditions. Finally my account banned itself."" Sentiment:negative
+Comment:""Was issued a permanent ban. Bad experience after seeing 90% of fake profiles."" Sentiment:negative
+Comment:""Not quite sure if the shallowness of dating is brought on by tinder or it has just brought it to the fore. Anyway, this vicious cycle is something I'm tired of, and dating seems like a far off pipe dream for me. Tinder doesn't help, instead it sets in more self doubt and insecurity than any positive experiences or feelings it promises."" Sentiment:negative
+Comment:""I registered and subscribed to this app in less than 3days only for me to be blocked, saying I have violated their terms and conditions which I have not. This app is a scam app Don't subscribe"" Sentiment:negative
+Comment:""Just got the app today, says it's under review should only take a couple minutes. I can't get into it. And this has been hours now."" Sentiment:negative
+Comment:""You Broke It. This app was already broken, and all around lacking in comparison to other dating apps available. And just when you thought it can't get anyworse, you've completely flubbered the tools to add and remove photos by overcomplicating and redesigning an already functional tool no one asked you to change or redesign in the first place. Congrats, now it doesn't work at all- I'll go back to Bumble👋"" Sentiment:negative
+Comment:""The limited amount of likes plus the amount of spam bots makes the whole experience trash. I really wish I could give it zero stars. Edit update: Wow, this app sucks.Then they have the balls to ask me to pay for features. Update: Far too many bots and fake profiles. Apparently you can't report fake profiles anymore for being straight up fake profiles. Tinder, fix yourself. Edit: Dear Tinder, remove whatever it is that lets ""calling cards"" be a thing."" Sentiment:negative
+
+## TASK
+Comment:""Hello my name is David and my experience with tinder has been very poor do to the fact that I don't get any likes at all and it would seem as if something is wrong or broken so I am going to just delete the account and the app and tell others to avoid it because it's not worth giving access to all your information just for them to shadow ban you so you can try to spend money on this app it is utterly useless and disappointing I am very dissatisfied."" Sentiment: 
+","Comment:""Can you delete my account I'm unable to"" Sentiment:negative
+Comment:""Alot of bots and undesirable people"" Sentiment:negative
+Comment:""I assume I was shadowbanned because nothing is working"" Sentiment:negative
+Comment:""First day it is nice . If any matches are not found it going to take account under review and it banns the account. Same situation happen to me. I don't know what I have crossed terms and conditions. Finally my account banned itself."" Sentiment:negative
+Comment:""Was issued a permanent ban. Bad experience after seeing 90% of fake profiles."" Sentiment:negative
+Comment:""Not quite sure if the shallowness of dating is brought on by tinder or it has just brought it to the fore. Anyway, this vicious cycle is something I'm tired of, and dating seems like a far off pipe dream for me. Tinder doesn't help, instead it sets in more self doubt and insecurity than any positive experiences or feelings it promises."" Sentiment:negative
+Comment:""I registered and subscribed to this app in less than 3days only for me to be blocked, saying I have violated their terms and conditions which I have not. This app is a scam app Don't subscribe"" Sentiment:negative
+Comment:""Just got the app today, says it's under review should only take a couple minutes. I can't get into it. And this has been hours now."" Sentiment:negative
+Comment:""You Broke It. This app was already broken, and all around lacking in comparison to other dating apps available. And just when you thought it can't get anyworse, you've completely flubbered the tools to add and remove photos by overcomplicating and redesigning an already functional tool no one asked you to change or redesign in the first place. Congrats, now it doesn't work at all- I'll go back to Bumble👋"" Sentiment:negative
+Comment:""The limited amount of likes plus the amount of spam bots makes the whole experience trash. I really wish I could give it zero stars. Edit update: Wow, this app sucks.Then they have the balls to ask me to pay for features. Update: Far too many bots and fake profiles. Apparently you can't report fake profiles anymore for being straight up fake profiles. Tinder, fix yourself. Edit: Dear Tinder, remove whatever it is that lets ""calling cards"" be a thing."" Sentiment:negative
+","[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]","Comment:""Hello my name is David and my experience with tinder has been very poor do to the fact that I don't get any likes at all and it would seem as if something is wrong or broken so I am going to just delete the account and the app and tell others to avoid it because it's not worth giving access to all your information just for them to shadow ban you so you can try to spend money on this app it is utterly useless and disappointing I am very dissatisfied."" Sentiment: 
+",negative,negative,982
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") for each task and nothing else.
+## Examples
+Comment:""Can you delete my account I'm unable to"" Sentiment:negative
+Comment:""Alot of bots and undesirable people"" Sentiment:negative
+Comment:""I assume I was shadowbanned because nothing is working"" Sentiment:negative
+Comment:""First day it is nice . If any matches are not found it going to take account under review and it banns the account. Same situation happen to me. I don't know what I have crossed terms and conditions. Finally my account banned itself."" Sentiment:negative
+Comment:""Was issued a permanent ban. Bad experience after seeing 90% of fake profiles."" Sentiment:negative
+Comment:""Not quite sure if the shallowness of dating is brought on by tinder or it has just brought it to the fore. Anyway, this vicious cycle is something I'm tired of, and dating seems like a far off pipe dream for me. Tinder doesn't help, instead it sets in more self doubt and insecurity than any positive experiences or feelings it promises."" Sentiment:negative
+Comment:""I registered and subscribed to this app in less than 3days only for me to be blocked, saying I have violated their terms and conditions which I have not. This app is a scam app Don't subscribe"" Sentiment:negative
+Comment:""Just got the app today, says it's under review should only take a couple minutes. I can't get into it. And this has been hours now."" Sentiment:negative
+Comment:""You Broke It. This app was already broken, and all around lacking in comparison to other dating apps available. And just when you thought it can't get anyworse, you've completely flubbered the tools to add and remove photos by overcomplicating and redesigning an already functional tool no one asked you to change or redesign in the first place. Congrats, now it doesn't work at all- I'll go back to Bumble👋"" Sentiment:negative
+Comment:""The limited amount of likes plus the amount of spam bots makes the whole experience trash. I really wish I could give it zero stars. Edit update: Wow, this app sucks.Then they have the balls to ask me to pay for features. Update: Far too many bots and fake profiles. Apparently you can't report fake profiles anymore for being straight up fake profiles. Tinder, fix yourself. Edit: Dear Tinder, remove whatever it is that lets ""calling cards"" be a thing."" Sentiment:negative
+
+## TASK
+Comment:""people telll me that if the account gets blocked they never get Amy information or reason."" Sentiment: 
+","Comment:""Can you delete my account I'm unable to"" Sentiment:negative
+Comment:""Alot of bots and undesirable people"" Sentiment:negative
+Comment:""I assume I was shadowbanned because nothing is working"" Sentiment:negative
+Comment:""First day it is nice . If any matches are not found it going to take account under review and it banns the account. Same situation happen to me. I don't know what I have crossed terms and conditions. Finally my account banned itself."" Sentiment:negative
+Comment:""Was issued a permanent ban. Bad experience after seeing 90% of fake profiles."" Sentiment:negative
+Comment:""Not quite sure if the shallowness of dating is brought on by tinder or it has just brought it to the fore. Anyway, this vicious cycle is something I'm tired of, and dating seems like a far off pipe dream for me. Tinder doesn't help, instead it sets in more self doubt and insecurity than any positive experiences or feelings it promises."" Sentiment:negative
+Comment:""I registered and subscribed to this app in less than 3days only for me to be blocked, saying I have violated their terms and conditions which I have not. This app is a scam app Don't subscribe"" Sentiment:negative
+Comment:""Just got the app today, says it's under review should only take a couple minutes. I can't get into it. And this has been hours now."" Sentiment:negative
+Comment:""You Broke It. This app was already broken, and all around lacking in comparison to other dating apps available. And just when you thought it can't get anyworse, you've completely flubbered the tools to add and remove photos by overcomplicating and redesigning an already functional tool no one asked you to change or redesign in the first place. Congrats, now it doesn't work at all- I'll go back to Bumble👋"" Sentiment:negative
+Comment:""The limited amount of likes plus the amount of spam bots makes the whole experience trash. I really wish I could give it zero stars. Edit update: Wow, this app sucks.Then they have the balls to ask me to pay for features. Update: Far too many bots and fake profiles. Apparently you can't report fake profiles anymore for being straight up fake profiles. Tinder, fix yourself. Edit: Dear Tinder, remove whatever it is that lets ""calling cards"" be a thing."" Sentiment:negative
+","[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]","Comment:""people telll me that if the account gets blocked they never get Amy information or reason."" Sentiment: 
+",neutral,negative,7165
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") for each task and nothing else.
+## Examples
+Comment:""Can you delete my account I'm unable to"" Sentiment:negative
+Comment:""Alot of bots and undesirable people"" Sentiment:negative
+Comment:""I assume I was shadowbanned because nothing is working"" Sentiment:negative
+Comment:""First day it is nice . If any matches are not found it going to take account under review and it banns the account. Same situation happen to me. I don't know what I have crossed terms and conditions. Finally my account banned itself."" Sentiment:negative
+Comment:""Was issued a permanent ban. Bad experience after seeing 90% of fake profiles."" Sentiment:negative
+Comment:""Not quite sure if the shallowness of dating is brought on by tinder or it has just brought it to the fore. Anyway, this vicious cycle is something I'm tired of, and dating seems like a far off pipe dream for me. Tinder doesn't help, instead it sets in more self doubt and insecurity than any positive experiences or feelings it promises."" Sentiment:negative
+Comment:""I registered and subscribed to this app in less than 3days only for me to be blocked, saying I have violated their terms and conditions which I have not. This app is a scam app Don't subscribe"" Sentiment:negative
+Comment:""Just got the app today, says it's under review should only take a couple minutes. I can't get into it. And this has been hours now."" Sentiment:negative
+Comment:""You Broke It. This app was already broken, and all around lacking in comparison to other dating apps available. And just when you thought it can't get anyworse, you've completely flubbered the tools to add and remove photos by overcomplicating and redesigning an already functional tool no one asked you to change or redesign in the first place. Congrats, now it doesn't work at all- I'll go back to Bumble👋"" Sentiment:negative
+Comment:""The limited amount of likes plus the amount of spam bots makes the whole experience trash. I really wish I could give it zero stars. Edit update: Wow, this app sucks.Then they have the balls to ask me to pay for features. Update: Far too many bots and fake profiles. Apparently you can't report fake profiles anymore for being straight up fake profiles. Tinder, fix yourself. Edit: Dear Tinder, remove whatever it is that lets ""calling cards"" be a thing."" Sentiment:negative
+
+## TASK
+Comment:""a money consuming app for nothing. maybe you get lucky with a match onec every two to three months or something. and I have a really good profile and not a monster face or something. sportive body. but what you know 😏"" Sentiment: 
+","Comment:""Can you delete my account I'm unable to"" Sentiment:negative
+Comment:""Alot of bots and undesirable people"" Sentiment:negative
+Comment:""I assume I was shadowbanned because nothing is working"" Sentiment:negative
+Comment:""First day it is nice . If any matches are not found it going to take account under review and it banns the account. Same situation happen to me. I don't know what I have crossed terms and conditions. Finally my account banned itself."" Sentiment:negative
+Comment:""Was issued a permanent ban. Bad experience after seeing 90% of fake profiles."" Sentiment:negative
+Comment:""Not quite sure if the shallowness of dating is brought on by tinder or it has just brought it to the fore. Anyway, this vicious cycle is something I'm tired of, and dating seems like a far off pipe dream for me. Tinder doesn't help, instead it sets in more self doubt and insecurity than any positive experiences or feelings it promises."" Sentiment:negative
+Comment:""I registered and subscribed to this app in less than 3days only for me to be blocked, saying I have violated their terms and conditions which I have not. This app is a scam app Don't subscribe"" Sentiment:negative
+Comment:""Just got the app today, says it's under review should only take a couple minutes. I can't get into it. And this has been hours now."" Sentiment:negative
+Comment:""You Broke It. This app was already broken, and all around lacking in comparison to other dating apps available. And just when you thought it can't get anyworse, you've completely flubbered the tools to add and remove photos by overcomplicating and redesigning an already functional tool no one asked you to change or redesign in the first place. Congrats, now it doesn't work at all- I'll go back to Bumble👋"" Sentiment:negative
+Comment:""The limited amount of likes plus the amount of spam bots makes the whole experience trash. I really wish I could give it zero stars. Edit update: Wow, this app sucks.Then they have the balls to ask me to pay for features. Update: Far too many bots and fake profiles. Apparently you can't report fake profiles anymore for being straight up fake profiles. Tinder, fix yourself. Edit: Dear Tinder, remove whatever it is that lets ""calling cards"" be a thing."" Sentiment:negative
+","[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]","Comment:""a money consuming app for nothing. maybe you get lucky with a match onec every two to three months or something. and I have a really good profile and not a monster face or something. sportive body. but what you know 😏"" Sentiment: 
+",negative,negative,4704
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") for each task and nothing else.
+## Examples
+Comment:""Can you delete my account I'm unable to"" Sentiment:negative
+Comment:""Alot of bots and undesirable people"" Sentiment:negative
+Comment:""I assume I was shadowbanned because nothing is working"" Sentiment:negative
+Comment:""First day it is nice . If any matches are not found it going to take account under review and it banns the account. Same situation happen to me. I don't know what I have crossed terms and conditions. Finally my account banned itself."" Sentiment:negative
+Comment:""Was issued a permanent ban. Bad experience after seeing 90% of fake profiles."" Sentiment:negative
+Comment:""Not quite sure if the shallowness of dating is brought on by tinder or it has just brought it to the fore. Anyway, this vicious cycle is something I'm tired of, and dating seems like a far off pipe dream for me. Tinder doesn't help, instead it sets in more self doubt and insecurity than any positive experiences or feelings it promises."" Sentiment:negative
+Comment:""I registered and subscribed to this app in less than 3days only for me to be blocked, saying I have violated their terms and conditions which I have not. This app is a scam app Don't subscribe"" Sentiment:negative
+Comment:""Just got the app today, says it's under review should only take a couple minutes. I can't get into it. And this has been hours now."" Sentiment:negative
+Comment:""You Broke It. This app was already broken, and all around lacking in comparison to other dating apps available. And just when you thought it can't get anyworse, you've completely flubbered the tools to add and remove photos by overcomplicating and redesigning an already functional tool no one asked you to change or redesign in the first place. Congrats, now it doesn't work at all- I'll go back to Bumble👋"" Sentiment:negative
+Comment:""The limited amount of likes plus the amount of spam bots makes the whole experience trash. I really wish I could give it zero stars. Edit update: Wow, this app sucks.Then they have the balls to ask me to pay for features. Update: Far too many bots and fake profiles. Apparently you can't report fake profiles anymore for being straight up fake profiles. Tinder, fix yourself. Edit: Dear Tinder, remove whatever it is that lets ""calling cards"" be a thing."" Sentiment:negative
+
+## TASK
+Comment:""Personally, the app feels very superficial. It ends up feeling repetitive."" Sentiment: 
+","Comment:""Can you delete my account I'm unable to"" Sentiment:negative
+Comment:""Alot of bots and undesirable people"" Sentiment:negative
+Comment:""I assume I was shadowbanned because nothing is working"" Sentiment:negative
+Comment:""First day it is nice . If any matches are not found it going to take account under review and it banns the account. Same situation happen to me. I don't know what I have crossed terms and conditions. Finally my account banned itself."" Sentiment:negative
+Comment:""Was issued a permanent ban. Bad experience after seeing 90% of fake profiles."" Sentiment:negative
+Comment:""Not quite sure if the shallowness of dating is brought on by tinder or it has just brought it to the fore. Anyway, this vicious cycle is something I'm tired of, and dating seems like a far off pipe dream for me. Tinder doesn't help, instead it sets in more self doubt and insecurity than any positive experiences or feelings it promises."" Sentiment:negative
+Comment:""I registered and subscribed to this app in less than 3days only for me to be blocked, saying I have violated their terms and conditions which I have not. This app is a scam app Don't subscribe"" Sentiment:negative
+Comment:""Just got the app today, says it's under review should only take a couple minutes. I can't get into it. And this has been hours now."" Sentiment:negative
+Comment:""You Broke It. This app was already broken, and all around lacking in comparison to other dating apps available. And just when you thought it can't get anyworse, you've completely flubbered the tools to add and remove photos by overcomplicating and redesigning an already functional tool no one asked you to change or redesign in the first place. Congrats, now it doesn't work at all- I'll go back to Bumble👋"" Sentiment:negative
+Comment:""The limited amount of likes plus the amount of spam bots makes the whole experience trash. I really wish I could give it zero stars. Edit update: Wow, this app sucks.Then they have the balls to ask me to pay for features. Update: Far too many bots and fake profiles. Apparently you can't report fake profiles anymore for being straight up fake profiles. Tinder, fix yourself. Edit: Dear Tinder, remove whatever it is that lets ""calling cards"" be a thing."" Sentiment:negative
+","[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]","Comment:""Personally, the app feels very superficial. It ends up feeling repetitive."" Sentiment: 
+",negative,negative,101
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") for each task and nothing else.
+## Examples
+Comment:""Can you delete my account I'm unable to"" Sentiment:negative
+Comment:""Alot of bots and undesirable people"" Sentiment:negative
+Comment:""I assume I was shadowbanned because nothing is working"" Sentiment:negative
+Comment:""First day it is nice . If any matches are not found it going to take account under review and it banns the account. Same situation happen to me. I don't know what I have crossed terms and conditions. Finally my account banned itself."" Sentiment:negative
+Comment:""Was issued a permanent ban. Bad experience after seeing 90% of fake profiles."" Sentiment:negative
+Comment:""Not quite sure if the shallowness of dating is brought on by tinder or it has just brought it to the fore. Anyway, this vicious cycle is something I'm tired of, and dating seems like a far off pipe dream for me. Tinder doesn't help, instead it sets in more self doubt and insecurity than any positive experiences or feelings it promises."" Sentiment:negative
+Comment:""I registered and subscribed to this app in less than 3days only for me to be blocked, saying I have violated their terms and conditions which I have not. This app is a scam app Don't subscribe"" Sentiment:negative
+Comment:""Just got the app today, says it's under review should only take a couple minutes. I can't get into it. And this has been hours now."" Sentiment:negative
+Comment:""You Broke It. This app was already broken, and all around lacking in comparison to other dating apps available. And just when you thought it can't get anyworse, you've completely flubbered the tools to add and remove photos by overcomplicating and redesigning an already functional tool no one asked you to change or redesign in the first place. Congrats, now it doesn't work at all- I'll go back to Bumble👋"" Sentiment:negative
+Comment:""The limited amount of likes plus the amount of spam bots makes the whole experience trash. I really wish I could give it zero stars. Edit update: Wow, this app sucks.Then they have the balls to ask me to pay for features. Update: Far too many bots and fake profiles. Apparently you can't report fake profiles anymore for being straight up fake profiles. Tinder, fix yourself. Edit: Dear Tinder, remove whatever it is that lets ""calling cards"" be a thing."" Sentiment:negative
+
+## TASK
+Comment:""Why keep showing me the fat and ugly ""secret admirer"" day after day?"" Sentiment: 
+","Comment:""Can you delete my account I'm unable to"" Sentiment:negative
+Comment:""Alot of bots and undesirable people"" Sentiment:negative
+Comment:""I assume I was shadowbanned because nothing is working"" Sentiment:negative
+Comment:""First day it is nice . If any matches are not found it going to take account under review and it banns the account. Same situation happen to me. I don't know what I have crossed terms and conditions. Finally my account banned itself."" Sentiment:negative
+Comment:""Was issued a permanent ban. Bad experience after seeing 90% of fake profiles."" Sentiment:negative
+Comment:""Not quite sure if the shallowness of dating is brought on by tinder or it has just brought it to the fore. Anyway, this vicious cycle is something I'm tired of, and dating seems like a far off pipe dream for me. Tinder doesn't help, instead it sets in more self doubt and insecurity than any positive experiences or feelings it promises."" Sentiment:negative
+Comment:""I registered and subscribed to this app in less than 3days only for me to be blocked, saying I have violated their terms and conditions which I have not. This app is a scam app Don't subscribe"" Sentiment:negative
+Comment:""Just got the app today, says it's under review should only take a couple minutes. I can't get into it. And this has been hours now."" Sentiment:negative
+Comment:""You Broke It. This app was already broken, and all around lacking in comparison to other dating apps available. And just when you thought it can't get anyworse, you've completely flubbered the tools to add and remove photos by overcomplicating and redesigning an already functional tool no one asked you to change or redesign in the first place. Congrats, now it doesn't work at all- I'll go back to Bumble👋"" Sentiment:negative
+Comment:""The limited amount of likes plus the amount of spam bots makes the whole experience trash. I really wish I could give it zero stars. Edit update: Wow, this app sucks.Then they have the balls to ask me to pay for features. Update: Far too many bots and fake profiles. Apparently you can't report fake profiles anymore for being straight up fake profiles. Tinder, fix yourself. Edit: Dear Tinder, remove whatever it is that lets ""calling cards"" be a thing."" Sentiment:negative
+","[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]","Comment:""Why keep showing me the fat and ugly ""secret admirer"" day after day?"" Sentiment: 
+",negative,negative,4222
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") for each task and nothing else.
+## Examples
+Comment:""Can you delete my account I'm unable to"" Sentiment:negative
+Comment:""Alot of bots and undesirable people"" Sentiment:negative
+Comment:""I assume I was shadowbanned because nothing is working"" Sentiment:negative
+Comment:""First day it is nice . If any matches are not found it going to take account under review and it banns the account. Same situation happen to me. I don't know what I have crossed terms and conditions. Finally my account banned itself."" Sentiment:negative
+Comment:""Was issued a permanent ban. Bad experience after seeing 90% of fake profiles."" Sentiment:negative
+Comment:""Not quite sure if the shallowness of dating is brought on by tinder or it has just brought it to the fore. Anyway, this vicious cycle is something I'm tired of, and dating seems like a far off pipe dream for me. Tinder doesn't help, instead it sets in more self doubt and insecurity than any positive experiences or feelings it promises."" Sentiment:negative
+Comment:""I registered and subscribed to this app in less than 3days only for me to be blocked, saying I have violated their terms and conditions which I have not. This app is a scam app Don't subscribe"" Sentiment:negative
+Comment:""Just got the app today, says it's under review should only take a couple minutes. I can't get into it. And this has been hours now."" Sentiment:negative
+Comment:""You Broke It. This app was already broken, and all around lacking in comparison to other dating apps available. And just when you thought it can't get anyworse, you've completely flubbered the tools to add and remove photos by overcomplicating and redesigning an already functional tool no one asked you to change or redesign in the first place. Congrats, now it doesn't work at all- I'll go back to Bumble👋"" Sentiment:negative
+Comment:""The limited amount of likes plus the amount of spam bots makes the whole experience trash. I really wish I could give it zero stars. Edit update: Wow, this app sucks.Then they have the balls to ask me to pay for features. Update: Far too many bots and fake profiles. Apparently you can't report fake profiles anymore for being straight up fake profiles. Tinder, fix yourself. Edit: Dear Tinder, remove whatever it is that lets ""calling cards"" be a thing."" Sentiment:negative
+
+## TASK
+Comment:""Good apps"" Sentiment: 
+","Comment:""Can you delete my account I'm unable to"" Sentiment:negative
+Comment:""Alot of bots and undesirable people"" Sentiment:negative
+Comment:""I assume I was shadowbanned because nothing is working"" Sentiment:negative
+Comment:""First day it is nice . If any matches are not found it going to take account under review and it banns the account. Same situation happen to me. I don't know what I have crossed terms and conditions. Finally my account banned itself."" Sentiment:negative
+Comment:""Was issued a permanent ban. Bad experience after seeing 90% of fake profiles."" Sentiment:negative
+Comment:""Not quite sure if the shallowness of dating is brought on by tinder or it has just brought it to the fore. Anyway, this vicious cycle is something I'm tired of, and dating seems like a far off pipe dream for me. Tinder doesn't help, instead it sets in more self doubt and insecurity than any positive experiences or feelings it promises."" Sentiment:negative
+Comment:""I registered and subscribed to this app in less than 3days only for me to be blocked, saying I have violated their terms and conditions which I have not. This app is a scam app Don't subscribe"" Sentiment:negative
+Comment:""Just got the app today, says it's under review should only take a couple minutes. I can't get into it. And this has been hours now."" Sentiment:negative
+Comment:""You Broke It. This app was already broken, and all around lacking in comparison to other dating apps available. And just when you thought it can't get anyworse, you've completely flubbered the tools to add and remove photos by overcomplicating and redesigning an already functional tool no one asked you to change or redesign in the first place. Congrats, now it doesn't work at all- I'll go back to Bumble👋"" Sentiment:negative
+Comment:""The limited amount of likes plus the amount of spam bots makes the whole experience trash. I really wish I could give it zero stars. Edit update: Wow, this app sucks.Then they have the balls to ask me to pay for features. Update: Far too many bots and fake profiles. Apparently you can't report fake profiles anymore for being straight up fake profiles. Tinder, fix yourself. Edit: Dear Tinder, remove whatever it is that lets ""calling cards"" be a thing."" Sentiment:negative
+","[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]","Comment:""Good apps"" Sentiment: 
+",positive,positive,7884
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") for each task and nothing else.
+## Examples
+Comment:""Can you delete my account I'm unable to"" Sentiment:negative
+Comment:""Alot of bots and undesirable people"" Sentiment:negative
+Comment:""I assume I was shadowbanned because nothing is working"" Sentiment:negative
+Comment:""First day it is nice . If any matches are not found it going to take account under review and it banns the account. Same situation happen to me. I don't know what I have crossed terms and conditions. Finally my account banned itself."" Sentiment:negative
+Comment:""Was issued a permanent ban. Bad experience after seeing 90% of fake profiles."" Sentiment:negative
+Comment:""Not quite sure if the shallowness of dating is brought on by tinder or it has just brought it to the fore. Anyway, this vicious cycle is something I'm tired of, and dating seems like a far off pipe dream for me. Tinder doesn't help, instead it sets in more self doubt and insecurity than any positive experiences or feelings it promises."" Sentiment:negative
+Comment:""I registered and subscribed to this app in less than 3days only for me to be blocked, saying I have violated their terms and conditions which I have not. This app is a scam app Don't subscribe"" Sentiment:negative
+Comment:""Just got the app today, says it's under review should only take a couple minutes. I can't get into it. And this has been hours now."" Sentiment:negative
+Comment:""You Broke It. This app was already broken, and all around lacking in comparison to other dating apps available. And just when you thought it can't get anyworse, you've completely flubbered the tools to add and remove photos by overcomplicating and redesigning an already functional tool no one asked you to change or redesign in the first place. Congrats, now it doesn't work at all- I'll go back to Bumble👋"" Sentiment:negative
+Comment:""The limited amount of likes plus the amount of spam bots makes the whole experience trash. I really wish I could give it zero stars. Edit update: Wow, this app sucks.Then they have the balls to ask me to pay for features. Update: Far too many bots and fake profiles. Apparently you can't report fake profiles anymore for being straight up fake profiles. Tinder, fix yourself. Edit: Dear Tinder, remove whatever it is that lets ""calling cards"" be a thing."" Sentiment:negative
+
+## TASK
+Comment:""This app is dry. A waste of mens time."" Sentiment: 
+","Comment:""Can you delete my account I'm unable to"" Sentiment:negative
+Comment:""Alot of bots and undesirable people"" Sentiment:negative
+Comment:""I assume I was shadowbanned because nothing is working"" Sentiment:negative
+Comment:""First day it is nice . If any matches are not found it going to take account under review and it banns the account. Same situation happen to me. I don't know what I have crossed terms and conditions. Finally my account banned itself."" Sentiment:negative
+Comment:""Was issued a permanent ban. Bad experience after seeing 90% of fake profiles."" Sentiment:negative
+Comment:""Not quite sure if the shallowness of dating is brought on by tinder or it has just brought it to the fore. Anyway, this vicious cycle is something I'm tired of, and dating seems like a far off pipe dream for me. Tinder doesn't help, instead it sets in more self doubt and insecurity than any positive experiences or feelings it promises."" Sentiment:negative
+Comment:""I registered and subscribed to this app in less than 3days only for me to be blocked, saying I have violated their terms and conditions which I have not. This app is a scam app Don't subscribe"" Sentiment:negative
+Comment:""Just got the app today, says it's under review should only take a couple minutes. I can't get into it. And this has been hours now."" Sentiment:negative
+Comment:""You Broke It. This app was already broken, and all around lacking in comparison to other dating apps available. And just when you thought it can't get anyworse, you've completely flubbered the tools to add and remove photos by overcomplicating and redesigning an already functional tool no one asked you to change or redesign in the first place. Congrats, now it doesn't work at all- I'll go back to Bumble👋"" Sentiment:negative
+Comment:""The limited amount of likes plus the amount of spam bots makes the whole experience trash. I really wish I could give it zero stars. Edit update: Wow, this app sucks.Then they have the balls to ask me to pay for features. Update: Far too many bots and fake profiles. Apparently you can't report fake profiles anymore for being straight up fake profiles. Tinder, fix yourself. Edit: Dear Tinder, remove whatever it is that lets ""calling cards"" be a thing."" Sentiment:negative
+","[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]","Comment:""This app is dry. A waste of mens time."" Sentiment: 
+",negative,negative,1115
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") for each task and nothing else.
+## Examples
+Comment:""Can you delete my account I'm unable to"" Sentiment:negative
+Comment:""Alot of bots and undesirable people"" Sentiment:negative
+Comment:""I assume I was shadowbanned because nothing is working"" Sentiment:negative
+Comment:""First day it is nice . If any matches are not found it going to take account under review and it banns the account. Same situation happen to me. I don't know what I have crossed terms and conditions. Finally my account banned itself."" Sentiment:negative
+Comment:""Was issued a permanent ban. Bad experience after seeing 90% of fake profiles."" Sentiment:negative
+Comment:""Not quite sure if the shallowness of dating is brought on by tinder or it has just brought it to the fore. Anyway, this vicious cycle is something I'm tired of, and dating seems like a far off pipe dream for me. Tinder doesn't help, instead it sets in more self doubt and insecurity than any positive experiences or feelings it promises."" Sentiment:negative
+Comment:""I registered and subscribed to this app in less than 3days only for me to be blocked, saying I have violated their terms and conditions which I have not. This app is a scam app Don't subscribe"" Sentiment:negative
+Comment:""Just got the app today, says it's under review should only take a couple minutes. I can't get into it. And this has been hours now."" Sentiment:negative
+Comment:""You Broke It. This app was already broken, and all around lacking in comparison to other dating apps available. And just when you thought it can't get anyworse, you've completely flubbered the tools to add and remove photos by overcomplicating and redesigning an already functional tool no one asked you to change or redesign in the first place. Congrats, now it doesn't work at all- I'll go back to Bumble👋"" Sentiment:negative
+Comment:""The limited amount of likes plus the amount of spam bots makes the whole experience trash. I really wish I could give it zero stars. Edit update: Wow, this app sucks.Then they have the balls to ask me to pay for features. Update: Far too many bots and fake profiles. Apparently you can't report fake profiles anymore for being straight up fake profiles. Tinder, fix yourself. Edit: Dear Tinder, remove whatever it is that lets ""calling cards"" be a thing."" Sentiment:negative
+
+## TASK
+Comment:""great"" Sentiment: 
+","Comment:""Can you delete my account I'm unable to"" Sentiment:negative
+Comment:""Alot of bots and undesirable people"" Sentiment:negative
+Comment:""I assume I was shadowbanned because nothing is working"" Sentiment:negative
+Comment:""First day it is nice . If any matches are not found it going to take account under review and it banns the account. Same situation happen to me. I don't know what I have crossed terms and conditions. Finally my account banned itself."" Sentiment:negative
+Comment:""Was issued a permanent ban. Bad experience after seeing 90% of fake profiles."" Sentiment:negative
+Comment:""Not quite sure if the shallowness of dating is brought on by tinder or it has just brought it to the fore. Anyway, this vicious cycle is something I'm tired of, and dating seems like a far off pipe dream for me. Tinder doesn't help, instead it sets in more self doubt and insecurity than any positive experiences or feelings it promises."" Sentiment:negative
+Comment:""I registered and subscribed to this app in less than 3days only for me to be blocked, saying I have violated their terms and conditions which I have not. This app is a scam app Don't subscribe"" Sentiment:negative
+Comment:""Just got the app today, says it's under review should only take a couple minutes. I can't get into it. And this has been hours now."" Sentiment:negative
+Comment:""You Broke It. This app was already broken, and all around lacking in comparison to other dating apps available. And just when you thought it can't get anyworse, you've completely flubbered the tools to add and remove photos by overcomplicating and redesigning an already functional tool no one asked you to change or redesign in the first place. Congrats, now it doesn't work at all- I'll go back to Bumble👋"" Sentiment:negative
+Comment:""The limited amount of likes plus the amount of spam bots makes the whole experience trash. I really wish I could give it zero stars. Edit update: Wow, this app sucks.Then they have the balls to ask me to pay for features. Update: Far too many bots and fake profiles. Apparently you can't report fake profiles anymore for being straight up fake profiles. Tinder, fix yourself. Edit: Dear Tinder, remove whatever it is that lets ""calling cards"" be a thing."" Sentiment:negative
+","[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]","Comment:""great"" Sentiment: 
+",positive,positive,9229
+qwen2.5:1.5b,"Respond ONLY with the sentiment label (""negative"", ""neutral"" or ""positive"") for each task and nothing else.
+## Examples
+Comment:""Can you delete my account I'm unable to"" Sentiment:negative
+Comment:""Alot of bots and undesirable people"" Sentiment:negative
+Comment:""I assume I was shadowbanned because nothing is working"" Sentiment:negative
+Comment:""First day it is nice . If any matches are not found it going to take account under review and it banns the account. Same situation happen to me. I don't know what I have crossed terms and conditions. Finally my account banned itself."" Sentiment:negative
+Comment:""Was issued a permanent ban. Bad experience after seeing 90% of fake profiles."" Sentiment:negative
+Comment:""Not quite sure if the shallowness of dating is brought on by tinder or it has just brought it to the fore. Anyway, this vicious cycle is something I'm tired of, and dating seems like a far off pipe dream for me. Tinder doesn't help, instead it sets in more self doubt and insecurity than any positive experiences or feelings it promises."" Sentiment:negative
+Comment:""I registered and subscribed to this app in less than 3days only for me to be blocked, saying I have violated their terms and conditions which I have not. This app is a scam app Don't subscribe"" Sentiment:negative
+Comment:""Just got the app today, says it's under review should only take a couple minutes. I can't get into it. And this has been hours now."" Sentiment:negative
+Comment:""You Broke It. This app was already broken, and all around lacking in comparison to other dating apps available. And just when you thought it can't get anyworse, you've completely flubbered the tools to add and remove photos by overcomplicating and redesigning an already functional tool no one asked you to change or redesign in the first place. Congrats, now it doesn't work at all- I'll go back to Bumble👋"" Sentiment:negative
+Comment:""The limited amount of likes plus the amount of spam bots makes the whole experience trash. I really wish I could give it zero stars. Edit update: Wow, this app sucks.Then they have the balls to ask me to pay for features. Update: Far too many bots and fake profiles. Apparently you can't report fake profiles anymore for being straight up fake profiles. Tinder, fix yourself. Edit: Dear Tinder, remove whatever it is that lets ""calling cards"" be a thing."" Sentiment:negative
+
+## TASK
+Comment:""I love having friends"" Sentiment: 
+","Comment:""Can you delete my account I'm unable to"" Sentiment:negative
+Comment:""Alot of bots and undesirable people"" Sentiment:negative
+Comment:""I assume I was shadowbanned because nothing is working"" Sentiment:negative
+Comment:""First day it is nice . If any matches are not found it going to take account under review and it banns the account. Same situation happen to me. I don't know what I have crossed terms and conditions. Finally my account banned itself."" Sentiment:negative
+Comment:""Was issued a permanent ban. Bad experience after seeing 90% of fake profiles."" Sentiment:negative
+Comment:""Not quite sure if the shallowness of dating is brought on by tinder or it has just brought it to the fore. Anyway, this vicious cycle is something I'm tired of, and dating seems like a far off pipe dream for me. Tinder doesn't help, instead it sets in more self doubt and insecurity than any positive experiences or feelings it promises."" Sentiment:negative
+Comment:""I registered and subscribed to this app in less than 3days only for me to be blocked, saying I have violated their terms and conditions which I have not. This app is a scam app Don't subscribe"" Sentiment:negative
+Comment:""Just got the app today, says it's under review should only take a couple minutes. I can't get into it. And this has been hours now."" Sentiment:negative
+Comment:""You Broke It. This app was already broken, and all around lacking in comparison to other dating apps available. And just when you thought it can't get anyworse, you've completely flubbered the tools to add and remove photos by overcomplicating and redesigning an already functional tool no one asked you to change or redesign in the first place. Congrats, now it doesn't work at all- I'll go back to Bumble👋"" Sentiment:negative
+Comment:""The limited amount of likes plus the amount of spam bots makes the whole experience trash. I really wish I could give it zero stars. Edit update: Wow, this app sucks.Then they have the balls to ask me to pay for features. Update: Far too many bots and fake profiles. Apparently you can't report fake profiles anymore for being straight up fake profiles. Tinder, fix yourself. Edit: Dear Tinder, remove whatever it is that lets ""calling cards"" be a thing."" Sentiment:negative
+","[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]","Comment:""I love having friends"" Sentiment: 
+",negative,positive,4010
