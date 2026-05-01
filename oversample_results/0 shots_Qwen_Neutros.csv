@@ -1,0 +1,1839 @@
+model,instructions,examples,answers
+qwen2.5:1.5b,"Generate ONLY a different comment to ""mostly just a hookup app. the distance selection is a little bugged out had mine set for 50 miles would still get suggestions of people 150+ miles. it's also become a major ""pay to play"" app."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Mostly just Tinder, with some added features that don't work well together. The price system has gotten out of hand too much."
+qwen2.5:1.5b,"Generate ONLY a different comment to ""ehhh.. .I prefer meeting people face to face but that has become a lost art form. Sometimes, you have to try something new"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Ehhh... I miss when we could just meet up and chat without needing technology in between.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Can't choose multiple options within: -Pets (cats only, dogs only, all the pets, but can't choose this AND that). -What you're looking for (friends, AND long term.. or friends AND short term).. Spotify set up also has a glitch that's been happening for years that tinder just doesn't fix, adding artists that people don't listen to, and can't remove from being seen."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Can’t select multiple options within Pets (cats only/dogs only/all pets/choose none). What you're looking for are friends AND long term relationships. Spotify's glitch keeps adding artists people don't
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Incredibly frustrating with little to no support. I paid for platinum and I constantly get push notifications saying I have a new like but when I open the app there is nothing. I contacted support and they said they cannot help. I was mid conversation with several matches and the app suddenly crashed and when I reopened it all my matches were gone!! Waste of money and I want a refund. So buggy and support is useless. I am so unsatisfied. Edit: I reinstalled the app and it restored my matches."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"I agree, this experience has been extremely disappointing with no resolution to issues reported or assistance from support. The constant crashes during conversations are particularly frustrating as they disrupt ongoing interactions. I'm left feeling like my"
+qwen2.5:1.5b,"Generate ONLY a different comment to ""good"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""good"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""good 👍"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""good"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""it's very nice put the payment system does not favour us if u don't have. debits card ..please what of the locally system of payment ..like MOMO payments or"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Thank you for considering this point regarding local payment systems like M-PESA, which offer alternatives to debit cards."
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Its an above average dating app but premium is rather high and its all over the place telling us to subscribe"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"This dating app offers decent features, just at a steep price point."
+qwen2.5:1.5b,"Generate ONLY a different comment to ""the restrictions are still much"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,The limitations remain substantial.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""good app"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great application!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""swipe and pray every day"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Pray while swiping daily for good luck.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""nice app"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great tool!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Good app for meeting people. Has a few glitches though sometimes I won't be notified of when I get a new match or message. Also I hate the pay to win type aspect where you have to pay a monthly fee to use all the features. Really annoying that I need to wait 12 hours even time I want to swipe again. Most annoying thing is even though I set it to show me women only sometimes men will show up. If those issues could be fixed then I'd leave 5 stars but for now I have to leave it at 3."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"I completely understand your frustration with this app's glitches and payment aspect, especially since you're looking forward to a seamless experience. Hopefully they can address these issues soon so we can have better compatibility between our"
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Please put some pop-ups or something to explain how to use/navigate the app once you start using it. I've been ""super-liking"" people I'm not interested in and swiping left on ppl I might've wanted to know about. I have an engineering background and I'm not slow on using apps, but I'm also not a psychic and it would be super helpful to ppl just getting familiar with the app if it could be explained how to use it. Plus, I'm not keen on hurting anyone's feelings. I thought this would be a given"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Thank you for your feedback; we appreciate understanding user needs better in our design.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""maybe"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Possibly?
+qwen2.5:1.5b,"Generate ONLY a different comment to ""nice ap"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great app!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Most people are fakes with unverified accounts"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Everyone has fake profiles on social media platforms.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Too many trans in the discovery"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"""Excessive transactions detected during discovery process."""
+qwen2.5:1.5b,"Generate ONLY a different comment to ""nice one to"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great job!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Pay to win"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Achieve success through financial means.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Tinder is a very good site and I must say I was having lots of fun till I was banned for no apparent reasonfor which I sent a mail but have not received any reply. I need to know why I was banned please.. I've recommended tinder to alot of my friends and they are on , please do something about my situation because I have a lot of friend who are waiting for the replies to messages n also waiting to talk to me."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Thank you, Tinder. Your service is fantastic! Please resolve this issue promptly so my friends can continue enjoying it too. I appreciate your attention to detail and value in user experience immensely."
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Tindr algorithm for matches seems heavily inconsistent. For one time I am being shown and matched for hot guys and the other for not. This changes by visit."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"The Tindr matching system displays conflicting preferences based on visits, leading to mixed match suggestions."
+qwen2.5:1.5b,"Generate ONLY a different comment to ""cool"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""it's nice"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,It is pleasant indeed.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""feature price aside, it's a great app."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great app regardless of its pricing feature.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Tinder should integrate payment with recharge cards OR other payment methods than CARD details"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"""Consider integrating alternative payment options for users, such as contactless payments or mobile wallets."""
+qwen2.5:1.5b,"Generate ONLY a different comment to ""quality of the actual matches are quite mediocre. lots of scammers"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"The quality of real interactions is disappointingly low, with many fraudulent participants."
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Has some problems but it's not completely Unuseable. Trying to link my Spotify and it just will not let me I've tried almost everything. Last thing is the tinder gold it's kind of a annoying to need tinder gold just to see who likes you. It has some problems and I've not used it to much so my rating may change as I continue to use the app."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Has issues, though still functional enough for basic needs; Spotify integration stuck without needing Tinder gold."
+qwen2.5:1.5b,"Generate ONLY a different comment to ""a little bit safe because most people here are cons"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"""Most folks around seem trustworthy."""
+qwen2.5:1.5b,"Generate ONLY a different comment to ""meh, dont know if just me but hard to get to know someone online and people a bit shy of meeting or even giving number"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Yeah, it's tough connecting with folks remotely. People tend to be on edge when it comes to face-to-face interactions sometimes."
+qwen2.5:1.5b,"Generate ONLY a different comment to ""average"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,fairly average
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Here r some problems: - Matching: As a user I want to be matched only with people living in a range that I select. It would be better if only these people see and like my profile. -where are the event based datings: coffee date, etc -fake profiles - UI: text copy is impossible"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Here r some problems: Matching: As a user I want to be matched only with people living in a range that I select. It would be better if these individuals see and like my profile too.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""hello everybody"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Greetings!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""pretty nice app"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great job!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""alot of opportunities"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Many exciting prospects await!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Nice app but it charges to view who liked you"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great app until they start charging for likes!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""not bad"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Good enough.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""The new UI is horrible"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,This new interface feels extremely frustrating.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""cool"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""it's really worth it"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Absolutely justified!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""I think Tinder is too expensive."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,I believe Tinder's pricing model can be improved for better value.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""I've been using this app for going on a month now and it's been mostly good but from the last time I used it till now I was logged out and now there's no Dark mode option. Please fix this"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Thank you for your patience; we're working on restoring dark mode options and resolving the login issue.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""good"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""I was remove from this dating site. Apparently I broke the rules I don't know which one. But still no longer being accepted"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"You're out of here after breaking some unknown rule, huh? No idea what it was this time either!"
+qwen2.5:1.5b,"Generate ONLY a different comment to ""App does what it's meant to do. I've met a few people thru the app but my only complaint is there has to be a way to filter these snapchat scammers who put their handles in their bios. Especially in the cities the feed is filled with them. The easiest way to know is if they don't have their mileage on their profile + snapchat user name."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Great app, just wish there was an easy filter for scammers in specific cities!"
+qwen2.5:1.5b,"Generate ONLY a different comment to ""very good"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Excellent!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""I think it should have a better perspective on how when browsing you should be able to at least text to say how you feel instead just liking someone's profile"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Absolutely, having an option for textual feedback would enhance user interaction."
+qwen2.5:1.5b,"Generate ONLY a different comment to ""so good"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Absolutely excellent!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Decent dating app, I'm just sick of Tinder forcing me to expand the distance. I'm not interested in a long distance relationship and shouldn't be forced to change it. It's very annoying!"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Understandably frustrating, especially when apps dictate your personal boundaries without consent."
+qwen2.5:1.5b,"Generate ONLY a different comment to ""you guys really got lock so much behind paying."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"""Your situation is indeed quite challenging due to high costs."""
+qwen2.5:1.5b,"Generate ONLY a different comment to ""show me around and near people"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Let's explore your surroundings together!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""I can't log in to my account and I've tried many times verifying my phone number and I'm still locked out without getting the verification code I need some assistance please"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,We're sorry for this inconvenience. Please provide your username so we can assist further with unlocking your account.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""It's only okay. It's hard to get a lot of matches on here especially when the app doesn't offer a lot in terms of rating photos quality, how to make a bio better, etc."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,It’s just fine. Getting decent photo ratings and bios is tough without features like those mentioned here.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Good for relationship"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great bonding opportunity!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""🤝"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,🤝 Connection established successfully!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""3 stars for now"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Thank you; we'll work on improving from here.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""it's expensive. my suggestion is match can be or likes. in order to have more customers to believe that this site is legit not for money.thanks"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"That approach sounds effective at attracting genuine interest rather than just monetary gain, which aligns better with building a trustworthy reputation. Thanks!"
+qwen2.5:1.5b,"Generate ONLY a different comment to ""maybe comment section on photos"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Maybe consider adding discussion about photo captions or tags instead?
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Very good app would like to see a single parents looking for love option on an update please 🥺"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Thank you, we'll definitely consider adding that feature. 😊"
+qwen2.5:1.5b,"Generate ONLY a different comment to ""osm"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great work! Keep it up!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""it's okay I guess"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Got it; no big deal then.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""lower your prices it shouldn't cost that much to talk to people"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Lowering costs is essential when engaging with customers, as high-quality interactions should be within budget."
+qwen2.5:1.5b,"Generate ONLY a different comment to ""I'm not crazy about the update, though I saw whining about having to tap on an info icon, so it is what it is. I miss being able to enlarge the picture."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,You're still disappointed with the change despite hearing complaints about tapping for information; you truly missed having a larger image option.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""was great until it kicked me out and claimed my account didn't exist 🙃"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Was fantastic, then I got banned and said my profile was fake 😢"
+qwen2.5:1.5b,"Generate ONLY a different comment to ""This app is terrible. Bots on bots. Profile barely gets shown to others, messaging system sucks, shadow bans for no reason... the list goes on.. Edit: seems like something changed and am now getting more matches. The app is functioning better and the messaging seems to be more stable."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"This update has improved significantly, with a much smoother messaging system this time around. Profile visibility remains limited though, which could use some adjustment for fairness!"
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Why i can't see the reply immediately in the ""meet me"" section? I got the notification, but when I open it, its empty.. please fix it.."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Could you clarify if there's a delay or issue preventing replies from appearing immediately in ""Meet Me""? Thank you."
+qwen2.5:1.5b,"Generate ONLY a different comment to ""I was banned for no reason, tho the app is good"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,The ban seems unjustified despite the application's positive qualities.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Without purchase nothing useful"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,No benefits without spending money.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""👍"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,👏
+qwen2.5:1.5b,"Generate ONLY a different comment to ""you can't filter out things you don't like so it makes it very ineffective"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"You end up dealing with everything, making your efforts futile."
+qwen2.5:1.5b,"Generate ONLY a different comment to ""keeping an open mind. Hopefully might get joyful or otherwise. Just enjoying the moment"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Enjoy every second with curiosity and positivity, hoping for delightful surprises!"
+qwen2.5:1.5b,"Generate ONLY a different comment to ""just setup profile so it's 3 Stars for now.."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Done!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""I think Tinder should allow sharing of media files. This will help greatly."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Sharing media on Tinder would significantly enhance user experience and connection opportunities.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""if it could be low subscribesin it could be better"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"If fewer subscribers, that would likely improve things instead."
+qwen2.5:1.5b,"Generate ONLY a different comment to ""I enjoy using Tinder to connect with people, but recently the app has been presenting bugs. Frequently it logs out of my account and when I do the login again, all the matches and chats simply desapear, so I have to log from my computer to be able to continue chatting with people. That's really frustrating to me."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"I understand it can be quite annoying when your Tinder experience becomes unreliable and full of bugs, leading you back to a less convenient method for socializing online."
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Lacks a lot of basic quality of life features that other dating apps have and they charge you ridiculous prices for ""premium"" features that don't actually increase your chances to match at all. I've met 2 people through Tinder (same amount I've met through Badoo) so I suppose it's still a good app, but 2 out of possibly 1000s of swipes isn't great."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Tinder struggles with basic functionality and high prices for non-essential features. While it's possible to meet two people, its effectiveness is limited compared to other apps like Badoo in finding matches through sw"
+qwen2.5:1.5b,"Generate ONLY a different comment to ""i think it was good for me"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,I believe this experience benefited me positively.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""The app is alright and talked to a few people but my main issue is when I get likes and open the app to see who liked me and it's not there"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Your experience with getting likes on your profile seems normal, right? Just curious about what specifically isn't working for you when trying to view those favorites."
+qwen2.5:1.5b,"Generate ONLY a different comment to ""no free trial to test if it actually works"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,No opportunity for evaluation before purchase.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""better"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great improvement!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Keep seeing same profile i said nope to...and now i cant even view my matches profiles...why is that? And just now i did my verification and am told am ban?"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Why are you blocking me after I explicitly declined your profile request, and how come they can't view their matches' profiles even though they've verified? Why is everyone getting banned now?"
+qwen2.5:1.5b,"Generate ONLY a different comment to ""The new update looks very childish. I don't need stickers to tell me which way I swiped."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"This update is clearly aimed at children, as it uses simple gestures instead of complex swipe instructions."
+qwen2.5:1.5b,"Generate ONLY a different comment to ""There needs to be more words to write in bio , 500 is not enough . Please add more .badoo gives unlimited"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Absolutely, having at least 500 characters isn't sufficient. Let's make sure we have plenty to share!"
+qwen2.5:1.5b,"Generate ONLY a different comment to ""nice"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""nightmarishly glitchy these days. There's a huge delay in notifying you if you got a like. You're likely to swipe left not knowing that person liked you. then you get a missed match notification before you could get a chance to see who liked you. I think they're trying to force you to pay to have any fun now. Also nobody talks on this app."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,I feel like these features are just another way for them to make money while making things even harder and less enjoyable overall.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Fwiw, trying the video call feature was unsuccessful today. I've never been asked to use it before, so could be me?"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Indeed, attempting the video call function did not work this time; perhaps due to unfamiliarity with its usage?"
+qwen2.5:1.5b,"Generate ONLY a different comment to ""I'm totally confused about what's going on this app..."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Got it! Understanding is clear now, thanks for clarifying."
+qwen2.5:1.5b,"Generate ONLY a different comment to ""It works okay. Weird how they showcase the Top Picks with people who probably don't need any help finding dates. Also, occasionally the app notifications say you have a new like but you really don't. Probably a user engagement trick."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Exactly right - it's clever marketing to highlight people who clearly aren’t in need of help finding dates, and those notifications are probably just for keeping users engaged."
+qwen2.5:1.5b,"Generate ONLY a different comment to ""make it more reliable to those you can't afford a dollar"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Ensure security for all, regardless of financial capability."
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Constant Account Verification issues. Every other day it asks to verify an email, login with Google/Facebook, take pictures to match the request, prove you're a human with screen selection stuff."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Email verification frequency is too frequent; please adjust.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Should have a reply feature"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Absolutely essential for user interaction!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""am cool with it"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Okay then.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""very good"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Excellent work!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Pretty nice app, very popular. But the UI change is really ugly and tackey, I am considering deleting it because it looks really obnoxious while swiping"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,The new user interface design feels incredibly outdated and unappealing when you swipe through.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""still getting to know the app"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Continuing to explore this application fully.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Location setting is not working properly. It reset to current location."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,The issue with location settings isn't resolved; it has reverted back to its initial position.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""pretty slow in terms of matches and is very much a gamble without gold/premium tinder"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Very inefficient with low success rates, relying heavily on luck."
+qwen2.5:1.5b,"Generate ONLY a different comment to ""it just tells to get your money"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,It's merely advising on recovering funds.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Elvish bhai"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Best friend in Elven language
+qwen2.5:1.5b,"Generate ONLY a different comment to ""so far so good..."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,So far and functioning well...
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Why price is different between app and website?"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,What's causing variations in pricing across an application versus its web interface?
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Hate that we need to pay just to see that someone liked us."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Disagree; it should be free for everyone's enjoyment.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""so much money >w<"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,So many dollars >w<
+qwen2.5:1.5b,"Generate ONLY a different comment to ""I'll rate it 5star if I found the one here int his app!"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Thank you for your high rating!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Used to crash on previous device, now runs ok (slow but ok). BUT one of the latest updates removed the option to highlight the text in bios. That was so useful in foreign countries when you dont speak the local language and you can highlight and translate the interests or comments of a person... Such a disgrace to remove that"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,That's disappointing they took away such an important feature.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""is there a bug going on? i cant open my matches profile"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Is it possible you're having trouble accessing your match profiles due to an issue?
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Nahh"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Okay?
+qwen2.5:1.5b,"Generate ONLY a different comment to ""great"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Excellent!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""don't allow me to send message to a person I like"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Understand that you're restricted from messaging someone you admire?
+qwen2.5:1.5b,"Generate ONLY a different comment to ""I think Tinder is a great platform to meet good people from around the world."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Tinder offers an excellent way for individuals worldwide to connect and find compatible matches.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""I genuinely think the subscriptions are all a scam, I mainly subscribed (to platinum mind you) for the ability to find people with similar interests but that feature doesn't even work. It's no different than Tinder just finding people with the same interests that's already on your profile. That even goes for the ""see who liked you"" feature, I got more ""see who liked you"" before I even had a subscription. The only feature that works flawlessly is the age range and gender preference."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,I genuinely believe all subscriptions are scams; it's disappointing to see such functionality issues.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""very good"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Excellent!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""well app"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great application!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""So many fake accounts"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Many false identities exist online.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""I enjoy some of the site but feel there could be improvement in some areas"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"This site excites me, yet I believe it can enhance certain aspects."
+qwen2.5:1.5b,"Generate ONLY a different comment to ""the app's redesign stripped it of any last dignity it had left, the dark mode is nauseous and the new animations and design finally allows you to see tinder's true colors- a gauche cashgrabbing sleezefest"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"The app’s redesign stripped it of any last dignity, leaving only an unpleasant dark mode. The new animations and design finally reveal Tinder as nothing short of a crass cash-grabbing sleaze fest"
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Stuff is too expensive nowadays. Also, Super Likes are too easily used by mistake. Give users an option to swipe back the Super Like. Hating new layout as of now btw."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Consider adding a ""Unlike"" button next to each super like for better user control and engagement feedback."
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Nawala ung isang naka match q idk why"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Matched with what, I'm clueless?"
+qwen2.5:1.5b,"Generate ONLY a different comment to ""I wished I could rate this app higher. As an app tester, unfortunately, this app did not pass the average recommendation! So after saying yes or no to many women, sames women keep showing up.. First tree days was swiping right, and every next day sames women would show up... On fourth day, started swiping left, did it for 3 others days, and same happens... I came to conclusion, Tinder need to fire a few people or trained them better to make this app worthy"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"I understand your frustration with Tinder's algorithm. It seems like there might be some room for improvement in how they match users, which could lead to a less satisfying experience overall. Perhaps considering alternative dating apps"
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Matched up with 10 people, sent a message saying Hi 👋 to all of them + other messages to some of them, but i have got no reply from any of them?"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Got responses back on everyone's messages.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""well it's ok for now but glitches well it's a place to meet new people"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"It’s fine as of now, just waiting for some bugs."
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Install a message part so we can text anyone, espcially those we like."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Enable messaging functionality for easy communication with loved ones.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""u have a 3 to 7 day trial...!"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Enjoy your freebie for up to seven days!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""I like this app compared to others, but too often is the case where you get matched with unresponsive profiles. Not sure if they've left the app or what."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,This issue frequently arises when using similar apps as this one.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""I have fouund an issue. I can't open other user profile from chat that I have matched"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,You've discovered a problem with accessing profiles of users you've paired in chats.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""it's good app"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great application!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""pay wall is off the charts ridiculous. if you spend 50 or 60 you may find a match that wants to go forward with you. hard to tell which accouts are fake. good AI program and really persuasive. everyone just wants money, fake or AI bot."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"""Pay walls often seem outrageous when it comes down to it."""
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Please be patient."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Thank you for understanding.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""It could've just been completely free.... Almost there"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great opportunity! Just about perfect now...
+qwen2.5:1.5b,"Generate ONLY a different comment to ""it need to have a send requests list because I want to look through the people that I liked"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,It needs an invitation list so you can review those who were liked.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Its hard to match with someone that i want, even im using platinum still hard. Please fix it for user platinum mate. Tks alot"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Thank you so much! I appreciate your understanding and support.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Explore tab is gone. I can only get it back when I uninstall and reinstall. But the moment I open up the all again later, gone again. Have to repeat the process over and over. (How can I get in contact with someone about this?)"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Explore tab is missing; need reinstall every time it reappears. Contact support for assistance.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Nothing special"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Absolutely nothing noteworthy here.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""honestly they could at least let you see who likes you"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Indeed, it would be nice if one day that happened too."
+qwen2.5:1.5b,"Generate ONLY a different comment to ""good and nice apps"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great and pleasant applications!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""So you took away our ability To use translate"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,That's why we can no longer utilize translation tools.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Thank you for your prompt response on the review. Whilst I appreciate the fact that you have to deal with a number of cases mine has been from Sunday over a ban that I had nothing to do with and I am still waiting for a tech support team member to adress the issue. I really want to order the Platinum version as I always do this time of the year."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Thank you again for your quick response regarding my review. Despite having nothing to do with a ban, it's still frustrating that I'm waiting for tech support assistance on an issue unrelated to mine. Ordering"
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Used to be fine but lately the New Matches section hasn't been working at all, won't display any matches that I haven't already messaged with. Pretty useless like that."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,The functionality for finding new messages has completely broken recently. It's frustrating how it stopped functioning properly.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Well refined app. But the UI overhaul around v14.23.0 has made it impossible to select and translate bio text, which a drag for all the international community"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,The new design makes selecting and translating bios extremely difficult due to the UI overhaul from v14.23.0.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""nice"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Any tinder employee reading this , my account got banned right after creating it , did not even let me see the interface of the app. Straight up BAN!!! And the reason? I violated some guidelines accordingly to the app. Just think , how can I violate guidelines, when I haven't even entered the app. This is a huge mistake. Fix this please."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Any Tinder employee reading this, my account got banned right after creating it, did not even let me see the interface of the app. Straight up BAN!!! And the reason? I violated some guidelines"
+qwen2.5:1.5b,"Generate ONLY a different comment to ""I've been blocked from using tinder , pls can you unblock my account 🙏"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Can't access Tinder, any chance of being unbanned? 🤷‍♂️"
+qwen2.5:1.5b,"Generate ONLY a different comment to ""language especially the ones from south Africa is only few not all 7 languages"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Languages in South Africa, except for seven total, are relatively limited."
+qwen2.5:1.5b,"Generate ONLY a different comment to ""All the best function are stuck behind a paywall.."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Congratulations on your functions being accessible only through payment...
+qwen2.5:1.5b,"Generate ONLY a different comment to ""not bad"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Not too shabby either.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""out of likes"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great job! Keep it up!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""helps people who helps themselves"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Inspires individuals to achieve success through their own efforts.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Good application"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great implementation!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""I appreciate you guys"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Thank you all for your kind words.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""I woke up one morning and my account has been banned. I am not sure why? 🤔🤔🤔"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Now, what's next on your list of things that have mysteriously disappeared or been taken away from you? 🙄🤷‍♂️"
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Need to pay additional fees to unlock extra features and get the most out of the app, and it's not that cheap, especially if you're only interested in the monthly subscription instead of the yearly subscription"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Unlocking premium benefits comes at a cost; consider your needs carefully.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""it's very expensive"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,That cost is quite high.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""nice app"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great tool!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""super"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Absolutely amazing!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""I live Here In Kansas city MO Love to have fun traveling music"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Enjoying life in Kansas City, MO! Can't wait for another adventure."
+qwen2.5:1.5b,"Generate ONLY a different comment to ""good"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""the app is very nice but please give me free premium because I'm finding it difficult to pay with my card please"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Thank you for your feedback. We appreciate that paying via credit/debit cards can be challenging sometimes, so we offer a complimentary upgrade option if needed. Please let us know how to proceed!"
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Terrible recent UI changes. It was possible to select text in profile description and use Google translate. Now it's not possible to select any text. And as someone else commented, too much scrolling is necessary now. Previously all information on person's profile was available at glance. UI was fine and didn't need to be changed. Service is fine."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"The recent changes have made it difficult to interact with the platform, especially regarding selecting text for translation or navigating through information efficiently. The increased scrolling requirements are also a significant inconvenience compared to before when everything was"
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Cool"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""I was banned, Please how do i get my account back ? I really need help beside some one reported me and they didn't ask or reveal before blocking me😡 I tried creating new account but i can't access tinder permanently which is so bad. But is a good app tho."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"I understand how frustrating this must be, especially when you feel like your efforts to improve are being overlooked or blocked by others' actions on Tinder. It's important that everyone feels valued and heard in their"
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Sooo many bots. Like 40 percent of the profiles I see in my area are either bots or scammers looking to chat on WhatsApp or the equivalent. I feel like with this high of a ratio there has to be some bot on bot or scammer on scammer interactions. I would pay to have access to read such things. I feel like it would be hilarious."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"I agree, bots and scammers are rampant! It's frustrating how often they show up in my area on WhatsApp or similar platforms. Wouldn't it be entertaining to read through all these interactions? I"
+qwen2.5:1.5b,"Generate ONLY a different comment to ""The user interface needs alot of improvements. it's a huge let down that you still can't reply individual messages on this app."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,This application falls short in its ability to handle personalized communication effectively.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""So hard to find a real girl. And also there's a lot of people using tinder in the area but it always tell that no one in your area. Fix it"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Finding genuine connections is tough, especially when Tinder suggests nobody’s available nearby - tricky!"
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Don't always get notifications or messages"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Absolutely avoid receiving alerts and updates.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Nice!"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Sucks"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,F*cked up!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""didn't you have to pay tinder you can talk to people"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"You didn’t need Tinder, right? It’s just about chatting with others."
+qwen2.5:1.5b,"Generate ONLY a different comment to ""It's ok, but kinda scam. Had Tinder+ twice by mistake. Never had any matches while I had the subscription. As soon as the subscription ended? Lots of matches. Also superlike functionality goes away after being premium once"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"That's understandable, though it seems like Tinder+ might be a bit misleading at times. It’s okay to have doubts about subscription services sometimes!"
+qwen2.5:1.5b,"Generate ONLY a different comment to ""App is buggy sometimes but all in all its fine"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"The app works well most of the time, just occasionally having issues."
+qwen2.5:1.5b,"Generate ONLY a different comment to ""s'ok"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Alright then.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""dumpster fire but it's our dumpster fire"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"""Dumpster fire indeed - ours."""
+qwen2.5:1.5b,"Generate ONLY a different comment to ""not"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Understood! Here's your unique comment without any additional words:
+
+**Not**
+
+This is already sufficient as it conveys exactly what you asked for."
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Paid for subscription, but still can't access subscription perks. 🤷🏾‍♂️"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Seriously? This shouldn’t be happening! 😱
+qwen2.5:1.5b,"Generate ONLY a different comment to ""ok"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Got it!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""MMR based. But not horrible. As a guy, you just need really good photos (and a drivers license). I'm reinstalling this after I get a boat Technical part: Tinder will keep showing the same blurry photo for months and say ""you got a match"" when I know it was someone months ago. Why does it mock me? I know I'm not a Casanova"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"MMR based, but definitely worth checking out for good photos and valid identification; no need to be a Casanova! Tinder's issues with showing old matches are frustrating."
+qwen2.5:1.5b,"Generate ONLY a different comment to ""I downloaded this app because I am bored and want to meet someone... If you don't pay this app is no fun, I lost my matches 2 times in 1 week kinda frustrated cuz 2 of the matches was notification I clicked on and kicked me out and had to relogin then lost everything... I prefer paying for it but can't because of the cost. 😕"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"I understand your frustration, especially with apps that don’t respect user privacy or functionality due to free access restrictions. It’s unfortunate when notifications lead you astray and cause unnecessary losses in matches. Perhaps there"
+qwen2.5:1.5b,"Generate ONLY a different comment to ""I don't understand how this app works"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Could you please explain further so I can grasp it better?
+qwen2.5:1.5b,"Generate ONLY a different comment to ""notifications are inconsistent for matches and messages. but they work just fine for advertising 🙄"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Notifications behave unpredictably between matching, messaging, and advertisements. However, everything functions as intended in other contexts! 😅"
+qwen2.5:1.5b,"Generate ONLY a different comment to ""too many of the same people over and over again and then a lot of people just seem really fake"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"""Too much sameness leads to shallow interactions."""
+qwen2.5:1.5b,"Generate ONLY a different comment to ""need more matches lol"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Exactly what you need!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""it's nice but alot of features require premium"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,It’s pleasant yet many functionalities demand an upgrade fee.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Even with Platinum and even after buying 10 boosts, Tinder hardly shows my profile to anyone because they want to keep me alone and paying. I'd rather be alone and not paying. Subscription cancelled."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Even with Platinum status and after purchasing 10 boosts, Tinder still rarely shows my profile to anyone because they aim for solitude instead of engagement. I'd prefer being alone without having to pay. The"
+qwen2.5:1.5b,"Generate ONLY a different comment to ""it's nice ☺️"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,It’s very cute 😊
+qwen2.5:1.5b,"Generate ONLY a different comment to ""mid"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Mid point.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""facebook dating is free if you didn't know...."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Facebook Dating offers no cost when it's convenient for those unaware of its features and benefits.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""ppl in the app are like bots or robots , the app is good but too many fake accounts . 3 months in the app i have 90% of them didn't replay after matching , and the 10% ppl talk 5 message then just afk"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Users behave like automated systems, making interactions feel artificial. Despite app functionality being satisfactory, nearly all users fail to engage beyond initial matching and five messages before disappearing online."
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Can't use all of the lifestyle options"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Surely some choices must be left unexplored this time around.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Pas mal Et prix attractif vu la popularité de l'application, pour moi l'une des plus fiable,"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Thank you for your positive feedback! I'm glad to hear that despite its popularity, the application is still reliable. It's important to me as well."
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Expensive!!!"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Absolutely pricey!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""I've litterally liked every one on here an think I only got two matches in a week I expected different especially when I paid 1299 for unlimited likes .."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"You thought you'd get better results with unlimited likes, huh?"
+qwen2.5:1.5b,"Generate ONLY a different comment to ""designed for the extraordinary and attractive. barely any customisation for interests and intentions. no bio filter. unpaid version is very limited."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Designed exclusively for exceptional individuals, with minimal customization options available. No need to apply filters or bios; enjoy unlimited access!"
+qwen2.5:1.5b,"Generate ONLY a different comment to ""It's great app but unfortunately after 2 times renew tinder platinum.. can't accept my renew anymore from my cellar number like usual .. can you help me to fix that ?????"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Thank you for reaching out. We're sorry to hear about your issue with Tinder Platinum renewal and our system blocking access through a specific phone number. Please provide any additional details or steps we can take to
+qwen2.5:1.5b,"Generate ONLY a different comment to ""very good"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Excellent work!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Nice dating app"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great dating platform!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""great"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Excellent!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Cool"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""It's a money trap that feeds on your loneliness. The app operates efficiently though."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"The application cleverly exploits isolation, making substantial profits despite its functionality."
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Too many fakes..."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great job catching that! Keep up the good work with all your efforts.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""good"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Why have you messed with the interface? Edit again: goodness me, is ai replying to these reviews? Why do you keep talking about billing issues? I asked why have you now made it impossible to translate foreign languages on the app and why you messed with the interface making it too easy to accidentally super like and boost?"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Why do people continue to make such a fuss about billing issues when they're already having trouble using the language feature? It's getting ridiculous.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Good"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""I'd rate this app five stars if you could do voice and video recordings, save and mute messages too. Apart from this it's an okay app though."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Thankfully, adding voice and video recording capabilities along with message saving and muting would elevate this application significantly!"
+qwen2.5:1.5b,"Generate ONLY a different comment to ""its aight"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,That's good enough!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""The app itself is alright but I feel like the subscriptions should have a trial so people can try them then if they like the subscriptions they can buy them"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,I think it would be better for users to get a free trial of the subscription before committing.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Suggestion for the devs: when trying to upload photos, can we get a gallery explorer that mimics the folder structure of our photos/videos instead of dumping everything in one place. Makes it hard to find anything that isn't fairly recent. Thanks."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Absolutely! A photo picker with a hierarchical view similar to your existing folders would greatly enhance organization and ease of use for users looking through old photos/videos. Thank you for considering this suggestion.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Who says money can't buy you love? I got a Super Like about a week ago and it still hasn't appeared!"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"""Money may bring some things, but true love comes from within."""
+qwen2.5:1.5b,"Generate ONLY a different comment to ""people on here are time wasters, looking for fun not to have a serious relationship, don't know why I waste my time on here tbh"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"People who frequent this platform seem idle and aimless. Why do they spend their time there? Honestly, it's frustrating."
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Too many restrictions"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Insufficient flexibility allowed.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""i think this app is awes"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,I really like how well-designed and user-friendly this application is!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""the app collapse once in a while, and it unmatched everyone I have"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"The application occasionally collapses, failing to meet expectations for all users."
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Nice but the charges is a No for me"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Understandable; however, my budget doesn't allow it."
+qwen2.5:1.5b,"Generate ONLY a different comment to ""well the app is great and all but why pay to see who matched with me ?? honestly that doesn't seem fair"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Well, it's fine as long as you don’t have to shell out money for matchmaking. That just feels a bit unfair!"
+qwen2.5:1.5b,"Generate ONLY a different comment to ""The app is fine but you need to emphasize photo verification because I got 2 scammers in a row; they move you to WhatsApp, promises the world and will try to upsell crypto. Watch out for the hot ones who move quite fast."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,The app works well overall though photo verification should be highlighted as it's been tricked by two scammers; they quickly redirect to WhatsApp and try selling crypto. Stay vigilant!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""I just want to know that the girl's you are showing are original note fake. and why should we pay many time i get advertizment on social media to chat free on dating app and in app you are charging big fee to chat with a girl. What is true or your compny is plying with our emotions & feelings to earn money."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,I just want to know if there's any truth in what you're showing as original notes and why we need to pay multiple times for ads on social media when chatting is supposed to be free. Is
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Good"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Will come back to this"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,See you soon here.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Funciona muito bem pra quem paga"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Works great for those who pay.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Normal app, they are trying to take more and more money from us."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"""Apps frequently squeeze users for additional fees."""
+qwen2.5:1.5b,"Generate ONLY a different comment to ""cool😊"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great! 😊
+qwen2.5:1.5b,"Generate ONLY a different comment to ""nice"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""I think is to find your lover on in tinder"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Finding love through Tinder sounds like an exciting adventure!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""All my conversations and matches disappeared. Awesome."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great news! Your previous interactions have been reset successfully.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""I think am going to get partner"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great! I'm looking forward to partnering with you.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""good"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""is alot of help especially where I am"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Thank you for your valuable assistance!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""They withhold real possible matches to keep you swiping unless you pay. Doesn't seem very trustworthy tbh"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"It feels untrustworthy that they hide genuine options, forcing payment for what seems unreliable."
+qwen2.5:1.5b,"Generate ONLY a different comment to ""okay okay but sending pictures should be an option"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Got it! Sending photos is definitely next on our list, right?"
+qwen2.5:1.5b,"Generate ONLY a different comment to ""i really like it."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,I truly enjoy it too!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""The app works well on ots own. Definitely makes it easier if you purchase their subscriptions. Only thing, they will randomly send me a notification that I got a match, I immediately check the app to find no new matches."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"The subscription adds convenience; otherwise, it functions well independently. Notifications occasionally interrupt peace of mind."
+qwen2.5:1.5b,"Generate ONLY a different comment to ""my tinder won't let me subscription"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,My Tinder account is refusing my request for subscription updates.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""I miss programming or software development between interests."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Programming and software development hold my passion too, much like other hobbies I enjoy."
+qwen2.5:1.5b,"Generate ONLY a different comment to ""meh"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Okay then...
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Used to be better. 99% of matches just sit behind a paywall now"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Now, only about 1 in 100 can access them freely."
+qwen2.5:1.5b,"Generate ONLY a different comment to ""something need free for popular this app"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"""Something deserves no cost due to its widespread popularity."""
+qwen2.5:1.5b,"Generate ONLY a different comment to ""good app just doesn't offer much on the free side"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Good app; only downside is limited features for free users.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""This app gives fake notifications. Itll say someone messaged or liked you but you'll click it and nobody's there, theyre just trying to get you to open the app"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,The app tricks users into believing messages are real when none exist.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""I was asked to verify via video/face photo twice and since logging off and logging back in, it's asking me again!"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Got another reminder about verifying through face/photo. Must have changed something!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""So far havent had any matches, but i think thats because this app uses the miles not kilometers."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,You've yet to find any results since your application converts units from miles to kilometers.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""It's not a bad app but once you run out likes then you need upgrade from free to paying. Unfortunately, the cost is outrageous for people on a fixed budget."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Sure! Here’s an alternative comment that conveys the same message:
+
+---
+
+It's quite reasonable; however, once you hit zero likes and can't afford to upgrade from free. The price is prohibit"
+qwen2.5:1.5b,"Generate ONLY a different comment to ""wish you can switch to different countries"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Wish for flexibility in choosing your location next time!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""lots of chat bots hopefully i find a date :/"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Lots of chatbots! Hopefully, I'll meet someone soon.:/"
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Pretty expensive subscription. Needs an option to filter out people who have filled their zodiac sign (that is too say, intellectually challenged)."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Absolutely right; it would be unfair if only those with certain traits were charged higher rates.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""I like it"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,That's great!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""😍"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,😊
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Hey Users, I haven't used tinder before. Do I need to buy any subscription to use Tinder app?"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great! Just download and install it; you won’t be charged for using this free service.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""people ain't that much active ,they wasting our time & data..I think those who are not active for long must not appear on our screens ..only active people must be shown"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"People aren’t very engaged, they’re using up all of your resources. I believe that inactive individuals shouldn't even have a place in front of us anymore... only those who stay active should be on"
+qwen2.5:1.5b,"Generate ONLY a different comment to ""🙃🙃🙃"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,😊😊😊
+qwen2.5:1.5b,"Generate ONLY a different comment to ""truthfully it's tinder.. getting swipes is like fishing in a lake that you know is stocked, but they want the good feed they got from the fish farm."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Truthfully, Tinder feels akin to fishing in an abundant pond where only select and high-quality catches are desired."
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Not sure what to expect from me"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Can't imagine how this will unfold for you now?
+qwen2.5:1.5b,"Generate ONLY a different comment to ""im already unsubscribe Tinder Gold from my account, but i still get notifications that Tinder ask for payment. can u tell me how u unsubscribe Tinder Gold properly? till i don't get more notification payment anymore?"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Thank you for your question; we've received it and will address this matter promptly. Please ensure to follow our guidelines carefully, as any additional details could help in providing a solution faster.
+
+Best regards,"
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Final updated review: Paying for the service. The app is OK, as long as it's most people's choice and the best selection can be found here. A few bugs but not on bothering. Support: asked two basic questions and it took them 12 days to answer, while I had to follow up several times. Support is clearly not prioritized in their budget and probably outsourced. No more than 3 stars. I'll improve or decrease the rating if they give me a reason. Don't tell me to contact tinder/support again."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Final updated review: Paying for the service. The app is okay, as long as it's most people’s choice and best selection can be found here. A few bugs but no big deal."
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Dark mode is cool but a height preference option would probably help everyone, honestly. I've also seen 10 or so profiles with the exact same text in bio. Tinder doesn't care about fake profiles."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Dark mode is great! Just adding a height preference option would make it even better for everyone, I think. And while we're at it, why don’t you consider removing those annoying duplicate bios on"
+qwen2.5:1.5b,"Generate ONLY a different comment to ""I got logged out when I logged back in all my matches disappeared. Kindly explain the reason for this because I really liked this one guy"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Understandably frustrating, considering you cherished that particular individual."
+qwen2.5:1.5b,"Generate ONLY a different comment to ""You are no longer able to highlight text and use translation functions within the app. It's become more tedious to use for me because of this."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,This change has made using your application significantly less convenient.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""we it don't crash it a grate app"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"""Indeed, this application runs smoothly without any glitches."""
+qwen2.5:1.5b,"Generate ONLY a different comment to ""nice"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""want to see liks"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Looking forward to seeing likes!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""nice app"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great tool!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Nice"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Facile et bien pensé, malheureusement que du short term et du pro :("", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Indeed, it's both easy and well-thought-out; unfortunately lacking in long-term vision and practical implementation."
+qwen2.5:1.5b,"Generate ONLY a different comment to ""it's getting a match... but most of them didn't reply... then how could this be a match? I think some match is fake from application"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"That makes sense; many responses were absent, so it's likely only part genuine."
+qwen2.5:1.5b,"Generate ONLY a different comment to ""it just seems no one is ever done to do anything and I can't message first only do likes so help me change my mind about it because since I've had it almost 3months I haven't been able to meet up with one girl just sayin"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"It feels like no progress is being made, and meeting someone seems impossible. Hope this changes soon!"
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Pretty good app for three most part but I hate that you can't see who likes you, unless you pay."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great overall experience except privacy feature is too restrictive.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Not impressed, so far, but I am I'm patient, to an extent!"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"I remain unimpressed thus far, yet with patience, there's still hope!"
+qwen2.5:1.5b,"Generate ONLY a different comment to ""although there are some complications but somehow good"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"despite challenges, everything works out well in the end"
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Spent a fortune on Superlikes and had no replies. Question to Tinder admin: Can free users see my Superlikes? If not, what is the point of them?"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Free users can't view your SuperLikes; it's pointless then.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""good"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Should be completely free."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Absolutely no cost should apply.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""I don't like it people don't need to know that and they also should be charging 6 bucks a week."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Understandably, privacy is valued. Reduced visibility aligns with cost savings for clients."
+qwen2.5:1.5b,"Generate ONLY a different comment to ""never gonna find love but it's cool ig 😅"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Love is just another thing you'll never truly have, right? Cool! 🎉"
+qwen2.5:1.5b,"Generate ONLY a different comment to ""would be nice to see the likes even on free"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,It would also be great if there were some kind of recognition for being part of something free.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""So my app updated, it used to have dark mode and now all of a sudden its gone.. Can you please fix this and bring it back? I have a Samsung galaxy s21. Hey thanks for responding! I'm not sure what the heck happened, but now dark mode is working.. I got logged out of the app and after logging back in, dark mode was gone.. But I just went back into it and it's now working.. Not sure what caused it.. I did just install the most recent android update so it could have been that?"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"I'm glad to hear dark mode is functioning again. It seems like a combination of factors might be causing this issue, including an Android update and possibly changes in your device's settings or permissions related to"
+qwen2.5:1.5b,"Generate ONLY a different comment to ""you can only send messages to people the app matches you with that's not good"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"This is just fine as it stands, maintaining its original message."
+qwen2.5:1.5b,"Generate ONLY a different comment to ""text entry for messaging new likes is yerrible"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Text input for adding messages about liking something isn't very good.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""The app is good. But is 90% money conscious as most of the activities in this app requires payment before you can do it. including knowing somebody who likes or admires you. you must make payment before the app will allow you know who admires or likes you. Even to like somebody in this app requires payment too. The financial requirements limits peoples activities in this app to the lowest minimum. This is not good. let loose some activities to make this app people's friendly. Thanks."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"The app needs better accessibility without forcing users into financial constraints for basic features, making it less inclusive and enjoyable overall. Let’s improve its inclusivity!"
+qwen2.5:1.5b,"Generate ONLY a different comment to ""keep getting Trans girls lol"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Keep meeting transgender women! Haha~
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Had the app for over a year with no issues then Was banned for no reason at all"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,The user has been using an application without any problems for one full year and suddenly faced being permanently blocked.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""I really dont like how I cant access my phone gallery and different albums when selecting a photo or video to upload on my profile. It makes it so much harder to find the photo im lookiglng for and for some reason it wont show me all of my photos from the photos it pops up for me to select"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,This issue is making navigation through your profile extremely frustrating.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""I met my husband using Tender 3 years ago and we have been married for 2 years now! Edit: we are 1 year divorced after 5 awful years of abuse and lies. On the upside I have an amazing 3 year old from the marriage."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"I met my husband through a dating app three years ago, which was quite coincidental! Now that we're divorced after five awful years of abuse and lies, I'm grateful for our 3-year"
+qwen2.5:1.5b,"Generate ONLY a different comment to ""great"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,excellent
+qwen2.5:1.5b,"Generate ONLY a different comment to ""cool"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""I've been enjoying the expirience with the until I have to verify my profile. This pose photo verification doesn't work. I uninstalled and reinstalled the app but still can't have full access to the app. I have reported the issue but still no assistance."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"I've been enjoying using the app until it requires photo verification, which doesn’t work as expected and uninstalling/reinstalling didn't resolve the issue. Reporting the problem hasn't led to any assistance"
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Demands money"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Needs financial resources.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Not too good"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great improvements needed!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""you should charge people even before they see there likes"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Absolutely right; it's essential to reward users proactively.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Categories don't work. Likes don't stay registered for things like ""binge watchers,"" where all the girls I want to meet are. Stupid to see the same profiles over and over again."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,This is frustrating because it feels repetitive seeing similar people listed everywhere.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""I love tinder tbh. But they can you for NO REASON. If it is , why do t they TELL YOU. I've had 3 different pages and get banned EVERY TIME. I don't post naked pics or promote myself or my cash app. And I've heard this from multiple people"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"I understand your frustration with Tinder's policies, tbh. It can be disappointing when you feel like they're keeping things secret from users who follow their guidelines closely."
+qwen2.5:1.5b,"Generate ONLY a different comment to ""good"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""I guess it's an okay app..I match with more fake/bot accounts than I do real people since 90% of this app is bot accounts anyway"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,It seems like most interactions are from bots.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""I matched with somone, opened messages and immediately got kicked from the app. When i went back to message the person they were no longer there in my matched. This has happened more then once and its infuriating."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"This issue is frustratingly persistent, isn't it?"
+qwen2.5:1.5b,"Generate ONLY a different comment to ""How can someone pass the verification? I tried a lot but always failed."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,What strategies have you employed for success in this process so far?
+qwen2.5:1.5b,"Generate ONLY a different comment to ""it's ok"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Supposedly the least bad dating app."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,This is reportedly one of the safest dating apps available.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""please make this app more accessible for visually impaired users."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Could you please ensure that your application is also usable by individuals with visual impairments?
+qwen2.5:1.5b,"Generate ONLY a different comment to ""It is difficult to use normally, many options do not work, you have to pay."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"""Many features fail when attempting normal usage."""
+qwen2.5:1.5b,"Generate ONLY a different comment to ""hopefully for the best."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Fingers crossed for the very best outcome.
+
+**Necessary Comment:** Hopefully, everything turns out perfectly well."
+qwen2.5:1.5b,"Generate ONLY a different comment to ""It's good but you will have to pay to fully use it"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Great deal! Just remember, though, fees apply for full functionality."
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Some of messeges comes few months later. Some messages are shown in notifications, but aren't in messages..."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Messages can arrive after several months or appear as notifications without being included in your current list.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""there are some ive met are real and others are scammers like krypto and asking for my bank accnt.. ive learn a lot from them dont trust them"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"You've gained valuable insights by interacting with genuine individuals versus those posing as scams. Always prioritize authenticity in interactions, especially when dealing with financial information like bank accounts. Trust is crucial here!"
+qwen2.5:1.5b,"Generate ONLY a different comment to ""not flexible to go back, missed opportunities. makes me frustrated"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Not accommodating changes leads to regretful outcomes and missed chances, causing frustration."
+qwen2.5:1.5b,"Generate ONLY a different comment to ""early days but seems to be hard to work out how to send a match a message"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Certainly, here's an alternative version:
+
+---
+
+Early times; figuring it out tricky for sending messages."
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Overall it's decent but don't expect to find actual connection, if you're just looking for short terms and flings then this is the app for you. Also, please pay better attention to your users because there are quite a few people on here who are clearly under 18"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Overall it's decent but don't expect meaningful connections; if short-term flings are all you're looking for, this app is perfect. Also, please prioritize user safety by being stricter with age verification"
+qwen2.5:1.5b,"Generate ONLY a different comment to ""I wish there was an option to share that I have a kid and am undecided if I want more. I feel like I'm painting the wrong picture if I say I have kids and don't want more OR I have kids and want more."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"I wish there was an option to share that parenthood is a journey, where having children doesn’t preclude wanting them again."
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Okay but they want money for more profiles"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Got it!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""could be free"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Possibly without cost.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""good"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""helpful"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Absolutely supportive!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""things should have been more easier"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Things really shouldn't be harder than they already are.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Kinda weird how guys I didn't match with suddenly match with me, then can message me🙃"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Yep! That's pretty odd too. 🤔
+qwen2.5:1.5b,"Generate ONLY a different comment to ""it's an Okay app however you have to pay to access many advanced options of which I feel they should be standard"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"It’s quite reasonable, yet it requires payment for most premium features. These functionalities are essential and shouldn’t come at a cost."
+qwen2.5:1.5b,"Generate ONLY a different comment to ""ok"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Got it!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Why not free"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Let's consider it as an invitation instead.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""the app itself is bad with showing girls realistically around you and it makes it seem like you need to buy into the subscription to really get any results"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"The application fails to accurately portray realistic female content, making its functionality dependent on a paid subscription."
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Money hungry app..."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,App seeking financial gain...
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Life is short enjoy"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Savor each moment while you can! Enjoy life fully now, for tomorrow might never come."
+qwen2.5:1.5b,"Generate ONLY a different comment to ""The least awful dating app I have used. Keeps showing me people not within my search criteria, doesnt let you lost social media in your bio so you're SOL if you dont have push notifications and aren't checking the app regularly, then there's all the subscription drama going on"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,The dating app is great despite its limitations.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""You need to add religion as an interest!!! For many of us, it's an extremely important factor!!!!!"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Religion holds significant importance for some individuals.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Too many fake accounts all asking for personal numbers.  Moreover too many likes and messages"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Please be cautious with excessive requests of personal information and notifications.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""This app is good but we need provision of sending pics"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great feature! Just missing photo upload capability for seamless sharing.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""nice app"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great app!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""there needs to be a radius to turned off so I don't match with people from the US"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,This is essential for maintaining privacy and avoiding confusion.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""I'm awful excited to app tinder can help who are here single hard I do already to found the girl is single together time"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Can't wait for Tinder's assistance in finding compatible singles!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""still figuring it out"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Still mulling over it.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""just like"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Exactly as expected.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Why is my height locked in meters and not just Feet and inches?"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Could you please specify what unit system your device or application uses for measuring heights?
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Suggestions: instead of Explore (e.g. Free Tonight, Let's be friends, etc) Make it: Fwb, Lovers, Gay. Short and sweet! Mwah love it!"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Great idea to make it shorter and sweeter with ""Fwb"" for Free Tonight, ""Lovers"" for Let's be friends, and ""Gay"". Love that!"
+qwen2.5:1.5b,"Generate ONLY a different comment to ""cool"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""not bad"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Very good indeed!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""no trial they just want you to spend money"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Absolutely right; no freebies allowed, only expenses for them."
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Can't believe that you saw the need to cap the amount of regular likes you can use. It caps out at around 20 likes (i think) for free users, so you'll have to buy premium. =("", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Absolutely ridiculous that they limit how many times a regular user can like posts without having to upgrade their account!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""subrang laki ng bayad ,kala ko walang bababayaran sa ganito .!ohmf 😔"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Subrang ladies, it's okay if you don't have money for this. 🌟"
+qwen2.5:1.5b,"Generate ONLY a different comment to ""good"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""options granted"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Options Granted
+qwen2.5:1.5b,"Generate ONLY a different comment to ""tinder some people are not serious and only want nude pics ,some of us are seriously searching for our missing ribs...I hope everyone had one in mind"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Some individuals might be seeking attention through inappropriate content, while others genuinely aim to find their lost bones. I wish all were thinking of something positive instead!"
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Way too many fake profiles on here with stolen photos."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,There's an abundance of imposter accounts using others' images online.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Tinders like blackjack...the odds of finding Mr. right are not in your favor. It's more for hooking up and even that is a challenge."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Finding true love isn't easy on Tinder either, especially when it comes to winning someone over beyond just casual connections."
+qwen2.5:1.5b,"Generate ONLY a different comment to ""hi i am here to serch a soulmate"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,I'm looking for someone special too!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""One of the worst dating apps just gotten worse by ruining their touch interface, so sensitive to touch, all miss touches happening on one app The reply by their team reflecting on their callous approach to their customers too. Guess the brand is too big to respect its customers opinions now."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"The company's arrogance towards customer feedback has reached an unacceptable level, leading them to overlook legitimate concerns about usability improvements on a dating app interface. It’s clear they prioritize their brand size over genuine interaction with"
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Too early to tell but the app is fast to load and populate with facts about yourself. Matchs can even turn to free chats ... you never see who likes you without paying. More diversity than AFF, Match, or Mingle"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great start! Just a few tweaks for variety...
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Dey are always rquesting fora login"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Users frequently ask for a login option.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Though I had given option of 40 km distance for finding chat friend it is friends from abroad mainly.Please show from nearest to maximum 100 km only"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Given options, mostly find chats with people nearby at most a 100km distance."
+qwen2.5:1.5b,"Generate ONLY a different comment to ""i didn't access inbox , i can't inbox members Y ?!!"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"You haven’t accessed your Inbox, so you cannot message group members."
+qwen2.5:1.5b,"Generate ONLY a different comment to ""App takes it upon itself to alter your preferred distance then blatantly lies about distances when there isn't enough in your search area. Showing people over a hundred miles away as 9 miles!!!"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"The app assumes control of how close you want to be and misrepresents distances inaccurately, placing distant locations within an unrealistic range!"
+qwen2.5:1.5b,"Generate ONLY a different comment to ""good"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""it's a good place to start, but expensive though."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,It’s an excellent starting point despite its high cost.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""trava muito a plataforma e a interação não é tão bacana"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"""Plataforma melhorada, mas menos fluída."""
+qwen2.5:1.5b,"Generate ONLY a different comment to ""The app is great everything works great except, I don't know why all my top pics in the app are 100 miles & over away?"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,That's strange; it seems like your photos might be way off due to an issue with location accuracy.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""still some scam girls. and matching isn't straight forward"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Still encountering issues with fake profiles and difficult matchmaking.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""As far as I'm concerned, if a profile isn't photo verified, then it's fake or a scammer."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,I agree; profiles without photos are often questionable.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""meh"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Okay then.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""i like it very much"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,I really enjoy this too!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Needs more filters, larger distance radius and built-in translator."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great suggestions! Need better translation too.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""lot of fake profiles sadly"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Many false accounts unfortunately exist.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""It has alot of glitches lately"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,The system is experiencing numerous issues recently.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Tried to get verified 5 times and they kept having errors. Everything is behind a paywall. And a lot of the neddages I get sent don't Show up until I Update the Chat by sending one myself. So I think someone ghosted me but they didn't and think I did"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"You've been trying to verify multiple times, yet continue facing errors each time you attempt it. Everything is restricted behind a paywall, making access challenging. Additionally, many of your requests don't appear"
+qwen2.5:1.5b,"Generate ONLY a different comment to ""The filters are misleading, in many cases they are not applied correctly to the picks"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Filters often incorrectly apply themselves to selections frequently.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""meh"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Okay then...
+qwen2.5:1.5b,"Generate ONLY a different comment to ""My account got paused I can't delete my account what should I do now?"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,You need to reactivate your account first before deleting it.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""am looking for serious dating"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Searching for genuine connections in relationships.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""I like this app, probably the only app that I've been successful in finding actual people on, but the pay wall, sucks. Gotta be a premium member to find more people in my area. Want to change your location, pay, want to filter your searches, pay, I understand they need to get paid somehow but it would be nice to find like minded people for a change"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,I agree that finding actual connections is valuable. The cost structure should reflect this better instead of forcing everyone into premium membership just to access features you actually want or need.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""After making a profile I got a few likes. $20 for 1 week is ridiculous. Then I read the other reviews and I'm happy I didn't pay. Too many other options for that price, giving them a 2nd chance."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great choice! The alternative offers are far better value at this cost.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""too expensive"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Absolutely right! Too costly is exactly what I meant.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""not working , starts and then shut down immediately, still not working"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Not functioning properly; restart causes immediate shutdown again.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Too many stale/filler profiles."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,There's an abundance of inactive or redundant user accounts.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""people telll me that if the account gets blocked they never get Amy information or reason."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"People informally state that once an account is disabled, there's no access to any data."
+qwen2.5:1.5b,"Generate ONLY a different comment to ""There are quite a few scammers on Tinder."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Many people encounter fraudulent profiles while using Tinder.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Great app until someone hacks your account and gets you banned cause put their snapchat on it and they don't care if was you or not cause picture clearly wasn't of me and no matter how much you try to appeal the ban they won't lift it"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Great app until someone hacks your account, gets banned due to a fake photo."
+qwen2.5:1.5b,"Generate ONLY a different comment to ""its nice"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,It's great!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""koi jbaw nhi"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"""Koi baat hai."""
+qwen2.5:1.5b,"Generate ONLY a different comment to ""I want to meet my love 😘"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"""I am eagerly awaiting our reunion."""
+qwen2.5:1.5b,"Generate ONLY a different comment to ""this app destroys my soul"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,This software exhausts me completely.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""I got banned for having an account, i been having the account for almost a year and i got banned out of no where. How may i re-use it because i really like this app but can't meet more people if i got banned, can someone please tell me what i can do to get unbanned."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,You've been temporarily suspended for an account you’ve used consistently. How might I assist in reactivating it?
+qwen2.5:1.5b,"Generate ONLY a different comment to ""uploading photos is not good"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Uploading photos isn't recommended.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""charge for all features"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"""Offer free basic service with options available on subscription."""
+qwen2.5:1.5b,"Generate ONLY a different comment to ""While I waited for my upgrade to Gold, I missed out on half a dozen potential matches at least. Luckily they got ontop of it all...eventually. No in-app help at all. Need to complain publicly to get help with the app. All good now..."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"While I waited for my upgrade, I missed out on half a dozen potential matches...eventually. No in-app help at all - need to complain publicly if you want assistance with the app. All"
+qwen2.5:1.5b,"Generate ONLY a different comment to ""it's tinder but all flashy. surprised the cut aways don't have their own trailers"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"""Unexpectedly, it feels like Tinder with its slick design and bold visuals - just missing out on those eye-catching transitions."""
+qwen2.5:1.5b,"Generate ONLY a different comment to ""So many scammers and fake profiles The app doesn't give you the exact location..."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Many impostors exist, making it challenging for accurate tracking."
+qwen2.5:1.5b,"Generate ONLY a different comment to ""nice one"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great job!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Too many options for ""membership"". Way to expensive to use all of the features."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"""Options abound, yet they're beyond budget and feature-rich enough."""
+qwen2.5:1.5b,"Generate ONLY a different comment to ""too many ads"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Too numerous advertisements.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""I wish I didn't live in an area where everybody is just kinda meh looking. Imagine being hungry enough to look in the fridge, but shutting the door without taking anything. App works great, wish people cared about their appearance more"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"I dream of living somewhere where everyone radiates enthusiasm instead of being just okay-looking. It's frustrating to feel hungry for food yet never eat anything because I'm afraid it won't impress others, especially"
+qwen2.5:1.5b,"Generate ONLY a different comment to ""I love## anngel ..to cook.. 764.. and clean I'm Italian and Hispanic...G.... ale... and walk to watch sunset.. om...c ."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Enjoying cooking, cleaning, walking after a meal in Italy and Spain."
+qwen2.5:1.5b,"Generate ONLY a different comment to ""it should be direct chatting.... should not a long wait till any other person look request to like to start chat"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Direct chats are preferable; lengthy waits for others to initiate contact aren't ideal.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Bad net work"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Poor internet connection.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Asking for high amount."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Requesting substantial funds.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""not sure yet but easy to operate"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Sure enough, it's quite straightforward."
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Not really sure about the efficiency still new"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Absolutely, I'm also unsure if it's as efficient yet!"
+qwen2.5:1.5b,"Generate ONLY a different comment to ""People should be serious bout dating & taking it ahead to meet in person than just doing time pass. Tinder can come up with both audio & video calling option wherein connected members can call each other. Social media profiles of respective members can be interlinked for a better wider idea. In-person Tinder community meets can be arranged in each city, that way many people on tinder can meet many others at a hall or so thereby fostering a better connect n more success towards dating."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"People should take dating seriously and plan to see someone face-to-face rather than just spending time online. Tinder could offer both audio and video calling options, linking profiles for a better understanding of each other's"
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Having problems with swiping, the swiping you do on people doesn't work and I have to keep pressing the buttons to get them to work"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Pressing frequently causes issues; try reducing button presses.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""meh. Wish there were a few more options for the free version. But overall, it's been good so far."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"I agree; sometimes having additional features would be nice too. Overall though, I'm satisfied with what I've got."
+qwen2.5:1.5b,"Generate ONLY a different comment to ""it's a hit or miss app, as are the people. just be careful and have fun!"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"""Good luck with both! Enjoy!"""
+qwen2.5:1.5b,"Generate ONLY a different comment to ""very limited view on free version"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Very narrow perspective with only basic features available.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""just joined so no real opinions yet"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great start; let's see where this journey takes us!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""ok"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Got it!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""thank you"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Of course!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""My phone restarted now I lost all my matches was going on a date now I cant communicate witch her anymore"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Now, unable to connect with previous dates due to phone malfunction."
+qwen2.5:1.5b,"Generate ONLY a different comment to ""nice"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""it's just a waiting game"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,It’s simply an anticipation period.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""It's better this for free I will gave 10 star"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great idea! Let me know if you need anything else.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Cant sign in"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Try again or check your credentials.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""very good app"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Excellent application!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""we everything is limited till you pay"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,We have nothing until we part with something.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""I'm rather piss off with this app. I have paid my whole month as gold tinder account. Due to I have accidently deleted the account and try to re download the app. But your app have banned me out completely which you've taken my whole month subscription and now I can't go in again. And my money can't be refunded. Is that how you con people money !!! 😡😡🤬🤬"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,I'm really frustrated with this app; it's completely unfair to take away all of your hard-earned subscription without any compensation or explanation. How can you justify taking my money and banning me for no
+qwen2.5:1.5b,"Generate ONLY a different comment to ""I just started using the app but I will comment later"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great start! Looking forward to your feedback soon.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""too money intensive!"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"""Expensive beyond reason!"""
+qwen2.5:1.5b,"Generate ONLY a different comment to ""lots of money's to be paid"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Many funds will need compensation.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Him As Nm Nm. . .xs Read . As. , Bum ZNAre d F Nd See xxax Bn Wa At xx Ca Him mzz Gm m Zac"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Him as nm nm... read, bum zna re see xxx ax bn wa at xc him mm zg mg zm."
+qwen2.5:1.5b,"Generate ONLY a different comment to ""I think to be better"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Indeed, striving for excellence is key."
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Notsure what's happened but used to on a rare occasion buy super likes, now it says I have to add my card to my google paly account (its never said that before) yet when I go on payment methods on the app its got my details? I don't wanna add my details to my Google play account I'd rather just buy when I want on the app"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Got it, no worries about adding your card info. Just wanted to make sure if there's another way around this without involving a Google Play account?"
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Good"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""nice"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""This dating app is easy to use and there is usually a good amount of people on. I like that they have started deleting social media profiles out of bios. Gold has gotten more expensive, there has been some glitching where you see a profile more than once, and I feel like there could be more incentive to stop hookup culture."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"This dating app is user-friendly with plenty of activity. They've removed social media bios for better privacy. Prices have risen; glitches occasionally show profiles multiple times, and I believe there should be stronger reasons"
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Tinder: I have a question. What justification do you have for your monthly premium pricing? If you think about it, Netflix, crave etc. Spend millions of dollars per month to always bring the best for their monthly subscribers, and they charge 1/2 of your price. I think tinder+ should be $2 instead of $20 but that's just me"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Tinder: How can you justify such high monthly premium pricing? If Netflix and Crave spend millions on improvements, shouldn't they offer a better deal for their customers instead of charging 1/2"
+qwen2.5:1.5b,"Generate ONLY a different comment to ""bdeya"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great work! Keep it up!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""give us more swipes"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Let's get even more likes!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""i used to like tinder but i havent been on it in awhile and its not letting me make a new account or just an account in general ever since i got my new phone"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,I'm glad you're enjoying Tinder again. It's great to see your old habits resurfacing with such ease on a fresh device!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""a fun site but slot of ghosting"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,A great website with some instances of ghosting.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Tinder has become too money focused. They are putting a price on love and friendship and that is disgusting"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"This obsession with financial aspects in Tinder's approach towards relationships is truly unsettling, as it trivializes what should be about genuine connection rather than just monetary value."
+qwen2.5:1.5b,"Generate ONLY a different comment to ""My tinder block"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great job with Tinder! Keep it strong and steady.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Good app so far"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great progress thus far!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Explore keeps vanishing on samsung fold 4, keep having to uninstall and install again to get it back, have cleared cache etc no change"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"""Samsung Fold 4's exploration feature is constantly resetting. Needing multiple reboots just to regain functionality."""
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Why does it keep bringing the upgrade upon installing it"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,What's causing this recurring update when setting up?
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Too many pay walls in the app"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,There should be fewer barriers set up for accessing content within the application.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Eh, I mean... It's tinder, so you won't meet anyone special. Everyone has this app though."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Ah, Tinder is just another dating app where everyone uses it too."
+qwen2.5:1.5b,"Generate ONLY a different comment to ""So many bots and fakes. Unless you pay you're invisible. People are here and matches happen but it's few and far between. That said it's better than most alternatives for sparking some conversation."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"So many bots and fakes, unless paid attention to disappear entirely. People are present yet interactions remain rare and sporadic compared to other options that can spark conversations."
+qwen2.5:1.5b,"Generate ONLY a different comment to ""It works, but there's a serious bot issue, I matched with 8 people. Half were real and half were bots who used certain characters to make a promotion of their OF accs."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"There are indeed issues related to detecting genuine users among bot promotions, as only eight individuals out of those matched with real accounts turned out to be legitimate. Half were bots attempting deceptive tactics using specific characters for"
+qwen2.5:1.5b,"Generate ONLY a different comment to ""I Tinder, it is not easy to find the profile who likes unless you pay."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Finding profiles liking someone on Tinder without paying isn't straightforward.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Keep getting notifications for matches or messages but when I open it there's nothing new... Take forever for the app to get caught up with notifications"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Your device is lagging behind in processing notification requests.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""good"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Pretty straight forward and easy to setup a profile in minutes. Matching & Messaging is easy enough. Pushes quite a bit for you to upgrade, but that's the nature, I guess. App stopped notifying of a Match or even a Missed Match since the last two weeks or so. Contacted support, 3 different people replied overall, and only 1 could advise to actually try something and still hasn't worked. Not been back in touch since which is pretty poor. Even Screen captured what was happening and nothing back"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"The app has a straightforward setup process, quick profile creation, easy matching & messaging functionality, with significant features for upgrade potential that come at an expense of poor customer support. Contacting multiple support personnel yielded"
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Good stuff"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great work!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""good"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""easy to use many choices"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Very intuitive with ample options available.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""this app is so good u can imagine making new friends but the app doesnt have normally call on video call and most people don't love video call so for that I'll rate 3 stars"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"This app offers fantastic opportunities to meet new folks, just imagine how it could enhance your social life! However, its primary downfall is a lack of support in video calls which significantly reduces user engagement. As"
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Gives me duplicate notifications. Annoying when it looks like I have a new like or message just to see its the same thing."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,This issue makes tracking updates difficult and confusing.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""They banned me for 2 years now I have not been able to use the app anymore"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Now, you're stuck without access to the app."
+qwen2.5:1.5b,"Generate ONLY a different comment to ""why does everything need our money as tokens when it's simply a dating app ugh 😑"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Why do we give so much for something that could be free? 🤔
+qwen2.5:1.5b,"Generate ONLY a different comment to ""for some reason its really buggy"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"For an unknown reason, it exhibits significant bugs."
+qwen2.5:1.5b,"Generate ONLY a different comment to ""blaaa"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great job!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""I have 99+ likes on my profile and yet it says there are no people nearby. My distance AND AGE settings are on max. There really should be some sort of penalty for ignoring matches."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"That's puzzling; usually, proximity or age filters don't affect visibility unless explicitly stated in your privacy preferences. Perhaps try adjusting these settings to see if that resolves it?"
+qwen2.5:1.5b,"Generate ONLY a different comment to ""good"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""nice"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""What I really don't like about this app is even with gold u need to pay and upgrade more money to platinum to even message with ppl that match or like that's prettY dumb unsubscribing and uninstalling this app sucks moose balls meet me sucks but at least you can text with others."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"This app is confusingly expensive, even for gold users. It's frustrating that platinum status requires such a significant upgrade just to message people who match or like your profile. Unsubscribing and uninstall"
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Quanta gente feia em um único lugar! Saí com a autoestima alta kkk"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"""Verdade, parece que todos têm algo pra criticar aqui!"""
+qwen2.5:1.5b,"Generate ONLY a different comment to ""it's really a nice app i like it"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,That app is truly delightful and I enjoy using it immensely!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""very good"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great job!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Do something about the bots"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Take action regarding the bot issue.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""it's good"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""nyc apps"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great NYC app suggestions!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""I used to like this App for years. But lately, since 2 or 3 days I am having many problems with it.. I am Swapping the same persons everyday with no limit of Swapping (means its not working).. amso I could not visit the profiles of people who we have matched together. Need to know if its a problem from Tinder or my own problem! I unistalled the App and re-install it again.. same problem!! 😑"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"I understand you're experiencing issues with your app. Let's resolve this together, no need to uninstall or reinstall; we can troubleshoot further!"
+qwen2.5:1.5b,"Generate ONLY a different comment to ""The app is nice but should allow mobile money for suscription"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great idea! Adding support for mobile money subscriptions would enhance user convenience further.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""The App is great.Its just that the matches that I'm getting are not the type of people that I am looking for"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"You've found something fantastic, yet it's missing what you specifically seek."
+qwen2.5:1.5b,"Generate ONLY a different comment to ""not good for free service"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Not suitable for cost-free offerings.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""I don't understand why people sign up for a dating app, swipe but do not answer messages after matching 😿 Like what is the point? It is fun when it works but most of the time it is kind of frustrating to wait."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Why waste your valuable time on apps that don't offer genuine connection or meaningful interactions?
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Good app but everything cost money"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great app! Just wish it didn't break the bank.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""I'm happy"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,That's great!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Tinder is good 😊"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great! 🎉
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Better be prepared to spend and spend."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Absolutely, it's wise to budget for unexpected expenses as well."
+qwen2.5:1.5b,"Generate ONLY a different comment to ""It's a good app and I like it"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great app! Liked it too.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Today Tinder erased all my matches and conversations I had in months."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Good news! Your profile is now clean, ready for fresh connections today."
+qwen2.5:1.5b,"Generate ONLY a different comment to ""I've talked to so many cool and laid back girls in this app, I highly recommend it to the people that are looking for love or maybe just a friend. Although I lost my phone due to this app I still am coming back to see if I find my true love over the Internet because I'm to shy to talk in person. Wish me luck."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"I've met many charming and laid-back ladies on this app, highly recommending it for those seeking romance or just a companion online—despite losing my phone due to its use, I'm still hoping"
+qwen2.5:1.5b,"Generate ONLY a different comment to ""I believe most profiles are fake"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Most profiles seem to be fake.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""good app"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great software!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""it's getting better with the limits on snap or other social media tags. still hard to find real people and not scammers"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"It’s improving, though it remains challenging to distinguish genuine connections from scams due to limitations in tagging features like snaps on platforms."
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Not yet use,but can feel it will be better"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Certainly! Here's an alternative way of expressing that idea:
+
+""Still unused, but already anticipate improvement."""
+qwen2.5:1.5b,"Generate ONLY a different comment to ""as a guy, it's a lot of scams. No matter who you are, you're just gunna have to wade through 90 percent of profiles of people who really are just after money, but to be fair... pretty par for the course with any app nowadays."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"As a guy, it's mostly scams. No matter what you're into, 90% of profiles are just after money - to be fair... pretty typical for apps these days."
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Good"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""I honestly don't know what is wrong with the app each time I close it and try reopening it again it tells me to log in from afresh by choosing items to verify it's me.... This can be very annoying and now after subscribing I am told there's a problem and my account has been locked... The whole thing pisses me off fr.... Pls try to work on that..... Thanks"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"I'm sorry, it seems you're experiencing persistent issues with your app. Let's see if we can resolve this together... Thank you for reaching out!"
+qwen2.5:1.5b,"Generate ONLY a different comment to ""I want to unsubscribe from tinder. I don't want them to be charging directly from my ACC as it has inconvenienced me at critical moments . And am not seeing to the unsubscribe button . Pls get to me asap"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Understand, I'm here."
+qwen2.5:1.5b,"Generate ONLY a different comment to ""no luck on tinder"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Good luck next time!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""less paid features"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Fewer options available for users now.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""My account says it's locked. So I try to verify by doing those photo poses and it won't let me get past that second pose!! It'll throw me back to the first pose everytime!!! Ugh it's frustrating!!!"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Ugh, this is so annoying!"
+qwen2.5:1.5b,"Generate ONLY a different comment to ""it's okk but am unable to meet good friends"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,That’s fine though I can't seem to make new pals.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Why have you taken me down from platinum to ordinary please xx"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Understandable - why were you demoted?
+qwen2.5:1.5b,"Generate ONLY a different comment to ""just a little bit lagging"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"""Only slightly behind schedule."""
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Great app but stop collecting my account"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Thank you for your feedback on our great app! We appreciate it when users share their thoughts and suggestions. Please let us know if we should adjust how we collect information to better serve all of our users
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Unfortunately this is currently (Dec 2023) the best free dating app currently out there. As a man you get about 50 swipes every 12 hours. Unfortunately a lot of the women are only looking for follows on Instagram. And the app is heavily focused on appearance (it can be awkward to actually read someone's profile sometimes). If you have patience you will make some conversation, which might lead to more. Definitely the best free dating app out there currently. But not great"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"This is indeed a highly rated and popular option for those seeking casual connections without spending much on apps. However, it's important to note that while this platform excels in its free nature, there are"
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Met the person im currently with on here back in August of 2023 I don't think its the best app I just downloaded it just for fun because I thought I would never find someone on here but I did so that was surprising and tinder plus or whatever subscription you have to pay definitely isn't worth it. (I didn't pay for it but I don't see a point in it."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"You regretfully acknowledge your dissatisfaction with Tinder Plus, emphasizing that while downloading was initially enjoyable due to its novelty and fun factor, you now recognize its value is minimal."
+qwen2.5:1.5b,"Generate ONLY a different comment to ""I like it but I don't get much luck with women on the app and I am sorta disappointed."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Sure, here's one that maintains the original sentiment without adding any extra words:
+
+---
+
+That’s disappointing. But it seems you don’t connect well with women on there.
+
+---"
+qwen2.5:1.5b,"Generate ONLY a different comment to ""The best dating app ever"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great choice! The perfect match for finding love is here.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""nice"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""beware of scammers"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Be cautious with scams.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""should have a chat option even when you not matching"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Absolutely essential for seamless communication!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""good"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""it is a great up buh u have to pay just to see who likes u"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"It's nice when you get noticed, even if it means paying for that recognition."
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Pt. 1 Tinder has the potential to rival new monsters in the ""market"". The 🌐 flame of its de-humanizing ego can actually burn the pillow of Hinge, boil the fishes of POF, & destroy the structural combs of Bumble however UNFORTUNATLY & I am new to dating apps..it's FLaWED & I mean FLAWED LADIES & GENTLEMEN🎭. The application will actually not alert you when it has IP flagged you all the while glitching & additionally the costumer support is MUCH BETTER but once you pay? it'll take your $$$"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Tinder could potentially challenge new dating apps, especially when its dehumanizing ego can cause problems for other platforms like Hinge and POF. However, I'm still learning about these applications so they"
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Simple to use"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Easy to operate.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""best"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,excellent
+qwen2.5:1.5b,"Generate ONLY a different comment to ""they make it pretty hard to use this app constructively with out paying a pretty penny..."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,It's challenging enough without having to spend money on this.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""expiring matches detracts from this app"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Expireable matches diminish user experience in this application.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""lots of fake"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Many false claims exist.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""You have to let us see who has liked us"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"""Show us your followers' faces, then."""
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Esta app es deprimente, solo la descargo para ver qué fotos subió mí ex #superar"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,This application is depressing; I only deleted it because of my former boyfriend's photos.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""stop the catfishing"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"""End the deception."""
+qwen2.5:1.5b,"Generate ONLY a different comment to ""pay walls are too expensive. other than that it does the job."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Other than being costly, paywalls hinder access for many users."
+qwen2.5:1.5b,"Generate ONLY a different comment to ""too many mechanics are pay to play only. it's like you can even write a message with super likes. you can't see who likes you either. that's the tip of the iceberg."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Many people engage in activities for monetary gain, often at your expense. It’s disappointing to have such a lackluster experience where visibility is restricted and authenticity questionable."
+qwen2.5:1.5b,"Generate ONLY a different comment to ""already been matched but need to find out more about the app"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Further investigation required regarding this application.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""cool, but can be better."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great idea though it could definitely improve further.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Why can l not receive any messages or view anyones profile. All was well until today in the morning. Please resolve"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Could you please check if there have been recent changes affecting your account settings?
+qwen2.5:1.5b,"Generate ONLY a different comment to ""why is everything about money"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Why does every conversation revolve around finances?
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Can't pay for tinder gold. There's always an error"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"This issue is due to persistent network problems or incorrect login details, leading to frequent errors in payment attempts on Tinder Gold."
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Lags and freezes."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Performance issues reported.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""app is good but it's very slow"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"The app works well, just feels sluggish at times."
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Annoying setting s rando bills"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Disappointing random bill selection.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Never really find anyone on there"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Finding someone never seems easy online.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""it's a good app"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great application!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""I absolutely love it so much"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,This is my absolute favorite!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""I should be able to message others for free like the old days without upgrading. That's what I think."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Absolutely, it’s great that messaging is back in its original state!"
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Have not been able to make a connection"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Connection attempt has failed so far.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Help i have some bug on my app"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Got it; I'll fix whatever issues you're encountering in your application right away!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""great app"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Excellent application!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Not so user friendly"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Very inconvenient for users.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""One can't delete a message on the app and it makes things quite complicated for me"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Deleting messages in this application causes significant inconvenience to me.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""love"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Affection!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Why did Tinder banned me what was my offense, upon that they still went ahead to debit me for subscription, please you guys should cancel and return my money because please.."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Understandably frustrated with being banned from Tinder without clear reason. Request immediate cancellation of account fees as compensation is due.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Nice app"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great app!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""you literally have to pay for every little feature of the app. it's robbery."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"You're paying dearly just for basic features in this application, essentially robbing you."
+qwen2.5:1.5b,"Generate ONLY a different comment to ""I have encountered a handful of profiles of ladies that were obviously fake and had the description: "" I'm only here to get d*cked"" or something similar. I know they're fake because they were presented as being very close to my location, had names that were not local, and offered snapchat as a contact; The thing is, nobody in my region of the world uses snapchat. Cheap tactics, Tinder! Cheap tactics! I am being generous with 3 stars on this review."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"I completely understand your frustration and disappointment at encountering fake profiles that try to trick you into thinking they're real. It's unfortunate when people use such low-quality tactics, especially those relying solely on location similarity"
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Good"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""should be a little cheaper by the week kinda ridiculous"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,It's quite unreasonable that it should cost less every week.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Hey I signed up for gold they they charged me still not get the offer"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Thanks, it's disappointing that you didn't receive your bonus."
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Your app is buggy since forever, all my matches just keep disappearing"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"""Thank you for your patience; we're working on resolving this issue."""
+qwen2.5:1.5b,"Generate ONLY a different comment to ""good"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""nice"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Me personally don't waste your time. Your better off actually trying to pickup chicks at your local bar. I myself is pretty handsome and only got a few messages that typically end because they forgot or don't think your on their level of attractiveness. Why do I need to pay for extra stuff when your not even guaranteed whoever you match with will even consider or is online. Like I said youll have more success actually going out and talking to women."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"You're right, it's better off trying at a bar instead of wasting time on messages that won't work anyway. The extra stuff is unnecessary since you'll likely have less success going out and talking"
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Is there any platform for feature request? Inside the app or at the website? Anyway I would like to ask a mark\tag for visitors, travelers. Like if a user traveled from it's hometown more than 100 km than the app automatically add them a visitor tag."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Is there any platform where feature requests can be submitted? Inside the app or on the website, I'd appreciate it if visitors and travelers could receive an automatic 'visitor' badge based on their travel distance"
+qwen2.5:1.5b,"Generate ONLY a different comment to ""The experience was decent. Had glitches and created a new profile 3 times with the same number and information and got banned."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Great job, managed through multiple challenges!"
+qwen2.5:1.5b,"Generate ONLY a different comment to ""not so bad"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Not too shabby either.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Banned for 12 hours after signing up, no explanation as to why, same profile as my other account 🤷🏼‍♀️ App is reasonably user friendly but has a cluttered UI and some actions are counter intuitive. Scrolling up should give you details, not be a super-like. Superlike should be a star and replace that up arrow."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Understandably frustrated with inconsistent account management!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""love, hate often not great, and yet it is always here for you."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Love and hate rarely bring lasting joy; however, their presence ensures your life's journey remains full of unexpected moments."
+qwen2.5:1.5b,"Generate ONLY a different comment to ""cost too much"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,It's expensive.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""You don't get enough swipes and the blurring out so you can't see who likes you is stupid"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,It's puzzling how someone could feel they're invisible.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""just arrived seeing what available"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Got here spotting options now.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Almost all profiles are for paying. It should be more options for Free.the rank of distance is longer than the one set"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,All profiles cost money; free ones would make things easier and quicker. The range of distances seems too extensive compared to what's been established.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""It's now very slow. Always on waiting mode. No changes done. Despite Black Platinum purchase I am regretting it now."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"You've been stuck in limbo forever, nothing has changed since your upgrade.后悔是迟了。"
+qwen2.5:1.5b,"Generate ONLY a different comment to ""it's been hard to match or use the app until I laid a complain"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"""Finding compatibility with the app has always proven challenging, especially after submitting my complaint."""
+qwen2.5:1.5b,"Generate ONLY a different comment to ""I will give it a 7star"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Absolutely! I deserve that rating.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""12/15/ no more darkmode in app settings 01/02/22 :hoping to have a dark mode theme option soon 08/14/22 : dark mode available... thanks developer"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"""Thank you for considering adding a Dark Mode feature back."""
+qwen2.5:1.5b,"Generate ONLY a different comment to ""i will try"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,I'll give it a shot instead.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Since I haven't never get a match even a closer match nearby and I still think there are not real people here or maybe it's Tinder that's regulating it. All they are after priemum membership which I did the last time i had thinder 3Month ago I did for one week i never meet anyone as a result of the frustration i delete my previous Account. I hope this time around they will be compronised!"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Sure, here's an alternative comment that captures the essence without adding any extra words:
+
+Since I haven't even found a close match and still believe there aren’t real people around or it’s Tinder regulating"
+qwen2.5:1.5b,"Generate ONLY a different comment to ""very good app, use it wisely though. don't hurt others or yourself. be kind and respectful."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Very useful tool; just remember kindness matters too.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""so far so good"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,So far and functioning well.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""The app has deleted some of my matches. Some are lost right after the match, it never shows up in chats, I don't know how many other's have been lost"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"This issue suggests that your application is inadvertently removing some of your matches from conversations. It seems these individuals are no longer accessible through chat functions; they disappear shortly after joining, and their presence isn't reflected"
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Needs a pronoun filter (free version by the way)"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Free version needs a pronoun filter, FYI."
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Extremely slow to update locations"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Very sluggish for location updates.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""tinder is pay to win"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Tinder relies on user contributions for its success.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""haven't met anyone"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,No one has crossed your path yet.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""its kinda great"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,That's pretty cool!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Undecided as of yet"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Still uncommitted at this point.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""its a good app. i got a lot of friends and not even 24 hours i got 99+ likes and a lot of guys text me 🥰 but the bad news is i got banned from tinder forever.... ( PLEASE UNBANNED ME TINDER 🙏🏻)"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"I'm sorry to hear you faced such a setback, but I hope your account gets reinstated soon. Keep spreading love and positivity!"
+qwen2.5:1.5b,"Generate ONLY a different comment to ""this is a nice apps, for finding friends"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,This app excels at connecting users easily!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Still not great to use. I did some troubleshooting and upon redownloading the app it still isn't working properly. I get notifications of matches and chat messages but when I open the app to check, matches and messages are missing. This has happened several times. There is no way to recover the matches or messages."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Still facing issues with functionality; need assistance in resolving these problems.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""nice"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""it's good"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great job!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""acceptable"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Good enough; satisfactory.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""it's more of a money making tool than to finding people partners"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,It functions primarily as an income-generating device rather than for connecting individuals.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""good"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""It's mostly bots nowadays or girls trying to get you on their OF or stream"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,This is primarily seen as either automated software or women attempting engagement.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""It's good yah nothing else to say"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Absolutely! Nothing needs saying then.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""not too many matches. :)"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great start! Keep it up!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""nice"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""can't filter out fat people. I think should able to."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Absolutely agree; everyone, regardless of size, deserves respect and opportunity equally."
+qwen2.5:1.5b,"Generate ONLY a different comment to ""expensive"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Costly
+qwen2.5:1.5b,"Generate ONLY a different comment to ""probably the best dating app based on the amount of genuine matches you can get, but still as predatory as any other by nature and lacks the more in-depth services Boo provides for free."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Probably one of the most effective apps when it comes to finding real connections, yet remains just another form of exploitation. It also falls short compared to other options like Boo in terms of comprehensive features for free"
+qwen2.5:1.5b,"Generate ONLY a different comment to ""your recommendation algorithm is opaque and doesn't seem fair"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Your recommendation system appears overly complex without transparency, making it unfair in its decision-making process."
+qwen2.5:1.5b,"Generate ONLY a different comment to ""It's so obvious that Tinder always blocks its users so easily even when you didn't commit any violation. This is so obvious...let them look at the system and know what the computer is doing. They always banned someone from using Tinder even when you didn't commit a crime, very annoying."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,It's frustrating that Tinder frequently blocks users without any evidence of wrongdoing. Let them see how their system operates and understand what it does to people like us who haven’t violated anything. It’s highly annoying
+qwen2.5:1.5b,"Generate ONLY a different comment to ""just start we will check"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Alright then! Let's proceed with our plan.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Venía funcionando bien pero recién estaba por responder un mensaje y cuando entré se cerró la sesión. Volví a loguearme y me encontré con que me borró todos los match. Me dejó en 0. 2 estrellas menos"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"You lost all your matches and were given only two stars, which is disappointing."
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Good I like it"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great! I enjoy it too.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""its nice met cool people as well.....very recommendable"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great meeting interesting individuals too... highly recommended!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Tinder is Frustration. 😮‍💨."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"""Tinder is Disappointment."" 🤯💨"
+qwen2.5:1.5b,"Generate ONLY a different comment to ""not a whole lot of opportunities for an unpaid account"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Not many chances available without compensation.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""it ask to boost everything that feels irritating"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Boost all things deemed annoying or bothersome.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Pay or this app is basically useless."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Use it and see how valuable it becomes!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""good"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""i like it but y buy things so that you can see who likes you"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"I appreciate your thoughtful gift, and I'm glad you enjoy seeing how others react."
+qwen2.5:1.5b,"Generate ONLY a different comment to ""It's ok"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Absolutely fine.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""it's not particularly fast or responsive"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,It lacks speed and responsiveness significantly.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Gold membership is too expensive."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Membership fees for gold status seem quite costly.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""You have to pay much"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Absolutely! It's important to remember that expenses come with it.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""I think it would be good to see who has liked you without the credit details"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Sure, here's an alternative way of commenting while maintaining the original message:
+
+""I believe displaying likes should omit personal information."""
+qwen2.5:1.5b,"Generate ONLY a different comment to ""good app"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great application!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Lower the difficulty PLEASE"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Sure! Here's an alternative way to express that idea:
+
+Please make it easier.
+
+This version conveys the same request for reduced complexity or accessibility."
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Το review είναι με 2 μήνες πληρωμή Platinum κ 2 δωρεάν για να δω διαφορές: - Χωρίς συνδρομή είχα περίπου 50 likes/μήνα(όχι match),με συνδρομή 10(?!) - Μόλις λήξει η συνδρομή εμφανίζονται ξαφνικά φοβερά προφίλ κ κορυφαίες επιλογές - Εμφανίζονται συνεχώς προφίλ που έχουν απορριφθεί - Αν δεν ανανεωθεί άμεσα η συνδρομή βγαίνει προσφορά 50% - Πολλά ψεύτικα προφίλ - Platinum ίισως βοηθάει,τίποτα τρελό - Μακριά από προφίλ με 1-2 φώτο κ/ή χωρίς bio - Μύθος το ""μόνο για σεξ"" - Μην swipe-άρετε μόνο δεξιά!"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Thank you for sharing this information. It seems like a challenging situation with some interesting points to consider regarding reviews and interactions on social media platforms.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""get me off of here."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Leave this place now.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""the paid plans are too expensive, the premium/gold plan is stupidly expensive. The gold/premium features should be included in the std paid tier and there should only be one tier. The app tells me I've ""missed a match"" when swiping left and to upgrade to see who likes me... if I've swiped left it's obviously not a match for me! the superlike pop up is super annoying."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"The pricing structure feels overly complex, with features that should be standard in lower tiers being overpriced. The app’s notifications about missed matches are confusing and intrusive when swiping left to indicate interest rather"
+qwen2.5:1.5b,"Generate ONLY a different comment to ""great app but hectic premium costs"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Excellent app! Just wish for lower premium fees.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""more freebies please"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"More goodies, naturally!"
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Can be improved. Would be nice to use folders or to pin or star certain conversations"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Could benefit from using folder organization, pins/stars for favorites, and better filtering options."
+qwen2.5:1.5b,"Generate ONLY a different comment to ""not had any good experiences so far."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"So far, you haven't enjoyed any positive encounters."
+qwen2.5:1.5b,"Generate ONLY a different comment to ""You gus need a confirmation when you click the boost button, if you accidentally click outside the box were you choose the 1 boost 2 boost option, automatically takes 1 boost, please create a confirmation"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Please confirm before clicking on ""boost"" to avoid unintended boosts."
+qwen2.5:1.5b,"Generate ONLY a different comment to ""The Hottest Bots !!! One of the pay features I would like is ""not a bot"". I understand that seeing exotic women in backgrounds that are clearly not anywhere close to you that happen to be financial analysts is lots of fun. However, I was misled into thinking this app was about dating. Clean up your act tinder or else I'll give you only three stars. It's been clear for years now that dating apps do not make their income from matching compatible people. Let that sink in."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Understandably, Tinder has always prided itself on being a platform where users can connect with others who share similar interests and backgrounds to them - including financial analysts! However, it's clear that they"
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Not bad"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Good enough.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""It's cool"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Great!
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Honestly, best dating experience I've had so far on an app. the gold status is a little expensive for one week at a time, but it's usually manageable and really helps cut to the chase of who your likes are for quick matches. That said, the filters barely work."", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Absolutely! The app offers excellent value with its gold status that significantly narrows down potential partners quickly and efficiently. While it can be pricey over time, it's worth considering for those looking to speed up"
+qwen2.5:1.5b,"Generate ONLY a different comment to ""not a bad app it's fair. finding mr.right here n tru love hoping to get one☺️🌹"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"""Finding Mr. Right is always exciting, and I hope for true love too."""
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Randomly logging me out about every week"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"""Your account is being randomly logged off once per week."""
+qwen2.5:1.5b,"Generate ONLY a different comment to ""could be better"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Could definitely improve further.
+qwen2.5:1.5b,"Generate ONLY a different comment to ""Lots of fake profiles, regardless the app still works , does what it says on the tin"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,Many impostor accounts despite functionality as advertised
+qwen2.5:1.5b,"Generate ONLY a different comment to ""It would be the best dating app if tinder itself provide more free features in application, it ruins the app itself if there's more paying process or whatsoever"", but keep the same meaning.Do not add more text than the necessary.
+###TASK
+Comment:",,"Enhancing Tinder with additional free functionalities could significantly improve its appeal. Expanding options without requiring payment would make dating apps more accessible and enjoyable for users, enhancing overall user experience."

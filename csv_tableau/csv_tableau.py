@@ -30,7 +30,7 @@ nombres_pos = {
 # Cargamos los archivos
 # df_neg = pd.read_csv('resultados_clustering_trigrams/negativos/distribucion_docs/distribucion_docs_k6.csv')
 # df_neu = pd.read_csv('resultados_clustering_trigrams/neutros/distribucion_docs/distribucion_docs_k5.csv')
-df_pos = pd.read_csv('resultados_clustering_trigrams/positivos/distribucion_docs/distribucion_docs_k5.csv')
+df_pos = pd.read_csv('../resultados_clustering_trigrams/positivos/distribucion_docs/distribucion_docs_k5.csv')
 
 # Renombramos las columnas de probabilidad en cada archivo ANTES de unirlos
 # df_neg.rename(columns=nombres_neg)
