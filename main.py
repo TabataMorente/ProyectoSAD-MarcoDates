@@ -6,7 +6,7 @@ import json
 
 
 def main():
-    # 1. Validación de argumentos (Ahora solo necesitamos 2: el CSV y el JSON)
+    # 1. Validación de argumentos
     if len(sys.argv) < 3:
         print("🚀 Uso: python main.py <data.csv> <config_file.json>")
         sys.exit(1)
@@ -14,9 +14,6 @@ def main():
     csv_data = sys.argv[1]
     json_file = sys.argv[2]
 
-    # Extraemos el nombre del dataset (ej: de 'ventas.csv' sacamos 'ventas')
-    # El evaluador buscará el modelo en resultados_clasificacion/<dataset>/mejor_modelo/
-    # y los datos en preprocesado/<dataset>/
     dataset_name = os.path.basename(csv_data).split('.')[0]
 
     # 2. Leer el JSON para saber qué tarea ejecutar
@@ -36,20 +33,35 @@ def main():
 
     if task == "classification":
         # --- FASE 1: ENTRENAMIENTO ---
-        # train.py ahora recibe: el csv original y el json
-        # Se encarga de dividir 70/15/15, preprocesar, entrenar y guardar el test listo
         print("\n--- 🛠️  FASE 1: ENTRENAMIENTO Y PREPROCESADO ---")
-        res_train = subprocess.run(["python", "train.py", csv_data, json_file])
+        res_train = subprocess.run([r"python", "train.py", csv_data, json_file])
 
         if res_train.returncode != 0:
             print("❌ Error en la fase de entrenamiento. Abortando...")
             sys.exit(1)
 
         # --- FASE 2: EVALUACIÓN (AUDITORÍA) ---
-        # eval.py ahora recibe: el json y el nombre del dataset
-        # Se encarga de cargar el modelo 'MEJOR_...' y el CSV '_test_ready.csv'
+        # Leemos la ruta exacta del mejor modelo que train.py escribió en disco.
+        # Así evaluar.py evalúa siempre el modelo de ESTA ejecución, no uno antiguo.
+        ruta_mejor_txt = os.path.join(
+            "resultados_clasificacion", dataset_name, "mejor_modelo", "ultimo_mejor_modelo.txt"
+        )
+
+        if not os.path.exists(ruta_mejor_txt):
+            print(f"❌ No se encontró el archivo de ruta del mejor modelo: {ruta_mejor_txt}")
+            sys.exit(1)
+
+        with open(ruta_mejor_txt, 'r', encoding='utf-8') as f:
+            ruta_mejor_modelo = f.read().strip()
+
+        print(f"\n📌 Mejor modelo de esta ejecución: {ruta_mejor_modelo}")
+
         print("\n--- 📊 FASE 2: EVALUACIÓN FINAL (AUDITORÍA) ---")
-        res_eval = subprocess.run(["python", "evaluar.py", json_file, dataset_name])
+        # Pasamos la ruta exacta del .pkl en lugar del dataset_name genérico,
+        # para que evaluar.py no tenga que buscar en disco por su cuenta.
+        res_eval = subprocess.run(
+            [r"python", "evaluar.py", json_file, dataset_name, ruta_mejor_modelo]
+        )
 
         if res_eval.returncode != 0:
             print("❌ Error en la fase de evaluación.")

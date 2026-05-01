@@ -162,8 +162,8 @@ def evaluar():
     X_test = df_test.drop(columns=[target])
     y_test = df_test[target]
 
-    # 3. BÚSQUEDA DEL MODELO GANADOR (.sav)
-    search_pattern   = os.path.join("resultados_clasificacion", "Tinder", "mejor_modelo", f"MEJOR_{csv_id}_{method}*.sav")
+    # 3. BÚSQUEDA DEL MODELO GANADOR (.pkl)
+    search_pattern   = os.path.join("resultados_clasificacion", csv_id, "mejor_modelo", f"MEJOR_{csv_id}_{method}*.pkl")
     modelos_encontrados = glob.glob(search_pattern)
 
     if not modelos_encontrados:

@@ -3,7 +3,6 @@ import sys
 import os
 import json
 import joblib
-import glob
 import pandas as pd
 
 from preprocessing import pipeline_preprocesamiento
@@ -30,9 +29,9 @@ def train():
         print("Uso: python train.py <data.csv> <config_file.json>")
         sys.exit(1)
 
-    config       = load_config(sys.argv[2])
+    config        = load_config(sys.argv[2])
     target_global = config.get('target')
-    df_raw       = pd.read_csv(sys.argv[1])
+    df_raw        = pd.read_csv(sys.argv[1])
 
     # ── División 70 / 15 / 15 ────────────────────────────────────────────────
     df_train_raw, df_temp = train_test_split(
@@ -74,9 +73,34 @@ def train():
     folder_path = os.path.join("resultados_clasificacion", csv_id, "modelos", method)
     os.makedirs(folder_path, exist_ok=True)
 
-    dict_predicciones = {'Valor_Real': dev_target.values}
+    # ── Registro de modelos entrenados en ESTA ejecución ─────────────────────
+    # Clave: evitar evaluar modelos de ejecuciones anteriores que queden en disco.
+    modelos_esta_ejecucion = {}   # { ruta_pkl: score_dev }
 
     print(f"🚀 Iniciando entrenamiento con método: {method}...")
+
+    # ════════════════════════════════════════════════════════════════════════
+    # FUNCIÓN AUXILIAR: entrenar, evaluar y registrar
+    # ════════════════════════════════════════════════════════════════════════
+    def registrar_modelo(model, model_name):
+        """Entrena, evalúa en dev, guarda en .pkl y registra en el dict de ejecución."""
+        model.fit(train_features, train_target)
+        y_pred = model.predict(dev_features)
+
+        if task == 'regression':
+            score_dev = r2_score(dev_target, y_pred)
+            metric    = "R2"
+        else:
+            score_dev = f1_score(dev_target, y_pred, average=eval_strat)
+            metric    = "F1"
+
+        # Guardamos en .pkl (antes era .sav)
+        pkl_name = model_name.replace(".sav", ".pkl")
+        pkl_path = os.path.join(folder_path, pkl_name)
+        joblib.dump(model, pkl_path)
+
+        modelos_esta_ejecucion[pkl_path] = score_dev
+        print(f"✅ Guardado: {pkl_name} | {metric}-Dev: {score_dev:.4f}")
 
     # ════════════════════════════════════════════════════════════════════════
     # NAIVE BAYES
@@ -85,7 +109,6 @@ def train():
         params_cfg = config.get('hyperparameters_bayes', {})
         b_type     = params_cfg.get('bayes_type', 'gaussian')
 
-        # Verificación anticipada: MultinomialNB necesita features no negativas
         if b_type == 'multinomial' and (train_features.values < 0).any():
             print("⚠️  MultinomialNB detectó valores negativos. Usando ComplementNB en su lugar.")
             b_type = 'complement'
@@ -93,50 +116,25 @@ def train():
         if b_type == 'multinomial':
             for a in params_cfg.get('alpha', [1.0]):
                 for sm in params_cfg.get('var_smoothing', [1e-9]):
-                    model      = MultinomialNB(alpha=a)
-                    model.fit(train_features, train_target)
-                    y_pred     = model.predict(dev_features)
-                    score_dev  = f1_score(dev_target, y_pred, average=eval_strat)
-                    model_name = f"bayes_multi_alpha={a}_sm={sm}.sav"
-                    dict_predicciones[model_name] = y_pred
-                    joblib.dump(model, os.path.join(folder_path, model_name))
-                    print(f"✅ Guardado: {model_name} | F1-Dev: {score_dev:.4f}")
+                    registrar_modelo(MultinomialNB(alpha=a),
+                                     f"bayes_multi_alpha={a}_sm={sm}.pkl")
 
-        # ComplementNB: ideal para texto con clases desbalanceadas
         elif b_type == 'complement':
             for a in params_cfg.get('alpha', [1.0]):
                 for sm in params_cfg.get('var_smoothing', [1e-9]):
-                    model      = ComplementNB(alpha=a)
-                    model.fit(train_features, train_target)
-                    y_pred     = model.predict(dev_features)
-                    score_dev  = f1_score(dev_target, y_pred, average=eval_strat)
-                    model_name = f"bayes_complement_alpha={a}_sm={sm}.sav"
-                    dict_predicciones[model_name] = y_pred
-                    joblib.dump(model, os.path.join(folder_path, model_name))
-                    print(f"✅ Guardado: {model_name} | F1-Dev: {score_dev:.4f}")
+                    registrar_modelo(ComplementNB(alpha=a),
+                                     f"bayes_complement_alpha={a}_sm={sm}.pkl")
 
         elif b_type == 'bernoulli':
             for a in params_cfg.get('alpha', [1.0]):
                 for sm in params_cfg.get('var_smoothing', [1e-9]):
-                    model      = BernoulliNB(alpha=a)
-                    model.fit(train_features, train_target)
-                    y_pred     = model.predict(dev_features)
-                    score_dev  = f1_score(dev_target, y_pred, average=eval_strat)
-                    model_name = f"bayes_bern_alpha={a}_sm={sm}.sav"
-                    dict_predicciones[model_name] = y_pred
-                    joblib.dump(model, os.path.join(folder_path, model_name))
-                    print(f"✅ Guardado: {model_name} | F1-Dev: {score_dev:.4f}")
+                    registrar_modelo(BernoulliNB(alpha=a),
+                                     f"bayes_bern_alpha={a}_sm={sm}.pkl")
 
         elif b_type == 'gaussian':
             for sm in params_cfg.get('var_smoothing', [1e-9]):
-                model      = GaussianNB(var_smoothing=sm)
-                model.fit(train_features, train_target)
-                y_pred     = model.predict(dev_features)
-                score_dev  = f1_score(dev_target, y_pred, average=eval_strat)
-                model_name = f"bayes_gauss_sm={sm}.sav"
-                dict_predicciones[model_name] = y_pred
-                joblib.dump(model, os.path.join(folder_path, model_name))
-                print(f"✅ Guardado: {model_name} | F1-Dev: {score_dev:.4f}")
+                registrar_modelo(GaussianNB(var_smoothing=sm),
+                                 f"bayes_gauss_sm={sm}.pkl")
 
     # ════════════════════════════════════════════════════════════════════════
     # KNN
@@ -153,59 +151,34 @@ def train():
             for p in lista_p:
                 for w in lista_w:
                     if task == 'regression':
-                        model     = KNeighborsRegressor(n_neighbors=k, p=p, weights=w)
-                        model.fit(train_features, train_target)
-                        y_pred    = model.predict(dev_features)
-                        score_dev = r2_score(dev_target, y_pred)
-                        metric    = "R2"
+                        model = KNeighborsRegressor(n_neighbors=k, p=p, weights=w)
                     else:
-                        model     = KNeighborsClassifier(n_neighbors=k, p=p, weights=w)
-                        model.fit(train_features, train_target)
-                        y_pred    = model.predict(dev_features)
-                        score_dev = f1_score(dev_target, y_pred, average=eval_strat)
-                        metric    = "F1"
-
-                    params_str = f"k={k}_p={p}_w={w}"
-                    model_name = f"knn_{params_str}.sav"
-                    dict_predicciones[model_name] = y_pred
-                    joblib.dump(model, os.path.join(folder_path, model_name))
-                    print(f"✅ Guardado: {model_name} | {metric}-Dev: {score_dev:.4f}")
+                        model = KNeighborsClassifier(n_neighbors=k, p=p, weights=w)
+                    registrar_modelo(model, f"knn_k={k}_p={p}_w={w}.pkl")
 
     # ════════════════════════════════════════════════════════════════════════
-    # ÁRBOL DE DECISIÓN
+    # DECISION TREE
     # ════════════════════════════════════════════════════════════════════════
     elif method == 'tree':
-        params_cfg   = config.get('hyperparameters_tree', {})
-        lista_depth  = params_cfg.get('max_depth', [5, 10])
-        lista_crit   = params_cfg.get('criterion', params_cfg.get('criterio', ['gini']))
+        params_cfg  = config.get('hyperparameters_tree', {})
+        lista_depth = params_cfg.get('max_depth', [None, 5, 10])
+        lista_crit  = params_cfg.get('criterio', ['gini'])
 
         for depth in lista_depth:
             for crit in lista_crit:
                 if task == 'regression':
-                    model     = DecisionTreeRegressor(max_depth=depth, criterion='squared_error', random_state=42)
-                    model.fit(train_features, train_target)
-                    y_pred    = model.predict(dev_features)
-                    score_dev = r2_score(dev_target, y_pred)
-                    metric    = "R2"
+                    model = DecisionTreeRegressor(max_depth=depth, criterion='squared_error',
+                                                  random_state=42)
                 else:
-                    model     = DecisionTreeClassifier(max_depth=depth, criterion=crit,
-                                                        class_weight='balanced', random_state=42)
-                    model.fit(train_features, train_target)
-                    y_pred    = model.predict(dev_features)
-                    score_dev = f1_score(dev_target, y_pred, average=eval_strat)
-                    metric    = "F1"
-
-                params_str = f"d={depth}_c={crit}"
-                model_name = f"tree_{params_str}.sav"
-                dict_predicciones[model_name] = y_pred
-                joblib.dump(model, os.path.join(folder_path, model_name))
-                print(f"✅ Guardado: {model_name} | {metric}-Dev: {score_dev:.4f}")
+                    model = DecisionTreeClassifier(max_depth=depth, criterion=crit,
+                                                   class_weight='balanced', random_state=42)
+                registrar_modelo(model, f"tree_d={depth}_c={crit}.pkl")
 
     # ════════════════════════════════════════════════════════════════════════
     # RANDOM FOREST
     # ════════════════════════════════════════════════════════════════════════
     elif method == 'forest':
-        params_cfg        = config.get('hyperparameters_forest', {})
+        params_cfg         = config.get('hyperparameters_forest', {})
         lista_n_estimators = params_cfg.get('n_estimators', [100])
         lista_depth        = params_cfg.get('max_depth', [None, 10])
         lista_features     = params_cfg.get('max_features', ['sqrt', 'log2'])
@@ -216,144 +189,109 @@ def train():
             for depth in lista_depth:
                 for feat in lista_features:
                     if task == 'regression':
-                        model     = RandomForestRegressor(
+                        model = RandomForestRegressor(
                             n_estimators=n_est, max_depth=depth, max_features=feat,
                             random_state=42, n_jobs=-1,
                         )
-                        model.fit(train_features, train_target)
-                        y_pred    = model.predict(dev_features)
-                        score_dev = r2_score(dev_target, y_pred)
-                        metric    = "R2"
                     else:
-                        model     = RandomForestClassifier(
+                        model = RandomForestClassifier(
                             n_estimators=n_est, max_depth=depth, max_features=feat,
                             random_state=42, n_jobs=-1, class_weight='balanced',
                         )
-                        model.fit(train_features, train_target)
-                        y_pred    = model.predict(dev_features)
-                        score_dev = f1_score(dev_target, y_pred, average=eval_strat)
-                        metric    = "F1"
-
-                    params_str = f"n={n_est}_d={depth}_f={feat}"
-                    model_name = f"forest_{params_str}.sav"
-                    dict_predicciones[model_name] = y_pred
-                    joblib.dump(model, os.path.join(folder_path, model_name))
-                    print(f"✅ Guardado: {model_name} | {metric}-Dev: {score_dev:.4f}")
+                    registrar_modelo(model, f"forest_n={n_est}_d={depth}_f={feat}.pkl")
 
     # ════════════════════════════════════════════════════════════════════════
     # LOGISTIC REGRESSION
     # ════════════════════════════════════════════════════════════════════════
     elif method == 'logistic':
-        params_cfg  = config.get('hyperparameters_logistic', {})
-        lista_C     = params_cfg.get('C', [0.1, 1.0, 10.0])
+        params_cfg   = config.get('hyperparameters_logistic', {})
+        lista_C      = params_cfg.get('C', [0.1, 1.0, 10.0])
         lista_solver = params_cfg.get('solver', ['lbfgs'])
 
         print("📈 Iniciando entrenamiento de Logistic Regression...")
 
         for c_val in lista_C:
             for solv in lista_solver:
-                if task == 'classification':
-                    model = LogisticRegression(
-                        C=c_val, solver=solv,
-                        max_iter=1000, random_state=42,
-                        class_weight='balanced',
-                    )
-                    model.fit(train_features, train_target)
-                    y_pred    = model.predict(dev_features)
-                    score_dev = f1_score(dev_target, y_pred, average=eval_strat)
-                    metric    = "F1"
-
-                    params_str = f"C={c_val}_solver={solv}"
-                    model_name = f"logistic_{params_str}.sav"
-                    dict_predicciones[model_name] = y_pred
-                    joblib.dump(model, os.path.join(folder_path, model_name))
-                    print(f"✅ Guardado: {model_name} | {metric}-Dev: {score_dev:.4f}")
+                model = LogisticRegression(
+                    C=c_val, solver=solv,
+                    max_iter=1000, random_state=42,
+                    class_weight='balanced',
+                )
+                registrar_modelo(model, f"logistic_C={c_val}_solver={solv}.pkl")
 
     else:
         print(f"❌ Método '{method}' no reconocido.")
         sys.exit(1)
 
     # ════════════════════════════════════════════════════════════════════════
-    # SELECCIÓN DEL MEJOR MODELO
+    # SELECCIÓN DEL MEJOR MODELO (solo de esta ejecución)
     # ════════════════════════════════════════════════════════════════════════
-    model_files    = glob.glob(os.path.join(folder_path, "*.sav"))
-    best_model_path = None
-    max_score       = -1
+    if not modelos_esta_ejecucion:
+        print("⚠️ No se entrenó ningún modelo en esta ejecución.")
+        sys.exit(1)
 
-    for m_path in model_files:
-        tmp_model = joblib.load(m_path)
-        y_pred    = tmp_model.predict(dev_features)
+    best_model_path = max(modelos_esta_ejecucion, key=modelos_esta_ejecucion.get)
+    max_score       = modelos_esta_ejecucion[best_model_path]
 
-        if task == 'regression':
-            current_score = r2_score(dev_target, y_pred)
-        else:
-            current_score = f1_score(dev_target, y_pred, average=eval_strat)
+    dir_mejor    = os.path.join("resultados_clasificacion", csv_id, "mejor_modelo")
+    dir_metricas = os.path.join("resultados_clasificacion", csv_id, "metricas")
+    os.makedirs(dir_mejor,    exist_ok=True)
+    os.makedirs(dir_metricas, exist_ok=True)
 
-        if current_score > max_score:
-            max_score       = current_score
-            best_model_path = m_path
+    detalles_params = os.path.basename(best_model_path)
+    final_name      = f"MEJOR_{csv_id}_{detalles_params}"
+    final_path      = os.path.join(dir_mejor, final_name)
 
-    if best_model_path:
-        dir_mejor    = os.path.join("resultados_clasificacion", csv_id, "mejor_modelo")
-        dir_metricas = os.path.join("resultados_clasificacion", csv_id, "metricas")
-        os.makedirs(dir_mejor,    exist_ok=True)
-        os.makedirs(dir_metricas, exist_ok=True)
+    mejor_modelo = joblib.load(best_model_path)
+    joblib.dump(mejor_modelo, final_path)
 
-        detalles_params  = os.path.basename(best_model_path)
-        final_name       = f"MEJOR_{csv_id}_{detalles_params}"
-        final_path       = os.path.join(dir_mejor, final_name)
+    y_pred_mejor = mejor_modelo.predict(dev_features)
 
-        mejor_modelo = joblib.load(best_model_path)
-        joblib.dump(mejor_modelo, final_path)
+    metrics_dict = {
+        'dataset':       [csv_id],
+        'algoritmo':     [method],
+        'configuracion': [detalles_params],
+        'accuracy':      [accuracy_score(dev_target, y_pred_mejor)],
+    }
 
-        y_pred_mejor = mejor_modelo.predict(dev_features)
-
-        metrics_dict = {
-            'dataset':       [csv_id],
-            'algoritmo':     [method],
-            'configuracion': [detalles_params],
-            'accuracy':      [accuracy_score(dev_target, y_pred_mejor)],
-        }
-
-        if task == 'classification':
-            metrics_dict['precision'] = [precision_score(dev_target, y_pred_mejor, average=eval_strat)]
-            metrics_dict['recall']    = [recall_score(dev_target,    y_pred_mejor, average=eval_strat)]
-            metrics_dict['f1_score']  = [f1_score(dev_target,        y_pred_mejor, average=eval_strat)]
-        else:
-            metrics_dict['r2_score']  = [r2_score(dev_target, y_pred_mejor)]
-
-        df_metrics = pd.DataFrame(metrics_dict)
-        ruta_csv   = os.path.join(dir_metricas, f"metricas_{method}_{csv_id}.csv")
-        df_metrics.to_csv(ruta_csv, index=False)
-
-        print("\n" + "⭐" * 40)
-        print(f"🏆 MODELO GANADOR: {final_name}")
-        print(f"📊 MEJOR F1-SCORE (DEV): {max_score:.4f}")
-
-        if task == 'classification':
-            print("\n📋 REPORTE FINAL DE CLASIFICACIÓN:")
-            print(classification_report(dev_target, y_pred_mejor))
-
-        print(f"📁 Modelo guardado en: {final_path}")
-        print(f"📄 CSV de métricas:    {ruta_csv}")
-        print("⭐" * 40)
-
-        # ── Exportar datos preprocesados para evaluación externa ────────────
-        processed_path = os.path.join("preprocesado", csv_id)
-        os.makedirs(processed_path, exist_ok=True)
-
-        pd.concat([test_features,  test_target],  axis=1).to_csv(os.path.join(processed_path, f"{csv_id}_test_ready.csv"),  index=False)
-        '''
-        pd.concat([train_features, train_target], axis=1).to_csv(
-            os.path.join(processed_path, f"{csv_id}_train_ready.csv"), index=False)
-        
-        pd.concat([dev_features,   dev_target],   axis=1).to_csv(
-            os.path.join(processed_path, f"{csv_id}_dev_ready.csv"),   index=False)
-        '''
-
-        print(f"📦 Datos preprocesados guardados en: {processed_path}/")
+    if task == 'classification':
+        metrics_dict['precision'] = [precision_score(dev_target, y_pred_mejor, average=eval_strat)]
+        metrics_dict['recall']    = [recall_score(dev_target,    y_pred_mejor, average=eval_strat)]
+        metrics_dict['f1_score']  = [f1_score(dev_target,        y_pred_mejor, average=eval_strat)]
     else:
-        print("⚠️ No se encontraron archivos .sav para evaluar.")
+        metrics_dict['r2_score']  = [r2_score(dev_target, y_pred_mejor)]
+
+    df_metrics = pd.DataFrame(metrics_dict)
+    ruta_csv   = os.path.join(dir_metricas, f"metricas_{method}_{csv_id}.csv")
+    df_metrics.to_csv(ruta_csv, index=False)
+
+    print("\n" + "⭐" * 40)
+    print(f"🏆 MODELO GANADOR: {final_name}")
+    print(f"📊 MEJOR F1-SCORE (DEV): {max_score:.4f}")
+
+    if task == 'classification':
+        print("\n📋 REPORTE FINAL DE CLASIFICACIÓN:")
+        print(classification_report(dev_target, y_pred_mejor))
+
+    print(f"📁 Modelo guardado en: {final_path}")
+    print(f"📄 CSV de métricas:    {ruta_csv}")
+    print("⭐" * 40)
+
+    # ── Exportar datos de test preprocesados para evaluación externa ──────────
+    processed_path = os.path.join("preprocesado", csv_id)
+    os.makedirs(processed_path, exist_ok=True)
+
+    pd.concat([test_features, test_target], axis=1).to_csv(
+        os.path.join(processed_path, f"{csv_id}_test_ready.csv"), index=False
+    )
+    print(f"📦 Datos preprocesados guardados en: {processed_path}/")
+
+    # ── Escribir la ruta exacta del mejor modelo para que evaluar.py la use ──
+    # Así el evaluador no tiene que buscar en disco: lee esta ruta directamente.
+    ruta_mejor_txt = os.path.join(dir_mejor, "ultimo_mejor_modelo.txt")
+    with open(ruta_mejor_txt, 'w', encoding='utf-8') as f:
+        f.write(final_path)
+    print(f"📝 Ruta del mejor modelo escrita en: {ruta_mejor_txt}")
 
 
 if __name__ == "__main__":
