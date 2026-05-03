@@ -60,14 +60,12 @@
       "test_questions": {
         "split_size": 10,
         "split": "Stratified",
-        "manual_split_indexes": [76,5753,6139,7275, 9989, 9955],
-        "hard_coded_questions": []
+        "manual_split_indexes": [76,5753,6139,7275, 9989, 9955]
       },
       "seed" : 42
     },
     "oversampling" : {
       "model": "qwen2.5:1.5b",
-      "possible_answers": ["positive","neutral","negative"],
       "temperature": 0.4,
       "repeat_penalty": 1.2,
       "num_predict": 40,

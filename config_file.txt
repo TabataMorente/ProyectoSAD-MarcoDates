@@ -69,6 +69,44 @@
     "top_p": 0.5                        // Límite de vocabulario por probabilidad
   },
 
+  "prompt_engineering" : {                                          // Configuración para Modelos de Lenguaje Locales (Ollama)
+    "mode": "clasificacion",                                        // Qué tarea se le pide hacer al modelo "clasificacion" o "oversampling"
+    "clasificacion": {
+      "model": "qwen2.5:1.5b",                                      // Nombre del modelo a utilizar
+      "possible_answers": ["positive","neutral","negative"],        // Lista con las respuestas que podrá dar el modelo
+                                                                    // Hiperparámetro de inferencia
+      "temperature": 0,                                             // temperatura: 0 => determinista; 1=>Aleatoriedad Alta
+      "repeat_penalty": 1.0,                                        // repeat_penalty: 1=> sin penalización por repetir; 2=>penalización muy alta por repetir
+      "num_predict": 8,                                             // num_predict: Longitud de respuesta del modelo
+      "top_k": 10,                                                  // top_k: valor bajo=> respuestas más seguras; valor alto=>mayor diversidad
+      "top_p": 0.5,                                                 // top_p: selección dinámica del conjunto de
+                                                                    // palabras más pequeñas hasta alcanzar una probabilidad acumulada top_p
+      "shots": [0,1,5,10],                                          // Lista de shots. Se hace un barrido por shots. Los ejemplos se extraen del dataset
+      "split": ["First","Random","Stratified","Manual"],            // Por cada shot qué tipo de split debe hacer en el dataset.
+      "manual_split_indexes": [[[1, 5], 9], [6,3,2]],               // En caso de incluir "Manual" en "split", se hace una lista de colecciones
+                                                                    // de instancias en el dataset. Hay que hacer referencia al número de fila de la instancia.
+                                                                    // Para hacer slicing crea dentro de una coleccion una dupla.
+      "test_questions": {                                           // Extracción de instancias a predecir
+        "split_size": 10,                                           // Número de instancias a predecir. Por cada instancia un barrido completo de shots.
+        "split": "Stratified",                                      // Tipo de split. "Fisrt", "Random", "Stratified" o "Manual"
+        "manual_split_indexes": [76,5753,6139,7275, 9989, 9955],    // Al elegir "Manual", se escribe los números de fila de las instancias que se quieren predecir.
+      },
+      "seed" : 42                                                   // Semilla que se usara para los splits
+    },
+    "oversampling" : {
+      "model": "qwen2.5:1.5b",                                      // Nombre del modelo a utilizar
+      "possible_answers": ["positive","neutral","negative"],
+      "temperature": 0.4,
+      "repeat_penalty": 1.2,
+      "num_predict": 40,
+      "top_k": 30,
+      "top_p": 0.5,
+      "shots": [0],
+      "split": ["Random"],
+      "seed" : 42
+    }
+  }
+
   "clustering_lda": {                   // Hiperparámetros de Topic Modeling (Latent Dirichlet Allocation)
        "n_components_range": [2, 3, 4, 5, 6, 7, 8, 9, 10], // Lista de cuántos "temas" a buscar (para gráfico codo)
        "learning_method": ["batch"],    // batch (procesa todos los datos a la vez) o online (lotes)

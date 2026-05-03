@@ -258,7 +258,7 @@ def evaluate(config, example_list_collection, tasks_collection):
     chain_no_zero_shots = create_chain(model, plantilla_no_zero_shots)
     chain_zero_shots = create_chain(model, plantilla_zero_shots)
 
-    log_generator = Classification_log_generator("classification_results_Qwen", False)
+    log_generator = Classification_log_generator("classification_results", False)
 
     sort_by_length(example_list_collection)
 
@@ -541,8 +541,9 @@ def split_paraphrasis_examples(conf, dataset):
 
 if __name__ == "__main__":
     """
-    Parametro 1: ruta a config_file.json
-    Parametro 2: ruta a el dataset
+    Parametro 1: ruta a el dataset
+    Parametro 2: ruta a config_file.json
+    Parametro 3: ruta al csv de parafrasis
     """
     parameters = get_parameters()
     prompt_config = None
