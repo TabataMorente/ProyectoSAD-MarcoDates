@@ -19,14 +19,14 @@ python main.py tinder.csv config_file.json
 En caso de querer hacer la clasficación, se usan los mismos parámetros
 al ejecutar el script.
 ```bash
-python prompt_engineering.py tinder.csv config_file.json
+python langChain.py tinder.csv config_file.json
 ```
 > El **resultado** se guarda en `classification_results` y contiene
 > archivos **divididos por shots**.
 #### Paráfrasis
 Para poder hacer oversampling generativo la ejecución del script es diferente.
 ```bash
-python prompt_engineering.py tinder.csv config_file.json parafrasis.csv
+python langChain.py tinder.csv config_file.json parafrasis.csv
 ```
 El archivo parafrasis.csv contiene dos columnas. La primera `id` hace referencia
 al número de fila de la instancia que se encuentra en el archivo `tinder.csv`. La
@@ -54,6 +54,6 @@ con los resultados generados por el modelo de lenguaje en un nuevo csv,
 que se llama `new_Tinder.csv` en la carpeta que el usuario considere.
 Esta sería la forma de ejecutar el script:
 ```bash
-python join_datasets directorio_parafrasis_generados tinder.csv directorio_resultado
+python join_datasets.py directorio_parafrasis_generados tinder.csv directorio_resultado
 ```
 > **No hace falta** crear `directorio_resultado` antes de ejecutar el script.
